@@ -3,6 +3,7 @@ package com.liucheng.administrator.doubicinamatickit.module.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ import butterknife.OnClick;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobConfig;
 import cn.bmob.v3.BmobSMS;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.SaveListener;
@@ -56,19 +58,32 @@ public class LoginActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.but_login:
+                //判断用户名和密码不为空
+                if (TextUtils.isEmpty(etLoginUsername.getText().toString())||
+                        TextUtils.isEmpty(etLoginPassword.getText().toString())) {
+                    Toast.makeText(this, "请检查用户名或密码！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-//
-//                BmobSMS.verifySmsCode("18707157352", "975968", new UpdateListener() {
-//                    @Override
-//                    public void done(BmobException e) {
-//                        if(e==null){//短信验证码已验证成功
-//                            Log.i("bmob", "验证通过");
-//                        }else{
-//                            Log.i("bmob", "验证失败：code ="+e.getErrorCode()+",msg = "+e.getLocalizedMessage());
-//                        }
-//                    }
-//                });
+                User bu2 = new User();
+                bu2.setUsername(etLoginUsername.getText().toString());
+                bu2.setPassword(etLoginPassword.getText().toString());
+                bu2.login(new SaveListener<BmobUser>() {
 
+                    @Override
+                    public void done(BmobUser bmobUser, BmobException e) {
+                        if(e==null){
+                            //登录成功
+                            Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                            //当前页面finish;
+                            finish();
+                            //通过BmobUser user = BmobUser.getCurrentUser()获取登录成功后的本地用户信息
+                            //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(MyUser.class)获取自定义用户信息
+                        }else{
+                            Toast.makeText(LoginActivity.this, "登录失败！请检查用户名或者密码！", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
                 break;
             case R.id.tv_login_register:
                 //跳转到注册页面

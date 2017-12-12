@@ -118,7 +118,7 @@
                 android:layout_height="match_parent"
                 android:gravity="end"
                 android:layout_gravity="center"
-                android:hint="点击输入昵称" />
+                android:hint="输入昵称" />
 
             </LinearLayout>
         </LinearLayout>
