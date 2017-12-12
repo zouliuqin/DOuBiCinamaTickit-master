@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:layout_width="match_parent" android:layout_height="130dp">
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        android:id="@+id/poster_upcoming"
+        android:layout_width="80dp"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/linearlayout_movie_content"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/poster_upcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="18sp"
+            android:text="寻梦环游记"
+            android:id="@+id/title_upvoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="主演名"
+            android:id="@+id/actor_upcoming"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/content_upcoming"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:text="rewgewawfewfgvfdsgtfrhwbhtrfhbrthewgbrvrewgvbrfrre"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/upcoming_date"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:text="上映时间"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

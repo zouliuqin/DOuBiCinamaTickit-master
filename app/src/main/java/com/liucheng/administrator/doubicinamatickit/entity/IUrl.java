@@ -16,8 +16,8 @@ public interface IUrl {
 
     //正在热映
     String IS_HIT="https://api-m.mtime.cn/Showtime/LocationMovies.api?locationId=290";
-
     //时光网票房榜
     String BOX_OFFICE="https://api-m.mtime.cn/TopList/TopListDetailsByRecommend.api?locationId=290&pageSubAreaID=48266&pageIndex=1";
-
+    //即将上映
+    String UPCOMING_MOVIE = "https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=290";
 }

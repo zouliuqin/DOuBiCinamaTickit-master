@@ -2,9 +2,7 @@ package com.liucheng.administrator.doubicinamatickit.ui;
 
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,18 +11,12 @@ import android.widget.Button;
 import android.widget.ViewFlipper;
 
 import com.liucheng.administrator.doubicinamatickit.R;
-import com.liucheng.administrator.doubicinamatickit.entity.IsHit;
-import com.liucheng.administrator.doubicinamatickit.manager.IsHitData;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
 import com.liucheng.administrator.doubicinamatickit.sql.MyDataBaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
-import cn.bmob.v3.Bmob;
-import cn.bmob.v3.BmobConfig;
-import cn.bmob.v3.BmobSMS;
-import cn.bmob.v3.b.This;
 
 public class SplashActivity extends Activity implements IsHitData.IsHitLoadListener {
     private ViewFlipper viewFlipper;

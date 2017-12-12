@@ -3,14 +3,12 @@ package com.liucheng.administrator.doubicinamatickit.module.buy_ticker.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
-import com.liucheng.administrator.doubicinamatickit.entity.IsHit;
-import com.liucheng.administrator.doubicinamatickit.manager.IsHitData;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

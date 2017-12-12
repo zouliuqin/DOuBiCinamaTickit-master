@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
-import com.liucheng.administrator.doubicinamatickit.entity.IsHit;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
-import com.liucheng.administrator.doubicinamatickit.manager.IsHitData;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.adapter.NowShowAdapter;
 
 import java.util.ArrayList;

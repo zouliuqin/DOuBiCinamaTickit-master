@@ -1,4 +1,4 @@
-package com.liucheng.administrator.doubicinamatickit.entity;
+package com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data;
 
 import com.google.gson.annotations.SerializedName;
 
