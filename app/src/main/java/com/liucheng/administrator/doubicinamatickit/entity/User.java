@@ -1,9 +1,10 @@
 package com.liucheng.administrator.doubicinamatickit.entity;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
 
 
-public class User extends BmobObject {
+public class User extends BmobUser {
 
     private  String username;
     private  String password;
