@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liucheng.administrator.doubicinamatickit.module.login.LoginActivity">
+
+    <include
+        android:id="@+id/include_login_title"
+        layout="@layout/include_login_title"/>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/include_login_title"
+        android:id="@+id/ll_login"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/et_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:hint="@string/username" />
+
+        <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:hint="@string/password"  />
+
+        <Button
+            android:id="@+id/but_login"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/shape_login_button"
+
+            android:text="@string/login"
+            />
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_login_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:text="@string/register"
+                />
+
+            <TextView
+                android:id="@+id/tv_login_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:text="@string/find" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

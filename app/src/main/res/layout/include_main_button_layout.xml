@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="horizontal">
+
+    <RadioGroup
+
+        android:id="@+id/include_ridiogroup_bottom"
+        android:background="#ffffff"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            style="@style/radioButton_rafiogroup_style"
+            android:id="@+id/radioButton_home"
+            android:textColor="#757575"
+            android:drawableTop="@drawable/home_gridbutton_selscte"
+            android:text="首页" />
+
+        <RadioButton
+            android:checked="true"
+            style="@style/radioButton_rafiogroup_style"
+            android:id="@+id/radioButton_buy_ticket"
+            android:textColor="#757575"
+            android:drawableTop="@drawable/buy_ticket_gridbutton_sellctor"
+            android:text="购票" />
+
+        <RadioButton
+            style="@style/radioButton_rafiogroup_style"
+            android:id="@+id/radioButton_cinema"
+            android:textColor="#757575"
+            android:drawableTop="@drawable/cinema_gridbutton_selscte"
+            android:text="院线" />
+
+        <RadioButton
+            style="@style/radioButton_rafiogroup_style"
+            android:id="@+id/radioButton_find"
+            android:textColor="#757575"
+            android:drawableTop="@drawable/find_gridbutton_selscte"
+            android:text="发现" />
+
+        <RadioButton
+            style="@style/radioButton_rafiogroup_style"
+            android:id="@+id/radioButton_my"
+            android:textColor="#757575"
+            android:drawableTop="@drawable/my_gridbutton_selscte"
+            android:text="我的" />
+
+
+    </RadioGroup>
+
+
+</LinearLayout>

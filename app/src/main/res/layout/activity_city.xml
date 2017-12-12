@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:indexBar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".module.cityselector.CityActivity">
+
+
+    <LinearLayout
+        android:id="@+id/edit_bacground_title"
+        android:orientation="horizontal"
+        android:background="#6BC5EB"
+        android:paddingTop="10dp"
+        android:paddingBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/edit_bacground"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/edittext_background">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/find" />
+            <com.liucheng.administrator.doubicinamatickit.module.cityselector.manager.EditTextWithDel
+                android:id="@+id/et_search"
+                android:hint="输入城市名称或拼音"
+                android:singleLine="true"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:textColorHint="#ffffff"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    
+    
+    
+
+
+    <com.liucheng.administrator.doubicinamatickit.module.cityselector.citychoose.SideIndexBar
+        android:id="@+id/index_bar"
+        android:layout_below="@+id/edit_bacground_title"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        indexBar:isBoldface="false"
+        indexBar:isLetterCenter="true"
+        indexBar:letterColor="@color/gray"
+        android:background="@null"
+        indexBar:letterSize="14sp"
+        indexBar:selectBackground="@color/white"
+        indexBar:selectLetterColor="@color/white"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@+id/edit_bacground_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_toLeftOf="@id/index_bar"
+        android:scrollbars="none"/>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="30dp"
+            android:text="2314"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/text_dia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_dialog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@color/transparentBlack"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

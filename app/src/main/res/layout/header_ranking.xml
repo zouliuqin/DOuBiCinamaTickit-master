@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="8dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingStart="8dp"
+    android:background="#e0e0e0"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/tv_header_movie_ranking"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center|left"
+        android:text="排行" />
+    <TextView
+        android:id="@+id/tv_header_movie_name"
+        android:layout_width="0dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="影片" />
+
+    <TextView
+        android:id="@+id/tv_header_box_office"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="日票房（万）" />
+
+    <TextView
+        android:id="@+id/tv_header_sum_box_office"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="累积票房" />
+    <TextView
+        android:id="@+id/tv_header_sum_box_grade"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="评分" />
+
+
+
+
+</LinearLayout>

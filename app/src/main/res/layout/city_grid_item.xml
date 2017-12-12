@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/city_grid_item_selector"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/city_grid_item_text"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:paddingRight="10dp"
+        android:gravity="center"
+        android:text="1232"
+        android:background="@drawable/edit_bacground"
+        android:textColor="#979797"
+        android:layout_height="30dp" />
+
+</LinearLayout>

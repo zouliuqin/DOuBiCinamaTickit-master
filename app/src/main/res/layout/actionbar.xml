@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.liucheng.administrator.doubicinamatickit.view.ImageText
+
+        android:id="@+id/imageviewText"
+        app:view_image="@mipmap/ic_launcher"
+        app:view_text="武汉"
+        android:layout_centerVertical="true"
+        app:view_text_size="9dp"
+
+        app:view_text_color="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/text_actionbar"
+        android:text="首页"
+        android:textColor="#ffffff"
+       android:layout_centerVertical="true"
+        android:textSize="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/imageView_actionbar"
+        android:scaleType="fitXY"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+
+</RelativeLayout>
