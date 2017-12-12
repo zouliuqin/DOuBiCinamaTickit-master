@@ -15,11 +15,9 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-
     <!-- runtime permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
 
     <!-- common permission -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -44,26 +42,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.MainActivity" />
-        <activity android:name=".module.cityselector.CityActivity"></activity>
+        <activity android:name=".module.cityselector.CityActivity" />
         <activity android:name=".module.login.LoginActivity" />
         <activity android:name=".module.register.RegisterActivity" />
-        <activity android:name=".module.findpassword.FindPasswordActivity"></activity>
-        <activity android:name=".module.myself.MySetActivity"></activity>
-
+        <activity android:name=".module.findpassword.FindPasswordActivity" />
+        <activity android:name=".module.myself.MySetActivity" />
 
         <!-- 百度地图所需meta-data,这里的value需要使用你自己申请的appkey -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="5ijmbiX0dc5yAHCpYnRSmLcGpIRTxZwN"/>
+            android:value="5ijmbiX0dc5yAHCpYnRSmLcGpIRTxZwN" />
 
         <!-- 百度地图远程服务 -->
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote">
-        </service>
+            android:process=":remote"></service>
 
-
+        <activity android:name=".module.details_movie.DetailsActivity"></activity>
     </application>
 
 </manifest>

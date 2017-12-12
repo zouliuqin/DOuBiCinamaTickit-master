@@ -20,4 +20,6 @@ public interface IUrl {
     String BOX_OFFICE="https://api-m.mtime.cn/TopList/TopListDetailsByRecommend.api?locationId=290&pageSubAreaID=48266&pageIndex=1";
     //即将上映
     String UPCOMING_MOVIE = "https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=290";
+    //电影详情
+    String DETAILS_MOVIE = "http://m.mtime.cn/Service/callback.mi/News/Detail.api?newsId=1575990";
 }

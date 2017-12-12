@@ -47,15 +47,15 @@ dependencies {
     compile 'cn.bmob.android:http-legacy:1.0'
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
 //    //轮播
-  compile 'com.youth.banner:banner:1.4.10'
+    compile 'com.youth.banner:banner:1.4.10'
     //下拉刷新，上拉加载
     compile 'com.zt.maven.widget:refreshview:1.0.2'
     //picasso图片加载
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     //okHttp，gson  bmob已经有了 不需要重复添加
-   // compile 'com.squareup.okhttp3:okhttp:3.9.1'
-   // implementation 'com.google.code.gson:gson:2.8.2'
+    // compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    // implementation 'com.google.code.gson:gson:2.8.2'
 
 
 }
