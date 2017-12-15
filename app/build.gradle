@@ -1,6 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        // ... and any other excludes go here
+    }
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
         // ... and any other excludes go here
@@ -50,14 +55,18 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.10'
     //下拉刷新，上拉加载
     compile 'com.zt.maven.widget:refreshview:1.0.2'
+
     //picasso图片加载
     implementation 'com.squareup.picasso:picasso:2.5.2'
     //jsoup解析
     compile 'org.jsoup:jsoup:1.9.2'
 
     //okHttp，gson  bmob已经有了 不需要重复添加
-    // compile 'com.squareup.okhttp3:okhttp:3.9.1'
+   //  compile 'com.squareup.okhttp3:okhttp:3.9.1'
     // implementation 'com.google.code.gson:gson:2.8.2'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.7'
+
+
 
 
 }

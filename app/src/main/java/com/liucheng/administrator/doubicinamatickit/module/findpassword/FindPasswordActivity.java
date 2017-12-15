@@ -53,12 +53,15 @@ public class FindPasswordActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.ib_register_auth_code:
                 //获取验证码
-                BmobSMS.requestSMSCode("18707157352", "zouliuqin", new QueryListener<Integer>() {
+                BmobSMS.requestSMSCode(etRegisterUsername.getText().toString(), "zouliuqin", new QueryListener<Integer>() {
 
                     @Override
                     public void done(Integer smsId, BmobException ex) {
                         if (ex == null) {//验证码发送成功
-                            Toast.makeText(FindPasswordActivity.this, "222", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FindPasswordActivity.this, "短信发送成功！", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Log.i("TAG", "done: "+ex);
+                            Toast.makeText(FindPasswordActivity.this, "发送异常！", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -80,7 +83,7 @@ public class FindPasswordActivity extends AppCompatActivity {
                     return;
                 }
 
-                BmobUser.resetPasswordBySMSCode(code, newPassword, new UpdateListener() {
+                BmobUser.resetPasswordBySMSCode(etRegisterAuthCode.getText().toString(), etRegisterPassword.getText().toString(), new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         if (e == null) {

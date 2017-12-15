@@ -34,6 +34,7 @@ public class NewsData {
             @Override
             public void run() {
                 try {
+
                     //创建OkHttpClient实例
                     OkHttpClient client = new OkHttpClient();
                     //创建request实例

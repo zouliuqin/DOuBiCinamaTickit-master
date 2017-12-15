@@ -91,13 +91,13 @@ public class RegisterActivity extends AppCompatActivity {
 
                 break;
             case R.id.but_register:
-                phoneNumber = etRegisterUsername.getText().toString();
+              final String   phoneNumber = etRegisterUsername.getText().toString();
 
-                authCode = etRegisterAuthCode.getText().toString();
+                String     authCode = etRegisterAuthCode.getText().toString();
 
-                password = etRegisterPassword.getText().toString();
+                final String    password = etRegisterPassword.getText().toString();
 
-                againPassword = etRegisterAgainPassword.getText().toString();
+                String   againPassword = etRegisterAgainPassword.getText().toString();
 
 
                 //点击注册按钮，先检查数据完整性，再检测验证码是否正确
@@ -128,16 +128,16 @@ public class RegisterActivity extends AppCompatActivity {
                             bu.setNickname(phoneNumber);
                             bu.setUsername(phoneNumber);
                             bu.setPassword(password);
-
-
-
                             //注意：不能用save方法进行注册
                             bu.signUp(new SaveListener<User>() {
                                 @Override
                                 public void done(User s, BmobException e) {
                                     if (e == null) {
-
+                                        Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+                                        //注册成功，返回登录页面
+                                        finish();
                                     } else {
+                                        Log.i("smile", "验证失败：code =" +e);
 
                                     }
                                 }
