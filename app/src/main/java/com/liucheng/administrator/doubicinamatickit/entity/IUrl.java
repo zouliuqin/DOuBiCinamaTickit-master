@@ -21,5 +21,5 @@ public interface IUrl {
     //即将上映
     String UPCOMING_MOVIE = "https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=290";
     //电影详情
-    String DETAILS_MOVIE = "http://m.mtime.cn/Service/callback.mi/News/Detail.api?newsId=1575990";
+    String DETAILS_MOVIE = "https://ticket-api-m.mtime.cn/movie/detail.api?locationId=290&movieId=";
 }

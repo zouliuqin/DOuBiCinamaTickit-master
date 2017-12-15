@@ -26,7 +26,7 @@ public class DetailsData {
     /**
      * 获取即将上映数据源
      */
-    public static void getIIsHitData(final DetailsData.DetailsDataLoadListener loadListener) {
+    public static void getIIsHitData(final DetailsData.DetailsDataLoadListener loadListener, final String cinameId) {
 
         new Thread(new Runnable() {
             @Override
@@ -37,7 +37,7 @@ public class DetailsData {
                     //创建request实例
                     Request request = new Request.Builder()
                             //设置url
-                            .url(IUrl.DETAILS_MOVIE)
+                            .url(IUrl.DETAILS_MOVIE+cinameId)
                             .build();
                     Response response = client.newCall(request).execute();
                     String data = response.body().string();

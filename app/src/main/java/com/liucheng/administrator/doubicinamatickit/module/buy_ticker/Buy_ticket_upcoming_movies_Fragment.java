@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,7 @@ public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("cinameId",upcomingList.get(i).getId()+"");
                 startActivity(intent);
             }
         });

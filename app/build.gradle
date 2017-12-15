@@ -52,6 +52,8 @@ dependencies {
     compile 'com.zt.maven.widget:refreshview:1.0.2'
     //picasso图片加载
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    //jsoup解析
+    compile 'org.jsoup:jsoup:1.9.2'
 
     //okHttp，gson  bmob已经有了 不需要重复添加
     // compile 'com.squareup.okhttp3:okhttp:3.9.1'

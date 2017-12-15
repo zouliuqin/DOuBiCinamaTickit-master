@@ -1,6 +1,7 @@
 package com.liucheng.administrator.doubicinamatickit.module.buy_ticker.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -41,12 +42,22 @@ view.setTag(holder);
         }else {
             holder = (ViewHolder) view.getTag();
         }
+
+
         Upcoming.MoviecomingsBean moviecomingsBean = upcoming.get(i);
-        Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.mipmap.ic_launcher).into(holder.posterUpcoming);
-        holder.titleUpvoming.setText(moviecomingsBean.getTitle());
-        holder.actorUpcoming.setText(moviecomingsBean.getActor1()+" / "+moviecomingsBean.getActor2());
-        holder.contentUpcoming.setText(moviecomingsBean.getType());
-        holder.upcomingDate.setText(moviecomingsBean.getReleaseDate());
+        Log.d("yyyyyyyyyyyyy",moviecomingsBean.getImage()+"" );
+        if (moviecomingsBean.getImage().length()>5){
+            Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.mipmap.ic_launcher).into(holder.posterUpcoming);
+            holder.titleUpvoming.setText(moviecomingsBean.getTitle());
+            holder.actorUpcoming.setText(moviecomingsBean.getActor1()+" / "+moviecomingsBean.getActor2());
+            holder.contentUpcoming.setText(moviecomingsBean.getType());
+            holder.upcomingDate.setText(moviecomingsBean.getReleaseDate());
+        }else {
+//            Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.mipmap.ic_launcher).into(holder.posterUpcoming);
+//            holder.posterUpcoming.setImageResource(R.mipmap.ic_launcher);
+        }
+
+
         return view;
     }
 
