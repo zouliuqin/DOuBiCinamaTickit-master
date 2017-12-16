@@ -68,6 +68,30 @@ public class Upcoming {
         private int wantedCount;
         private List<VideosBean> videos;
 
+        @Override
+        public String toString() {
+            return "AttentionBean{" +
+                    "actor1='" + actor1 + '\'' +
+                    ", actor2='" + actor2 + '\'' +
+                    ", director='" + director + '\'' +
+                    ", id=" + id +
+                    ", image='" + image + '\'' +
+                    ", isFilter=" + isFilter +
+                    ", isTicket=" + isTicket +
+                    ", isVideo=" + isVideo +
+                    ", locationName='" + locationName + '\'' +
+                    ", rDay=" + rDay +
+                    ", rMonth=" + rMonth +
+                    ", rYear=" + rYear +
+                    ", releaseDate='" + releaseDate + '\'' +
+                    ", title='" + title + '\'' +
+                    ", type='" + type + '\'' +
+                    ", videoCount=" + videoCount +
+                    ", wantedCount=" + wantedCount +
+                    ", videos=" + videos +
+                    '}';
+        }
+
         public String getActor1() {
             return actor1;
         }

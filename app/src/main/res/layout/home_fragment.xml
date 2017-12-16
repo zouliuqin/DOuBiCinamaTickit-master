@@ -73,7 +73,7 @@
                 android:id="@+id/rv_homepage_hot"
                 android:layout_below="@+id/rl_hot"
                 android:layout_width="match_parent"
-                android:layout_height="150dp">
+                android:layout_height="200dp">
 
 
             </android.support.v7.widget.RecyclerView>
@@ -126,7 +126,7 @@
                 android:id="@+id/rv_coming_soon"
                 android:layout_below="@+id/rl_coming_soon"
                 android:layout_width="match_parent"
-                android:layout_height="150dp">
+                android:layout_height="200dp">
 
 
             </android.support.v7.widget.RecyclerView>

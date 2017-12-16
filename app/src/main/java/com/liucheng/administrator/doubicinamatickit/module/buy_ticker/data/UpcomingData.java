@@ -18,13 +18,13 @@ public class UpcomingData {
      * 接口回调
      */
     public interface UpcomingLoadListener {
-        void onIsHitLoadEnd(Upcoming upcoming);
+        void onUpcomingLoadEnd(Upcoming upcoming);
     }
 
     /**
      * 获取即将上映数据源
      */
-    public static void getIIsHitData(final UpcomingData.UpcomingLoadListener loadListener) {
+    public static void getUpcomingData(final UpcomingData.UpcomingLoadListener loadListener) {
 
         new Thread(new Runnable() {
             @Override
@@ -44,7 +44,7 @@ public class UpcomingData {
                     Upcoming upcoming = gson.fromJson(data, Upcoming.class);
 
                     //接口回调
-                    loadListener.onIsHitLoadEnd(upcoming);
+                    loadListener.onUpcomingLoadEnd(upcoming);
 
                 } catch (IOException e) {
                     e.printStackTrace();

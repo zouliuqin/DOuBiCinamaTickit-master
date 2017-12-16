@@ -3,7 +3,9 @@ package com.liucheng.administrator.doubicinamatickit.module.homepage;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
-import com.liucheng.administrator.doubicinamatickit.entity.ListNews;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
-import com.liucheng.administrator.doubicinamatickit.module.find.NewsFragment;
-import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.Upcoming;
+import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.UpcomingData;
+import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageComingSoonAdapter;
+import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageHotAdapter;
 import com.liucheng.administrator.doubicinamatickit.view.ImageText;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -35,7 +38,7 @@ import butterknife.Unbinder;
  * Created by Administrator on 2017/10/15 0015.
  */
 
-public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener {
+public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener, UpcomingData.UpcomingLoadListener {
 
 
     @BindView(R.id.imageviewText)
@@ -63,9 +66,16 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     /**
      * 正在热映
      */
-    private List<IsHit.MsBean> listNews = new ArrayList<>();
+    private List<IsHit.MsBean> isHits = new ArrayList<>();
 
+    private HomepageHotAdapter hotAdapter;
 
+    /**
+     * 即将上线
+     */
+    private List<Upcoming.AttentionBean> comingSoons = new ArrayList<>();
+
+    private HomepageComingSoonAdapter comingSoonAdapter;
 
 
     @Nullable
@@ -73,9 +83,12 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.home_fragment, container, false);
 
-        //获取正在热映数据源
+        //获取正在热映数据
 
         IsHitData.getIIsHitData(this);
+
+        //获取即将上线数据
+        UpcomingData.getUpcomingData(this);
 
         initialUI();
 
@@ -123,7 +136,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     private void setBanner() {
         //取正在热映的前6条数据剧照
         for (int i = 0; i < 6; i++) {
-            imgs.add(listNews.get(i).getImg());
+            imgs.add(isHits.get(i).getImg());
 
         }
 
@@ -149,33 +162,48 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void onIsHitLoadEnd(IsHit isHit) {
-
-
         //获取资讯集合
-            listNews.addAll(isHit.getMs());
-
-
-
-
+        isHits.addAll(isHit.getMs());
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
-                //TODO 设置正在热映
-
-
-                //TODO 设置即将上映
-
-                //TODO 设置电影资讯
-
-
-
-
-
+                //设置正在热映
+                LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                rvHomepageHot.setLayoutManager(manager);
+                hotAdapter = new HomepageHotAdapter(R.layout.item_homepage_hot, isHits);
+                rvHomepageHot.setAdapter(hotAdapter);
                 //设置轮播
                 setBanner();
             }
         });
+    }
+
+    /**
+     * @param upcoming 即将上线数据(回调接口名字没改)
+     */
+
+
+    @Override
+    public void onUpcomingLoadEnd(Upcoming upcoming) {
+
+        comingSoons.addAll(upcoming.getAttention());
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //TODO 设置即将上映
+                LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                rvComingSoon.setLayoutManager(manager);
+                comingSoonAdapter = new HomepageComingSoonAdapter(R.layout.item_homepage_comingsoon, comingSoons);
+                rvComingSoon.setAdapter(comingSoonAdapter);
+
+
+            }
+        });
+
+        //TODO 设置电影资讯
 
 
     }
@@ -209,6 +237,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             return null;
         }
     }
+
     //如果你需要考虑更好的体验，可以这么操作
     @Override
     public void onStart() {

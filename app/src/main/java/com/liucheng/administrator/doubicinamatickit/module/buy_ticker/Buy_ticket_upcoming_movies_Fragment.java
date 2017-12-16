@@ -42,7 +42,7 @@ public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.buy_ticket_upconming_movies_fragment, container, false);
         unbinder = ButterKnife.bind(this, contentView);
-        UpcomingData.getIIsHitData(this);
+        UpcomingData.getUpcomingData(this);
         Listener();
         return contentView;
     }
@@ -65,7 +65,7 @@ public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements
     }
 
     @Override
-    public void onIsHitLoadEnd(Upcoming upcoming) {
+    public void onUpcomingLoadEnd(Upcoming upcoming) {
         upcomingList.clear();
         upcomingList.addAll(upcoming.getMoviecomings());
         getActivity().runOnUiThread(new Runnable() {

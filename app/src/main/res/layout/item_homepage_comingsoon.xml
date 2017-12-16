@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/item_iv_homepage_coming_soon_img"
+        android:layout_width="72dp"
+        android:layout_height="94dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/item_tv_homepage_coming_soon_name"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:text="电影名称" />
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/item_tv_homepage_coming_soon_releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2015-07-01"
+        android:textSize="12sp"
+        />
+
+</LinearLayout>
