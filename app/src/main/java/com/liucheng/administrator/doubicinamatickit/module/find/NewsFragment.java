@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +17,7 @@ import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.liucheng.administrator.doubicinamatickit.module.find.adapter.NewsAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
-import com.liucheng.administrator.doubicinamatickit.util.StringUtil;
+
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;

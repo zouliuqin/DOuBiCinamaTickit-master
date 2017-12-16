@@ -50,10 +50,7 @@ public class NewsData {
 
 
                     if (loadListener!=null&&movieNews!=null){
-                        Log.i("TAG", "-------------------------------------------");
-                        Log.i("TAG", "run: "+loadListener);
-                        Log.i("TAG", "run: "+movieNews);
-                        Log.i("TAG", "-------------------------------------------");
+
                         //接口回调
                         loadListener.onNewsLoadEnd(movieNews);
                     }

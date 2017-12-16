@@ -1,6 +1,5 @@
 package com.liucheng.administrator.doubicinamatickit.module.find;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +12,6 @@ import android.widget.RelativeLayout;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
-import com.liucheng.administrator.doubicinamatickit.fragment.HomeFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
