@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DOuBiCinamaTickit.iml" filepath="$PROJECT_DIR$/DOuBiCinamaTickit.iml" />
       <module fileurl="file://D:\doubi\DOuBiCinamaTickit-master\DOuBiCinamaTickit.iml" filepath="D:\doubi\DOuBiCinamaTickit-master\DOuBiCinamaTickit.iml" />
-      <module fileurl="file://F:\xm\DOuBiCinamaTickit-master\DOuBiCinamaTickit.iml" filepath="F:\xm\DOuBiCinamaTickit-master\DOuBiCinamaTickit.iml" />
       <module fileurl="file://D:\AndroidProject\DOuBiCinamaTickit\DOuBiCinamaTickit.iml" filepath="D:\AndroidProject\DOuBiCinamaTickit\DOuBiCinamaTickit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DOuBiCinamaTickit-master.iml" filepath="$PROJECT_DIR$/DOuBiCinamaTickit-master.iml" />
+      <module fileurl="file://F:\xm\DOuBiCinamaTickit-master\DOuBiCinamaTickit.iml" filepath="F:\xm\DOuBiCinamaTickit-master\DOuBiCinamaTickit.iml" />
       <module fileurl="file://D:\doubi\DOuBiCinamaTickit\DOuBiCinamaTickit-master.iml" filepath="D:\doubi\DOuBiCinamaTickit\DOuBiCinamaTickit-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://D:\AndroidProject\DOuBiCinamaTickit\app\app.iml" filepath="D:\AndroidProject\DOuBiCinamaTickit\app\app.iml" />
