@@ -11,15 +11,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
+import com.liucheng.administrator.doubicinamatickit.entity.ListNews;
+import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
+import com.liucheng.administrator.doubicinamatickit.manager.LocationId;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.Upcoming;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.UpcomingData;
+import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageComingSoonAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageHotAdapter;
+import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageNewsAdapter;
 import com.liucheng.administrator.doubicinamatickit.view.ImageText;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -38,7 +45,7 @@ import butterknife.Unbinder;
  * Created by Administrator on 2017/10/15 0015.
  */
 
-public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener, UpcomingData.UpcomingLoadListener {
+public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener, UpcomingData.UpcomingLoadListener,NewsData.NewsLoadListener {
 
 
     @BindView(R.id.imageviewText)
@@ -77,6 +84,18 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     private HomepageComingSoonAdapter comingSoonAdapter;
 
+    /**
+     *新闻资讯
+     */
+    private  List<MovieNews.NewsListBean>  news = new ArrayList<>();
+
+    private HomepageNewsAdapter newsAdapter;
+    private  List<MovieNews.NewsListBean>  newsTop4 =new ArrayList<>();
+
+    /**
+     * 定位城市
+     */
+    private  String city;
 
     @Nullable
     @Override
@@ -90,7 +109,12 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         //获取即将上线数据
         UpcomingData.getUpcomingData(this);
 
-        initialUI();
+
+
+        //获取新闻资讯数据
+        NewsData.getNewsData(this, 1);
+
+
 
 
         unbinder = ButterKnife.bind(this, contentView);
@@ -101,8 +125,18 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     public void initialUI() {
         //设置标题栏
         actionBar = contentView.findViewById(R.id.include_actionbar_home);
-        initiaActionBar(R.drawable.go, "武汉", "某票", -1);
+        initiaActionBar(R.drawable.go, city, "某票", -1);
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        //获取当前城市
+        city= MyApplication.getCityName();
+        initialUI();
+        //获取城市ID
+        int Locationid = LocationId.getLocationId(getActivity(), R.raw.json);
+        //Toast.makeText(getActivity(), "Locationid"+Locationid, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -180,7 +214,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     }
 
     /**
-     * @param upcoming 即将上线数据(回调接口名字没改)
+     * @param upcoming 即将上线数据
      */
 
 
@@ -203,8 +237,38 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             }
         });
 
-        //TODO 设置电影资讯
 
+
+
+    }
+
+    /**
+     * @param movieNews 最新资讯
+     */
+
+
+    @Override
+    public void onNewsLoadEnd(MovieNews movieNews) {
+
+        news.addAll(movieNews.getNewsList());
+        //首页只显示4条电影资讯，点击更多跳转到发现-电影资讯，查看更多电影资讯
+        newsTop4.clear();
+        for (int i = 0 ; i< 4 ; i ++){
+
+            newsTop4.add(movieNews.getNewsList().get(i));
+        }
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //TODO 设置电影资讯
+                LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                manager.setOrientation(LinearLayoutManager.VERTICAL);
+                rvMovieNews.setLayoutManager(manager);
+                newsAdapter = new HomepageNewsAdapter(R.layout.item_news, newsTop4);
+                rvMovieNews.setAdapter(newsAdapter);
+            }
+        });
 
     }
 

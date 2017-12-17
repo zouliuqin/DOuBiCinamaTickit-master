@@ -3,6 +3,7 @@ package com.liucheng.administrator.doubicinamatickit.manager;
 import android.content.Context;
 
 import com.google.gson.Gson;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.entity.Location;
 
 import java.io.BufferedReader;
@@ -49,7 +50,7 @@ public class LocationId {
             Gson gson = new Gson();
             location = gson.fromJson(jsonBuilder, Location.class);
             for (int i = 0; i < location.getP().size(); i++) {
-                if ("武汉".equals(location.getP().get(i).getN())) {
+                if (MyApplication.getCityName().equals(location.getP().get(i).getN())) {
                     return location.getP().get(i).getId();
                 }
             }

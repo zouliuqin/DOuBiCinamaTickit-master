@@ -1,6 +1,7 @@
 package com.liucheng.administrator.doubicinamatickit.module.cityselector;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -26,6 +27,7 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.module.cityselector.citychoose.CityListAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.cityselector.citychoose.PinyinUtil;
 import com.liucheng.administrator.doubicinamatickit.module.cityselector.citychoose.PinyinUtils;
@@ -48,12 +50,12 @@ import java.util.List;
  * 包含权限请求,百度地图定位,以及城市选择功能
  */
 public class CityActivity extends AppCompatActivity implements
-        CityListAdapter.OnCityClickListener, AdapterView.OnItemClickListener{
+        CityListAdapter.OnCityClickListener, AdapterView.OnItemClickListener {
 
     private static final String TAG = "CityActivity";
     EditTextWithDel editTextWithDel;
 
-//    private LocationService locationService;//定位Service
+    //    private LocationService locationService;//定位Service
     private ArrayList<City> allCityList = new ArrayList<>();//所有城市集合
     private ArrayList<City> cityHotList = new ArrayList<City>();//热门城市集合
     private ArrayList<String> cityHisList = new ArrayList<String>(4);//最近访问城市集合
@@ -86,11 +88,11 @@ public class CityActivity extends AppCompatActivity implements
         mLocationClient.registerLocationListener(new MyLocationListener());
         SDKInitializer.initialize(getApplicationContext());
 
-         // 隐藏标题栏
-//                 getSupportActionBar().hide();
-                 // 隐藏状态栏
-//                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager
-//                         .LayoutParams.FLAG_FULLSCREEN);
+        // 隐藏标题栏
+        //                 getSupportActionBar().hide();
+        // 隐藏状态栏
+        //                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager
+        //                         .LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_city);
         //主listView
@@ -101,16 +103,14 @@ public class CityActivity extends AppCompatActivity implements
         mEtCityName = (EditTextWithDel) findViewById(R.id.et_search);
 
         //检查权限
-      startPermison();
-
-
-
+        startPermison();
 
 
         textView = (TextView) findViewById(R.id.text_dia);
     }
-//申请权限
-    public void startPermison(){
+
+    //申请权限
+    public void startPermison() {
         List<String> permissionList = new ArrayList<>();
         if (ContextCompat.checkSelfPermission(CityActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -130,15 +130,15 @@ public class CityActivity extends AppCompatActivity implements
     }
 
 
-
-//初始化定位
+    //初始化定位
     private void initLocation() {
         LocationClientOption option = new LocationClientOption();
         option.setScanSpan(5000);
         option.setIsNeedAddress(true);
         mLocationClient.setLocOption(option);
     }
-//注册并开启定位
+
+    //注册并开启定位
     private void requestLocation() {
         initLocation();
         mLocationClient.start();
@@ -146,7 +146,7 @@ public class CityActivity extends AppCompatActivity implements
 
     }
 
-//申请权限的回调
+    //申请权限的回调
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
@@ -191,25 +191,22 @@ public class CityActivity extends AppCompatActivity implements
             } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {
                 currentPosition.append("网络");
             }
-            Log.d("00000000", currentPosition.toString());
+
             textView.setText(currentPosition);
-            Toast.makeText(CityActivity.this, currentPosition.toString(), Toast.LENGTH_SHORT).show();
+
 
             String city = location.getCity();
-                if (null == locateCity){
-                    refreshLocateCity(city);
-                }
-                if (!locateCity.equals(city)){
-                    refreshLocateCity(city);
-                }
+            if (null == locateCity) {
+                refreshLocateCity(city);
+            }
+            if (!locateCity.equals(city)) {
+                refreshLocateCity(city);
+            }
 
 
         }
 
     }
-
-
-
 
 
     private void Listener() {
@@ -234,6 +231,7 @@ public class CityActivity extends AppCompatActivity implements
 
 
     }
+
     /**
      * 根据输入框中的值来过滤数据并更新ListView
      *
@@ -251,7 +249,7 @@ public class CityActivity extends AppCompatActivity implements
             mSortList.add(city);
             city = new City("热门", "2"); // 热门
             mSortList.add(city);
-//            mSortList.addAll(getCityList());
+            //            mSortList.addAll(getCityList());
             for (City sortModel : allCityList) {
                 String name = sortModel.getName();
 
@@ -260,62 +258,61 @@ public class CityActivity extends AppCompatActivity implements
                 }
             }
         }
-        Log.d("ppppppppppppppp",mSortList.toString());
+
         // 根据a-z进行排序
-        Collections.sort(mSortList,new PinyinComparator());//按拼音字母排序
-        cityListAdapter.updateListView(CityActivity.this,mSortList,cityHotList,cityHisList);
+        Collections.sort(mSortList, new PinyinComparator());//按拼音字母排序
+        cityListAdapter.updateListView(CityActivity.this, mSortList, cityHotList, cityHisList);
     }
 
 
+    //    @Override
+    //    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    //        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    //        Log.i(TAG, "onRequestPermissionsResult()---requestCode : " + requestCode
+    //            + ", permissions.length : " + permissions.length +
+    //            ", grantResults : " + grantResults);
+    //
+    //        if(requestCode == PermissionUtil.LOCATE_PERMISSION_REQUEST){
+    //            for (int grantResult:grantResults) {
+    //                Log.i(TAG, "---------grantResult : " + grantResult);
+    //                if (grantResult != PackageManager.PERMISSION_GRANTED){
+    //                    Toast.makeText(this, "必须同意所有权限才能使用本程序", Toast.LENGTH_SHORT).show();
+    //                    isLocatePermissionGranted = false;
+    //                    finish();
+    //                }
+    //            }
+    //            isLocatePermissionGranted = true;
+    //            startLocate();
+    //            initCityData();
+    //        }
+    //
+    //    }
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        Log.i(TAG, "onRequestPermissionsResult()---requestCode : " + requestCode
-//            + ", permissions.length : " + permissions.length +
-//            ", grantResults : " + grantResults);
-//
-//        if(requestCode == PermissionUtil.LOCATE_PERMISSION_REQUEST){
-//            for (int grantResult:grantResults) {
-//                Log.i(TAG, "---------grantResult : " + grantResult);
-//                if (grantResult != PackageManager.PERMISSION_GRANTED){
-//                    Toast.makeText(this, "必须同意所有权限才能使用本程序", Toast.LENGTH_SHORT).show();
-//                    isLocatePermissionGranted = false;
-//                    finish();
-//                }
-//            }
-//            isLocatePermissionGranted = true;
-//            startLocate();
-//            initCityData();
-//        }
-//
-//    }
-
-//    @Override
-//    protected void onStart() {
-//        // TODO Auto-generated method stub
-//        super.onStart();
-//        if (isLocatePermissionGranted){
-//            startLocate();
-//            initCityData();
-//        }
-//    }
+    //    @Override
+    //    protected void onStart() {
+    //        // TODO Auto-generated method stub
+    //        super.onStart();
+    //        if (isLocatePermissionGranted){
+    //            startLocate();
+    //            initCityData();
+    //        }
+    //    }
 
     /**
      * 开始定位
      */
-//    private void startLocate(){
-//        // -----------location config ------------
-//        locationService = ((CityChooseApplication) getApplication()).locationService;
-//        locationService.registerListener((BDLocationListener) mListener);
-//        //注册监听
-//        locationService.start();
-//    }
+    //    private void startLocate(){
+    //        // -----------location config ------------
+    //        locationService = ((CityChooseApplication) getApplication()).locationService;
+    //        locationService.registerListener((BDLocationListener) mListener);
+    //        //注册监听
+    //        locationService.start();
+    //    }
 
     /**
      * 初始化城市数据
      */
-    private void initCityData(){
+    private void initCityData() {
         City city = new City("定位", "0"); //定位
         allCityList.add(city);
         city = new City("最近", "1"); // 最近
@@ -340,6 +337,7 @@ public class CityActivity extends AppCompatActivity implements
 
     /**
      * 从已有的数据库文件中所有城市列表
+     *
      * @return
      */
     private ArrayList<City> getCityList() {
@@ -416,7 +414,7 @@ public class CityActivity extends AppCompatActivity implements
      * 在触摸索引栏时使用该集合,触摸索引会返回一个索引字母或者前三个特殊字符,
      * 这个字符即为集合的key,通过此key即可get此key对应的value
      */
-    private void initAlphaIndex(){
+    private void initAlphaIndex() {
         for (int i = 0; i < allCityList.size(); i++) {
             // 当前汉语拼音首字母
             String currentStr = PinyinUtil.getAlpha(allCityList.get(i).getPinyi());
@@ -434,14 +432,14 @@ public class CityActivity extends AppCompatActivity implements
     /**
      * 初始化右侧索引栏
      */
-    private void initIndexBar(){
+    private void initIndexBar() {
         SideIndexBar indexBar = (SideIndexBar) findViewById(R.id.index_bar);
         indexBar.setTextDialog(indexDialogText);
         indexBar.setOnLetterChangedListener(new SideIndexBar.OnLetterChangedListener() {
             @Override
             public void onChanged(String s, int position) {
                 Log.e(TAG, "onChanged(), s : " + s + ", position:" + position);
-                if(null != alphaIndexer.get(s)){
+                if (null != alphaIndexer.get(s)) {
                     int currentPosition = alphaIndexer.get(s);
                     cityListView.setSelection(currentPosition);
                 }
@@ -460,7 +458,7 @@ public class CityActivity extends AppCompatActivity implements
     protected void onStop() {
         // TODO Auto-generated method stub
         super.onStop();
-       //停止定位fuwu
+        //停止定位fuwu
         mLocationClient.stop();
         currentCity = null;
         locateCity = null;
@@ -470,10 +468,10 @@ public class CityActivity extends AppCompatActivity implements
     }
 
 
-
     /**
      * 增加最近访问城市
      * 这里使用SharedPreferences,没有使用数据库存储的形式
+     *
      * @param name
      */
     public void insertCity(String name) {
@@ -593,7 +591,6 @@ public class CityActivity extends AppCompatActivity implements
     }
 
 
-
     /**
      * 刷新定位城市
      *
@@ -635,11 +632,14 @@ public class CityActivity extends AppCompatActivity implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Log.i(TAG, "onItemClick position : " + position
-                + ", city : " + ((City)cityListAdapter.getItem(position)).getName());
+                + ", city : " + ((City) cityListAdapter.getItem(position)).getName());
         if (position >= 3) {
-//            currentCity = allCityList.get(position).getName();
-//            insertCity(currentCity);
-            Toast.makeText(this,((City)cityListAdapter.getItem(position)).getName(), Toast.LENGTH_SHORT).show();
+            //            currentCity = allCityList.get(position).getName();
+            //            insertCity(currentCity);
+            //点击选中的城市，关闭当前界面,把当前城市记录下。
+            MyApplication.setCityName(((City) cityListAdapter.getItem(position)).getName());
+            finish();
+            //Toast.makeText(this,((City)cityListAdapter.getItem(position)).getName(), Toast.LENGTH_SHORT).show();
         }
 
     }

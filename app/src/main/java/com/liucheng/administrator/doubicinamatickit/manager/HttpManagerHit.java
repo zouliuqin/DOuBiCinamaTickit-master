@@ -27,6 +27,7 @@ public class HttpManagerHit {
 
         BufferedReader reader = null;
         try {
+            //获取城市ID
             int Locationid = LocationId.getLocationId(context, R.raw.json);
 
 

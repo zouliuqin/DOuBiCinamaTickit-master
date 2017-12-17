@@ -2,6 +2,7 @@ package com.liucheng.administrator.doubicinamatickit.module.cityselector.citycho
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +17,11 @@ import android.widget.Toast;
 
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.module.cityselector.database.City;
 
 import java.util.List;
+
 /**
  * Created by Luojingjing on 2017/11/14.
  * 城市列表的主要适配器
@@ -48,6 +51,7 @@ public class CityListAdapter extends BaseAdapter {
         sections = new String[list.size()];
 
     }
+
     /**
      * 当ListView数据发生变化时,调用此方法来更新ListView
      *
@@ -64,29 +68,29 @@ public class CityListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-//    @Override
-//    public Object[] getSections() {
-//        return null;
-//    }
-//
-//    @Override
-//    public int getPositionForSection(int sectionIndex) {
-//        for (int i = 0; i < getCount(); i++) {
-//            String sortStr = list.get(i).getPinyi();
-//            char firstChar = sortStr.toUpperCase().charAt(0);
-//            if (firstChar == sectionIndex) {
-//                return i;
-//            }
-//        }
-//        return -1;
-//    }
-//
-//    @Override
-//    public int getSectionForPosition(int position) {
-//        return list.get(position).getPinyi().charAt(0);
-//    }
+    //    @Override
+    //    public Object[] getSections() {
+    //        return null;
+    //    }
+    //
+    //    @Override
+    //    public int getPositionForSection(int sectionIndex) {
+    //        for (int i = 0; i < getCount(); i++) {
+    //            String sortStr = list.get(i).getPinyi();
+    //            char firstChar = sortStr.toUpperCase().charAt(0);
+    //            if (firstChar == sectionIndex) {
+    //                return i;
+    //            }
+    //        }
+    //        return -1;
+    //    }
+    //
+    //    @Override
+    //    public int getSectionForPosition(int position) {
+    //        return list.get(position).getPinyi().charAt(0);
+    //    }
 
-    public interface OnCityClickListener{
+    public interface OnCityClickListener {
         void onCityClick(String city);
 
     }
@@ -146,14 +150,17 @@ public class CityListAdapter extends BaseAdapter {
 
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
+                                        final int position, long id) {
                     currentCity = hisList.get(position);
                     //refreshCurrentCity(currentCity);
                     onCityClickListener.onCityClick(currentCity);
-                    ((Activity)context).runOnUiThread(new Runnable() {
+                    ((Activity) context).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(context, currentCity, Toast.LENGTH_SHORT).show();
+                            //点击选中的城市，关闭当前界面,把当前城市记录下。
+                            MyApplication.setCityName(currentCity);
+                            ((Activity) context).finish();
+
                         }
                     });
 
@@ -170,10 +177,13 @@ public class CityListAdapter extends BaseAdapter {
                                         int position, long id) {
                     currentCity = hotList.get(position).getName();
                     onCityClickListener.onCityClick(currentCity);
-                    ((Activity)context).runOnUiThread(new Runnable() {
+                    ((Activity) context).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(context, currentCity, Toast.LENGTH_SHORT).show();
+                            //点击选中的城市，关闭当前界面,把当前城市记录下。
+                            MyApplication.setCityName(currentCity);
+                            ((Activity) context).finish();
+                           // Toast.makeText(context, currentCity, Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -200,7 +210,7 @@ public class CityListAdapter extends BaseAdapter {
             }
             if (position >= 1) {
                 holder.name.setText(list.get(position).getName());
-                Log.d("YYYYYYYYYYYYYYYYYYYYYY",list.toString());
+                Log.d("YYYYYYYYYYYYYYYYYYYYYY", list.toString());
                 String currentStr = PinyinUtil.getAlpha(list.get(position).getPinyi());
                 String previewStr = (position - 1) >= 0 ? PinyinUtil.getAlpha(list
                         .get(position - 1).getPinyi()) : " ";

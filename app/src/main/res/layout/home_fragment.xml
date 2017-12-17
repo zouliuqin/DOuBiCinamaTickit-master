@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,183 +11,189 @@
 
     </include>
 
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/include_actionbar_home"
-        >
+        android:layout_below="@id/include_actionbar_home">
 
-        <RelativeLayout
+        <ScrollView
+
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.youth.banner.Banner
-
-
-
-                android:id="@+id/homepage_banner"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginBottom="5dp"
-
-                />
-
             <RelativeLayout
-                android:id="@+id/rl_hot"
-                android:layout_below="@+id/homepage_banner"
-                android:padding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                
-                <ImageView
-
-                    android:id="@+id/iv_dot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:src="@drawable/ic_dot"
-                    />
-                
-                
-                <TextView
-                    android:id="@+id/tv_hot"
-                    android:layout_toEndOf="@+id/iv_dot"
-                    android:text="正在热映"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:paddingEnd="5dp"
-                    android:id="@+id/tv_hot_more"
-                    android:text="更多 >"
-                    android:textColor="@color/gray"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </RelativeLayout>
-            <android.support.v7.widget.RecyclerView
-                android:paddingStart="10dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:id="@+id/rv_homepage_hot"
-                android:layout_below="@+id/rl_hot"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-
-            </android.support.v7.widget.RecyclerView>
-
-            <TextView
-                android:layout_below="@+id/rv_homepage_hot"
-                android:id="@+id/line1"
-                android:background="@color/gray_200"
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-            <RelativeLayout
-                android:id="@+id/rl_coming_soon"
-                android:layout_below="@+id/line1"
-                android:padding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-
-                    android:id="@+id/iv_coming_soon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:src="@drawable/ic_dot"
-                    />
-
-
-                <TextView
-                    android:id="@+id/tv_coming_soon"
-                    android:layout_toEndOf="@+id/iv_coming_soon"
-                    android:text="即将上映"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:paddingEnd="5dp"
-                    android:id="@+id/tv_coming_soon_more"
-                    android:text="更多 >"
-                    android:textColor="@color/gray"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </RelativeLayout>
-            <android.support.v7.widget.RecyclerView
-                android:paddingStart="10dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:id="@+id/rv_coming_soon"
-                android:layout_below="@+id/rl_coming_soon"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-
-            </android.support.v7.widget.RecyclerView>
-            <TextView
-                android:layout_below="@+id/rv_coming_soon"
-                android:id="@+id/line2"
-                android:background="@color/gray_200"
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <RelativeLayout
-                android:id="@+id/rl_movie_news"
-                android:layout_below="@+id/line2"
-                android:padding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-
-                    android:id="@+id/iv_movie_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:src="@drawable/ic_dot"
-                    />
-
-
-                <TextView
-                    android:id="@+id/tv_movie_news"
-                    android:layout_toEndOf="@+id/iv_movie_news"
-                    android:text="最新资讯"
-                    android:textSize="16sp"
-                    android:textColor="@color/theme"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:paddingEnd="5dp"
-                    android:id="@+id/tv_movie_news_more"
-                    android:text="更多 >"
-                    android:textColor="@color/gray"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </RelativeLayout>
-            <android.support.v7.widget.RecyclerView
-                android:padding="5dp"
-                android:id="@+id/rv_movie_news"
-                android:layout_below="@+id/rl_movie_news"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-            </android.support.v7.widget.RecyclerView>
-
-
-        </RelativeLayout>
+                <com.youth.banner.Banner
 
 
+                    android:id="@+id/homepage_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="5dp"
 
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/rl_hot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/homepage_banner"
+                    android:padding="5dp">
+
+                    <ImageView
+
+                        android:id="@+id/iv_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_dot" />
+
+
+                    <TextView
+                        android:id="@+id/tv_hot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/iv_dot"
+                        android:text="正在热映"
+                        android:textColor="@color/theme"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_hot_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="5dp"
+                        android:text="更多 >"
+                        android:textColor="@color/gray" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_homepage_hot"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/rl_hot"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/rv_homepage_hot"
+                    android:background="@color/gray_200" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_coming_soon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line1"
+                    android:padding="5dp">
+
+                    <ImageView
+
+                        android:id="@+id/iv_coming_soon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_dot" />
+
+
+                    <TextView
+                        android:id="@+id/tv_coming_soon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/iv_coming_soon"
+                        android:text="即将上映"
+                        android:textColor="@color/theme"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_coming_soon_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="5dp"
+                        android:text="更多 >"
+                        android:textColor="@color/gray" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_coming_soon"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/rl_coming_soon"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/rv_coming_soon"
+                    android:background="@color/gray_200" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_movie_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line2"
+                    android:padding="5dp">
+
+                    <ImageView
+
+                        android:id="@+id/iv_movie_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_dot" />
+
+
+                    <TextView
+                        android:id="@+id/tv_movie_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/iv_movie_news"
+                        android:text="最新资讯"
+                        android:textColor="@color/theme"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_movie_news_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="5dp"
+                        android:text="更多 >"
+                        android:textColor="@color/gray" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_movie_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_movie_news"
+                    android:padding="5dp">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
+

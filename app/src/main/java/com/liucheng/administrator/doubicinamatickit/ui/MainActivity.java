@@ -8,7 +8,7 @@ import android.widget.RadioGroup;
 
 import com.liucheng.administrator.doubicinamatickit.adapter.MyFragmentAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.BuyTicketFragment;
-import com.liucheng.administrator.doubicinamatickit.fragment.CinemaFragment;
+import com.liucheng.administrator.doubicinamatickit.module.cinema.CinemaFragment;
 import com.liucheng.administrator.doubicinamatickit.module.find.FindFragment;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.HomeFragment;
 import com.liucheng.administrator.doubicinamatickit.module.myself.MyFragment;

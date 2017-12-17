@@ -17,6 +17,7 @@ import cn.bmob.v3.BmobConfig;
 public class MyApplication extends Application {
 
     private static Context context;
+    private static  String cityName;
 
     @Override
     public void onCreate() {
@@ -38,6 +39,14 @@ public class MyApplication extends Application {
 
 
 
+    }
+
+    public static String getCityName() {
+        return cityName;
+    }
+
+    public static void setCityName(String cityName) {
+        MyApplication.cityName = cityName;
     }
 
     public static Context getContext() {
