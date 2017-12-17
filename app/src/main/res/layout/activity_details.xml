@@ -1,83 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E0E0E0"
     tools:context="com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity">
-    <LinearLayout
-        android:layout_margin="8dp"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:padding="8dp"
-        android:orientation="horizontal"
-        android:background="@drawable/bacground"
-        android:layout_height="157dp">
-        <ImageView
-            android:id="@+id/image_movie"
-            android:src="@mipmap/ic_launcher"
-            android:scaleType="fitXY"
-            android:layout_width="100dp"
-            android:layout_height="141dp" />
+        android:layout_height="match_parent">
         <LinearLayout
-            android:layout_marginLeft="7dp"
-            android:layout_width="wrap_content"
             android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/text_movieName"
-                android:text="片名：极限特工：终极回归"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
-            <TextView
-                android:id="@+id/text_movieNameEn"
-                android:text="xXx: The Return of Xander Cage"
-                android:textColor="#000000"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
-            <TextView
-                android:id="@+id/text_movieDate"
-                android:text="年代：2017年"
-                android:textColor="#000000"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
-            <TextView
-                android:id="@+id/text_movieDuration"
-                android:text="时长：107"
-                android:textColor="#000000"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
-            <TextView
-                android:id="@+id/text_movieDirector"
-                android:text="导演：都比"
-                android:textColor="#000000"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
-            <TextView
-                android:id="@+id/text_movieAct"
-                android:text="主演：二货"
-                android:textColor="#000000"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
-            <TextView
-                android:id="@+id/text_movieType"
-                android:text="类型：剧情 战争"
-                android:textColor="#000000"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
+            <include
+                android:id="@+id/movie_headview1"
+                layout="@layout/details_headview1">
+            </include>
+            <include
+                android:id="@+id/movie_headview2"
+                layout="@layout/details_headview2">
+            </include>
+           <LinearLayout
+               android:layout_margin="6dp"
+               android:layout_width="match_parent"
+               android:padding="8dp"
+               android:orientation="vertical"
+               android:background="@drawable/bacground"
+               android:layout_height="wrap_content">
 
+               <TextView
+                   android:text="剧照："
+                   android:layout_marginTop="5dp"
+                   android:layout_marginLeft="5dp"
+                   android:textSize="16sp"
+                   android:textColor="#000000"
+                   android:layout_height="wrap_content"
+                   android:layout_width="match_parent" />
+               <android.support.v7.widget.RecyclerView
+                   android:id="@+id/still_recyc"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+               </android.support.v7.widget.RecyclerView>
+
+           </LinearLayout>
+            <include
+                android:id="@+id/movie_headview4"
+                layout="@layout/details_headview4">
+            </include>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="6dp"
+               android:background="@drawable/bacground"
+               android:orientation="vertical">
+               <TextView
+                   android:text="主创："
+                   android:layout_marginTop="5dp"
+                   android:layout_marginBottom="5dp"
+                   android:id="@+id/text_movieTitle"
+                   android:textColor="#000000"
+                   android:paddingLeft="5dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="16sp"  />
+               <android.support.v7.widget.RecyclerView
+                   android:id="@+id/actor_recyc"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+               </android.support.v7.widget.RecyclerView>
+
+
+           </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/bacground"
+                android:orientation="vertical">
+                <TextView
+                    android:text="热评："
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/text_review"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"  />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/review_recyc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+
+
+            </LinearLayout>
         </LinearLayout>
+    </ScrollView>
 
 
-    </LinearLayout>
 
-</LinearLayout>
+
+
+</RelativeLayout>

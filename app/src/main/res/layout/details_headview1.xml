@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="6dp"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bacground"
+    android:layout_height="157dp">
+
+
+        <ImageView
+            android:id="@+id/image_movie"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
+            android:layout_width="100dp"
+            android:layout_height="141dp" />
+        <LinearLayout
+            android:layout_marginLeft="7dp"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text_movieName"
+                android:text="片名：极限特工：终极回归"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/text_movieNameEn"
+                android:text="xXx: The Return of Xander Cage"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/text_movieDate"
+                android:text="年代：2017年"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/text_movieDuration"
+                android:text="时长：107"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/text_movieDirector"
+                android:text="导演：都比"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/text_movieAct"
+                android:text="主演：二货"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/text_movieType"
+                android:text="类型：剧情 战争"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+

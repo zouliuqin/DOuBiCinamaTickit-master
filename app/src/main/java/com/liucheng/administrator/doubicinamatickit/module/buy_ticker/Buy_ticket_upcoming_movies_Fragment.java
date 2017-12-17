@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
@@ -54,6 +55,7 @@ public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("cinameId",upcomingList.get(i).getId()+"");
                 startActivity(intent);
+
             }
         });
     }

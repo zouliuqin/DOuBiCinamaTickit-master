@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+<LinearLayout
+    android:id="@+id/layout_moviePrevue"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:background="@drawable/bacground"
+    android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_moviePrevue"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="预告片"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/text_movieTitle"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="16sp" />
+
+</LinearLayout>
+        <FrameLayout
+            android:id="@+id/frame_play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/play"
+                    android:layout_marginTop="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,17 +1,21 @@
 package com.liucheng.administrator.doubicinamatickit.module.buy_ticker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.adapter.NowShowAdapter;
+import com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +42,20 @@ public class Buy_ticket_now_showing_Fragment extends BaseFragment implements IsH
         contentView = inflater.inflate(R.layout.buy_ticket_now_showing_fragment, container, false);
         unbinder = ButterKnife.bind(this, contentView);
         IsHitData.getIIsHitData(this);
-
+        Listener();
         return contentView;
+    }
+
+    private void Listener() {
+        listViewHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("cinameId",hitList.get(i).getId()+"");
+                startActivity(intent);
+//                Toast.makeText(getContext(), "sdagvfdsgvbf", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

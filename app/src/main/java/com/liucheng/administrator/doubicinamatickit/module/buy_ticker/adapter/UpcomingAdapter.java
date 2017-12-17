@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.Upcoming;
@@ -47,7 +48,8 @@ view.setTag(holder);
         Upcoming.MoviecomingsBean moviecomingsBean = upcoming.get(i);
         Log.d("yyyyyyyyyyyyy",moviecomingsBean.getImage()+"" );
         if (moviecomingsBean.getImage().length()>5){
-            Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.mipmap.ic_launcher).into(holder.posterUpcoming);
+//            Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.mipmap.ic_launcher).into(holder.posterUpcoming);
+            Glide.with(getContext()).load(moviecomingsBean.getImage()).into(holder.posterUpcoming);
             holder.titleUpvoming.setText(moviecomingsBean.getTitle());
             holder.actorUpcoming.setText(moviecomingsBean.getActor1()+" / "+moviecomingsBean.getActor2());
             holder.contentUpcoming.setText(moviecomingsBean.getType());
