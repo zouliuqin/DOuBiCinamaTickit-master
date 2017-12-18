@@ -22,14 +22,14 @@ public interface IUrl {
     String UPCOMING_MOVIE = "https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=290";
     //电影详情
     String DETAILS_MOVIE = "https://ticket-api-m.mtime.cn/movie/detail.api?locationId=290&movieId=";
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 
     //根据城市ID获取全部影院
     String CINEMA_BY_CITY_ID = "https://api-m.mtime.cn/OnlineLocationCinema/OnlineCinemasByCity.api?locationId=";
 
 
-=======
+//=======
     //热评
     String REVIEW_MOVIE = "http://ticket-api.m.mtime.cn/movie/hotComment.api?movieId=";
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 }

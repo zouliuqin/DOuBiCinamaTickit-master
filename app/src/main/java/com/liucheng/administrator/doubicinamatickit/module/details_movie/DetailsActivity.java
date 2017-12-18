@@ -226,18 +226,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     }
 
 
-//    @OnClick(R.id.image_down)
-//    public void onViewClicked() {
-//        if (i % 2 == 0) {
-//            textMovieIntro.setVisibility(View.GONE);
-//            textMovieIntro1.setVisibility(View.VISIBLE);
-//        } else {
-//            textMovieIntro.setVisibility(View.VISIBLE);
-//            textMovieIntro1.setVisibility(View.GONE);
-//        }
-//        i++;
-//
-//    }
+
 
 
 }
