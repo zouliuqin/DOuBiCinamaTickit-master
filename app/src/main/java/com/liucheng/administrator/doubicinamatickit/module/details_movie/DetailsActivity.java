@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.CreatorAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.ReviewAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.StillAdapter;

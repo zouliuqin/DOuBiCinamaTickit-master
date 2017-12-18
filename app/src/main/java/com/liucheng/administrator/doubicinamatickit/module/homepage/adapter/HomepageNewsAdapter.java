@@ -16,7 +16,7 @@ import java.util.List;
  * Created by 邹柳钦 on 2017/12/17 0017.
  */
 
-public class HomepageNewsAdapter extends BaseQuickAdapter<MovieNews.NewsListBean,BaseViewHolder> {
+public class HomepageNewsAdapter extends BaseQuickAdapter<MovieNews.NewsListBean, BaseViewHolder> {
     public HomepageNewsAdapter(int layoutResId, @Nullable List<MovieNews.NewsListBean> data) {
         super(layoutResId, data);
     }
@@ -25,11 +25,16 @@ public class HomepageNewsAdapter extends BaseQuickAdapter<MovieNews.NewsListBean
     protected void convert(BaseViewHolder helper, MovieNews.NewsListBean item) {
 
 
-        //设置图像
-      Picasso.with(mContext).load(item.getImage()).placeholder(R.mipmap.ic_launcher).into((ImageView) helper.getView(R.id.iv_item_news_picture));
+        Log.i(TAG, "convert: " + item.getImage());
+
+        if (!item.getImage().equals("")) {
+            //设置图像
+            Picasso.with(mContext).load(item.getImage()).placeholder(R.mipmap.ic_launcher).into((ImageView) helper.getView(R.id.iv_item_news_picture));
+        }
+
         //设置描述
 
-        helper.setText(R.id.tv_item_news_describe,item.getTitle());
+        helper.setText(R.id.tv_item_news_describe, item.getTitle());
 
     }
 }
