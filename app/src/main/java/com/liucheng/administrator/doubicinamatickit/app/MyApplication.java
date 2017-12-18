@@ -17,7 +17,7 @@ import cn.bmob.v3.BmobConfig;
 public class MyApplication extends Application {
 
     private static Context context;
-    private static  String cityName;
+    private static  String cityName ="北京";
 
     @Override
     public void onCreate() {
