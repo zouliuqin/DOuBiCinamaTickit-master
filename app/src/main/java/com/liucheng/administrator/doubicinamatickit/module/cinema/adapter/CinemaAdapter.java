@@ -1,5 +1,6 @@
 package com.liucheng.administrator.doubicinamatickit.module.cinema.adapter;
 
+import android.app.Application;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,7 +9,10 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
+import com.liucheng.administrator.doubicinamatickit.util.DistanceUtil;
+import com.liucheng.administrator.doubicinamatickit.util.NumUtil;
 
 import java.util.List;
 
@@ -28,10 +32,11 @@ public class CinemaAdapter extends BaseQuickAdapter<Cinema.CinemaBean, CinemaAda
         helper.setText(R.id.item_cinema_address, item.getAddress());
         //如果最低消费大于0则显示最低价格
         if (item.getMinPrice() > 0) {
-            helper.itemCinemaMinPrice.setVisibility(View.VISIBLE);
+           // helper.itemCinemaMinPrice.setVisibility(View.VISIBLE);
             helper.setText(R.id.item_cinema_minPrice, "￥" + item.getMinPrice() / 100 + "起");
         } else {
-            helper.itemCinemaMinPrice.setVisibility(View.GONE);
+            helper.setText(R.id.item_cinema_minPrice, "");
+           // helper.itemCinemaMinPrice.setVisibility(View.GONE);
         }
     //设置电影院包含设施的图标
         if (item.getFeature().getHasIMAX() == 1) {
@@ -61,6 +66,10 @@ public class CinemaAdapter extends BaseQuickAdapter<Cinema.CinemaBean, CinemaAda
         } else {
             helper.itemCinemaWifi.setVisibility(View.GONE);
         }
+
+       double a = DistanceUtil.getDistance(item.getBaiduLongitude(),item.getBaiduLatitude(), MyApplication.getLongitude(),MyApplication.getLatitude());
+
+        helper.itemCinemaDistance.setText(NumUtil.getNum(a/1000)+"KM");
     }
 
 

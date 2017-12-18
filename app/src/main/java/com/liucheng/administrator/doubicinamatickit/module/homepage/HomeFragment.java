@@ -196,6 +196,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void onIsHitLoadEnd(IsHit isHit) {
+        isHits.clear();
         //获取资讯集合
         isHits.addAll(isHit.getMs());
         getActivity().runOnUiThread(new Runnable() {

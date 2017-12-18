@@ -1,5 +1,6 @@
 package com.liucheng.administrator.doubicinamatickit.entity;
 
+
 import java.util.List;
 
 /**
@@ -18,6 +19,8 @@ public class Cinema {
     public void setCinema(List<CinemaBean> cinema) {
         this.cinema = cinema;
     }
+
+
 
     public static class CinemaBean {
         /**

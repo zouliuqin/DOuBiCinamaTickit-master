@@ -17,7 +17,19 @@ import cn.bmob.v3.BmobConfig;
 public class MyApplication extends Application {
 
     private static Context context;
-    private static  String cityName ="北京";
+    /**
+     * 默认城市
+     */
+    private static String cityName = "北京";
+
+    /**
+     * 纬度
+     */
+    private static double Latitude=30.585394;
+    /**
+     * 经度
+     */
+    private static double Longitude=114.347122;
 
     @Override
     public void onCreate() {
@@ -38,7 +50,6 @@ public class MyApplication extends Application {
         Bmob.initialize(config);
 
 
-
     }
 
     public static String getCityName() {
@@ -51,5 +62,21 @@ public class MyApplication extends Application {
 
     public static Context getContext() {
         return context;
+    }
+
+    public static double getLatitude() {
+        return Latitude;
+    }
+
+    public static void setLatitude(double latitude) {
+        Latitude = latitude;
+    }
+
+    public static double getLongitude() {
+        return Longitude;
+    }
+
+    public static void setLongitude(double longitude) {
+        Longitude = longitude;
     }
 }
