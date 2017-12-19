@@ -1,15 +1,20 @@
 package com.liucheng.administrator.doubicinamatickit.module.cinema;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
@@ -18,7 +23,9 @@ import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.manager.LocationId;
 import com.liucheng.administrator.doubicinamatickit.module.cinema.adapter.CinemaAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.cinema.data.CinemaData;
+import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.CinemaPlaysMoviesActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,14 +44,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     @BindView(R.id.rv_cinema)
     RecyclerView rvCinema;
     Unbinder unbinder;
-
-
-
-
-
     private CinemaAdapter cinemaAdapter;
-
-
     /**
      * 定位城市
      */
@@ -106,6 +106,21 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
                 rvCinema.setAdapter(cinemaAdapter);
 
                 cinemaAdapter.addHeaderView(getHeaderView());
+                cinemaAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                        //点击电影院 跳转到电影院详情
+                        Intent intent = new Intent(getActivity(), CinemaPlaysMoviesActivity.class);
+
+                        Cinema.CinemaBean   c =  cinemaBeans.get(position);
+                        intent.putExtra("cinemaBeans", c);
+
+
+                        startActivity(intent);
+                    }
+                });
+
+
 
 
             }
@@ -117,14 +132,14 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     private View getHeaderView() {
         View view = getLayoutInflater().inflate(R.layout.header_cinema, (ViewGroup) rvCinema.getParent(), false);
         TextView itemCinemaSign = view.findViewById(R.id.item_cinema_sign);
-        TextView itemCinemaCinameName= view.findViewById(R.id.item_cinema_cinameName);
-        TextView itemCinemaMinPrice= view.findViewById(R.id.item_cinema_minPrice);
-        TextView itemCinemaAddress= view.findViewById(R.id.item_cinema_address);
-        TextView itemCinemaDistance= view.findViewById(R.id.item_cinema_distance);
-        ImageView itemCinemaVip= view.findViewById(R.id.item_cinema_vip);
-        ImageView itemCinemaPark= view.findViewById(R.id.item_cinema_park);
-        ImageView itemCinemaImax= view.findViewById(R.id.item_cinema_imax);
-        ImageView itemCinemaWifi= view.findViewById(R.id.item_cinema_wifi);
+        TextView itemCinemaCinameName = view.findViewById(R.id.item_cinema_cinameName);
+        TextView itemCinemaMinPrice = view.findViewById(R.id.item_cinema_minPrice);
+        TextView itemCinemaAddress = view.findViewById(R.id.item_cinema_address);
+        TextView itemCinemaDistance = view.findViewById(R.id.item_cinema_distance);
+        ImageView itemCinemaVip = view.findViewById(R.id.item_cinema_vip);
+        ImageView itemCinemaPark = view.findViewById(R.id.item_cinema_park);
+        ImageView itemCinemaImax = view.findViewById(R.id.item_cinema_imax);
+        ImageView itemCinemaWifi = view.findViewById(R.id.item_cinema_wifi);
 
         return view;
     }

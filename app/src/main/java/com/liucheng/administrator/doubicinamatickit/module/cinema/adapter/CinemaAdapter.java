@@ -40,33 +40,36 @@ public class CinemaAdapter extends BaseQuickAdapter<Cinema.CinemaBean, CinemaAda
         }
     //设置电影院包含设施的图标
         if (item.getFeature().getHasIMAX() == 1) {
-            helper.itemCinemaMinPrice.setVisibility(View.VISIBLE);
+            helper.itemCinemaImax.setVisibility(View.VISIBLE);
+
             helper.setImageResource(R.id.item_cinema_imax, R.mipmap.ic_imax);
         } else {
             helper.itemCinemaImax.setVisibility(View.GONE);
         }
 
         if (item.getFeature().getHasVIP() == 1) {
-            helper.itemCinemaMinPrice.setVisibility(View.VISIBLE);
+            helper.itemCinemaVip.setVisibility(View.VISIBLE);
             helper.setImageResource(R.id.item_cinema_vip, R.mipmap.ic_vip);
         } else {
             helper.itemCinemaVip.setVisibility(View.GONE);
         }
 
         if (item.getFeature().getHasPark() == 1) {
-            helper.itemCinemaMinPrice.setVisibility(View.VISIBLE);
+            helper.itemCinemaPark.setVisibility(View.VISIBLE);
             helper.setImageResource(R.id.item_cinema_park, R.mipmap.ic_park);
         } else {
             helper.itemCinemaPark.setVisibility(View.GONE);
         }
 
         if (item.getFeature().getHasWifi() == 1) {
-            helper.itemCinemaMinPrice.setVisibility(View.VISIBLE);
+            helper.itemCinemaWifi.setVisibility(View.VISIBLE);
             helper.setImageResource(R.id.item_cinema_wifi, R.mipmap.ic_wifi);
         } else {
             helper.itemCinemaWifi.setVisibility(View.GONE);
         }
 
+
+        //设置距离
        double a = DistanceUtil.getDistance(item.getBaiduLongitude(),item.getBaiduLatitude(), MyApplication.getLongitude(),MyApplication.getLatitude());
 
         helper.itemCinemaDistance.setText(NumUtil.getNum(a/1000)+"KM");
