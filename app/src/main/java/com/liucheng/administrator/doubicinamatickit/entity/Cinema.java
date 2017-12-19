@@ -1,5 +1,9 @@
 package com.liucheng.administrator.doubicinamatickit.entity;
 
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -11,6 +15,11 @@ public class Cinema {
 
     private List<CinemaBean> cinema;
 
+    protected Cinema(Parcel in) {
+        cinema = in.createTypedArrayList(CinemaBean.CREATOR);
+    }
+
+
     public List<CinemaBean> getCinema() {
         return cinema;
     }
@@ -19,7 +28,8 @@ public class Cinema {
         this.cinema = cinema;
     }
 
-    public static class CinemaBean {
+
+    public static class CinemaBean implements Parcelable {
         /**
          * address : 上海市虹口区西江湾路388号凯德龙之梦B座6F-7F
          * baiduLatitude : 31.276552
@@ -55,6 +65,36 @@ public class Cinema {
         private double ratingFinal;
         private int showtimeCount;
         private List<?> couponActivityList;
+
+
+        protected CinemaBean(Parcel in) {
+            address = in.readString();
+            baiduLatitude = in.readDouble();
+            baiduLongitude = in.readDouble();
+            cinameName = in.readString();
+            cinemaId = in.readInt();
+            districtID = in.readInt();
+            isETicket = in.readByte() != 0;
+            isTicket = in.readByte() != 0;
+            latitude = in.readDouble();
+            longitude = in.readDouble();
+            minPrice = in.readInt();
+            movieCount = in.readInt();
+            ratingFinal = in.readDouble();
+            showtimeCount = in.readInt();
+        }
+
+        public static final Creator<CinemaBean> CREATOR = new Creator<CinemaBean>() {
+            @Override
+            public CinemaBean createFromParcel(Parcel in) {
+                return new CinemaBean(in);
+            }
+
+            @Override
+            public CinemaBean[] newArray(int size) {
+                return new CinemaBean[size];
+            }
+        };
 
         @Override
         public String toString() {
@@ -206,6 +246,30 @@ public class Cinema {
             this.couponActivityList = couponActivityList;
         }
 
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+            parcel.writeString(address);
+            parcel.writeDouble(baiduLatitude);
+            parcel.writeDouble(baiduLongitude);
+            parcel.writeString(cinameName);
+            parcel.writeInt(cinemaId);
+            parcel.writeInt(districtID);
+            parcel.writeByte((byte) (isETicket ? 1 : 0));
+            parcel.writeByte((byte) (isTicket ? 1 : 0));
+            parcel.writeDouble(latitude);
+            parcel.writeDouble(longitude);
+            parcel.writeInt(minPrice);
+            parcel.writeInt(movieCount);
+            parcel.writeDouble(ratingFinal);
+            parcel.writeInt(showtimeCount);
+        }
+
+
         public static class FeatureBean {
             /**
              * has3D : 0
@@ -232,6 +296,32 @@ public class Cinema {
             private int hasServiceTicket;
             private int hasVIP;
             private int hasWifi;
+
+            protected FeatureBean(Parcel in) {
+                has3D = in.readInt();
+                hasFeature4D = in.readInt();
+                hasFeature4K = in.readInt();
+                hasFeatureDolby = in.readInt();
+                hasFeatureHuge = in.readInt();
+                hasIMAX = in.readInt();
+                hasLoveseat = in.readInt();
+                hasPark = in.readInt();
+                hasServiceTicket = in.readInt();
+                hasVIP = in.readInt();
+                hasWifi = in.readInt();
+            }
+
+            public static final Creator<FeatureBean> CREATOR = new Creator<FeatureBean>() {
+                @Override
+                public FeatureBean createFromParcel(Parcel in) {
+                    return new FeatureBean(in);
+                }
+
+                @Override
+                public FeatureBean[] newArray(int size) {
+                    return new FeatureBean[size];
+                }
+            };
 
             public int getHas3D() {
                 return has3D;
@@ -320,6 +410,8 @@ public class Cinema {
             public void setHasWifi(int hasWifi) {
                 this.hasWifi = hasWifi;
             }
+
+
         }
     }
 }

@@ -196,6 +196,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void onIsHitLoadEnd(IsHit isHit) {
+        isHits.clear();
         //获取资讯集合
         isHits.addAll(isHit.getMs());
         getActivity().runOnUiThread(new Runnable() {
@@ -249,6 +250,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void onNewsLoadEnd(MovieNews movieNews) {
+        news.clear();
 
         news.addAll(movieNews.getNewsList());
         //首页只显示4条电影资讯，点击更多跳转到发现-电影资讯，查看更多电影资讯

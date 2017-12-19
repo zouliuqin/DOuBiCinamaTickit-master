@@ -48,11 +48,6 @@ public class CinemaData {
                             .build();
                     Response response = client.newCall(request).execute();
 
-//String data = "[{\"address\":\"上海市徐汇区淮海中路999号环贸广场L6-1\",\"baiduLatitude\":31.221869,\"baiduLongitude\":121.46461,\"cinameName\":\"上海百丽宫影城环贸iapm店\",\"cinemaId\":4249,\"couponActivityList\":[],\"districtID\":1583,\"feature\":{\"has3D\":1,\"hasFeature4D\":0,\"hasFeature4K\":0,\"hasFeatureDolby\":0,\"hasFeatureHuge\":0,\"hasIMAX\":1,\"hasLoveseat\":0,\"hasPark\":1,\"hasServiceTicket\":1,\"hasVIP\":0,\"hasWifi\":1},\"isETicket\":true,\"isTicket\":true,\"latitude\":31.216019,\"longitude\":121.45732,\"minPrice\":5900,\"movieCount\":16,\"ratingFinal\":7.7836256,\"showtimeCount\":67}]";
-                  //  String data ="[{\"address\":\"上海市虹口区西江湾路388号凯德龙之梦B座6F-7F\"},{\"address\":\"上海市徐汇区淮海中路999号环贸广场L6-1\"}]";
-
-
-                   // String data1 = data.substring(1,data.length()-1);
                     String data = response.body().string();
                     StringBuffer s = new StringBuffer("{\"cinema\":");
                     s.append(data);
@@ -60,7 +55,7 @@ public class CinemaData {
                     Gson gson = new Gson();
                     Cinema cinema = gson.fromJson(s.toString(), Cinema.class);
 
-                    Log.i("TAG", "run: "+cinema.toString());
+                    Log.i("TAG", "run: "+cinema.getCinema().toString());
 
                     if (loadListener != null && cinema != null) {
                         //接口回调

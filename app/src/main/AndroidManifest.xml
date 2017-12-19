@@ -26,7 +26,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -54,15 +53,16 @@
         <!-- 百度地图所需meta-data,这里的value需要使用你自己申请的appkey -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="5ijmbiX0dc5yAHCpYnRSmLcGpIRTxZwN" />
+            android:value="PIjaE9bgPT41nX494RWcgu8nF5sBXvZy" />
 
         <!-- 百度地图远程服务 -->
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
-        <activity android:name=".module.details_movie.DetailsActivity"></activity>
+        <activity android:name=".module.details_movie.DetailsActivity" />
+        <activity android:name=".module.cinemaplaysmovies.CinemaPlaysMoviesActivity"></activity>
     </application>
 
 </manifest>

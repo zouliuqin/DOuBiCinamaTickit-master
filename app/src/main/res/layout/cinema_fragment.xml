@@ -8,19 +8,12 @@
         android:id="@+id/include_actionbar_cinema"
         layout="@layout/actionbar"></include>
 
-    <TextView
-        android:id="@+id/cinema_line_1"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_below="@+id/include_actionbar_cinema"
-        android:background="#000000" />
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_cinema"
+    android:layout_below="@+id/include_actionbar_cinema"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Cinema/影院"
-        android:textSize="30sp" />
+</android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

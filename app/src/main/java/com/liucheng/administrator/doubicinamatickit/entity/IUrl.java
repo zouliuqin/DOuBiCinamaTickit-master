@@ -30,4 +30,11 @@ public interface IUrl {
     //热评
     String REVIEW_MOVIE = "http://ticket-api.m.mtime.cn/movie/hotComment.api?movieId=";
 
+    //电影院当前播放的电影
+  //  String  TEST="https://ticket-api-m.mtime.cn/cinema/showtime.api?cinemaId=1306";
+    //电影院信息详情locationId 地区号    cinemaId 电影院代号
+    //https://ticket-api-m.mtime.cn/cinema/detail.api?locationId=561&cinemaId=9997
+    String  TEST = "https://ticket-api-m.mtime.cn/cinema/detail.api?locationId="+"&cinemaId="   ;
+
+
 }

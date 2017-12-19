@@ -177,6 +177,10 @@ public class CityActivity extends AppCompatActivity implements
 
         @Override
         public void onReceiveLocation(BDLocation location) {
+            //设置经纬度
+            MyApplication.setLatitude(location.getLatitude());
+            MyApplication.setLongitude(location.getLongitude());
+
             StringBuilder currentPosition = new StringBuilder();
             currentPosition.append("纬度：").append(location.getLatitude()).append("\n");
             currentPosition.append("经线：").append(location.getLongitude()).append("\n");
