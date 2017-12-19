@@ -275,22 +275,22 @@ public class Review {
                  * title : 《星球大战8》预告片:13个彩蛋与秘密你可能错过了
                  */
 
-                private int commentDate;
+                private String commentDate;
                 private int commentId;
                 private String content;
                 private String headImg;
                 private boolean isWantSee;
                 private String locationName;
                 private String nickname;
-                private int rating;
+                private String rating;
                 private int replyCount;
                 private String title;
 
-                public int getCommentDate() {
+                public String getCommentDate() {
                     return commentDate;
                 }
 
-                public void setCommentDate(int commentDate) {
+                public void setCommentDate(String commentDate) {
                     this.commentDate = commentDate;
                 }
 
@@ -342,11 +342,11 @@ public class Review {
                     this.nickname = nickname;
                 }
 
-                public int getRating() {
-                    return rating;
+                public String getRating() {
+                    return String.valueOf(rating);
                 }
 
-                public void setRating(int rating) {
+                public void setRating(String rating) {
                     this.rating = rating;
                 }
 
