@@ -65,6 +65,16 @@ public class CinemaPlaysMovies {
         private List<MoviesBean> movies;
         private List<ShowtimesBean> showtimes;
 
+
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "cinema=" + cinema +
+                    ", movies=" + movies +
+                    ", showtimes=" + showtimes +
+                    '}';
+        }
+
         public CinemaBean getCinema() {
             return cinema;
         }
@@ -90,6 +100,21 @@ public class CinemaPlaysMovies {
         }
 
         public static class CinemaBean {
+            @Override
+            public String toString() {
+                return "CinemaBean{" +
+                        "address='" + address + '\'' +
+                        ", baiduLatitude=" + baiduLatitude +
+                        ", baiduLongitude=" + baiduLongitude +
+                        ", cinemaId=" + cinemaId +
+                        ", feature=" + feature +
+                        ", name='" + name + '\'' +
+                        ", promotionTag='" + promotionTag + '\'' +
+                        ", tel='" + tel + '\'' +
+                        ", activityList=" + activityList +
+                        '}';
+            }
+
             /**
              * activityList : []
              * address : 武汉市江汉区江汉路步行街（中心百货旁）璇宫饭店5-6楼
@@ -101,6 +126,8 @@ public class CinemaPlaysMovies {
              * promotionTag : 用时光网App购票，享受更多优惠
              * tel : 027-82280809
              */
+
+
 
             private String address;
             private double baiduLatitude;
@@ -189,6 +216,28 @@ public class CinemaPlaysMovies {
         }
 
         public static class MoviesBean {
+            @Override
+            public String toString() {
+                return "MoviesBean{" +
+                        "commentSpecial='" + commentSpecial + '\'' +
+                        ", img='" + img + '\'' +
+                        ", is3D=" + is3D +
+                        ", isDMAX=" + isDMAX +
+                        ", isFilter=" + isFilter +
+                        ", isIMAX=" + isIMAX +
+                        ", isIMAX3D=" + isIMAX3D +
+                        ", length='" + length + '\'' +
+                        ", movieId=" + movieId +
+                        ", preferentialFlag=" + preferentialFlag +
+                        ", ratingFinal=" + ratingFinal +
+                        ", title='" + title + '\'' +
+                        ", titleEn='" + titleEn + '\'' +
+                        ", type='" + type + '\'' +
+                        ", performers=" + performers +
+                        ", showDates=" + showDates +
+                        '}';
+            }
+
             /**
              * commentSpecial : 青春少男少女的文工团芳华岁月
              * img : http://img5.mtime.cn/mt/2017/12/09/120449.13626053_328X490X4.jpg
@@ -207,6 +256,8 @@ public class CinemaPlaysMovies {
              * titleEn : Youth
              * type : 爱情 / 剧情 / 战争
              */
+
+
 
             private String commentSpecial;
             private String img;
@@ -354,11 +405,21 @@ public class CinemaPlaysMovies {
             }
 
             public static class PerformersBean {
+                @Override
+                public String toString() {
+                    return "PerformersBean{" +
+                            "name='" + name + '\'' +
+                            ", nameEn='" + nameEn + '\'' +
+                            ", personId=" + personId +
+                            '}';
+                }
+
                 /**
                  * name : 黄轩
                  * nameEn : Xuan Huang
                  * personId : 1518239
                  */
+
 
                 private String name;
                 private String nameEn;
@@ -401,6 +462,15 @@ public class CinemaPlaysMovies {
             private String moviekey;
             private List<ListBean> list;
 
+            @Override
+            public String toString() {
+                return "ShowtimesBean{" +
+                        "movieId=" + movieId +
+                        ", moviekey='" + moviekey + '\'' +
+                        ", list=" + list +
+                        '}';
+            }
+
             public int getMovieId() {
                 return movieId;
             }
@@ -426,6 +496,35 @@ public class CinemaPlaysMovies {
             }
 
             public static class ListBean {
+                @Override
+                public String toString() {
+                    return "ListBean{" +
+                            "capacity='" + capacity + '\'' +
+                            ", cinemaPrice=" + cinemaPrice +
+                            ", effect='" + effect + '\'' +
+                            ", endTime=" + endTime +
+                            ", hall='" + hall + '\'' +
+                            ", hallID=" + hallID +
+                            ", isCoupon=" + isCoupon +
+                            ", isMovies=" + isMovies +
+                            ", isSeatLess=" + isSeatLess +
+                            ", isTicket=" + isTicket +
+                            ", isVaildTicket=" + isVaildTicket +
+                            ", language='" + language + '\'' +
+                            ", length=" + length +
+                            ", price='" + price + '\'' +
+                            ", sId=" + sId +
+                            ", salePrice=" + salePrice +
+                            ", seatSalesTip='" + seatSalesTip + '\'' +
+                            ", seatTotal=" + seatTotal +
+                            ", showDay=" + showDay +
+                            ", startTime=" + startTime +
+                            ", version=" + version +
+                            ", versionDesc='" + versionDesc + '\'' +
+                            ", providers=" + providers +
+                            '}';
+                }
+
                 /**
                  * capacity :
                  * cinemaPrice : 7000
@@ -661,6 +760,16 @@ public class CinemaPlaysMovies {
                 }
 
                 public static class ProvidersBean {
+
+                    @Override
+                    public String toString() {
+                        return "ProvidersBean{" +
+                                "dId=" + dId +
+                                ", level=" + level +
+                                ", pId=" + pId +
+                                '}';
+                    }
+
                     /**
                      * dId : 301682745
                      * level : 0

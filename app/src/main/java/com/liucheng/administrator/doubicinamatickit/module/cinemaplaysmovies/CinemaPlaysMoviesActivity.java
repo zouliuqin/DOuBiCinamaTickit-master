@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
+import com.liucheng.administrator.doubicinamatickit.entity.CinemaPlaysMovies;
+import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.data.CinemaPlaysMoviesData;
 import com.liucheng.administrator.doubicinamatickit.util.Utils;
 
 import butterknife.BindView;
@@ -25,7 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class CinemaPlaysMoviesActivity extends AppCompatActivity {
+public class CinemaPlaysMoviesActivity extends AppCompatActivity implements CinemaPlaysMoviesData.CinemaPlaysMoviesLoadListener {
 
     @BindView(R.id.tv_cinema_plays_movies_cinema_name)
     TextView tvCinemaPlaysMoviesCinemaName;
@@ -63,9 +65,13 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //接收电影院详情
         cinemaBean = getIntent().getParcelableExtra("cinemaBeans");
-        Log.i("ATG", "onCreate: "+cinemaBean.toString());
+
+        //获取电影院正在播出的电影
+        CinemaPlaysMoviesData.getCinemaPlaysMoviesData(this,this);
+
         //初始化UI
         initUi();
+
 
 
     }
@@ -110,5 +116,10 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity {
             case R.id.rb_the_day_after_tomorrw:
                 break;
         }
+    }
+
+    @Override
+    public void onCinemaPlaysMoviesLoadEnd(CinemaPlaysMovies cinemaPlaysMovies) {
+        Log.i("ATG", "~~~~~~~~~~~~~~~~~~~~~~: "+cinemaPlaysMovies.getData().toString());
     }
 }
