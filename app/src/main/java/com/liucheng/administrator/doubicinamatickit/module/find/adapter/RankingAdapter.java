@@ -48,7 +48,7 @@ public class RankingAdapter extends BaseAdapter<BoxOffice.MoviesBean> {
         //        holer.tvMovieDay.setText(getItem(i).getMovieDay()+"天");
         //        holer.tvBoxPer.setText(getItem(i).getBoxPer()+"%");
         holer.tvMovieRanking.setText( getItem(i).getRankNum()+"");
-        Picasso.with(getContext()).load(getItem(i).getPosterUrl()).placeholder(R.mipmap.ic_launcher).into(holer.imMoviePoster);
+        Picasso.with(getContext()).load(getItem(i).getPosterUrl()).placeholder(R.drawable.logo).into(holer.imMoviePoster);
         holer.tvMovieName.setText(getItem(i).getName());
         holer.tvMovieUsName.setText(getItem(i).getNameEn());
         holer.tvMovieBoxOffice.setText(StringUtil.BoxOfficeString(getItem(i).getWeekBoxOffice()));

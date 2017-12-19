@@ -5,5 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.liucheng.administrator.doubicinamatickit.module.find.DetailNewsActivity">
+    <TextView
+        android:id="@+id/text_Content"
+        android:textSize="16sp"
+        android:textColor="#696969"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>

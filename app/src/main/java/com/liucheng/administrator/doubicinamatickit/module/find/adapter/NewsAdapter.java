@@ -40,14 +40,8 @@ public class NewsAdapter extends BaseAdapter<MovieNews.NewsListBean> {
         } else {
             holer = (ViewHolder) view.getTag();
         }
-        if (!news.getImage().equals("")) {
-            //设置图像
-            Picasso.with(getContext()).load(news.getImage()).placeholder(R.mipmap.ic_launcher).into(holer.ivItemNewsPicture);
-        }else {
-            //设置图像
-            Picasso.with(getContext()).load(R.drawable.logo).placeholder(R.mipmap.ic_launcher).into(holer.ivItemNewsPicture);
-        }
-
+        //设置图像
+        Picasso.with(getContext()).load(news.getImage()).placeholder(R.drawable.logo).into(holer.ivItemNewsPicture);
         //设置描述
         holer.tvItemNewsDescribe.setText(news.getTitle());
         return view;

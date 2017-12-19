@@ -40,7 +40,7 @@ public class ReviewAdapter extends BaseQuickAdapter<Review.DataBean.MiniBean.Lis
         helper.setText(R.id.review_contentIt,item.getContent()+"");
         String date =  DateUtils.timet(item.getCommentDate()+"");
         helper.setText(R.id.review_dateIt,date+"");
-        helper.setText(R.id.review_gradeIt, item.getRating()+"");
+        helper.setText(R.id.review_gradeIt, "评分:"+item.getRating()+"");
 
     }
 }

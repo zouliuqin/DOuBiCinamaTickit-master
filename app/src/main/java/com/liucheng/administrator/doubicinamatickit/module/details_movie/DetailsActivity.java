@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -15,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
-
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.CreatorAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.ReviewAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.StillAdapter;
@@ -84,7 +85,12 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     ImageView imageDown;
     @BindView(R.id.image_up)
     ImageView imageUp;
-
+    @BindView(R.id.video_play)
+    ImageView videoPlay;
+    @BindView(R.id.text_AllReview)
+    TextView textAllReview;
+    //当前页的电影id
+    String cinameId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,17 +99,32 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String cinameId = intent.getStringExtra("cinameId");
+        cinameId = intent.getStringExtra("cinameId");
         Log.d("9999999999", cinameId);
         //电影详情
         DetailsData.getIIsHitData(this, cinameId);
         //热评
         ReviewData.getReviewData(this, cinameId);
 //        Log.d("rrrrrrrrrrrrrr",detail.getData().getBasic().getStory());
+        initiaUi();
+    }
+
+    private void initiaUi() {
+        //设置webView
+        webView = (WebView) findViewById(R.id.webView_video1);
+        // 设置WebView属性，能够执行Javascript脚本
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setMediaPlaybackRequiresUserGesture(false);
+        webView.setVisibility(View.VISIBLE);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.getSettings().setUseWideViewPort(true);
     }
 
     private void initiaData() {
-        Picasso.with(this).load(detail.getData().getBasic().getImg()).into(imageMovie);
+        Picasso.with(this).load(detail.getData().getBasic().getImg()).placeholder(R.drawable.logo).into(imageMovie);
         textMovieName.setText(detail.getData().getBasic().getName());
         if (detail.getData().getBasic().getNameEn().length() > 1) {
             textMovieNameEn.setText(detail.getData().getBasic().getNameEn());
@@ -150,7 +171,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         textMovieIntro1.setText(detail.getData().getBasic().getStory());
 //        Log.d("000000000",detail.getData().getBasic().getVideo().getImg());
         if (detail.getData().getBasic().getVideo().getImg().length() > 0) {
-            Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).into(imageMoviePrevue);
+            Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).placeholder(R.drawable.logo).into(imageMoviePrevue);
         } else {
             layoutMoviePrevue.setVisibility(View.GONE);
             framePlay.setVisibility(View.GONE);
@@ -208,7 +229,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
     }
 
-    @OnClick({R.id.image_down, R.id.image_up})
+    @OnClick({R.id.image_down, R.id.image_up,R.id.text_AllReview})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.image_down:
@@ -223,11 +244,22 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
                 imageDown.setVisibility(View.VISIBLE);
                 imageUp.setVisibility(View.GONE);
                 break;
+            case R.id.text_AllReview:
+                Intent intent = new Intent(this, ReviewActivity.class);
+                intent.putExtra("cinameId",cinameId);
+                startActivity(intent);
+
+
+                break;
         }
     }
 
 
-
+    @OnClick(R.id.video_play)
+    public void onViewClicked() {
+        webView.setVisibility(View.VISIBLE);
+        webView.loadUrl(detail.getData().getBasic().getVideo().getUrl());
+    }
 
 
 }

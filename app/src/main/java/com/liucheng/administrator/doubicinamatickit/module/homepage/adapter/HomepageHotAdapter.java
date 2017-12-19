@@ -24,7 +24,7 @@ public class HomepageHotAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHo
     protected void convert(BaseViewHolder helper, IsHit.MsBean item) {
 
         helper.setText(R.id.item_tv_homepage_hot_name,item.getTCn());
-        Picasso.with(mContext).load(item.getImg()).placeholder(R.mipmap.ic_launcher).into((ImageView)
+        Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).into((ImageView)
                 helper.getView(R.id.item_iv_homepage_hot));
 
     }

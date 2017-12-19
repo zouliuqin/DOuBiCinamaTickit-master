@@ -29,6 +29,10 @@ public interface IUrl {
 
     //热评
     String REVIEW_MOVIE = "http://ticket-api.m.mtime.cn/movie/hotComment.api?movieId=";
+    //全部热评
+    String ALL_REVIEW_MOVIE = "http://api.m.mtime.cn/Showtime/HotMovieComments.api?movieId=";
+    //热评下标
+    String REVIEW_INDEX = "&pageIndex=";
 
     //电影院当前播放的电影
   //  String  TEST="https://ticket-api-m.mtime.cn/cinema/showtime.api?cinemaId=1306";

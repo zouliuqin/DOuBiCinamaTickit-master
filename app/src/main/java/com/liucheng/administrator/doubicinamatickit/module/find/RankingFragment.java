@@ -1,5 +1,6 @@
 package com.liucheng.administrator.doubicinamatickit.module.find;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.BoxOffice;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieBoxOffice;
+import com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity;
 import com.liucheng.administrator.doubicinamatickit.module.find.adapter.RankingAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.BoxOfficeData;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
@@ -56,8 +58,21 @@ public class RankingFragment extends Fragment implements BoxOfficeData.BoxOffice
         initUi();
         //获取排行榜数据
         BoxOfficeData.getNewsData(this);
-
+         Listener();
         return view;
+
+
+    }
+
+    private void Listener() {
+        lvRanking.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("cinameId",boxOffices.get(i-1).getId()+"");
+                startActivity(intent);
+            }
+        });
 
 
     }

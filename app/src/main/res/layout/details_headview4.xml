@@ -36,6 +36,7 @@
             android:layout_height="wrap_content">
                 <ImageView
                     android:src="@drawable/play"
+                    android:id="@+id/video_play"
                     android:layout_marginTop="50dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

@@ -6,11 +6,12 @@ import java.util.List;
  * Created by Administrator on 2017/12/18 0018.
  */
 
-public class AllReviewData {
+public class AllReview {
+
 
     /**
      * code : 1
-     * data : {"advertisement":{"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城喵星人+商城乐高","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html"}],"count":1,"error":"","success":true},"basic":{"actors":[{"actorId":1646183,"img":"http://img31.mtime.cn/ph/2014/06/20/113215.19957262_1280X720X2.jpg","name":"大鹏","nameEn":"Peng Da","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171717.90488511.jpg","roleName":"诸葛青云"},{"actorId":1879781,"img":"http://img5.mtime.cn/ph/2017/02/17/104720.28134534_1280X720X2.jpg","name":"倪妮","nameEn":"Ni Ni","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171723.24108267.jpg","roleName":"铁蜻蜓"},{"actorId":1706195,"img":"http://img31.mtime.cn/ph/2016/08/29/141047.77357073_1280X720X2.jpg","name":"李治廷","nameEn":"Aarif Lee","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171729.83572110.jpg","roleName":"刀宜长"},{"actorId":1772902,"img":"http://img31.mtime.cn/ph/2016/01/07/105839.82690032_1280X720X2.jpg","name":"周冬雨","nameEn":"Dongyu Zhou","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171735.30879099.jpg","roleName":"小圆"},{"actorId":988545,"img":"http://img5.mtime.cn/ph/2017/01/13/144747.66456166_1280X720X2.jpg","name":"伍佰","nameEn":"Wu Bai","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171742.69112081.jpg","roleName":"老大"},{"actorId":1716128,"img":"http://img5.mtime.cn/ph/2017/07/27/094457.87514630_1280X720X2.jpg","name":"柳岩","nameEn":"Ada","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171839.35799238.jpg","roleName":"娇娇"},{"actorId":942189,"img":"http://img5.mtime.cn/ph/2017/07/19/120930.41793778_1280X720X2.jpg","name":"田启文","nameEn":"Kai Man Tin","roleImg":"","roleName":"大鼻毛"},{"actorId":1890608,"img":"http://img21.mtime.cn/ph/2011/12/28/214129.58103400_1280X720X2.jpg","name":"许明虎","nameEn":"Tiger Xu ","roleImg":"","roleName":""},{"actorId":2113308,"img":"http://img31.mtime.cn/ph/2014/12/28/160646.14439399_1280X720X2.jpg","name":"杨一威","nameEn":"Yiwei Yang","roleImg":"","roleName":""},{"actorId":1013759,"img":"http://img31.mtime.cn/ph/2016/09/02/144851.74300138_1280X720X2.jpg","name":"谢苗","nameEn":"Miu Tse","roleImg":"","roleName":""},{"actorId":1272854,"img":"http://img31.mtime.cn/ph/2014/02/22/213623.47010666_1280X720X2.jpg","name":"孙明明","nameEn":"Mingming Sun","roleImg":"","roleName":""},{"actorId":1249959,"img":"http://img31.mtime.cn/ph/2014/03/15/175154.16010138_1280X720X2.jpg","name":"黄晓明","nameEn":"Xiaoming Huang","roleImg":"","roleName":"黄裳"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"大鹏倪妮周冬雨组团打怪","community":{},"director":{"directorId":893058,"img":"http://img31.mtime.cn/ph/2014/03/21/100813.45312129_1280X720X2.jpg","name":"袁和平","nameEn":"Woo-ping Yuen"},"festivals":[],"hotRanking":27,"img":"http://img5.mtime.cn/mt/2017/12/13/180931.39063693_1280X720X2.jpg","is3D":true,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":false,"isIMAX3D":true,"isTicket":true,"message":"该操作将清除您对该片的评分！是否确认？","mins":"113分钟","movieId":229668,"name":"奇门遁甲","nameEn":"The Thousand Faces of Dunjia","overallRating":6,"personCount":20,"quizGame":{},"releaseArea":"中国","releaseDate":"20171214","showCinemaCount":146,"showDay":1513584000,"showtimeCount":1210,"stageImg":{"count":144,"list":[{"imgId":7403389,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145429.56806480_1280X720X2.jpg"},{"imgId":7403390,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145445.43814374_1280X720X2.jpg"},{"imgId":7403391,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145447.58001158_1280X720X2.jpg"},{"imgId":7403392,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145449.81427925_1280X720X2.jpg"}]},"story":"该片讲述的是一个妖孽横行，天象大乱的时代，外星妖物侵袭而来。此时江湖上精通\u201c奇门遁甲\u201d之术的神秘组织\u201c雾隐门\u201d挺身而出，其首领老大（伍佰 饰）、弟子诸葛青云（大鹏 饰）、铁蜻蜓（倪妮 饰）和雾隐七子等众人各怀所长。另一方面，诸葛青云途中寻找新一代掌门小圆（周冬雨 饰）之时，新晋捕快刀宜长（李治廷 饰）为救铁蜻蜓亦被牵连在内。一时间，风云涌起，\u201c天外来客\u201d与\u201c雾隐门\u201d之间的正邪之战即将引发，一场新的奇幻危机正在来临\u2026\u2026","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["奇幻","动作"],"url":"https://movie.mtime.com/229668/","video":{"count":12,"hightUrl":"https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878.mp4","img":"http://img5.mtime.cn/mg/2017/12/13/165637.14955281_235X132X4.jpg","title":"奇门遁甲 终极预告片","url":"https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878_480.mp4","videoId":68851}},"boxOffice":{"movieId":229668,"ranking":2,"todayBox":435687234,"todayBoxDes":"435.69","todayBoxDesUnit":"今日实时(万)","totalBox":23908656950,"totalBoxDes":"2.39","totalBoxUnit":"累计票房(亿)"},"live":{"count":0,"img":"","liveId":0,"playNumTag":"","playTag":"","status":3,"title":""},"related":{"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}}
+     * data : {"cts":[{"ca":"M_1612111252291715911","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513615587,"ce":"今天中午看了第五遍\u2026\u2026","ceimg":"","commentCount":3,"cr":10,"isHot":false,"tweetId":45232505},{"ca":"时光用户_1494719774743","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513615092,"ce":"完全是浪费时间。","ceimg":"","commentCount":1,"cr":1,"isHot":false,"tweetId":45232420},{"ca":"fairytale3221645","caimg":"http://img32.mtime.cn/up/2012/09/17/065944.26823962_128X128.jpg","cal":"桂林","cd":1513611247,"ce":"冯导水平各方面还是一流的，也没有刻意丑化或歌颂什么，还是挺值得品味的。各种人看起来的感受应该也不一样吧","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231922},{"ca":"Vivienne","caimg":"http://img22.mtime.cn/up/2012/01/12/193009.72468715_128X128.jpg","cal":"北京","cd":1513610915,"ce":"并未经历过那个时代的人 看了此片 没有特别的感想 可能属于细细品味的片子？没有冲击力 不能带动我的情绪 舞蹈是真漂亮 我就想问 那个\u201c假大空\u201d的bra到底是谁的","ceimg":"","commentCount":0,"cr":7.1,"isHot":false,"tweetId":45231870},{"ca":"mahdini","caimg":"http://img22.mtime.cn/up/2012/05/26/122507.53208896_128X128.jpg","cal":"昆明","cd":1513610399,"ce":"感谢冯导选择云南拍摄此片","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231799},{"ca":"M_1601272323366085886","caimg":"http://img32.mtime.cn/up/2016/01/27/232451.62997503_128X128.jpg","cal":"","cd":1513610401,"ce":"还是有几处经典镜头给我留下很深印象！导演想要表达的东西是比较多，但也只能点到即止，留给观影者自己揣摩体会吧！经历过一些事情后，还是能感悟到一些东西，难以言语\u2026\u2026但又似乎被刺痛有些无奈和忧伤\u2026\u2026","ceimg":"","commentCount":0,"cr":9,"isHot":false,"tweetId":45231796},{"ca":"M_1504181344065271800","caimg":"http://img5.mtime.cn/up/2017/08/29/074440.75992438_128X128.jpg","cal":"","cd":1513610394,"ce":"时代变了吗？文工团因为时代原因被解散，团员和老师们一起吃散伙饭，大家除了一起热泪盈眶地大唱了一场卡拉OK\u201c送战友\u201d外，没有一个镜头跟为他们真正付出过的战友刘峰和何小萍有关，也没有一个镜头让观众联想起他俩，没有一个人物哪怕片刻想起过他俩，包括那位制造了这一切的林丁丁女士。","ceimg":"","commentCount":1,"cr":6,"isHot":false,"tweetId":45231794},{"ca":"mahdini","caimg":"http://img22.mtime.cn/up/2012/05/26/122507.53208896_128X128.jpg","cal":"昆明","cd":1513610268,"ce":"感谢冯导选择云南拍摄此片","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231773},{"ca":"水浒三国金刚","caimg":"http://img22.mtime.cn/up/2010/06/27/212019.57374961_128X128.jpg","cal":"上虞","cd":1513609877,"ce":"那些年我们一起芳华过的战友","ceimg":"","commentCount":0,"cr":7.3,"isHot":false,"tweetId":45231736},{"ca":"al1226","caimg":"http://img32.mtime.cn/up/2013/05/06/153253.60554096_128X128.jpg","cal":"上海","cd":1513609686,"ce":"导演想表达的有很多，这点毋庸置疑，那是导演内心最向往的年华，能详细展开我觉得必将成为经典。","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231719},{"ca":"浮水印008","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513608132,"ce":"电影开始时的八一电影制片厂的五星闪烁画面，立刻把我带回曾经露天电影的情景。两个小时的情节只能说不温不火，对于进电影院就打瞌睡的我，这一次没有睡意。","ceimg":"","commentCount":1,"cr":7,"isHot":false,"tweetId":45231517},{"ca":"盛哈哈","caimg":"http://img32.mtime.cn/up/2015/05/23/094825.82137692_128X128.jpg","cal":"","cd":1513607445,"ce":"重新评下分 之前评8分 后来越来越觉得这部影片值得更好更高的赞誉！","ceimg":"","commentCount":0,"cr":9,"isHot":false,"tweetId":45231445},{"ca":"巧克力帝国","caimg":"http://img32.mtime.cn/up/2013/07/12/120503.37324815_128X128.jpg","cal":"重庆","cd":1513605927,"ce":"冯小刚的电影耐看，但也总是差些什么。","ceimg":"","commentCount":0,"cr":7.8,"isHot":false,"tweetId":45231319},{"ca":"我爱次橙子","caimg":"http://img5.mtime.cn/up/2016/11/14/104229.33748739_128X128.jpg","cal":"","cd":1513604914,"ce":"好看，过两天二刷","ceimg":"","commentCount":0,"cr":9.4,"isHot":false,"tweetId":45231227},{"ca":"Pinkashes","caimg":"http://img32.mtime.cn/up/2014/10/17/104851.17157917_128X128.jpg","cal":"北京","cd":1513604617,"ce":"《芳华》里冯小刚对人性复杂的呈现是最动人之处，但他还是太沉湎于对他梦想时代的怀旧。如果能把严歌苓要传达的人性暧昧更细腻的呈现，电影会更深刻。很难相信一个让大部分人尤其是好人受伤的青春会是美的。","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231200},{"ca":"小黄","caimg":"http://img2.mtime.cn/u/194/1864194/3171f398-dc4e-4f02-a6f6-bfdb186cf520/128X128.jpg","cal":"安顺","cd":1513603938,"ce":"车轮碾过，芳华满地\u2026\u2026有情怀、有温度。","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231118},{"ca":"盗寻欢","caimg":"http://img2.mtime.cn/u/1934/2475934/3d1387c5-87c4-47cf-afb2-f2bf2402f3ed/128X128.jpg","cal":"丽水","cd":1513602380,"ce":"未评分","ceimg":"","commentCount":0,"cr":0,"isHot":false,"tweetId":45230989},{"ca":"北斗","caimg":"http://img2.mtime.cn/u/366/702366/4e472a3b-5b0a-4b83-8f38-c6ac504e5525/128X128.jpg","cal":"广州","cd":1513602191,"ce":"冯小刚在某次采访的时候说这部片子是拍给50岁以上的人看的，从我阿姨观影的反应来看，冯导这次的目标观众还是对这片子很受落的...","ceimg":"","commentCount":0,"cr":7.6,"isHot":false,"tweetId":45230976},{"ca":"寂寥一生","caimg":"http://img2.mtime.cn/u/330/220330/a970d521-53f4-4165-9312-5af7209eabce/128X128.jpg","cal":"宁波","cd":1513601761,"ce":"总是觉得离经典差一口气！结尾其实以月下独舞那个画面为结局会不会更好点！","ceimg":"","commentCount":2,"cr":7.8,"isHot":false,"tweetId":45230934},{"ca":"能干的赫奇斯","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513600890,"ce":"再感人一点就更好啦！","ceimg":"","commentCount":0,"cr":10,"isHot":false,"tweetId":45230880}],"totalCount":1659,"tpc":10}
      * msg : 成功
      * showMsg :
      */
@@ -54,1014 +55,142 @@ public class AllReviewData {
 
     public static class DataBean {
         /**
-         * advertisement : {"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城喵星人+商城乐高","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html"}],"count":1,"error":"","success":true}
-         * basic : {"actors":[{"actorId":1646183,"img":"http://img31.mtime.cn/ph/2014/06/20/113215.19957262_1280X720X2.jpg","name":"大鹏","nameEn":"Peng Da","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171717.90488511.jpg","roleName":"诸葛青云"},{"actorId":1879781,"img":"http://img5.mtime.cn/ph/2017/02/17/104720.28134534_1280X720X2.jpg","name":"倪妮","nameEn":"Ni Ni","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171723.24108267.jpg","roleName":"铁蜻蜓"},{"actorId":1706195,"img":"http://img31.mtime.cn/ph/2016/08/29/141047.77357073_1280X720X2.jpg","name":"李治廷","nameEn":"Aarif Lee","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171729.83572110.jpg","roleName":"刀宜长"},{"actorId":1772902,"img":"http://img31.mtime.cn/ph/2016/01/07/105839.82690032_1280X720X2.jpg","name":"周冬雨","nameEn":"Dongyu Zhou","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171735.30879099.jpg","roleName":"小圆"},{"actorId":988545,"img":"http://img5.mtime.cn/ph/2017/01/13/144747.66456166_1280X720X2.jpg","name":"伍佰","nameEn":"Wu Bai","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171742.69112081.jpg","roleName":"老大"},{"actorId":1716128,"img":"http://img5.mtime.cn/ph/2017/07/27/094457.87514630_1280X720X2.jpg","name":"柳岩","nameEn":"Ada","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171839.35799238.jpg","roleName":"娇娇"},{"actorId":942189,"img":"http://img5.mtime.cn/ph/2017/07/19/120930.41793778_1280X720X2.jpg","name":"田启文","nameEn":"Kai Man Tin","roleImg":"","roleName":"大鼻毛"},{"actorId":1890608,"img":"http://img21.mtime.cn/ph/2011/12/28/214129.58103400_1280X720X2.jpg","name":"许明虎","nameEn":"Tiger Xu ","roleImg":"","roleName":""},{"actorId":2113308,"img":"http://img31.mtime.cn/ph/2014/12/28/160646.14439399_1280X720X2.jpg","name":"杨一威","nameEn":"Yiwei Yang","roleImg":"","roleName":""},{"actorId":1013759,"img":"http://img31.mtime.cn/ph/2016/09/02/144851.74300138_1280X720X2.jpg","name":"谢苗","nameEn":"Miu Tse","roleImg":"","roleName":""},{"actorId":1272854,"img":"http://img31.mtime.cn/ph/2014/02/22/213623.47010666_1280X720X2.jpg","name":"孙明明","nameEn":"Mingming Sun","roleImg":"","roleName":""},{"actorId":1249959,"img":"http://img31.mtime.cn/ph/2014/03/15/175154.16010138_1280X720X2.jpg","name":"黄晓明","nameEn":"Xiaoming Huang","roleImg":"","roleName":"黄裳"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"大鹏倪妮周冬雨组团打怪","community":{},"director":{"directorId":893058,"img":"http://img31.mtime.cn/ph/2014/03/21/100813.45312129_1280X720X2.jpg","name":"袁和平","nameEn":"Woo-ping Yuen"},"festivals":[],"hotRanking":27,"img":"http://img5.mtime.cn/mt/2017/12/13/180931.39063693_1280X720X2.jpg","is3D":true,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":false,"isIMAX3D":true,"isTicket":true,"message":"该操作将清除您对该片的评分！是否确认？","mins":"113分钟","movieId":229668,"name":"奇门遁甲","nameEn":"The Thousand Faces of Dunjia","overallRating":6,"personCount":20,"quizGame":{},"releaseArea":"中国","releaseDate":"20171214","showCinemaCount":146,"showDay":1513584000,"showtimeCount":1210,"stageImg":{"count":144,"list":[{"imgId":7403389,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145429.56806480_1280X720X2.jpg"},{"imgId":7403390,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145445.43814374_1280X720X2.jpg"},{"imgId":7403391,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145447.58001158_1280X720X2.jpg"},{"imgId":7403392,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145449.81427925_1280X720X2.jpg"}]},"story":"该片讲述的是一个妖孽横行，天象大乱的时代，外星妖物侵袭而来。此时江湖上精通\u201c奇门遁甲\u201d之术的神秘组织\u201c雾隐门\u201d挺身而出，其首领老大（伍佰 饰）、弟子诸葛青云（大鹏 饰）、铁蜻蜓（倪妮 饰）和雾隐七子等众人各怀所长。另一方面，诸葛青云途中寻找新一代掌门小圆（周冬雨 饰）之时，新晋捕快刀宜长（李治廷 饰）为救铁蜻蜓亦被牵连在内。一时间，风云涌起，\u201c天外来客\u201d与\u201c雾隐门\u201d之间的正邪之战即将引发，一场新的奇幻危机正在来临\u2026\u2026","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["奇幻","动作"],"url":"https://movie.mtime.com/229668/","video":{"count":12,"hightUrl":"https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878.mp4","img":"http://img5.mtime.cn/mg/2017/12/13/165637.14955281_235X132X4.jpg","title":"奇门遁甲 终极预告片","url":"https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878_480.mp4","videoId":68851}}
-         * boxOffice : {"movieId":229668,"ranking":2,"todayBox":435687234,"todayBoxDes":"435.69","todayBoxDesUnit":"今日实时(万)","totalBox":23908656950,"totalBoxDes":"2.39","totalBoxUnit":"累计票房(亿)"}
-         * live : {"count":0,"img":"","liveId":0,"playNumTag":"","playTag":"","status":3,"title":""}
-         * related : {"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}
+         * cts : [{"ca":"M_1612111252291715911","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513615587,"ce":"今天中午看了第五遍\u2026\u2026","ceimg":"","commentCount":3,"cr":10,"isHot":false,"tweetId":45232505},{"ca":"时光用户_1494719774743","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513615092,"ce":"完全是浪费时间。","ceimg":"","commentCount":1,"cr":1,"isHot":false,"tweetId":45232420},{"ca":"fairytale3221645","caimg":"http://img32.mtime.cn/up/2012/09/17/065944.26823962_128X128.jpg","cal":"桂林","cd":1513611247,"ce":"冯导水平各方面还是一流的，也没有刻意丑化或歌颂什么，还是挺值得品味的。各种人看起来的感受应该也不一样吧","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231922},{"ca":"Vivienne","caimg":"http://img22.mtime.cn/up/2012/01/12/193009.72468715_128X128.jpg","cal":"北京","cd":1513610915,"ce":"并未经历过那个时代的人 看了此片 没有特别的感想 可能属于细细品味的片子？没有冲击力 不能带动我的情绪 舞蹈是真漂亮 我就想问 那个\u201c假大空\u201d的bra到底是谁的","ceimg":"","commentCount":0,"cr":7.1,"isHot":false,"tweetId":45231870},{"ca":"mahdini","caimg":"http://img22.mtime.cn/up/2012/05/26/122507.53208896_128X128.jpg","cal":"昆明","cd":1513610399,"ce":"感谢冯导选择云南拍摄此片","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231799},{"ca":"M_1601272323366085886","caimg":"http://img32.mtime.cn/up/2016/01/27/232451.62997503_128X128.jpg","cal":"","cd":1513610401,"ce":"还是有几处经典镜头给我留下很深印象！导演想要表达的东西是比较多，但也只能点到即止，留给观影者自己揣摩体会吧！经历过一些事情后，还是能感悟到一些东西，难以言语\u2026\u2026但又似乎被刺痛有些无奈和忧伤\u2026\u2026","ceimg":"","commentCount":0,"cr":9,"isHot":false,"tweetId":45231796},{"ca":"M_1504181344065271800","caimg":"http://img5.mtime.cn/up/2017/08/29/074440.75992438_128X128.jpg","cal":"","cd":1513610394,"ce":"时代变了吗？文工团因为时代原因被解散，团员和老师们一起吃散伙饭，大家除了一起热泪盈眶地大唱了一场卡拉OK\u201c送战友\u201d外，没有一个镜头跟为他们真正付出过的战友刘峰和何小萍有关，也没有一个镜头让观众联想起他俩，没有一个人物哪怕片刻想起过他俩，包括那位制造了这一切的林丁丁女士。","ceimg":"","commentCount":1,"cr":6,"isHot":false,"tweetId":45231794},{"ca":"mahdini","caimg":"http://img22.mtime.cn/up/2012/05/26/122507.53208896_128X128.jpg","cal":"昆明","cd":1513610268,"ce":"感谢冯导选择云南拍摄此片","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231773},{"ca":"水浒三国金刚","caimg":"http://img22.mtime.cn/up/2010/06/27/212019.57374961_128X128.jpg","cal":"上虞","cd":1513609877,"ce":"那些年我们一起芳华过的战友","ceimg":"","commentCount":0,"cr":7.3,"isHot":false,"tweetId":45231736},{"ca":"al1226","caimg":"http://img32.mtime.cn/up/2013/05/06/153253.60554096_128X128.jpg","cal":"上海","cd":1513609686,"ce":"导演想表达的有很多，这点毋庸置疑，那是导演内心最向往的年华，能详细展开我觉得必将成为经典。","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231719},{"ca":"浮水印008","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513608132,"ce":"电影开始时的八一电影制片厂的五星闪烁画面，立刻把我带回曾经露天电影的情景。两个小时的情节只能说不温不火，对于进电影院就打瞌睡的我，这一次没有睡意。","ceimg":"","commentCount":1,"cr":7,"isHot":false,"tweetId":45231517},{"ca":"盛哈哈","caimg":"http://img32.mtime.cn/up/2015/05/23/094825.82137692_128X128.jpg","cal":"","cd":1513607445,"ce":"重新评下分 之前评8分 后来越来越觉得这部影片值得更好更高的赞誉！","ceimg":"","commentCount":0,"cr":9,"isHot":false,"tweetId":45231445},{"ca":"巧克力帝国","caimg":"http://img32.mtime.cn/up/2013/07/12/120503.37324815_128X128.jpg","cal":"重庆","cd":1513605927,"ce":"冯小刚的电影耐看，但也总是差些什么。","ceimg":"","commentCount":0,"cr":7.8,"isHot":false,"tweetId":45231319},{"ca":"我爱次橙子","caimg":"http://img5.mtime.cn/up/2016/11/14/104229.33748739_128X128.jpg","cal":"","cd":1513604914,"ce":"好看，过两天二刷","ceimg":"","commentCount":0,"cr":9.4,"isHot":false,"tweetId":45231227},{"ca":"Pinkashes","caimg":"http://img32.mtime.cn/up/2014/10/17/104851.17157917_128X128.jpg","cal":"北京","cd":1513604617,"ce":"《芳华》里冯小刚对人性复杂的呈现是最动人之处，但他还是太沉湎于对他梦想时代的怀旧。如果能把严歌苓要传达的人性暧昧更细腻的呈现，电影会更深刻。很难相信一个让大部分人尤其是好人受伤的青春会是美的。","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231200},{"ca":"小黄","caimg":"http://img2.mtime.cn/u/194/1864194/3171f398-dc4e-4f02-a6f6-bfdb186cf520/128X128.jpg","cal":"安顺","cd":1513603938,"ce":"车轮碾过，芳华满地\u2026\u2026有情怀、有温度。","ceimg":"","commentCount":0,"cr":8,"isHot":false,"tweetId":45231118},{"ca":"盗寻欢","caimg":"http://img2.mtime.cn/u/1934/2475934/3d1387c5-87c4-47cf-afb2-f2bf2402f3ed/128X128.jpg","cal":"丽水","cd":1513602380,"ce":"未评分","ceimg":"","commentCount":0,"cr":0,"isHot":false,"tweetId":45230989},{"ca":"北斗","caimg":"http://img2.mtime.cn/u/366/702366/4e472a3b-5b0a-4b83-8f38-c6ac504e5525/128X128.jpg","cal":"广州","cd":1513602191,"ce":"冯小刚在某次采访的时候说这部片子是拍给50岁以上的人看的，从我阿姨观影的反应来看，冯导这次的目标观众还是对这片子很受落的...","ceimg":"","commentCount":0,"cr":7.6,"isHot":false,"tweetId":45230976},{"ca":"寂寥一生","caimg":"http://img2.mtime.cn/u/330/220330/a970d521-53f4-4165-9312-5af7209eabce/128X128.jpg","cal":"宁波","cd":1513601761,"ce":"总是觉得离经典差一口气！结尾其实以月下独舞那个画面为结局会不会更好点！","ceimg":"","commentCount":2,"cr":7.8,"isHot":false,"tweetId":45230934},{"ca":"能干的赫奇斯","caimg":"http://img2.mtime.cn/images/default/head.gif","cal":"","cd":1513600890,"ce":"再感人一点就更好啦！","ceimg":"","commentCount":0,"cr":10,"isHot":false,"tweetId":45230880}]
+         * totalCount : 1659
+         * tpc : 10
          */
 
-        private AdvertisementBean advertisement;
-        private BasicBean basic;
-        private BoxOfficeBean boxOffice;
-        private LiveBean live;
-        private RelatedBean related;
+        private int totalCount;
+        private int tpc;
+        private List<CtsBean> cts;
 
-        public AdvertisementBean getAdvertisement() {
-            return advertisement;
+        public int getTotalCount() {
+            return totalCount;
         }
 
-        public void setAdvertisement(AdvertisementBean advertisement) {
-            this.advertisement = advertisement;
+        public void setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
         }
 
-        public BasicBean getBasic() {
-            return basic;
+        public int getTpc() {
+            return tpc;
         }
 
-        public void setBasic(BasicBean basic) {
-            this.basic = basic;
+        public void setTpc(int tpc) {
+            this.tpc = tpc;
         }
 
-        public BoxOfficeBean getBoxOffice() {
-            return boxOffice;
+        public List<CtsBean> getCts() {
+            return cts;
         }
 
-        public void setBoxOffice(BoxOfficeBean boxOffice) {
-            this.boxOffice = boxOffice;
+        public void setCts(List<CtsBean> cts) {
+            this.cts = cts;
         }
 
-        public LiveBean getLive() {
-            return live;
-        }
-
-        public void setLive(LiveBean live) {
-            this.live = live;
-        }
-
-        public RelatedBean getRelated() {
-            return related;
-        }
-
-        public void setRelated(RelatedBean related) {
-            this.related = related;
-        }
-
-        public static class AdvertisementBean {
+        public static class CtsBean {
             /**
-             * advList : [{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城喵星人+商城乐高","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html"}]
-             * count : 1
-             * error :
-             * success : true
+             * ca : M_1612111252291715911
+             * caimg : http://img2.mtime.cn/images/default/head.gif
+             * cal :
+             * cd : 1513615587
+             * ce : 今天中午看了第五遍……
+             * ceimg :
+             * commentCount : 3
+             * cr : 10
+             * isHot : false
+             * tweetId : 45232505
              */
 
-            private int count;
-            private String error;
-            private boolean success;
-            private List<AdvListBean> advList;
+            private String ca;
+            private String caimg;
+            private String cal;
+            private long cd;
+            private String ce;
+            private String ceimg;
+            private int commentCount;
+            private String cr;
+            private boolean isHot;
+            private int tweetId;
 
-            public int getCount() {
-                return count;
+            public String getCa() {
+                return ca;
             }
 
-            public void setCount(int count) {
-                this.count = count;
+            public void setCa(String ca) {
+                this.ca = ca;
             }
 
-            public String getError() {
-                return error;
+            public String getCaimg() {
+                return caimg;
             }
 
-            public void setError(String error) {
-                this.error = error;
+            public void setCaimg(String caimg) {
+                this.caimg = caimg;
             }
 
-            public boolean isSuccess() {
-                return success;
+            public String getCal() {
+                return cal;
             }
 
-            public void setSuccess(boolean success) {
-                this.success = success;
+            public void setCal(String cal) {
+                this.cal = cal;
             }
 
-            public List<AdvListBean> getAdvList() {
-                return advList;
+            public long getCd() {
+                return cd;
             }
 
-            public void setAdvList(List<AdvListBean> advList) {
-                this.advList = advList;
+            public void setCd(long cd) {
+                this.cd = cd;
             }
 
-            public static class AdvListBean {
-                /**
-                 * advTag :
-                 * endDate : 1514649599
-                 * isHorizontalScreen : false
-                 * isOpenH5 : false
-                 * startDate : 1451577600
-                 * tag : 商城喵星人+商城乐高
-                 * type : 203
-                 * typeName : 影片详情页banner2
-                 * url : https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html
-                 */
-
-                private String advTag;
-                private int endDate;
-                private boolean isHorizontalScreen;
-                private boolean isOpenH5;
-                private int startDate;
-                private String tag;
-                private String type;
-                private String typeName;
-                private String url;
-
-                public String getAdvTag() {
-                    return advTag;
-                }
-
-                public void setAdvTag(String advTag) {
-                    this.advTag = advTag;
-                }
-
-                public int getEndDate() {
-                    return endDate;
-                }
-
-                public void setEndDate(int endDate) {
-                    this.endDate = endDate;
-                }
-
-                public boolean isIsHorizontalScreen() {
-                    return isHorizontalScreen;
-                }
-
-                public void setIsHorizontalScreen(boolean isHorizontalScreen) {
-                    this.isHorizontalScreen = isHorizontalScreen;
-                }
-
-                public boolean isIsOpenH5() {
-                    return isOpenH5;
-                }
-
-                public void setIsOpenH5(boolean isOpenH5) {
-                    this.isOpenH5 = isOpenH5;
-                }
-
-                public int getStartDate() {
-                    return startDate;
-                }
-
-                public void setStartDate(int startDate) {
-                    this.startDate = startDate;
-                }
-
-                public String getTag() {
-                    return tag;
-                }
-
-                public void setTag(String tag) {
-                    this.tag = tag;
-                }
-
-                public String getType() {
-                    return type;
-                }
-
-                public void setType(String type) {
-                    this.type = type;
-                }
-
-                public String getTypeName() {
-                    return typeName;
-                }
-
-                public void setTypeName(String typeName) {
-                    this.typeName = typeName;
-                }
-
-                public String getUrl() {
-                    return url;
-                }
-
-                public void setUrl(String url) {
-                    this.url = url;
-                }
-            }
-        }
-
-        public static class BasicBean {
-            /**
-             * actors : [{"actorId":1646183,"img":"http://img31.mtime.cn/ph/2014/06/20/113215.19957262_1280X720X2.jpg","name":"大鹏","nameEn":"Peng Da","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171717.90488511.jpg","roleName":"诸葛青云"},{"actorId":1879781,"img":"http://img5.mtime.cn/ph/2017/02/17/104720.28134534_1280X720X2.jpg","name":"倪妮","nameEn":"Ni Ni","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171723.24108267.jpg","roleName":"铁蜻蜓"},{"actorId":1706195,"img":"http://img31.mtime.cn/ph/2016/08/29/141047.77357073_1280X720X2.jpg","name":"李治廷","nameEn":"Aarif Lee","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171729.83572110.jpg","roleName":"刀宜长"},{"actorId":1772902,"img":"http://img31.mtime.cn/ph/2016/01/07/105839.82690032_1280X720X2.jpg","name":"周冬雨","nameEn":"Dongyu Zhou","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171735.30879099.jpg","roleName":"小圆"},{"actorId":988545,"img":"http://img5.mtime.cn/ph/2017/01/13/144747.66456166_1280X720X2.jpg","name":"伍佰","nameEn":"Wu Bai","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171742.69112081.jpg","roleName":"老大"},{"actorId":1716128,"img":"http://img5.mtime.cn/ph/2017/07/27/094457.87514630_1280X720X2.jpg","name":"柳岩","nameEn":"Ada","roleImg":"http://img5.mtime.cn/mg/2017/12/12/171839.35799238.jpg","roleName":"娇娇"},{"actorId":942189,"img":"http://img5.mtime.cn/ph/2017/07/19/120930.41793778_1280X720X2.jpg","name":"田启文","nameEn":"Kai Man Tin","roleImg":"","roleName":"大鼻毛"},{"actorId":1890608,"img":"http://img21.mtime.cn/ph/2011/12/28/214129.58103400_1280X720X2.jpg","name":"许明虎","nameEn":"Tiger Xu ","roleImg":"","roleName":""},{"actorId":2113308,"img":"http://img31.mtime.cn/ph/2014/12/28/160646.14439399_1280X720X2.jpg","name":"杨一威","nameEn":"Yiwei Yang","roleImg":"","roleName":""},{"actorId":1013759,"img":"http://img31.mtime.cn/ph/2016/09/02/144851.74300138_1280X720X2.jpg","name":"谢苗","nameEn":"Miu Tse","roleImg":"","roleName":""},{"actorId":1272854,"img":"http://img31.mtime.cn/ph/2014/02/22/213623.47010666_1280X720X2.jpg","name":"孙明明","nameEn":"Mingming Sun","roleImg":"","roleName":""},{"actorId":1249959,"img":"http://img31.mtime.cn/ph/2014/03/15/175154.16010138_1280X720X2.jpg","name":"黄晓明","nameEn":"Xiaoming Huang","roleImg":"","roleName":"黄裳"}]
-             * award : {"awardList":[],"totalNominateAward":0,"totalWinAward":0}
-             * commentSpecial : 大鹏倪妮周冬雨组团打怪
-             * community : {}
-             * director : {"directorId":893058,"img":"http://img31.mtime.cn/ph/2014/03/21/100813.45312129_1280X720X2.jpg","name":"袁和平","nameEn":"Woo-ping Yuen"}
-             * festivals : []
-             * hotRanking : 27
-             * img : http://img5.mtime.cn/mt/2017/12/13/180931.39063693_1280X720X2.jpg
-             * is3D : true
-             * isDMAX : true
-             * isEggHunt : false
-             * isFilter : false
-             * isIMAX : false
-             * isIMAX3D : true
-             * isTicket : true
-             * message : 该操作将清除您对该片的评分！是否确认？
-             * mins : 113分钟
-             * movieId : 229668
-             * name : 奇门遁甲
-             * nameEn : The Thousand Faces of Dunjia
-             * overallRating : 6
-             * personCount : 20
-             * quizGame : {}
-             * releaseArea : 中国
-             * releaseDate : 20171214
-             * showCinemaCount : 146
-             * showDay : 1513584000
-             * showtimeCount : 1210
-             * stageImg : {"count":144,"list":[{"imgId":7403389,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145429.56806480_1280X720X2.jpg"},{"imgId":7403390,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145445.43814374_1280X720X2.jpg"},{"imgId":7403391,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145447.58001158_1280X720X2.jpg"},{"imgId":7403392,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145449.81427925_1280X720X2.jpg"}]}
-             * story : 该片讲述的是一个妖孽横行，天象大乱的时代，外星妖物侵袭而来。此时江湖上精通“奇门遁甲”之术的神秘组织“雾隐门”挺身而出，其首领老大（伍佰 饰）、弟子诸葛青云（大鹏 饰）、铁蜻蜓（倪妮 饰）和雾隐七子等众人各怀所长。另一方面，诸葛青云途中寻找新一代掌门小圆（周冬雨 饰）之时，新晋捕快刀宜长（李治廷 饰）为救铁蜻蜓亦被牵连在内。一时间，风云涌起，“天外来客”与“雾隐门”之间的正邪之战即将引发，一场新的奇幻危机正在来临……
-             * style : {"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""}
-             * totalNominateAward : 0
-             * totalWinAward : 0
-             * type : ["奇幻","动作"]
-             * url : https://movie.mtime.com/229668/
-             * video : {"count":12,"hightUrl":"https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878.mp4","img":"http://img5.mtime.cn/mg/2017/12/13/165637.14955281_235X132X4.jpg","title":"奇门遁甲 终极预告片","url":"https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878_480.mp4","videoId":68851}
-             */
-
-            private AwardBean award;
-            private String commentSpecial;
-            private CommunityBean community;
-            private DirectorBean director;
-            private int hotRanking;
-            private String img;
-            private boolean is3D;
-            private boolean isDMAX;
-            private boolean isEggHunt;
-            private boolean isFilter;
-            private boolean isIMAX;
-            private boolean isIMAX3D;
-            private boolean isTicket;
-            private String message;
-            private String mins;
-            private int movieId;
-            private String name;
-            private String nameEn;
-            private int overallRating;
-            private int personCount;
-            private QuizGameBean quizGame;
-            private String releaseArea;
-            private String releaseDate;
-            private int showCinemaCount;
-            private int showDay;
-            private int showtimeCount;
-            private StageImgBean stageImg;
-            private String story;
-            private StyleBean style;
-            private int totalNominateAward;
-            private int totalWinAward;
-            private String url;
-            private VideoBean video;
-            private List<ActorsBean> actors;
-            private List<?> festivals;
-            private List<String> type;
-
-            public AwardBean getAward() {
-                return award;
-            }
-
-            public void setAward(AwardBean award) {
-                this.award = award;
-            }
-
-            public String getCommentSpecial() {
-                return commentSpecial;
-            }
-
-            public void setCommentSpecial(String commentSpecial) {
-                this.commentSpecial = commentSpecial;
-            }
-
-            public CommunityBean getCommunity() {
-                return community;
-            }
-
-            public void setCommunity(CommunityBean community) {
-                this.community = community;
-            }
-
-            public DirectorBean getDirector() {
-                return director;
-            }
-
-            public void setDirector(DirectorBean director) {
-                this.director = director;
-            }
-
-            public int getHotRanking() {
-                return hotRanking;
-            }
-
-            public void setHotRanking(int hotRanking) {
-                this.hotRanking = hotRanking;
-            }
-
-            public String getImg() {
-                return img;
-            }
-
-            public void setImg(String img) {
-                this.img = img;
-            }
-
-            public boolean isIs3D() {
-                return is3D;
-            }
-
-            public void setIs3D(boolean is3D) {
-                this.is3D = is3D;
-            }
-
-            public boolean isIsDMAX() {
-                return isDMAX;
-            }
-
-            public void setIsDMAX(boolean isDMAX) {
-                this.isDMAX = isDMAX;
-            }
-
-            public boolean isIsEggHunt() {
-                return isEggHunt;
-            }
-
-            public void setIsEggHunt(boolean isEggHunt) {
-                this.isEggHunt = isEggHunt;
-            }
-
-            public boolean isIsFilter() {
-                return isFilter;
-            }
-
-            public void setIsFilter(boolean isFilter) {
-                this.isFilter = isFilter;
-            }
-
-            public boolean isIsIMAX() {
-                return isIMAX;
-            }
-
-            public void setIsIMAX(boolean isIMAX) {
-                this.isIMAX = isIMAX;
-            }
-
-            public boolean isIsIMAX3D() {
-                return isIMAX3D;
-            }
-
-            public void setIsIMAX3D(boolean isIMAX3D) {
-                this.isIMAX3D = isIMAX3D;
-            }
-
-            public boolean isIsTicket() {
-                return isTicket;
-            }
-
-            public void setIsTicket(boolean isTicket) {
-                this.isTicket = isTicket;
-            }
-
-            public String getMessage() {
-                return message;
-            }
-
-            public void setMessage(String message) {
-                this.message = message;
-            }
-
-            public String getMins() {
-                return mins;
-            }
-
-            public void setMins(String mins) {
-                this.mins = mins;
-            }
-
-            public int getMovieId() {
-                return movieId;
-            }
-
-            public void setMovieId(int movieId) {
-                this.movieId = movieId;
-            }
-
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public String getNameEn() {
-                return nameEn;
-            }
-
-            public void setNameEn(String nameEn) {
-                this.nameEn = nameEn;
-            }
-
-            public int getOverallRating() {
-                return overallRating;
-            }
-
-            public void setOverallRating(int overallRating) {
-                this.overallRating = overallRating;
-            }
-
-            public int getPersonCount() {
-                return personCount;
-            }
-
-            public void setPersonCount(int personCount) {
-                this.personCount = personCount;
-            }
-
-            public QuizGameBean getQuizGame() {
-                return quizGame;
-            }
-
-            public void setQuizGame(QuizGameBean quizGame) {
-                this.quizGame = quizGame;
-            }
-
-            public String getReleaseArea() {
-                return releaseArea;
-            }
-
-            public void setReleaseArea(String releaseArea) {
-                this.releaseArea = releaseArea;
-            }
-
-            public String getReleaseDate() {
-                return releaseDate;
-            }
-
-            public void setReleaseDate(String releaseDate) {
-                this.releaseDate = releaseDate;
-            }
-
-            public int getShowCinemaCount() {
-                return showCinemaCount;
-            }
-
-            public void setShowCinemaCount(int showCinemaCount) {
-                this.showCinemaCount = showCinemaCount;
-            }
-
-            public int getShowDay() {
-                return showDay;
-            }
-
-            public void setShowDay(int showDay) {
-                this.showDay = showDay;
-            }
-
-            public int getShowtimeCount() {
-                return showtimeCount;
-            }
-
-            public void setShowtimeCount(int showtimeCount) {
-                this.showtimeCount = showtimeCount;
-            }
-
-            public StageImgBean getStageImg() {
-                return stageImg;
-            }
-
-            public void setStageImg(StageImgBean stageImg) {
-                this.stageImg = stageImg;
-            }
-
-            public String getStory() {
-                return story;
-            }
-
-            public void setStory(String story) {
-                this.story = story;
-            }
-
-            public StyleBean getStyle() {
-                return style;
-            }
-
-            public void setStyle(StyleBean style) {
-                this.style = style;
-            }
-
-            public int getTotalNominateAward() {
-                return totalNominateAward;
-            }
-
-            public void setTotalNominateAward(int totalNominateAward) {
-                this.totalNominateAward = totalNominateAward;
-            }
-
-            public int getTotalWinAward() {
-                return totalWinAward;
-            }
-
-            public void setTotalWinAward(int totalWinAward) {
-                this.totalWinAward = totalWinAward;
-            }
-
-            public String getUrl() {
-                return url;
-            }
-
-            public void setUrl(String url) {
-                this.url = url;
-            }
-
-            public VideoBean getVideo() {
-                return video;
-            }
-
-            public void setVideo(VideoBean video) {
-                this.video = video;
-            }
-
-            public List<ActorsBean> getActors() {
-                return actors;
-            }
-
-            public void setActors(List<ActorsBean> actors) {
-                this.actors = actors;
-            }
-
-            public List<?> getFestivals() {
-                return festivals;
-            }
-
-            public void setFestivals(List<?> festivals) {
-                this.festivals = festivals;
-            }
-
-            public List<String> getType() {
-                return type;
-            }
-
-            public void setType(List<String> type) {
-                this.type = type;
-            }
-
-            public static class AwardBean {
-            }
-
-            public static class CommunityBean {
-            }
-
-            public static class DirectorBean {
-            }
-
-            public static class QuizGameBean {
-            }
-
-            public static class StageImgBean {
-                /**
-                 * count : 144
-                 * list : [{"imgId":7403389,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145429.56806480_1280X720X2.jpg"},{"imgId":7403390,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145445.43814374_1280X720X2.jpg"},{"imgId":7403391,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145447.58001158_1280X720X2.jpg"},{"imgId":7403392,"imgUrl":"http://img5.mtime.cn/pi/2017/09/21/145449.81427925_1280X720X2.jpg"}]
-                 */
-
-                private int count;
-                private List<ListBean> list;
-
-                public int getCount() {
-                    return count;
-                }
-
-                public void setCount(int count) {
-                    this.count = count;
-                }
-
-                public List<ListBean> getList() {
-                    return list;
-                }
-
-                public void setList(List<ListBean> list) {
-                    this.list = list;
-                }
-
-                public static class ListBean {
-                    /**
-                     * imgId : 7403389
-                     * imgUrl : http://img5.mtime.cn/pi/2017/09/21/145429.56806480_1280X720X2.jpg
-                     */
-
-                    private int imgId;
-                    private String imgUrl;
-
-                    public int getImgId() {
-                        return imgId;
-                    }
-
-                    public void setImgId(int imgId) {
-                        this.imgId = imgId;
-                    }
-
-                    public String getImgUrl() {
-                        return imgUrl;
-                    }
-
-                    public void setImgUrl(String imgUrl) {
-                        this.imgUrl = imgUrl;
-                    }
-                }
-            }
-
-            public static class StyleBean {
-                /**
-                 * isLeadPage : 0
-                 * leadImg : https://img2.mtime.cn/mg/.jpg
-                 * leadUrl :
-                 */
-
-                private int isLeadPage;
-                private String leadImg;
-                private String leadUrl;
-
-                public int getIsLeadPage() {
-                    return isLeadPage;
-                }
-
-                public void setIsLeadPage(int isLeadPage) {
-                    this.isLeadPage = isLeadPage;
-                }
-
-                public String getLeadImg() {
-                    return leadImg;
-                }
-
-                public void setLeadImg(String leadImg) {
-                    this.leadImg = leadImg;
-                }
-
-                public String getLeadUrl() {
-                    return leadUrl;
-                }
-
-                public void setLeadUrl(String leadUrl) {
-                    this.leadUrl = leadUrl;
-                }
-            }
-
-            public static class VideoBean {
-                /**
-                 * count : 12
-                 * hightUrl : https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878.mp4
-                 * img : http://img5.mtime.cn/mg/2017/12/13/165637.14955281_235X132X4.jpg
-                 * title : 奇门遁甲 终极预告片
-                 * url : https://vfx.mtime.cn/Video/2017/12/13/mp4/171213165643382878_480.mp4
-                 * videoId : 68851
-                 */
-
-                private int count;
-                private String hightUrl;
-                private String img;
-                private String title;
-                private String url;
-                private int videoId;
-
-                public int getCount() {
-                    return count;
-                }
-
-                public void setCount(int count) {
-                    this.count = count;
-                }
-
-                public String getHightUrl() {
-                    return hightUrl;
-                }
-
-                public void setHightUrl(String hightUrl) {
-                    this.hightUrl = hightUrl;
-                }
-
-                public String getImg() {
-                    return img;
-                }
-
-                public void setImg(String img) {
-                    this.img = img;
-                }
-
-                public String getTitle() {
-                    return title;
-                }
-
-                public void setTitle(String title) {
-                    this.title = title;
-                }
-
-                public String getUrl() {
-                    return url;
-                }
-
-                public void setUrl(String url) {
-                    this.url = url;
-                }
-
-                public int getVideoId() {
-                    return videoId;
-                }
-
-                public void setVideoId(int videoId) {
-                    this.videoId = videoId;
-                }
-            }
-
-            public static class ActorsBean {
-                /**
-                 * actorId : 1646183
-                 * img : http://img31.mtime.cn/ph/2014/06/20/113215.19957262_1280X720X2.jpg
-                 * name : 大鹏
-                 * nameEn : Peng Da
-                 * roleImg : http://img5.mtime.cn/mg/2017/12/12/171717.90488511.jpg
-                 * roleName : 诸葛青云
-                 */
-
-                private int actorId;
-                private String img;
-                private String name;
-                private String nameEn;
-                private String roleImg;
-                private String roleName;
-
-                public int getActorId() {
-                    return actorId;
-                }
-
-                public void setActorId(int actorId) {
-                    this.actorId = actorId;
-                }
-
-                public String getImg() {
-                    return img;
-                }
-
-                public void setImg(String img) {
-                    this.img = img;
-                }
-
-                public String getName() {
-                    return name;
-                }
-
-                public void setName(String name) {
-                    this.name = name;
-                }
-
-                public String getNameEn() {
-                    return nameEn;
-                }
-
-                public void setNameEn(String nameEn) {
-                    this.nameEn = nameEn;
-                }
-
-                public String getRoleImg() {
-                    return roleImg;
-                }
-
-                public void setRoleImg(String roleImg) {
-                    this.roleImg = roleImg;
-                }
-
-                public String getRoleName() {
-                    return roleName;
-                }
-
-                public void setRoleName(String roleName) {
-                    this.roleName = roleName;
-                }
-            }
-        }
-
-        public static class BoxOfficeBean {
-            /**
-             * movieId : 229668
-             * ranking : 2
-             * todayBox : 435687234
-             * todayBoxDes : 435.69
-             * todayBoxDesUnit : 今日实时(万)
-             * totalBox : 23908656950
-             * totalBoxDes : 2.39
-             * totalBoxUnit : 累计票房(亿)
-             */
-
-            private int movieId;
-            private int ranking;
-            private int todayBox;
-            private String todayBoxDes;
-            private String todayBoxDesUnit;
-            private long totalBox;
-            private String totalBoxDes;
-            private String totalBoxUnit;
-
-            public int getMovieId() {
-                return movieId;
-            }
-
-            public void setMovieId(int movieId) {
-                this.movieId = movieId;
-            }
-
-            public int getRanking() {
-                return ranking;
-            }
-
-            public void setRanking(int ranking) {
-                this.ranking = ranking;
-            }
-
-            public int getTodayBox() {
-                return todayBox;
-            }
-
-            public void setTodayBox(int todayBox) {
-                this.todayBox = todayBox;
-            }
-
-            public String getTodayBoxDes() {
-                return todayBoxDes;
-            }
-
-            public void setTodayBoxDes(String todayBoxDes) {
-                this.todayBoxDes = todayBoxDes;
-            }
-
-            public String getTodayBoxDesUnit() {
-                return todayBoxDesUnit;
-            }
-
-            public void setTodayBoxDesUnit(String todayBoxDesUnit) {
-                this.todayBoxDesUnit = todayBoxDesUnit;
-            }
-
-            public long getTotalBox() {
-                return totalBox;
-            }
-
-            public void setTotalBox(long totalBox) {
-                this.totalBox = totalBox;
-            }
-
-            public String getTotalBoxDes() {
-                return totalBoxDes;
-            }
-
-            public void setTotalBoxDes(String totalBoxDes) {
-                this.totalBoxDes = totalBoxDes;
-            }
-
-            public String getTotalBoxUnit() {
-                return totalBoxUnit;
-            }
-
-            public void setTotalBoxUnit(String totalBoxUnit) {
-                this.totalBoxUnit = totalBoxUnit;
-            }
-        }
-
-        public static class LiveBean {
-            /**
-             * count : 0
-             * img :
-             * liveId : 0
-             * playNumTag :
-             * playTag :
-             * status : 3
-             * title :
-             */
-
-            private int count;
-            private String img;
-            private int liveId;
-            private String playNumTag;
-            private String playTag;
-            private int status;
-            private String title;
-
-            public int getCount() {
-                return count;
-            }
-
-            public void setCount(int count) {
-                this.count = count;
-            }
-
-            public String getImg() {
-                return img;
-            }
-
-            public void setImg(String img) {
-                this.img = img;
-            }
-
-            public int getLiveId() {
-                return liveId;
-            }
-
-            public void setLiveId(int liveId) {
-                this.liveId = liveId;
-            }
-
-            public String getPlayNumTag() {
-                return playNumTag;
-            }
-
-            public void setPlayNumTag(String playNumTag) {
-                this.playNumTag = playNumTag;
-            }
-
-            public String getPlayTag() {
-                return playTag;
+            public String getCe() {
+                return ce;
             }
 
-            public void setPlayTag(String playTag) {
-                this.playTag = playTag;
+            public void setCe(String ce) {
+                this.ce = ce;
             }
-
-            public int getStatus() {
-                return status;
-            }
-
-            public void setStatus(int status) {
-                this.status = status;
-            }
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
-            }
-        }
-
-        public static class RelatedBean {
-            /**
-             * goodsCount : 0
-             * goodsList : []
-             * relateId : 0
-             * relatedUrl : https://mall-wv.mtime.cn/#!/commerce/list/
-             * type : 0
-             */
-
-            private int goodsCount;
-            private int relateId;
-            private String relatedUrl;
-            private int type;
-            private List<?> goodsList;
 
-            public int getGoodsCount() {
-                return goodsCount;
+            public String getCeimg() {
+                return ceimg;
             }
 
-            public void setGoodsCount(int goodsCount) {
-                this.goodsCount = goodsCount;
+            public void setCeimg(String ceimg) {
+                this.ceimg = ceimg;
             }
 
-            public int getRelateId() {
-                return relateId;
+            public int getCommentCount() {
+                return commentCount;
             }
 
-            public void setRelateId(int relateId) {
-                this.relateId = relateId;
+            public void setCommentCount(int commentCount) {
+                this.commentCount = commentCount;
             }
 
-            public String getRelatedUrl() {
-                return relatedUrl;
+            public String getCr() {
+                return cr;
             }
 
-            public void setRelatedUrl(String relatedUrl) {
-                this.relatedUrl = relatedUrl;
+            public void setCr(String cr) {
+                this.cr = cr;
             }
 
-            public int getType() {
-                return type;
+            public boolean isIsHot() {
+                return isHot;
             }
 
-            public void setType(int type) {
-                this.type = type;
+            public void setIsHot(boolean isHot) {
+                this.isHot = isHot;
             }
 
-            public List<?> getGoodsList() {
-                return goodsList;
+            public int getTweetId() {
+                return tweetId;
             }
 
-            public void setGoodsList(List<?> goodsList) {
-                this.goodsList = goodsList;
+            public void setTweetId(int tweetId) {
+                this.tweetId = tweetId;
             }
         }
     }

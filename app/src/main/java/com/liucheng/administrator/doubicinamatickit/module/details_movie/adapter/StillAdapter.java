@@ -23,7 +23,7 @@ public class StillAdapter extends BaseQuickAdapter<Details.DataBean.BasicBean.St
 
     @Override
     protected void convert(BaseViewHolder helper, Details.DataBean.BasicBean.StageImgBean.ListBean item) {
-        Picasso.with(mContext).load(item.getImgUrl()).placeholder(R.mipmap.ic_launcher).into((ImageView)
+        Picasso.with(mContext).load(item.getImgUrl()).placeholder(R.drawable.logo).into((ImageView)
                 helper.getView(R.id.image_still));
     }
 
