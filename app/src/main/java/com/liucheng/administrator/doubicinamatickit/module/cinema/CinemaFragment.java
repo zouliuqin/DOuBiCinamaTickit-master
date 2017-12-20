@@ -84,7 +84,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
         //获取城市ID
         cityId = LocationId.getLocationId(getActivity(), R.raw.json);
         //获取城市影院
-        CinemaData.getNewsData(this, cityId);
+        CinemaData.getCinemaData(this, cityId);
 
     }
 

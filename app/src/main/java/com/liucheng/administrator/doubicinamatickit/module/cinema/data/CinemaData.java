@@ -34,7 +34,7 @@ public class CinemaData {
     /**
      * 获取电影资讯数据源
      */
-    public static void getNewsData(final CinemaData.CinemaLoadListener loadListener, final int cityId) {
+    public static void getCinemaData(final CinemaData.CinemaLoadListener loadListener, final int cityId) {
         new Thread(new Runnable() {
             @Override
             public void run() {
