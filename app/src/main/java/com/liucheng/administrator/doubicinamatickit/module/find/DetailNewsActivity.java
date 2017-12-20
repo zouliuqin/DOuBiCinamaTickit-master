@@ -3,6 +3,7 @@ package com.liucheng.administrator.doubicinamatickit.module.find;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -10,8 +11,12 @@ import com.liucheng.administrator.doubicinamatickit.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.lang.annotation.Documented;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,55 +24,94 @@ import butterknife.ButterKnife;
 public class DetailNewsActivity extends AppCompatActivity {
 
     @BindView(R.id.text_Content)
-   TextView textContent;
+  WebView textContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_news);
         ButterKnife.bind(this);
-    String content =     Jsoup.parse(" \"<i><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/19/160000.78161024.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/19/160000.78161024.jpg\\\" /><br /></i> \n" +
-                "  <i>（本文来自影视生活第一站 时光网）</i> \n" +
-                "  <br /> \n" +
-                "  <0000000000>　　时光网讯</b> 第90届奥斯卡最佳原创歌曲初选名单公布，共有70首歌曲入围。其中 \n" +
-                "  <a href=\\\"https://movie.mtime.com/195064/\\\" target=\\\"_blank\\\">《美女与野兽》</a>的“Evermore”\\\"How Does a Moment Last Forever\\\"、 \n" +
-                "  <a href=\\\"https://movie.mtime.com/234474/\\\" target=\\\"_blank\\\">《请以你的名字呼唤我》</a>里的\\\"Mystery Of Love\\\" \\\"Visions Of Gideon\\\"、 \n" +
-                "  <a href=\\\"https://movie.mtime.com/227434/\\\" target=\\\"_blank\\\">《寻梦环游记》</a>的 \\\"Remember Me\\\"、 \n" +
-                "  <a href=\\\"https://movie.mtime.com/149326/\\\" target=\\\"_blank\\\">《马戏之王》</a>的“This Is Me”以及 \n" +
-                "  <a href=\\\"https://movie.mtime.com/224001/\\\" target=\\\"_blank\\\">《五十度黑》</a>的“I Don’t Wanna Live Forever”（“霉霉”泰勒斯威夫特创作）等影片的原创歌曲入围。 \n" +
-                "  <br />　　同时，最佳电影配乐初选名单也出炉，共141部影片的配乐符合规定。奥斯卡常客汉斯·季默和约翰·威廉姆斯再度名列其中。值得一提的是，已经五获奥斯卡的 \n" +
-                "  <a href=\\\"https://people.mtime.com/937718/\\\" target=\\\"_blank\\\">约翰·威廉姆斯</a>凭借 \n" +
-                "  <a href=\\\"https://movie.mtime.com/211981/\\\" target=\\\"_blank\\\">《星球大战：最后的绝地武士》</a>和 \n" +
-                "  <a href=\\\"https://movie.mtime.com/241666/\\\" target=\\\"_blank\\\">《华盛顿邮报》</a>双片入围。 \n" +
-                "  <br /> \n" +
-                "  <img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/19/160000.30310678.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/19/160000.30310678.jpg\\\" width=\\\"310\\\" /> \n" +
-                "  <p>约翰威廉姆斯能否再添一座小金人？</p>　　此外，有四部影片入围的有5位：丹尼尔·彭博顿( \n" +
-                "  <a href=\\\"https://movie.mtime.com/242447/\\\" target=\\\"_blank\\\">《金钱世界》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/216639/\\\" target=\\\"_blank\\\">《亚瑟王：斗兽争霸》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/229536/\\\" target=\\\"_blank\\\">《马克·费尔特:扳倒白宫之人》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/232069/\\\" target=\\\"_blank\\\">《茉莉的牌局》</a>)、 \n" +
-                "  <a href=\\\"https://people.mtime.com/1455904/\\\" target=\\\"_blank\\\">本杰明·沃菲斯齐</a>( \n" +
-                "  <a href=\\\"https://movie.mtime.com/232866/\\\" target=\\\"_blank\\\">《安娜贝尔2：诞生》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/212468/\\\" target=\\\"_blank\\\">《银翼杀手2049》</a>(与汉斯·季默共同创作) \n" +
-                "  <a href=\\\"https://movie.mtime.com/223677/\\\" target=\\\"_blank\\\">《救命解药》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/103523/\\\" target=\\\"_blank\\\">《小丑回魂》</a>)、 \n" +
-                "  <a href=\\\"https://people.mtime.com/1265738/\\\" target=\\\"_blank\\\">迈克·吉亚奇诺</a>( \n" +
-                "  <a href=\\\"https://movie.mtime.com/223152/\\\" target=\\\"_blank\\\">《亨利之书》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/227434/\\\" target=\\\"_blank\\\">《寻梦环游记》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/208175/\\\" target=\\\"_blank\\\">《蜘蛛侠：英雄归来》</a>《猩球崛起3》)、 \n" +
-                "  <a href=\\\"https://people.mtime.com/1265210/\\\" target=\\\"_blank\\\">布莱恩·泰勒</a>( \n" +
-                "  <a href=\\\"https://movie.mtime.com/224149/\\\" target=\\\"_blank\\\">《速度与激情8》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/125805/\\\" target=\\\"_blank\\\">《极限特工3》</a>(与罗伯特·莱德克共同配乐 ) \n" +
-                "  <a href=\\\"https://movie.mtime.com/207927/\\\" target=\\\"_blank\\\">《新木乃伊》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/215833/\\\" target=\\\"_blank\\\">《恐龙战队》</a>)和罗伯·西蒙森(《寻父记》 \n" +
-                "  <a href=\\\"https://movie.mtime.com/227482/\\\" target=\\\"_blank\\\">《天才少女》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/227171/\\\" target=\\\"_blank\\\">《三个老枪手》</a> \n" +
-                "  <a href=\\\"https://movie.mtime.com/93274/\\\" target=\\\"_blank\\\">《纽约唯一活着的男孩》</a>)。 \n" +
-                "  <br />　　美国电影科学与艺术学院的音乐部门成员将投票选出最终入围提名的名单，并与1月23日公布提名。第90届奥斯卡颁奖典礼将于明年3月4日举行。 \n" +
-                "  <br /> \n" +
-                "  <i>（更专业的影视媒体，更全面的票务周边服务，尽在时光网）</i>\"").text();
+//       textContent.getSettings().setJavaScriptEnabled(true);//启用js
+//       textContent.getSettings().setBlockNetworkImage(false);//解决图片不显示
+//        textContent.getSettings().setDatabaseEnabled(true);
+//        textContent.getSettings().setDefaultTextEncodingName("UTF-8") ;
+        textContent.getSettings().setJavaScriptEnabled(true);
+        textContent.getSettings().setDatabaseEnabled(false);
 
-        textContent.setText(content);
+        String html ="<p>成龙领衔，罗志祥、欧阳娜娜、夏侯云姗主演的<b>贺岁档唯一动作大片</b><b>《机器之血》</b>将在<b>12月22日（周五）</b>上映。</p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020618.50893880.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020618.50893880.jpg\\\" /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p>《机器之血》讲述了特工林东（成龙饰）和骇客李森（罗志祥饰）联手揭开阴谋并对抗邪恶大boss的故事。与以往电影不同，《机器之血》涉及到了科幻元素，而最后大boss亦是生化人，力量很强大，不知道成龙的拳脚能否敌得过坏人。<br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p> \n" +
+            "   <video data-video-type=\\\"3\\\" data-video-id=\\\"145802\\\" poster=\\\"https://img5.mtime.cn/mg/2017/12/18/194305.20430059.jpg\\\" controls=\\\"controls\\\" src=\\\"https://short-video-ksccdn.mtime.cn/playrecord/7323a036386447d574b609e29853797e_6Gj8aPUO_145802_720p.mp4?k=edbc4f0afe2575bccd53e0c590bd24f8&t=1513796341\\\"></video><br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>看过终极预告，总结一下《机器之血》4大看点：</b></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>真枪实弹 火药全开</b></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p>与以往成龙电影不同，《机器之血》里夹杂了更多枪战戏份。而且都是实拍！据悉，为了片中的枪战戏，剧组共四五十支真枪，100公斤火药，弹药3万发。而影片开头的13分钟枪战戏中，都采用真枪实弹，几十条枪一起发威，让大哥也连连说怕。而片中爆炸戏也非常过瘾，都是之前成龙电影极少见到的。</p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.66038382.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.66038382.jpg\\\" /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.29676344.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.29676344.jpg\\\" /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.75444006.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.75444006.jpg\\\" /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>动作飙车 毫不含糊</b></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p>而影片中的打斗场景，都由“成家班”承担！一众动作演员很早就开始集结排练，各种打斗片段的走位都需要精细演练，才能呈现出最终效果。<br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p>大哥的戏中怎能没有飙车戏呢？其实飙车戏的设置，除了让观众更爽，还有赞助商的新款车出现！</p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.21612915.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.21612915.jpg\\\" /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>无保护 真动作 决战悉尼歌剧院</b></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p>成龙的武打，必定是重头戏。这次高难度的武打片段，选在悉尼歌剧院楼顶。开工前，工作人员毕竟经过将近一小时的身体检查，才能被放到楼顶。而且成龙的动作戏，都没有任何威亚保护，就在倾斜的歌剧院楼顶做危险动作。而上楼一次，也要禁水，省去上厕所的麻烦。</p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.43118911.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.43118911.jpg\\\" /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.71186777.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020619.71186777.jpg\\\" /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>搞笑担当“龙女郎”</b></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p>罗志祥，则是片中的搞笑担当！相对于大哥的硬汉气质，罗志祥的文弱书生的表演则让严肃的故事多了很多轻松愉快的桥段。他成为名副其实的“龙女郎”，真是夺了欧阳娜娜和夏侯云姗的戏。<br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020620.81041678.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020620.81041678.jpg\\\" /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>喜欢动作片的朋友不要错过12月15日上映《机器之血》！</b>一起见证更爽的动作戏，更原味的成龙武打，以及成龙与罗志祥的“龙猪组合”。</p> \n" +
+            "  <p><br /></p> \n" +
+            "  <p><b>另，《机器之血》提供更多版本，让您体会更多观影乐趣</b></p> \n" +
+            "  <p><b><br /></b></p> \n" +
+            "  <p><img src=\\\"\\\" data-src=\\\"https://img5.mtime.cn/mg/2017/12/20/020620.51734304.jpg\\\" data-original=\\\"https://img5.mtime.cn/mg/2017/12/20/020620.51734304.jpg\\\" /></p> \n" +
+            "  <p><br /></p>";
+
+        Document doc =  Jsoup.parse(html);
+        Elements html2 = doc.select("i");
+        html2.html("<i><i/>");
+//        Elements html3 = doc.select("");
+
+//        Elements  ac =html.not("a");
+//        Elements ac = html2.not("i");
+        String content1 = doc.toString();
+        String  content = content1.replace("时光网讯"," ");
+        String str = "'\\'";
+        String sb = str.replace("'","");
+        Log.d("88888888888",sb);
+
+        String Content= content.replaceAll("\\\\","");
+        String ab = Content.replaceAll("&quot;","");
+        Log.d("000000000000",ab);
+
+
+
+
+        textContent.loadDataWithBaseURL("", ab, "text/html", "utf-8", null);
+
+
 
     }
 }

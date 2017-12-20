@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.liucheng.administrator.doubicinamatickit.module.find.DetailNewsActivity">
-    <TextView
+    <WebView
         android:id="@+id/text_Content"
         android:textSize="16sp"
         android:textColor="#696969"
