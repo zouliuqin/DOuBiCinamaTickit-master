@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,9 +16,9 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -33,9 +35,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -53,12 +55,27 @@
         </LinearLayout>
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_cinema_plays_movies"
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
 
-    </android.support.v7.widget.RecyclerView>
+    <RelativeLayout
+        android:id="@+id/cinema_plays_movies"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:clipChildren="false">
+
+        <com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.view.ClipViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/pager_margin"
+            android:layout_marginRight="@dimen/pager_margin"
+            android:layout_marginTop="10dp"
+            android:clipChildren="false"
+
+            />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -107,6 +124,7 @@
                 android:padding="5dp"
                 android:text="今天"
 
+
                 android:textColor="@drawable/selector_today" />
 
             <RadioButton
@@ -138,15 +156,14 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_cinema_plays_movies"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_cinema_plays_movies"
         android:layout_width="match_parent"
 
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    </LinearLayout>
-
+    </android.support.v7.widget.RecyclerView>
 
 
 </LinearLayout>
