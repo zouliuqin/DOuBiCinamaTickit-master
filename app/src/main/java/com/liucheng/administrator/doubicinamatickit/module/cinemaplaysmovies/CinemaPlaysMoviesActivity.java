@@ -100,8 +100,10 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
      * 某电影“今天”的排片
      */
     private List<CinemaPlaysMovies.DataBean.ShowtimesBean> todayShowTimes = new ArrayList<>();
-
-
+    /**
+     * 滑动选中的电影ID
+     */
+   private int  movieId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,9 +116,25 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
         //获取电影院正在播出的电影
         CinemaPlaysMoviesData.getCinemaPlaysMoviesData(this, this);
 
+        //initData
+        initData();
         //初始化UI
         initUi();
 
+
+    }
+
+    private void initData() {
+
+        //获取第一部电影的影片ID
+        int movieId = moviesBeans.get(0).getMovieId();
+        //遍历 通过movieId 找到集合里面为当前影片的排片数组
+        todayShowTimes.clear();
+        for (int i = 0; i < showtimesBeans.size(); i++) {
+            if (showtimesBeans.get(i).getMovieId() == movieId) {
+                todayShowTimes.add(showtimesBeans.get(i));
+            }
+        }
 
     }
 
@@ -165,6 +183,7 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
                 tvCinemaPlaysMoviesDescribe.setText(moviesBeans.get(position).getType());
 
                 moviesPosition = position;
+
             }
 
             @Override
@@ -223,11 +242,8 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
                 originBitmap.getHeight() / scaleRatio,
                 false);
         Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
-
         Drawable a = new BitmapDrawable(blurBitmap);
-
         cinemaPlaysMovies.setBackground(a);
-
     }
 
     @OnClick({R.id.iv_cinema_plays_movies_movies_img_bg, R.id.rb_today, R.id.rb_tomorrow, R.id.rb_the_day_after_tomorrw})
@@ -239,7 +255,7 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
                 // List<Integer> index =new ArrayList<>();
 
                 //获取当前选中的影片ID
-                int movieId = moviesBeans.get(moviesPosition).getMovieId();
+                movieId = moviesBeans.get(moviesPosition).getMovieId();
                 //遍历 通过movieId 找到集合里面为当前影片的排片数组
                 todayShowTimes.clear();
                 for (int i = 0; i < showtimesBeans.size(); i++) {
@@ -247,14 +263,38 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
                         todayShowTimes.add(showtimesBeans.get(i));
                     }
                 }
-
                 //显示“今天” 的排片
-
-
+                playTimeAdapter.setNewData(todayShowTimes);
                 break;
             case R.id.rb_tomorrow:
+                // List<Integer> index =new ArrayList<>();
+
+                //获取当前选中的影片ID
+                 movieId = moviesBeans.get(moviesPosition).getMovieId();
+                //遍历 通过movieId 找到集合里面为当前影片的排片数组
+                todayShowTimes.clear();
+                for (int i = 0; i < showtimesBeans.size(); i++) {
+                    if (showtimesBeans.get(i).getMovieId() == movieId) {
+                        todayShowTimes.add(showtimesBeans.get(i));
+                    }
+                }
+                //显示“今天” 的排片
+                playTimeAdapter.setNewData(todayShowTimes);
                 break;
             case R.id.rb_the_day_after_tomorrw:
+                // List<Integer> index =new ArrayList<>();
+
+                //获取当前选中的影片ID
+                movieId = moviesBeans.get(moviesPosition).getMovieId();
+                //遍历 通过movieId 找到集合里面为当前影片的排片数组
+                todayShowTimes.clear();
+                for (int i = 0; i < showtimesBeans.size(); i++) {
+                    if (showtimesBeans.get(i).getMovieId() == movieId) {
+                        todayShowTimes.add(showtimesBeans.get(i));
+                    }
+                }
+                //显示“今天” 的排片
+                playTimeAdapter.setNewData(todayShowTimes);
                 break;
         }
     }
