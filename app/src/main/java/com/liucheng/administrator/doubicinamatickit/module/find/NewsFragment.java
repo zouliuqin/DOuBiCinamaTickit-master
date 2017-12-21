@@ -54,7 +54,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     /**
      * 新闻资讯数据
      */
-    private List<MovieNews.NewsListBean> newsLists = new ArrayList<>();
+    private List<MovieNews.DataBeanX.DataBean> newsLists = new ArrayList<>();
 
     /**
      * 新闻资讯adapter
@@ -152,9 +152,9 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     public void onNewsLoadEnd(MovieNews movieNews) {
         //获取新闻资讯集合
         if (newsLists==null){
-            newsLists.addAll( movieNews.getNewsList());
+            newsLists.addAll( movieNews.getData().getData());
         }else {
-            newsLists.addAll(0,movieNews.getNewsList());
+            newsLists.addAll(0,movieNews.getData().getData());
         }
 
 
@@ -168,8 +168,8 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
                 //如果没有横幅 则添加横幅信息
                 if (!isBanner) {
                     for (int i = 0; i < 4; i++) {
-                        images.add(newsLists.get(i).getImage());
-                        titles.add(newsLists.get(i).getTitle2());
+                        images.add(newsLists.get(i).getImg1());
+                        titles.add(newsLists.get(i).getTitle());
                     }
                     //修改是否有横幅状态
                     isBanner=true;

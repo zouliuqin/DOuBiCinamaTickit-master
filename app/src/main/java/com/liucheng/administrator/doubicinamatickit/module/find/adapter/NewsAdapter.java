@@ -20,16 +20,16 @@ import java.util.List;
  * Created by 邹柳钦 on 2017/11/29 0029.
  */
 
-public class NewsAdapter extends BaseAdapter<MovieNews.NewsListBean> {
-    List<MovieNews.NewsListBean> data =new ArrayList<>();
-    public NewsAdapter(Context context, List<MovieNews.NewsListBean> data) {
+public class NewsAdapter extends BaseAdapter<MovieNews.DataBeanX.DataBean> {
+    List<MovieNews.DataBeanX.DataBean> data =new ArrayList<>();
+    public NewsAdapter(Context context, List<MovieNews.DataBeanX.DataBean> data) {
 
         super(context, data);
         this.data=data;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        MovieNews.NewsListBean news = getData().get(i+4);
+        MovieNews.DataBeanX.DataBean news = getData().get(i+4);
         ViewHolder holer = null;
         if (null == view) {
             holer = new ViewHolder();
@@ -41,7 +41,7 @@ public class NewsAdapter extends BaseAdapter<MovieNews.NewsListBean> {
             holer = (ViewHolder) view.getTag();
         }
         //设置图像
-        Picasso.with(getContext()).load(news.getImage()).placeholder(R.drawable.logo).into(holer.ivItemNewsPicture);
+        Picasso.with(getContext()).load(news.getImg1()).placeholder(R.drawable.logo).into(holer.ivItemNewsPicture);
         //设置描述
         holer.tvItemNewsDescribe.setText(news.getTitle());
         return view;

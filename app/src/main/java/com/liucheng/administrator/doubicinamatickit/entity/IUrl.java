@@ -10,7 +10,11 @@ public interface IUrl {
     String MOVIES_ON_NEXT = "https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=";
 
     //影片资讯   参数传入1-10
-    String MOVIES_NEWS = "https://api-m.mtime.cn/News/NewsList.api?pageIndex=";
+    String MOVIES_NEWS = "https://ticket-api-m.mtime.cn/choice/feed.api?pageIndex=";
+    //新闻详情，传入新闻的ID
+    String NEWS_DETAILS ="https://ticket-api-m.mtime.cn/article/detail.api?locationId=561&articleId=";
+    String NEWS_PAGE ="&topListPageIndex=1";
+
     //票房榜
     // String BOX_OFFICE="http://api.shenjian.io/?appid=64f3dae56d5e2b86655c5b7d6dbf121a";
 

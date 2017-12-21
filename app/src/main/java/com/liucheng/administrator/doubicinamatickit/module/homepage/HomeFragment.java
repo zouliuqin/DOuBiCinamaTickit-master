@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
@@ -88,10 +90,10 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     /**
      * 新闻资讯
      */
-    private List<MovieNews.NewsListBean> news = new ArrayList<>();
+    private List<MovieNews.DataBeanX.DataBean> news = new ArrayList<>();
 
     private HomepageNewsAdapter newsAdapter;
-    private List<MovieNews.NewsListBean> newsTop4 = new ArrayList<>();
+    private List<MovieNews.DataBeanX.DataBean> newsTop4 = new ArrayList<>();
 
     /**
      * 定位城市
@@ -137,6 +139,20 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         rvMovieNews.setLayoutManager(manager);
         newsAdapter = new HomepageNewsAdapter(R.layout.item_news, newsTop4);
         rvMovieNews.setAdapter(newsAdapter);
+
+        newsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                //TODO 点击电影资讯item跳转到资讯详情
+//                Toast.makeText(getContext(), "sdafvsadf", Toast.LENGTH_SHORT).show();
+                Intent intentNew = new Intent(getActivity(), DetailNewsActivity.class);
+//                        Log.d("00000000000ppppp",comingSoons.get(position).getId()+"");
+                intentNew.putExtra("NewsId",news.get(position).getAId()+"");
+                startActivity(intentNew);
+
+
+            }
+        });
     }
 
     @Override
@@ -283,12 +299,12 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     public void onNewsLoadEnd(MovieNews movieNews) {
         news.clear();
 
-        news.addAll(movieNews.getNewsList());
+        news.addAll(movieNews.getData().getData());
         //首页只显示4条电影资讯，点击更多跳转到发现-电影资讯，查看更多电影资讯
         newsTop4.clear();
         for (int i = 0; i < 8; i++) {
 
-            newsTop4.add(movieNews.getNewsList().get(i));
+            newsTop4.add(movieNews.getData().getData().get(i));
         }
 
         getActivity().runOnUiThread(new Runnable() {
@@ -296,17 +312,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void run() {
                 //TODO 设置电影资讯
                 newsAdapter.setNewData(newsTop4);
-                newsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        //TODO 点击电影资讯item跳转到资讯详情
-                        Intent intentNew = new Intent(getActivity(), DetailNewsActivity.class);
-//                        intentCom.putExtra("cinameId",comingSoons.get(position).getId()+"");
-                        startActivity(intentNew);
 
-
-                    }
-                });
             }
         });
 
