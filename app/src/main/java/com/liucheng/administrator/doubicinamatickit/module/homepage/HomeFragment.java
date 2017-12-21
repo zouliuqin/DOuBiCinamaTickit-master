@@ -130,6 +130,13 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         //设置标题栏
         actionBar = contentView.findViewById(R.id.include_actionbar_home);
         initiaActionBar(R.drawable.go, city, "某票", -1);
+
+        //初始化新闻信息
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        rvMovieNews.setLayoutManager(manager);
+        newsAdapter = new HomepageNewsAdapter(R.layout.item_news, newsTop4);
+        rvMovieNews.setAdapter(newsAdapter);
     }
 
     @Override
@@ -288,11 +295,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             @Override
             public void run() {
                 //TODO 设置电影资讯
-                LinearLayoutManager manager = new LinearLayoutManager(getContext());
-                manager.setOrientation(LinearLayoutManager.VERTICAL);
-                rvMovieNews.setLayoutManager(manager);
-                newsAdapter = new HomepageNewsAdapter(R.layout.item_news, newsTop4);
-                rvMovieNews.setAdapter(newsAdapter);
+                newsAdapter.setNewData(newsTop4);
                 newsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

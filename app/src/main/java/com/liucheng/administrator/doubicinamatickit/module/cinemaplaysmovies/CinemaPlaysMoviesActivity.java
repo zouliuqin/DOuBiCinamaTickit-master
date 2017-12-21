@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,18 +22,25 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
 import com.liucheng.administrator.doubicinamatickit.entity.CinemaPlaysMovies;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.adapter.PlayTimeAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.data.CinemaPlaysMoviesData;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.view.ClipViewPager;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.view.PageTransformer;
+import com.liucheng.administrator.doubicinamatickit.util.DateUtil;
+import com.liucheng.administrator.doubicinamatickit.util.FastBlurUtil;
 import com.liucheng.administrator.doubicinamatickit.util.Utils;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -99,11 +107,21 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
     /**
      * 某电影“今天”的排片
      */
-    private List<CinemaPlaysMovies.DataBean.ShowtimesBean> todayShowTimes = new ArrayList<>();
+    private List<CinemaPlaysMovies.DataBean.ShowtimesBean.ListBean> todayShowTimes = new ArrayList<>();
+    /**
+     * 某电影“明天”的排片
+     */
+    private List<CinemaPlaysMovies.DataBean.ShowtimesBean.ListBean> tomorrowShowTimes = new ArrayList<>();
+
+    /**
+     * 某电影“后天”的排片
+     */
+    private List<CinemaPlaysMovies.DataBean.ShowtimesBean.ListBean> theDayAfterTomorrowShowTimes = new ArrayList<>();
     /**
      * 滑动选中的电影ID
      */
-   private int  movieId;
+    private int movieId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,16 +143,10 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
     }
 
     private void initData() {
-
-        //获取第一部电影的影片ID
-        int movieId = moviesBeans.get(0).getMovieId();
-        //遍历 通过movieId 找到集合里面为当前影片的排片数组
-        todayShowTimes.clear();
-        for (int i = 0; i < showtimesBeans.size(); i++) {
-            if (showtimesBeans.get(i).getMovieId() == movieId) {
-                todayShowTimes.add(showtimesBeans.get(i));
-            }
-        }
+        getPlayTimeData(0);
+        //        Log.i("TAG", "todayShowTimes: "+todayShowTimes.toString());
+        //        Log.i("TAG", "tomorrowShowTimes: "+tomorrowShowTimes.toString());
+        //        Log.i("TAG", "theDayAfterTomorrowShowTimes: "+theDayAfterTomorrowShowTimes.toString());
 
     }
 
@@ -144,8 +156,18 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
         LinearLayoutManager manager = new LinearLayoutManager(CinemaPlaysMoviesActivity.this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         rvCinemaPlaysMovies.setLayoutManager(manager);
-        playTimeAdapter = new PlayTimeAdapter(R.layout.item_news, todayShowTimes);
+        playTimeAdapter = new PlayTimeAdapter(R.layout.item_play_time, todayShowTimes);
         rvCinemaPlaysMovies.setAdapter(playTimeAdapter);
+
+
+        playTimeAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+
+                Toast.makeText(CinemaPlaysMoviesActivity.this, "onItemChildClick" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         //设置电影院地址,第一个电影的信息
         tvCinemaPlaysMoviesCinemaName.setText(cinemaBean.getCinameName());
@@ -154,6 +176,9 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
         tvCinemaPlaysMoviesDescribe.setText(moviesBeans.get(0).getType());
         //设置"今天"为点中
         rbToday.setChecked(true);
+
+        //刚进入界面模糊第一张图片为背景
+        dimImage(moviesBeans.get(0).getImg());
 
         //设置cinemaPlaysMovies
         cinemaPlaysMovies.setOnTouchListener(new View.OnTouchListener() {
@@ -183,6 +208,23 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
                 tvCinemaPlaysMoviesDescribe.setText(moviesBeans.get(position).getType());
 
                 moviesPosition = position;
+
+                //设置“今天”被点击
+
+                rbToday.setChecked(true);
+                //清空历史数据
+
+                todayShowTimes.clear();
+                tomorrowShowTimes.clear();
+                theDayAfterTomorrowShowTimes.clear();
+                //获取
+                getPlayTimeData(position);
+
+                //获取选中图像
+                String img = moviesBeans.get(position).getImg();
+                //模糊背景
+                dimImage(img);
+
 
             }
 
@@ -224,26 +266,93 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
 
         });
 
-
-        //模糊背景
-        dimImage();
+        //
+        //        //模糊背景
+        //        dimImage(img);
 
     }
 
-    private void dimImage() {
-        //得到原始图片
+    /**
+     * 获取某个电影排片时间
+     */
+    private void getPlayTimeData(int position) {
+        //获取当前选中的影片ID
+        movieId = moviesBeans.get(position).getMovieId();
+        //遍历 通过movieId 找到集合里面为当前影片的排片数组
+        todayShowTimes.clear();
+        tomorrowShowTimes.clear();
+        theDayAfterTomorrowShowTimes.clear();
+        for (int i = 0; i < showtimesBeans.size(); i++) {
+            if (showtimesBeans.get(i).getMovieId() == movieId) {
+                //添加数据
+                if (FormatDateTime(showtimesBeans.get(i).getMoviekey().split("_")[1]) == 0) {
 
-        Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.a111);
-        int scaleRatio = 10;
-        int blurRadius = 100;//模糊度 越大越模糊
-        //将图片进行缩放 避免OOM错误
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
-                originBitmap.getWidth() / scaleRatio,
-                originBitmap.getHeight() / scaleRatio,
-                false);
-        Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
-        Drawable a = new BitmapDrawable(blurBitmap);
-        cinemaPlaysMovies.setBackground(a);
+                    for (int j = 0; j < showtimesBeans.get(i).getList().size(); j++) {
+
+                        todayShowTimes.add(showtimesBeans.get(i).getList().get(j));
+                    }
+
+                } else if (FormatDateTime(showtimesBeans.get(i).getMoviekey().split("_")[1]) == 1) {
+
+                    for (int j = 0; j < showtimesBeans.get(i).getList().size(); j++) {
+
+                        tomorrowShowTimes.add(showtimesBeans.get(i).getList().get(j));
+                    }
+
+
+                } else if (FormatDateTime(showtimesBeans.get(i).getMoviekey().split("_")[1]) == 2) {
+
+                    for (int j = 0; j < showtimesBeans.get(i).getList().size(); j++) {
+                        theDayAfterTomorrowShowTimes.add(showtimesBeans.get(i).getList().get(j));
+                    }
+
+                }
+            }
+        }
+    }
+
+    private void dimImage(final String img) {
+        //        //得到原始图片
+        //        Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.a111);
+        //        int scaleRatio = 10;
+        //        int blurRadius = 100;//模糊度 越大越模糊
+        //        //将图片进行缩放 避免OOM错误
+        //        Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
+        //                originBitmap.getWidth() / scaleRatio,
+        //                originBitmap.getHeight() / scaleRatio,
+        //                false);
+        //        Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
+        //        Drawable a = new BitmapDrawable(blurBitmap);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int scaleRatio = 0;
+                String pattern = "8";
+                if (TextUtils.isEmpty(pattern)) {
+                    scaleRatio = 0;
+                } else if (scaleRatio < 0) {
+                    scaleRatio = 10;
+                } else {
+                    scaleRatio = Integer.parseInt(pattern);
+                }
+                // 下面的这个方法必须在子线程中执行
+                final Bitmap blurBitmap2 = FastBlurUtil.GetUrlBitmap(img, scaleRatio);
+
+                // 刷新ui必须在主线程中执行
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Drawable a = new BitmapDrawable(blurBitmap2);
+
+                        cinemaPlaysMovies.setBackground(a);
+                    }
+                });
+            }
+        }).start();
+
+
     }
 
     @OnClick({R.id.iv_cinema_plays_movies_movies_img_bg, R.id.rb_today, R.id.rb_tomorrow, R.id.rb_the_day_after_tomorrw})
@@ -252,49 +361,20 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
             case R.id.iv_cinema_plays_movies_movies_img_bg:
                 break;
             case R.id.rb_today:
-                // List<Integer> index =new ArrayList<>();
 
-                //获取当前选中的影片ID
-                movieId = moviesBeans.get(moviesPosition).getMovieId();
-                //遍历 通过movieId 找到集合里面为当前影片的排片数组
-                todayShowTimes.clear();
-                for (int i = 0; i < showtimesBeans.size(); i++) {
-                    if (showtimesBeans.get(i).getMovieId() == movieId) {
-                        todayShowTimes.add(showtimesBeans.get(i));
-                    }
-                }
                 //显示“今天” 的排片
                 playTimeAdapter.setNewData(todayShowTimes);
+
                 break;
             case R.id.rb_tomorrow:
-                // List<Integer> index =new ArrayList<>();
 
-                //获取当前选中的影片ID
-                 movieId = moviesBeans.get(moviesPosition).getMovieId();
-                //遍历 通过movieId 找到集合里面为当前影片的排片数组
-                todayShowTimes.clear();
-                for (int i = 0; i < showtimesBeans.size(); i++) {
-                    if (showtimesBeans.get(i).getMovieId() == movieId) {
-                        todayShowTimes.add(showtimesBeans.get(i));
-                    }
-                }
-                //显示“今天” 的排片
-                playTimeAdapter.setNewData(todayShowTimes);
+                //显示“明天” 的排片
+                playTimeAdapter.setNewData(tomorrowShowTimes);
                 break;
             case R.id.rb_the_day_after_tomorrw:
-                // List<Integer> index =new ArrayList<>();
 
-                //获取当前选中的影片ID
-                movieId = moviesBeans.get(moviesPosition).getMovieId();
-                //遍历 通过movieId 找到集合里面为当前影片的排片数组
-                todayShowTimes.clear();
-                for (int i = 0; i < showtimesBeans.size(); i++) {
-                    if (showtimesBeans.get(i).getMovieId() == movieId) {
-                        todayShowTimes.add(showtimesBeans.get(i));
-                    }
-                }
-                //显示“今天” 的排片
-                playTimeAdapter.setNewData(todayShowTimes);
+                //显示“后天” 的排片
+                playTimeAdapter.setNewData(theDayAfterTomorrowShowTimes);
                 break;
         }
     }
@@ -317,4 +397,23 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
         });
 
     }
+
+    /**
+     * 由于数据的固定数据 所以 写死  2017-12-19今天 2017-12-20 明天  2017-12-21 后天
+     *
+     * @return 0: "今天" ，1：“明天”，2：“后天”
+     */
+    public int FormatDateTime(String date) {
+        if (date.equals("2017-12-19")) {
+            return 0;
+        } else if (date.equals("2017-12-20")) {
+            return 1;
+
+        } else if (date.equals("2017-12-21")) {
+            return 2;
+        }
+        return 0;
+    }
+
+
 }
