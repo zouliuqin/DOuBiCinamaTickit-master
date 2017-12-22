@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobSMS;
+
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
@@ -59,17 +60,17 @@ public class FindPasswordActivity extends AppCompatActivity {
                     public void done(Integer smsId, BmobException ex) {
                         if (ex == null) {//验证码发送成功
                             Toast.makeText(FindPasswordActivity.this, "短信发送成功！", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Log.i("TAG", "done: "+ex);
+                        } else {
+                            Log.i("TAG", "done: " + ex);
                             Toast.makeText(FindPasswordActivity.this, "发送异常！", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
                 break;
             case R.id.but_submit:
-                final String code = etRegisterAuthCode.getText().toString();
-                final String newPassword = etRegisterPassword.getText().toString();
-                final String newPassword2 = etRegisterAgainPassword.getText().toString();
+                String code = etRegisterAuthCode.getText().toString();
+                String newPassword = etRegisterPassword.getText().toString();
+               String newPassword2 = etRegisterAgainPassword.getText().toString();
                 if (TextUtils.isEmpty(code)) {
                     Toast.makeText(this, "验证码不能为空", Toast.LENGTH_SHORT).show();
                     return;
@@ -83,18 +84,17 @@ public class FindPasswordActivity extends AppCompatActivity {
                     return;
                 }
 
-                BmobUser.resetPasswordBySMSCode(etRegisterAuthCode.getText().toString(), etRegisterPassword.getText().toString(), new UpdateListener() {
+
+                Log.i("TAG", "onViewClicked: " + code);
+                Log.i("TAG", "onViewClicked: " + newPassword);
+                BmobUser.resetPasswordBySMSCode(code, newPassword, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         if (e == null) {
                             Toast.makeText(FindPasswordActivity.this, "密码重置成功", Toast.LENGTH_SHORT).show();
-
-                            Log.i("smile", "密码重置成功");
-
-
-
+                            finish();
                         } else {
-                            Log.i("TAG", "重置失败：code =" + e.getErrorCode() + ",msg = " + e.getLocalizedMessage());
+                            Toast.makeText(FindPasswordActivity.this, "重置失败：code =" + e.getErrorCode() + ",msg = " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

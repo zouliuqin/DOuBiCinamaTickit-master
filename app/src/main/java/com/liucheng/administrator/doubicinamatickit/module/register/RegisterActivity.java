@@ -71,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.ib_register_auth_code:
+
                 phoneNumber = etRegisterUsername.getText().toString();
                 //检查手机号格式
                 boolean isMobile = PhoneNumberUtil.isMobile(phoneNumber);
@@ -85,19 +86,21 @@ public class RegisterActivity extends AppCompatActivity {
                     public void done(Integer integer, BmobException e) {
                         if (e == null) {//验证码发送成功
                             Toast.makeText(RegisterActivity.this, "验证码发送成功", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(RegisterActivity.this, ""+e, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
                 break;
             case R.id.but_register:
-              final String   phoneNumber = etRegisterUsername.getText().toString();
+                final String phoneNumber = etRegisterUsername.getText().toString();
 
-                String     authCode = etRegisterAuthCode.getText().toString();
+                String authCode = etRegisterAuthCode.getText().toString();
 
-                final String    password = etRegisterPassword.getText().toString();
+                final String password = etRegisterPassword.getText().toString();
 
-                String   againPassword = etRegisterAgainPassword.getText().toString();
+                String againPassword = etRegisterAgainPassword.getText().toString();
 
 
                 //点击注册按钮，先检查数据完整性，再检测验证码是否正确
@@ -111,42 +114,31 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
 
-                //坚持密码和重复密码是否一致
+                //检查密码和重复密码是否一致
                 if (!password.equals(againPassword)) {
                     etRegisterAgainPassword.setTextColor(getResources().getColor(R.color.colorAccent));
                     Toast.makeText(this, "两次密码不一致！", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                //检查验证码是否正确，调用Bmob方法
-                BmobSMS.verifySmsCode(phoneNumber, authCode, new UpdateListener() {
-
+                //注册
+                User bu = new User();
+                bu.setNickname(phoneNumber);
+                bu.setUsername(phoneNumber);
+                bu.setPassword(password);
+                bu.setMobilePhoneNumber(phoneNumber);
+                bu.signOrLogin(authCode, new SaveListener<User>() {
                     @Override
-                    public void done(BmobException ex) {
-                        if (ex == null) {//短信验证码已验证成功
-                            //注册
-                            User bu = new User();
-                            bu.setNickname(phoneNumber);
-                            bu.setUsername(phoneNumber);
-                            bu.setPassword(password);
-                            //注意：不能用save方法进行注册
-                            bu.signUp(new SaveListener<User>() {
-                                @Override
-                                public void done(User s, BmobException e) {
-                                    if (e == null) {
-                                        Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                                        //注册成功，返回登录页面
-                                        finish();
-                                    } else {
-                                        Log.i("smile", "验证失败：code =" +e);
-
-                                    }
-                                }
-                            });
+                    public void done(User user, BmobException e) {
+                        if (e == null) {
+                            Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                            finish();
                         } else {
-                            Log.i("smile", "验证失败：code =" + ex.getErrorCode() + ",msg = " + ex.getLocalizedMessage());
+                            Toast.makeText(RegisterActivity.this, "注册失败:" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                         }
+
                     }
                 });
+
                 break;
         }
     }

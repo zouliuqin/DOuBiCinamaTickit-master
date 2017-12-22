@@ -25,8 +25,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+
 import com.liucheng.administrator.doubicinamatickit.R;
-import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
 import com.liucheng.administrator.doubicinamatickit.entity.CinemaPlaysMovies;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.adapter.PlayTimeAdapter;

@@ -73,6 +73,12 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     public void initialUI() {
         actionBar = contentView.findViewById(R.id.include_actionbar_cinema);
         initiaActionBar(R.drawable.go, city, "影院", R.drawable.title_find);
+        //TODO 设置即将上映
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        rvCinema.setLayoutManager(manager);
+        cinemaAdapter = new CinemaAdapter(R.layout.item_cinema, cinemaBeans);
+        rvCinema.setAdapter(cinemaAdapter);
     }
 
     @Override
@@ -98,13 +104,8 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //TODO 设置即将上映
-                LinearLayoutManager manager = new LinearLayoutManager(getContext());
-                manager.setOrientation(LinearLayoutManager.VERTICAL);
-                rvCinema.setLayoutManager(manager);
-                cinemaAdapter = new CinemaAdapter(R.layout.item_cinema, cinemaBeans);
-                rvCinema.setAdapter(cinemaAdapter);
 
+                cinemaAdapter.setNewData(cinemaBeans);
                 cinemaAdapter.addHeaderView(getHeaderView());
                 cinemaAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
