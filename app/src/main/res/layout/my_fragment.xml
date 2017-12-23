@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_200"
+
     android:orientation="vertical">
 
     <include
@@ -46,7 +46,7 @@
             android:src="@mipmap/a025" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_my_islogin_or_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -63,13 +63,13 @@
         android:background="@color/gray_200" />
 
     <LinearLayout
+        android:id="@+id/ll_wanna_see"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
@@ -95,6 +95,7 @@
         android:background="@color/gray_200" />
 
     <LinearLayout
+        android:id="@+id/ll_have_seen"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -127,6 +128,7 @@
         android:background="@color/gray_200" />
 
     <LinearLayout
+        android:id="@+id/ll_invite_friends"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -159,6 +161,40 @@
         android:background="@color/gray_200" />
 
     <LinearLayout
+        android:id="@+id/ll_setting"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="基本设置" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_right_arrow" />
+
+
+    </LinearLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/include_actionbar_my"
+        android:background="@color/gray_200" />
+
+    <LinearLayout
+        android:id="@+id/ll_feedback"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -182,38 +218,6 @@
 
 
     </LinearLayout>
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_below="@+id/include_actionbar_my"
-        android:background="@color/gray_200" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="清除缓存" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@mipmap/ic_right_arrow" />
-
-
-    </LinearLayout>
     <TextView
 
         android:layout_width="match_parent"
@@ -231,6 +235,7 @@
         android:background="@color/gray_200" />
 
     <LinearLayout
+        android:id="@+id/ll_about_us"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -263,24 +268,5 @@
         android:layout_below="@+id/include_actionbar_my"
         android:background="@color/gray_200" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:orientation="horizontal"
-
-        >
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/shape_quit_button"
-            android:text="退出登录"
-            android:textColor="#ffffff"
-            android:textSize="16sp" />
-
-    </LinearLayout>
 </LinearLayout>
