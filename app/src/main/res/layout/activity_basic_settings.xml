@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray_200"
     android:orientation="vertical"
-    tools:context="com.liucheng.administrator.doubicinamatickit.module.BasicSettings">
+    tools:context="com.liucheng.administrator.doubicinamatickit.module.basicsettings.BasicSettingsActivity">
 
     <LinearLayout
 
@@ -38,6 +38,23 @@
                     android:text="免打扰时间" />
 
                 <TextView
+                    android:id="@+id/tv_no_disturbing_time_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+
+                    android:gravity="center_vertical"
+                    android:text="不限" />
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+
+                    android:gravity="center_vertical"
+                    android:text="-" />
+                <TextView
+                    android:id="@+id/tv_no_disturbing_time_end"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="10dp"
@@ -173,6 +190,7 @@
                     android:text="清除缓存" />
 
                 <TextView
+                    android:id="@+id/tv_cache"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="10dp"

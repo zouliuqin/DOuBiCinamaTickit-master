@@ -41,8 +41,8 @@ public class Buy_ticket_now_showing_Fragment extends BaseFragment implements IsH
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.buy_ticket_now_showing_fragment, container, false);
         unbinder = ButterKnife.bind(this, contentView);
-        IsHitData.getIIsHitData(this);
-        Listener();
+
+
         return contentView;
     }
 
@@ -63,6 +63,12 @@ public class Buy_ticket_now_showing_Fragment extends BaseFragment implements IsH
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        IsHitData.getIIsHitData(this);
+        Listener();
+    }
 
     @Override
     public void onIsHitLoadEnd(IsHit isHit) {

@@ -72,5 +72,8 @@ dependencies {
     //获取系统当前信息
 //    compile 'com.eyeem.deviceinfo:library:<latest>'
 
+    //时间选择器
+    compile 'com.contrarywind:Android-PickerView:3.2.7'
+
 
 }

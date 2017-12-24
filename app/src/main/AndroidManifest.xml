@@ -65,7 +65,9 @@
         <activity android:name=".module.find.DetailNewsActivity" />
         <activity android:name=".module.details_movie.ReviewActivity" />
         <activity android:name=".module.cinemaplaysmovies.CinemaPlaysMoviesActivity" />
-        <activity android:name=".module.BasicSettings"></activity>
+        <activity android:name=".module.basicsettings.BasicSettingsActivity" />
+        <activity android:name=".module.basicsettings.NotificationManagerActivity" />
+        <activity android:name=".module.feedback.FeedbackActivity"></activity>
     </application>
 
 </manifest>
