@@ -104,11 +104,9 @@ public class MyFragment extends BaseFragment {
         } else {
             isLogin = false;
             tvMyIsloginOrUsername.setText("点击登录");
-
         }
-
         //加载本地模糊背景
-        dimImage();
+       // dimImage();
     }
 
     /**
@@ -117,15 +115,16 @@ public class MyFragment extends BaseFragment {
     private void dimImage() {
         //得到原始图片
         Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.myself_bg);
-        int scaleRatio = 10;
-        int blurRadius = 100;//模糊度 越大越模糊
+        int scaleRatio = 100;
+        int blurRadius = 80;//模糊度 越大越模糊
         //将图片进行缩放 避免OOM错误
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
                 originBitmap.getWidth() / scaleRatio,
                 originBitmap.getHeight() / scaleRatio,
                 false);
-        Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
-        Drawable a = new BitmapDrawable(blurBitmap);
+      //  Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
+        Bitmap blurBitmap=  FastBlurUtil.doBlur(scaledBitmap,blurRadius,true);
+       Drawable a = new BitmapDrawable(this.getResources(),blurBitmap);
 
         flMyFragment.setBackground(a);
 
@@ -152,6 +151,7 @@ public class MyFragment extends BaseFragment {
                 }
                 // 下面的这个方法必须在子线程中执行
                 final Bitmap blurBitmap2 = FastBlurUtil.GetUrlBitmap(img, scaleRatio);
+
 
                 // 刷新ui必须在主线程中执行
                 getActivity().runOnUiThread(new Runnable() {

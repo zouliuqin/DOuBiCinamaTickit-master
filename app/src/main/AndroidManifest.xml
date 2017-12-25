@@ -63,12 +63,13 @@
 
         <activity android:name=".module.details_movie.DetailsActivity" />
         <activity android:name=".module.find.DetailNewsActivity" />
-        <activity android:name=".module.SeatTable.SeatToActivity"></activity>
+        <activity android:name=".module.SeatTable.SeatToActivity" />
         <activity android:name=".module.details_movie.ReviewActivity" />
         <activity android:name=".module.cinemaplaysmovies.CinemaPlaysMoviesActivity" />
         <activity android:name=".module.basicsettings.BasicSettingsActivity" />
         <activity android:name=".module.basicsettings.NotificationManagerActivity" />
-        <activity android:name=".module.feedback.FeedbackActivity"></activity>
+        <activity android:name=".module.feedback.FeedbackActivity" />
+        <activity android:name=".module.myself.ChangePasswordActivity"></activity>
     </application>
 
 </manifest>

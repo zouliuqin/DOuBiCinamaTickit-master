@@ -125,6 +125,8 @@ public class RegisterActivity extends AppCompatActivity {
                 bu.setNickname(phoneNumber);
                 bu.setUsername(phoneNumber);
                 bu.setPassword(password);
+                //默认设置为男
+                bu.setGender("1");
                 bu.setMobilePhoneNumber(phoneNumber);
                 bu.setHeadPortrait("http://bmob-cdn-15880.b0.upaiyun.com/2017/12/25/25942f691d034e92be90b593818b982c.png");
                 bu.signOrLogin(authCode, new SaveListener<User>() {

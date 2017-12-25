@@ -24,6 +24,7 @@ import com.liucheng.administrator.doubicinamatickit.module.login.LoginActivity;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
@@ -60,6 +61,10 @@ public class MySetActivity extends AppCompatActivity {
     LinearLayout llMySetPassword;
     @BindView(R.id.but_my_set_submit)
     Button butMySetSubmit;
+    /**
+     * 上传的头像
+     */
+    public String imagePaths;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,19 +72,37 @@ public class MySetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_set);
         ButterKnife.bind(this);
 
+        initUi();
+
+
+    }
+
+    private void initUi() {
+
         //修改标题
         tvIncludeLoginTitle.setText("个人信息");
         //获取用户信息
-        BmobUser bmobUser = BmobUser.getCurrentUser();
-        if (bmobUser != null) {
+        User user = BmobUser.getCurrentUser(User.class);
+        if (user != null) {
             //设置用户名
-            tvMySetUsername.setText(bmobUser.getUsername());
+            tvMySetUsername.setText(user.getUsername());
+            //设置头像
+            Picasso.with(MySetActivity.this).load(user.getHeadPortrait()).into(ivMySetImg);
+            //设置昵称
+            etMySetNicename.setText(user.getNickname());
+            //设置性别
+            if (user.getGender().equals("1")) {
+                rbMySetMan.setChecked(true);
+                rbMySetWomen.setChecked(false);
+            }else {
+                rbMySetMan.setChecked(false);
+                rbMySetWomen.setChecked(true);
+            }
         } else {
             Toast.makeText(MyApplication.getContext(), "请先登录！", Toast.LENGTH_SHORT).show();
             Intent intent2 = new Intent(MySetActivity.this, LoginActivity.class);
             startActivity(intent2);
         }
-
     }
 
     @OnClick({R.id.ib_include_back, R.id.but_my_set_submit, R.id.iv_my_set_img, R.id.ll_my_set_password})
@@ -88,16 +111,15 @@ public class MySetActivity extends AppCompatActivity {
             case R.id.ib_include_back:
                 finish();
                 break;
-
             case R.id.iv_my_set_img:
                 //点击头像
                 pictureSelector();
                 break;
             case R.id.ll_my_set_password:
                 //修改密码
+                startActivity(new Intent(this,ChangePasswordActivity.class));
                 break;
             case R.id.but_my_set_submit:
-
                 //保存
                 submit();
                 break;
@@ -106,93 +128,89 @@ public class MySetActivity extends AppCompatActivity {
     }
 
     private void submit() {
-//
-//        final User user = new User();
-//        user.setNickname(etMySetNicename.getText().toString());
-//
-//        if (rbMySetMan.isChecked()){
-//            user.setGender("1");
-//        }else {
-//            user.setGender("2");
-//        }
-//
-//
-//
-//        //得到当前登录的用户
-//        User currentUser = BmobUser.getCurrentUser(User.class);
-//
-//        user.update(currentUser.getObjectId(), new UpdateListener() {
-//            @Override
-//            public void done(BmobException e) {
-//                if (e == null) {
-//
-//
-//                    if (imagePath!=null) {//需要修改头像
-//
-//                        //上传图片
-//                        final BmobFile uploadHead = new BmobFile(new File(imagePath));
-//
-//                        final KProgressHUD hud = KProgressHUD.create(ChangeMyNickAndHeadActivity.this)
-//                                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-//                                .setLabel("Loading...")
-//                                .setCancellable(true)
-//                                .setAnimationSpeed(2)
-//                                .setDimAmount(0.5f)
-//                                .show();
-//
-//                        uploadHead.uploadblock(new UploadFileListener() {
-//
-//                            @Override
-//                            public void done(BmobException e) {
-//                                if (e == null) {
-//                                    hud.dismiss();
-//                                    //把上传完的图片网址得到给到用户
-//                                    user.setHeadPortrait(uploadHead.getFileUrl());
-//                                    user.update(BmobUser.getCurrentUser(MyUser.class).getObjectId(), new UpdateListener() {
-//                                        @Override
-//                                        public void done(BmobException e) {
-//                                            if (e == null) {
-//                                                Toast.makeText(ChangeMyNickAndHeadActivity.this, "更新成功", Toast.LENGTH_LONG).show();
-//                                                finish();
-//                                            } else {
-//                                                Toast.makeText(ChangeMyNickAndHeadActivity.this, "更新失败:" + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-//                                            }
-//                                        }
-//                                    });
-//                                } else {
-//                                    Toast.makeText(ChangeMyNickAndHeadActivity.this, "上传头像失败："+e.getLocalizedMessage(), Toast
-//                                            .LENGTH_SHORT).show();
-//                                }
-//
-//                            }
-//
-//                            @Override
-//                            public void onProgress(Integer value) {
-//                                // 返回的上传进度（百分比）
-//                                hud.setProgress(value);
-//
-//                                Log.i("tarena", "onProgress: "+value);
-//                            }
-//                        });
-//
-//
-//
-//                    }else{
-//                        finish();
-//                        Toast.makeText(ChangeMyNickAndHeadActivity.this, "修改成功！", Toast.LENGTH_SHORT)
-//                                .show();
-//                    }
-//
-//
-//
-//
-//                } else {
-//                    Toast.makeText(ChangeMyNickAndHeadActivity.this, "修改失败：" + e
-//                            .getLocalizedMessage(), Toast.LENGTH_SHORT)
-//                            .show();
-//                }
-//            }
-//        });
+
+        final User user = new User();
+        //获取昵称
+        user.setNickname(etMySetNicename.getText().toString());
+        //获取性别
+        if (rbMySetMan.isChecked()) {
+            user.setGender("1");
+        } else {
+            user.setGender("2");
+        }
+
+        //得到当前登录的用户
+        User currentUser = BmobUser.getCurrentUser(User.class);
+
+        user.update(currentUser.getObjectId(), new UpdateListener() {
+
+
+            @Override
+            public void done(BmobException e) {
+                if (e == null) {
+                    if (imagePaths != null) {//需要修改头像
+
+                        //上传图片
+                        final BmobFile uploadHead = new BmobFile(new File(imagePaths));
+                        //
+                        //                        final KProgressHUD hud = KProgressHUD.create(ChangeMyNickAndHeadActivity.this)
+                        //                                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        //                                .setLabel("Loading...")
+                        //                                .setCancellable(true)
+                        //                                .setAnimationSpeed(2)
+                        //                                .setDimAmount(0.5f)
+                        //                                .show();
+
+                        uploadHead.uploadblock(new UploadFileListener() {
+
+                            @Override
+                            public void done(BmobException e) {
+                                if (e == null) {
+                                    // hud.dismiss();
+                                    //把上传完的图片网址得到给到用户
+                                    user.setHeadPortrait(uploadHead.getFileUrl());
+                                    user.update(BmobUser.getCurrentUser(User.class).getObjectId(), new UpdateListener() {
+                                        @Override
+                                        public void done(BmobException e) {
+                                            if (e == null) {
+                                                Toast.makeText(MySetActivity.this, "更新成功", Toast.LENGTH_LONG).show();
+                                                finish();
+                                            } else {
+                                                Toast.makeText(MySetActivity.this, "更新失败:" + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    });
+                                } else {
+                                    Toast.makeText(MySetActivity.this, "上传头像失败：" + e.getLocalizedMessage(), Toast
+                                            .LENGTH_SHORT).show();
+                                }
+
+                            }
+
+                            @Override
+                            public void onProgress(Integer value) {
+                                // 返回的上传进度（百分比）
+                                // hud.setProgress(value);
+
+                                Log.i("tarena", "onProgress: " + value);
+                            }
+                        });
+
+
+                    } else {
+                        finish();
+                        Toast.makeText(MySetActivity.this, "修改成功！", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+
+
+                } else {
+                    Toast.makeText(MySetActivity.this, "修改失败：" + e
+                            .getLocalizedMessage(), Toast.LENGTH_SHORT)
+                            .show();
+                }
+            }
+        });
 
     }
 
@@ -267,6 +285,7 @@ public class MySetActivity extends AppCompatActivity {
 
                     Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
                     ivMySetImg.setImageBitmap(bitmap);
+                    imagePaths=imagePath;
                 } else {
                     Toast.makeText(MySetActivity.this, "选择头像失败", Toast.LENGTH_LONG).show();
                 }

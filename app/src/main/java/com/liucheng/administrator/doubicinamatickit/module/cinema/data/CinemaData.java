@@ -49,13 +49,12 @@ public class CinemaData {
                     Response response = client.newCall(request).execute();
 
                     String data = response.body().string();
-                    StringBuffer s = new StringBuffer("{\"cinema\":");
+                    StringBuilder s = new StringBuilder("{\"cinema\":");
                     s.append(data);
                     s.append("}");
                     Gson gson = new Gson();
                     Cinema cinema = gson.fromJson(s.toString(), Cinema.class);
 
-                    Log.i("TAG", "run: "+cinema.getCinema().toString());
 
                     if (loadListener != null && cinema != null) {
                         //接口回调
