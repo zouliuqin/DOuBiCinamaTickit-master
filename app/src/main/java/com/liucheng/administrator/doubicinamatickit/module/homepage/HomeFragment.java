@@ -129,6 +129,19 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void initialUI() {
+
+        LinearLayoutManager manager2 = new LinearLayoutManager(getContext());
+        manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvComingSoon.setLayoutManager(manager2);
+        comingSoonAdapter = new HomepageComingSoonAdapter(R.layout.item_homepage_comingsoon, comingSoons);
+        rvComingSoon.setAdapter(comingSoonAdapter);
+
+        LinearLayoutManager manager1 = new LinearLayoutManager(getContext());
+        manager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvHomepageHot.setLayoutManager(manager1);
+        hotAdapter = new HomepageHotAdapter(R.layout.item_homepage_hot, isHits);
+        rvHomepageHot.setAdapter(hotAdapter);
+
         //设置标题栏
         actionBar = contentView.findViewById(R.id.include_actionbar_home);
         initiaActionBar(R.drawable.go, city, "某票", -1);
@@ -223,19 +236,18 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
      */
 
     @Override
-    public void onIsHitLoadEnd(IsHit isHit) {
+    public void onIsHitLoadEnd(final IsHit isHit) {
         isHits.clear();
         //获取资讯集合
         isHits.addAll(isHit.getMs());
+        if (isHits.size()<=0){
+            return;
+        }
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //设置正在热映
-                LinearLayoutManager manager = new LinearLayoutManager(getContext());
-                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-                rvHomepageHot.setLayoutManager(manager);
-                hotAdapter = new HomepageHotAdapter(R.layout.item_homepage_hot, isHits);
-                rvHomepageHot.setAdapter(hotAdapter);
+                hotAdapter.setNewData(isHits);
                 hotAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -263,16 +275,14 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     public void onUpcomingLoadEnd(Upcoming upcoming) {
 
         comingSoons.addAll(upcoming.getAttention());
-
+        if (comingSoons.size()<=0){
+            return;
+        }
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //TODO 设置即将上映
-                LinearLayoutManager manager = new LinearLayoutManager(getContext());
-                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-                rvComingSoon.setLayoutManager(manager);
-                comingSoonAdapter = new HomepageComingSoonAdapter(R.layout.item_homepage_comingsoon, comingSoons);
-                rvComingSoon.setAdapter(comingSoonAdapter);
+                comingSoonAdapter.setNewData(comingSoons);
                 comingSoonAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

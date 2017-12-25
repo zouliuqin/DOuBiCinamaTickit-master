@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
+    android:background="@color/gray_200"
     tools:context="com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity">
 
     <ScrollView
@@ -19,6 +19,67 @@
                 android:id="@+id/movie_headview1"
                 layout="@layout/details_headview1">
             </include>
+
+            <LinearLayout
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_details_wanna_see"
+                    android:background="@color/gray_200"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/iv_details_wanna_see"
+                        android:layout_margin="5dp"
+                        android:src="@mipmap/ic_love"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                    <TextView
+                        android:id="@+id/tv_details_wanna_see"
+                        android:text="想看"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_details_have_seen"
+
+                    android:gravity="center"
+                    android:background="@color/gray_200"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/iv_details_have_seen"
+                        android:layout_margin="5dp"
+                        android:src="@mipmap/ic_star"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                    <TextView
+                        android:id="@+id/tv_details_have_seen"
+                        android:text="看过"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+
             <include
                 android:id="@+id/movie_headview2"
                 layout="@layout/details_headview2">

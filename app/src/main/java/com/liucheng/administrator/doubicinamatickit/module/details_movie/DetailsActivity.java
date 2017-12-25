@@ -91,6 +91,18 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     TextView textAllReview;
     //当前页的电影id
     String cinameId;
+    @BindView(R.id.ll_details_wanna_see)
+    LinearLayout llDetailsWannaSee;
+    @BindView(R.id.ll_details_have_seen)
+    LinearLayout llDetailsHaveSeen;
+    @BindView(R.id.iv_details_wanna_see)
+    ImageView ivDetailsWannaSee;
+    @BindView(R.id.tv_details_wanna_see)
+    TextView tvDetailsWannaSee;
+    @BindView(R.id.iv_details_have_seen)
+    ImageView ivDetailsHaveSeen;
+    @BindView(R.id.tv_details_have_seen)
+    TextView tvDetailsHaveSeen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,12 +112,12 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
         Intent intent = getIntent();
         cinameId = intent.getStringExtra("cinameId");
-        Log.d("9999999999", cinameId);
+
         //电影详情
         DetailsData.getIIsHitData(this, cinameId);
         //热评
         ReviewData.getReviewData(this, cinameId);
-//        Log.d("rrrrrrrrrrrrrr",detail.getData().getBasic().getStory());
+        //        Log.d("rrrrrrrrrrrrrr",detail.getData().getBasic().getStory());
         initiaUi();
     }
 
@@ -169,7 +181,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         textMovieType.setText(detail.getData().getBasic().getType() + "");
         textMovieIntro.setText(detail.getData().getBasic().getStory());
         textMovieIntro1.setText(detail.getData().getBasic().getStory());
-//        Log.d("000000000",detail.getData().getBasic().getVideo().getImg());
+        //        Log.d("000000000",detail.getData().getBasic().getVideo().getImg());
         if (detail.getData().getBasic().getVideo().getImg().length() > 0) {
             Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).placeholder(R.drawable.logo).into(imageMoviePrevue);
         } else {
@@ -229,7 +241,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
     }
 
-    @OnClick({R.id.image_down, R.id.image_up,R.id.text_AllReview})
+    @OnClick({R.id.image_down, R.id.image_up, R.id.text_AllReview, R.id.ll_details_wanna_see, R.id.ll_details_have_seen})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.image_down:
@@ -246,10 +258,25 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
                 break;
             case R.id.text_AllReview:
                 Intent intent = new Intent(this, ReviewActivity.class);
-                intent.putExtra("cinameId",cinameId);
+                intent.putExtra("cinameId", cinameId);
                 startActivity(intent);
 
 
+                break;
+            case R.id.ll_details_wanna_see:
+                //想看
+                //点击想看,改变图像样式，字体颜色
+
+                tvDetailsWannaSee.setTextColor(getResources().getColor(R.color.red_300));
+                ivDetailsWannaSee.setImageResource(R.mipmap.ic_love_select);
+
+
+                break;
+            case R.id.ll_details_have_seen:
+                tvDetailsHaveSeen.setTextColor(getResources().getColor(R.color.red_300));
+                ivDetailsHaveSeen.setImageResource(R.mipmap.ic_star_select);
+
+                //看过
                 break;
         }
     }

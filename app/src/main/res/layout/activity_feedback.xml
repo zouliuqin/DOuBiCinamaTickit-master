@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         android:text="图片(选填，提供问题截图)" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rl_feedback_img"
         android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:src="@mipmap/ic_add" />
-    </LinearLayout>
+    </RelativeLayout>
     <TextView
         android:textSize="12sp"
         android:padding="@dimen/dp_10"
@@ -76,4 +77,5 @@
         android:background="@drawable/shape_submit_feedback_button"
         android:text="提交反馈"
         android:textColor="#ffffff" />
+
 </LinearLayout>
