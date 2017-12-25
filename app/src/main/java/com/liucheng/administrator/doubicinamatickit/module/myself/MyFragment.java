@@ -13,7 +13,8 @@ import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
-import com.liucheng.administrator.doubicinamatickit.module.BasicSettings;
+import com.liucheng.administrator.doubicinamatickit.module.basicsettings.BasicSettingsActivity;
+import com.liucheng.administrator.doubicinamatickit.module.feedback.FeedbackActivity;
 import com.liucheng.administrator.doubicinamatickit.module.login.LoginActivity;
 
 import butterknife.BindView;
@@ -112,12 +113,13 @@ public class MyFragment extends BaseFragment {
                 //TODO  分享给好友
                 break;
             case R.id.ll_setting:
-                //TODO  基本设置
-                Intent  intent1 = new Intent(getActivity(), BasicSettings.class);
-                startActivity(intent1);
+                //  基本设置
+
+                startActivity(new Intent(getActivity(), BasicSettingsActivity.class));
                 break;
             case R.id.ll_feedback:
-                //TODO  反馈
+                //  反馈
+                startActivity(new Intent(getActivity(), FeedbackActivity.class));
                 break;
             case R.id.ll_about_us:
                 //TODO  关于我们

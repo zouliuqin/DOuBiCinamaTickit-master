@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_200"
+
+    tools:context="com.liucheng.administrator.doubicinamatickit.module.feedback.FeedbackActivity">
+
+
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/textView2"
+        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="问题和意见" />
+
+    <EditText
+        android:id="@+id/et_feedback_describe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="top"
+        android:hint="简要描述您要反馈的问题和意见"
+        android:maxLines="8"
+        android:minLines="8"
+        android:padding="10dp" />
+
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/textView3"
+        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图片(选填，提供问题截图)" />
+
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_feedback_add_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@mipmap/ic_add" />
+    </LinearLayout>
+    <TextView
+        android:textSize="12sp"
+        android:padding="@dimen/dp_10"
+        android:text="联系方式(选填)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_feedback_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+
+        android:hint="微信/QQ/邮箱/手机号"
+        android:padding="10dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/but_feedback_submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_submit_feedback_button"
+        android:text="提交反馈"
+        android:textColor="#ffffff" />
+</LinearLayout>
