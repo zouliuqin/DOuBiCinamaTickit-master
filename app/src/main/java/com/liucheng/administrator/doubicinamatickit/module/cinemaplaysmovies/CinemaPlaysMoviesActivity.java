@@ -1,5 +1,6 @@
 package com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -29,6 +30,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
 import com.liucheng.administrator.doubicinamatickit.entity.CinemaPlaysMovies;
+import com.liucheng.administrator.doubicinamatickit.module.SeatTable.SeatToActivity;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.adapter.PlayTimeAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.data.CinemaPlaysMoviesData;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.view.ClipViewPager;
@@ -163,7 +165,8 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
         playTimeAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-
+                Intent intent = new Intent(CinemaPlaysMoviesActivity.this, SeatToActivity.class);
+                startActivity(intent);
                 Toast.makeText(CinemaPlaysMoviesActivity.this, "onItemChildClick" + position, Toast.LENGTH_SHORT).show();
             }
         });

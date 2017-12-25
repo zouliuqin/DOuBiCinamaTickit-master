@@ -73,4 +73,5 @@ dependencies {
 //    compile 'com.eyeem.deviceinfo:library:<latest>'
 
 
+    compile project(path: ':SeatTable')
 }
