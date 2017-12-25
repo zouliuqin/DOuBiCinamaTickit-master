@@ -4,11 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.bumptech.glide.Glide;
+
 /**
  * Created by JiaJi on 2015/12/15.
  */
-public class CooksDBHelper extends SQLiteOpenHelper {
-    public static final String DB_NAME = "cooks.db";
+public class MovieDBHelper extends SQLiteOpenHelper {
+    public static final String DB_NAME = "movie.db";
     public static final int VERSION = 1;
     /**
      * 是否添加了收藏：0不是，1是
@@ -18,50 +20,57 @@ public class CooksDBHelper extends SQLiteOpenHelper {
      * 是否是观看历史：0不是，1是
      */
     public static final String HISTORY_LOOK = "history";
-    public static final String TABLE_TEXT = "cooks_info";
+
+    public static final String TABLE_TEXT = "movie_info";
+
     public static final String ID = "_id";
-    public static final String TITLE = "title";
     /**
-     * 关于菜的功效
+     * 电影名称
      */
-    public static final String TAGS = "tags";
+    public static final String TITLE = "movie_name";
     /**
-     * 菜品的来历
+     * 电影ID
      */
-    public static final String IMTRO = "imtro";
-    /**
-     * 菜品所需材料
-     */
-    public static final String INGREDIENTS = "ingredients";
-    /**
-     * 原材料
-     */
-    public static final String BURDEN = "burden";
+    public static final String MOVIE_ID = "movie_id";
+
     /**
      * 图片
      */
-    public static final String ALBUMS = "albums";
+    public static final String MOVE_IMG = "movie_img";
+    /**
+     * 电影描述
+     */
+    public static final String CONTENT = "movie_content";
+    /**
+     * 演员
+     */
+    public static final String ACTORS = "movie_actors";
+    /**
+     * 评分
+     */
+    public static final String GRADER = "movie_grader";
+
+
     public static final String CREATE_TEXT_TABLE = "create table " + TABLE_TEXT + "(" +
             ID + " integer primary key," +
             TITLE + "," +
-            TAGS + "," +
-            IMTRO + "," +
-            INGREDIENTS + "," +
-            BURDEN + "," +
-            ALBUMS + "," +
+            MOVIE_ID + "," +
+            MOVE_IMG + "," +
+            CONTENT + "," +
+            ACTORS + "," +
+            GRADER + "," +
             HISTORY_LOOK + " integer default 0," +
             MY_LIKE + " integer default 0)";
 
 
-    public static final String TABLE_IMGS = "cooks_imgs";
+    public static final String TABLE_IMGS = "movie_imgs";
     public static final String IMG = "img";
-    public static final String STEP = "step";
+
     public static String CREATE_IMGS_TABLE = "create table " + TABLE_IMGS + "(" +
             ID + " integer," +
-            IMG + "," +
-            STEP + ")";
+            IMG + "," + ")";
 
-    public CooksDBHelper(Context context) {
+    public MovieDBHelper(Context context) {
         super(context, DB_NAME, null, VERSION);
     }
 

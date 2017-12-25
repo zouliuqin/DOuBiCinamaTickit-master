@@ -114,11 +114,12 @@
                 android:gravity="end">
 
                 <EditText
+
                     android:id="@+id/et_my_set_nicename"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:gravity="end"
+                    android:gravity="center|end"
                     android:background="@null"
                      />
 
@@ -179,6 +180,7 @@
                 android:layout_height="wrap_content"
                 android:text="设置密码" />
             <LinearLayout
+                android:id="@+id/ll_my_set_password"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -191,7 +193,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    app:srcCompat="@drawable/go" />
+                    app:srcCompat="@mipmap/right_arrow" />
             </LinearLayout>
         </LinearLayout>
 
@@ -204,7 +206,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/but_my_set_log_out"
+                android:id="@+id/but_my_set_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_login_button"

@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 public class NowShowAdapter extends BaseAdapter {
-List<IsHit.MsBean> hitData = new ArrayList<>();
+    List<IsHit.MsBean> hitData = new ArrayList<>();
 
     public NowShowAdapter(Context context, List data) {
         super(context, data);

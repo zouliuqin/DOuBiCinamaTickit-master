@@ -14,26 +14,27 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
+import com.liucheng.administrator.doubicinamatickit.entity.User;
 import com.liucheng.administrator.doubicinamatickit.module.login.LoginActivity;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
-import com.luck.picture.lib.entity.LocalMedia;
-import com.squareup.picasso.Picasso;
 
 import java.io.File;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.UpdateListener;
+import cn.bmob.v3.listener.UploadFileListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MySetActivity extends AppCompatActivity {
@@ -52,22 +53,27 @@ public class MySetActivity extends AppCompatActivity {
     RadioButton rbMySetWomen;
     @BindView(R.id.iv_my_set_password)
     ImageView ivMySetPassword;
-    @BindView(R.id.but_my_set_log_out)
-    Button butMySetLogOut;
+
+    @BindView(R.id.tv_include_login_title)
+    TextView tvIncludeLoginTitle;
+    @BindView(R.id.ll_my_set_password)
+    LinearLayout llMySetPassword;
+    @BindView(R.id.but_my_set_submit)
+    Button butMySetSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_set);
         ButterKnife.bind(this);
+
+        //修改标题
+        tvIncludeLoginTitle.setText("个人信息");
         //获取用户信息
         BmobUser bmobUser = BmobUser.getCurrentUser();
-
         if (bmobUser != null) {
             //设置用户名
             tvMySetUsername.setText(bmobUser.getUsername());
-
-
         } else {
             Toast.makeText(MyApplication.getContext(), "请先登录！", Toast.LENGTH_SHORT).show();
             Intent intent2 = new Intent(MySetActivity.this, LoginActivity.class);
@@ -76,24 +82,118 @@ public class MySetActivity extends AppCompatActivity {
 
     }
 
-
-    @OnClick({R.id.ib_include_back, R.id.but_my_set_log_out, R.id.iv_my_set_img})
+    @OnClick({R.id.ib_include_back, R.id.but_my_set_submit, R.id.iv_my_set_img, R.id.ll_my_set_password})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ib_include_back:
                 finish();
                 break;
-            case R.id.but_my_set_log_out:
-                //用户登出
 
-                break;
             case R.id.iv_my_set_img:
                 //点击头像
-                // 进入相册 以下是例子：用不到的api可以不写
-                //  Utils.showToast(PostTradeActivity.this,"!!!!!!!!!!!!!!!!!!");
                 pictureSelector();
                 break;
+            case R.id.ll_my_set_password:
+                //修改密码
+                break;
+            case R.id.but_my_set_submit:
+
+                //保存
+                submit();
+                break;
+
         }
+    }
+
+    private void submit() {
+//
+//        final User user = new User();
+//        user.setNickname(etMySetNicename.getText().toString());
+//
+//        if (rbMySetMan.isChecked()){
+//            user.setGender("1");
+//        }else {
+//            user.setGender("2");
+//        }
+//
+//
+//
+//        //得到当前登录的用户
+//        User currentUser = BmobUser.getCurrentUser(User.class);
+//
+//        user.update(currentUser.getObjectId(), new UpdateListener() {
+//            @Override
+//            public void done(BmobException e) {
+//                if (e == null) {
+//
+//
+//                    if (imagePath!=null) {//需要修改头像
+//
+//                        //上传图片
+//                        final BmobFile uploadHead = new BmobFile(new File(imagePath));
+//
+//                        final KProgressHUD hud = KProgressHUD.create(ChangeMyNickAndHeadActivity.this)
+//                                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+//                                .setLabel("Loading...")
+//                                .setCancellable(true)
+//                                .setAnimationSpeed(2)
+//                                .setDimAmount(0.5f)
+//                                .show();
+//
+//                        uploadHead.uploadblock(new UploadFileListener() {
+//
+//                            @Override
+//                            public void done(BmobException e) {
+//                                if (e == null) {
+//                                    hud.dismiss();
+//                                    //把上传完的图片网址得到给到用户
+//                                    user.setHeadPortrait(uploadHead.getFileUrl());
+//                                    user.update(BmobUser.getCurrentUser(MyUser.class).getObjectId(), new UpdateListener() {
+//                                        @Override
+//                                        public void done(BmobException e) {
+//                                            if (e == null) {
+//                                                Toast.makeText(ChangeMyNickAndHeadActivity.this, "更新成功", Toast.LENGTH_LONG).show();
+//                                                finish();
+//                                            } else {
+//                                                Toast.makeText(ChangeMyNickAndHeadActivity.this, "更新失败:" + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+//                                            }
+//                                        }
+//                                    });
+//                                } else {
+//                                    Toast.makeText(ChangeMyNickAndHeadActivity.this, "上传头像失败："+e.getLocalizedMessage(), Toast
+//                                            .LENGTH_SHORT).show();
+//                                }
+//
+//                            }
+//
+//                            @Override
+//                            public void onProgress(Integer value) {
+//                                // 返回的上传进度（百分比）
+//                                hud.setProgress(value);
+//
+//                                Log.i("tarena", "onProgress: "+value);
+//                            }
+//                        });
+//
+//
+//
+//                    }else{
+//                        finish();
+//                        Toast.makeText(ChangeMyNickAndHeadActivity.this, "修改成功！", Toast.LENGTH_SHORT)
+//                                .show();
+//                    }
+//
+//
+//
+//
+//                } else {
+//                    Toast.makeText(ChangeMyNickAndHeadActivity.this, "修改失败：" + e
+//                            .getLocalizedMessage(), Toast.LENGTH_SHORT)
+//                            .show();
+//                }
+//            }
+//        });
+
     }
 
     private void pictureSelector() {
@@ -146,11 +246,11 @@ public class MySetActivity extends AppCompatActivity {
             switch (requestCode) {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片选择结果回调
-                   // PictureSelector.obtainMultipleResult(data);
+                    // PictureSelector.obtainMultipleResult(data);
 
                     //在界面中显示已经选择回来的图片
-                   // Picasso.with(MyApplication.getContext()).load().into(ivMySetImg);
-                    Log.i("TAG", "onActivityResult: "+PictureSelector.obtainMultipleResult(data).get(0).getPath());
+                    // Picasso.with(MyApplication.getContext()).load().into(ivMySetImg);
+                    Log.i("TAG", "onActivityResult: " + PictureSelector.obtainMultipleResult(data).get(0).getPath());
                     showImage(PictureSelector.obtainMultipleResult(data).get(0).getPath());
                     break;
             }

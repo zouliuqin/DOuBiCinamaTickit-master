@@ -214,7 +214,7 @@ public class BasicSettingsActivity extends AppCompatActivity {
 
                 CacheDataManager.clearAllCache(BasicSettingsActivity.this);
 
-                Thread.sleep(3000);
+                Thread.sleep(1000);
 
                 if (CacheDataManager.getTotalCacheSize(BasicSettingsActivity.this).startsWith("0")) {
 

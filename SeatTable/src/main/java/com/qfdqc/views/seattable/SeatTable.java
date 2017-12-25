@@ -593,7 +593,7 @@ public class SeatTable extends View {
                         canvas.drawBitmap(checkedSeatBitmap, tempMatrix, paint);
                         drawText(canvas, i, j, top, left);
                         Log.d("999999999999",i+1+"排"+(j+1)+"坐");
-                        Toast.makeText(getContext(), i+1+"排"+(j+1)+"坐", Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getContext(), i+1+"排"+(j+1)+"坐", Toast.LENGTH_SHORT).show();
                         break;
                     case SEAT_TYPE_SOLD:
                         canvas.drawBitmap(seatSoldBitmap, tempMatrix, paint);
