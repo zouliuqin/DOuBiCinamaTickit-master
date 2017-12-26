@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.User;
 import com.liucheng.administrator.doubicinamatickit.module.login.LoginActivity;
 import com.luck.picture.lib.PictureSelector;
@@ -87,7 +88,8 @@ public class MySetActivity extends AppCompatActivity {
             //设置用户名
             tvMySetUsername.setText(user.getUsername());
             //设置头像
-            Picasso.with(MySetActivity.this).load(user.getHeadPortrait()).into(ivMySetImg);
+            Picasso.with(MySetActivity.this).load(user.getHeadPortrait()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                    .noFade().into(ivMySetImg);
             //设置昵称
             etMySetNicename.setText(user.getNickname());
             //设置性别

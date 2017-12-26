@@ -9,7 +9,7 @@ public interface IUrl {
 
     String MOVIES_ON_NEXT = "https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=";
 
-    //影片资讯   参数传入1-10
+    //影片资讯   参数传入1-5
     String MOVIES_NEWS = "https://ticket-api-m.mtime.cn/choice/feed.api?pageIndex=";
     //新闻详情，传入新闻的ID
     String NEWS_DETAILS ="https://ticket-api-m.mtime.cn/article/detail.api?locationId=561&articleId=";

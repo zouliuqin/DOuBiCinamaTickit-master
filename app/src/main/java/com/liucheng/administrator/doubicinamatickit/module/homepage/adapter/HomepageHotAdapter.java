@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.squareup.picasso.Picasso;
 
@@ -24,7 +25,8 @@ public class HomepageHotAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHo
     protected void convert(BaseViewHolder helper, IsHit.MsBean item) {
 
         helper.setText(R.id.item_tv_homepage_hot_name,item.getTCn());
-        Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).into((ImageView)
+        Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into((ImageView)
                 helper.getView(R.id.item_iv_homepage_hot));
 
     }

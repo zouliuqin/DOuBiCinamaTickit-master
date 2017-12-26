@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.Upcoming;
 import com.squareup.picasso.Picasso;
 
@@ -49,7 +50,8 @@ view.setTag(holder);
         Log.d("yyyyyyyyyyyyy",moviecomingsBean.getImage()+"" );
         if (moviecomingsBean.getImage().length()>5){
 //            Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.mipmap.ic_launcher).into(holder.posterUpcoming);
-            Glide.with(getContext()).load(moviecomingsBean.getImage()).into(holder.posterUpcoming);
+//            Glide.with(getContext()).load(moviecomingsBean.getImage()).into(holder.posterUpcoming);
+            Picasso.with(getContext()).load(moviecomingsBean.getImage()).placeholder(R.drawable.logo).transform(new CropSquareTransformation()).into(holder.posterUpcoming);
             holder.titleUpvoming.setText(moviecomingsBean.getTitle());
             holder.actorUpcoming.setText(moviecomingsBean.getActor1()+" / "+moviecomingsBean.getActor2());
             holder.contentUpcoming.setText(moviecomingsBean.getType());

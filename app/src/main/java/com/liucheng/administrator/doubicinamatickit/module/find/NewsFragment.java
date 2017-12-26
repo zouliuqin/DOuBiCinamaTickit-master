@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.liucheng.administrator.doubicinamatickit.module.find.adapter.NewsAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
@@ -81,6 +82,11 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     }
 
     private void initUi() {
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        lvNews.setLayoutManager(manager);
+        adapter = new NewsAdapter(R.layout.item_news,newsLists);
+        lvNews.setAdapter(adapter);
 
         //默认下拉刷新
         srlNews.setColorSchemeColors(Color.parseColor("#000000"));
@@ -88,15 +94,15 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
             @Override
             public void onRefresh() {
                 //加载数据
-                if (pageNumber<=10){
+                if (pageNumber<=4){
                     pageNumber++;
                     //获取新闻资讯数据
                     NewsData.getNewsData(NewsFragment.this, pageNumber);
                     //停止更新
                     srlNews.setRefreshing(false);
                 }else {
-                    //最多加载10页
-                    Toast.makeText(getActivity(), "无法加载新数据~~~", Toast.LENGTH_SHORT).show();
+                    //最多加载5页
+                    Toast.makeText(getActivity(), "无法加载更多数据", Toast.LENGTH_SHORT).show();
                     //停止更新
                     srlNews.setRefreshing(false);
                 }
@@ -155,7 +161,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     @Override
     public void onNewsLoadEnd(final MovieNews movieNews) {
         //获取新闻资讯集合
-        if (newsLists==null){
+        if (newsLists.size()<=0){
             newsLists.addAll( movieNews.getData().getData());
         }else {
             newsLists.addAll(0,movieNews.getData().getData());
@@ -170,12 +176,10 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
                 //更新界面
 //                adapter.notifyDataSetChanged();
                 //如果没有横幅 则添加横幅信息
-                LinearLayoutManager manager = new LinearLayoutManager(getActivity());
-                manager.setOrientation(LinearLayoutManager.VERTICAL);
-                lvNews.setLayoutManager(manager);
-                adapter = new NewsAdapter(R.layout.item_news,newsLists);
-                Log.d("8888888888",newsLists.get(2).getContent());
-                lvNews.setAdapter(adapter);
+
+
+
+                adapter.setNewData(newsLists);
 
                 if (!isBanner) {
                     for (int i = 0; i < 4; i++) {
@@ -210,7 +214,8 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
 
             //Picasso 加载图片简单用法
             if (!path.toString().equals("")){
-                Picasso.with(context).load(path.toString()).into((ImageView) imageView);
+                Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                        .noFade().into((ImageView) imageView);
             }
 
 

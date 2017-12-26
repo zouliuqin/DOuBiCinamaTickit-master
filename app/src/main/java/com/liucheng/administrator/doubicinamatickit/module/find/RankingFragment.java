@@ -137,10 +137,7 @@ public class RankingFragment extends Fragment implements BoxOfficeData.BoxOffice
         boxOffices.clear();
         //获得到排行榜数据
         boxOffices.addAll(boxOffice.getMovies());
-        for (BoxOffice.MoviesBean office : boxOffices) {
 
-
-        }
         if (boxOffices != null) {
             //数据适配
             getActivity().runOnUiThread(new Runnable() {

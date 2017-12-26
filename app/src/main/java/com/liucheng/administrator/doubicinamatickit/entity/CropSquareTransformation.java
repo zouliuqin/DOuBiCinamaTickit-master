@@ -12,9 +12,9 @@ public class CropSquareTransformation implements Transformation {
     @Override
     public Bitmap transform(Bitmap source) {
 
-        int targetWidth = 600;
+        int targetWidth = 400;
 
-        int targetHeight = 600;
+        int targetHeight = 400;
 
         if (source.getWidth() == 0 || source.getHeight() == 0) {
             return source;

@@ -13,6 +13,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.DateUtils;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.Details;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.Review;
@@ -34,7 +35,8 @@ public class ReviewAdapter extends BaseQuickAdapter<Review.DataBean.MiniBean.Lis
 
     @Override
     protected void convert(BaseViewHolder helper, Review.DataBean.MiniBean.ListBean item) {
-        Picasso.with(mContext).load(item.getHeadImg()).placeholder(R.drawable.logo).into((ImageView)
+        Picasso.with(mContext).load(item.getHeadImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into((ImageView)
                 helper.getView(R.id.user_imageIt));
         helper.setText(R.id.text_movieTitleIt,item.getNickname()+"");
         helper.setText(R.id.review_contentIt,item.getContent()+"");

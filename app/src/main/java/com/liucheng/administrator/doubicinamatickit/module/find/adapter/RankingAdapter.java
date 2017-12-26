@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
 import com.liucheng.administrator.doubicinamatickit.entity.BoxOffice;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.util.StringUtil;
 import com.squareup.picasso.Picasso;
 
@@ -48,7 +49,8 @@ public class RankingAdapter extends BaseAdapter<BoxOffice.MoviesBean> {
         //        holer.tvMovieDay.setText(getItem(i).getMovieDay()+"天");
         //        holer.tvBoxPer.setText(getItem(i).getBoxPer()+"%");
         holer.tvMovieRanking.setText( getItem(i).getRankNum()+"");
-        Picasso.with(getContext()).load(getItem(i).getPosterUrl()).placeholder(R.drawable.logo).into(holer.imMoviePoster);
+        Picasso.with(getContext()).load(getItem(i).getPosterUrl()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into(holer.imMoviePoster);
         holer.tvMovieName.setText(getItem(i).getName());
         holer.tvMovieUsName.setText(getItem(i).getNameEn());
         holer.tvMovieBoxOffice.setText(StringUtil.BoxOfficeString(getItem(i).getWeekBoxOffice()));

@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.DateUtils;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.AllReview;
 import com.squareup.picasso.Picasso;
@@ -24,7 +25,8 @@ public class AllReviewAdapter extends BaseQuickAdapter<AllReview.DataBean.CtsBea
 
     @Override
     protected void convert(BaseViewHolder helper, AllReview.DataBean.CtsBean item) {
-        Picasso.with(mContext).load(item.getCaimg()).placeholder(R.drawable.logo).into((ImageView)
+        Picasso.with(mContext).load(item.getCaimg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into((ImageView)
                 helper.getView(R.id.user_image));
         helper.setText(R.id.text_movieTitle,item.getCa()+"");
         helper.setText(R.id.review_content,item.getCe()+"");

@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.Details;
 import com.squareup.picasso.Picasso;
 
@@ -23,7 +24,8 @@ public class StillAdapter extends BaseQuickAdapter<Details.DataBean.BasicBean.St
 
     @Override
     protected void convert(BaseViewHolder helper, Details.DataBean.BasicBean.StageImgBean.ListBean item) {
-        Picasso.with(mContext).load(item.getImgUrl()).placeholder(R.drawable.logo).into((ImageView)
+        Picasso.with(mContext).load(item.getImgUrl()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into((ImageView)
                 helper.getView(R.id.image_still));
     }
 

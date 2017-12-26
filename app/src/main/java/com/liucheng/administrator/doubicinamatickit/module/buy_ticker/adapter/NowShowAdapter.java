@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
 import com.squareup.picasso.Picasso;
 
@@ -44,7 +45,8 @@ public class NowShowAdapter extends BaseAdapter {
         }
        IsHit.MsBean hitMovie =  hitData.get(i);
 //        Picasso.with(getContext()).load(hitMovie.getImg()).placeholder(R.mipmap.ic_launcher).into(holder.imageView_movie);
-        Glide.with(getContext()).load(hitMovie.getImg()).into(holder.imageView_movie);
+//        Glide.with(getContext()).load(hitMovie.getImg()).into(holder.imageView_movie);
+        Picasso.with(getContext()).load(hitMovie.getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation()).into(holder.imageView_movie);
 holder.textView_title.setText(hitMovie.getTCn());
 holder.textView_content.setText(hitMovie.getCommonSpecial());
 holder.textView_grader.setText(hitMovie.getR()+"");

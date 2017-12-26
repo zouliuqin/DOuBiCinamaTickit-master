@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.squareup.picasso.Picasso;
 
@@ -29,7 +30,8 @@ public class HomepageNewsAdapter extends BaseQuickAdapter<MovieNews.DataBeanX.Da
 
         if (!item.getImg1().equals("")) {
             //设置图像
-            Picasso.with(mContext).load(item.getImg1()).placeholder(R.mipmap.ic_launcher).into((ImageView) helper.getView(R.id.iv_item_news_picture));
+            Picasso.with(mContext).load(item.getImg1()).placeholder(R.mipmap.ic_launcher).transform(new CropSquareTransformation())
+                    .noFade().into((ImageView) helper.getView(R.id.iv_item_news_picture));
         }
 
         //设置描述

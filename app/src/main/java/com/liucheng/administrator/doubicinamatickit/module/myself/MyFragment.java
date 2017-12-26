@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.User;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.basicsettings.BasicSettingsActivity;
@@ -94,7 +95,8 @@ public class MyFragment extends BaseFragment {
             if (user.getHeadPortrait()!=null){
                 //如果用户设置了头像则用用户的头像
 
-                Picasso.with(getContext()).load(user.getHeadPortrait()).into(ivHeadPortrait);
+                Picasso.with(getContext()).load(user.getHeadPortrait()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                        .noFade().into(ivHeadPortrait);
             }else {
                 //如果用户没有设置头像使用默认头像
                 ivHeadPortrait.setImageResource(R.drawable.ic_login_default_head_portraits);

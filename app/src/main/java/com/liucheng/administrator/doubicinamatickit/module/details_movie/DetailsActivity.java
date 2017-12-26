@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.CreatorAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.ReviewAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.StillAdapter;
@@ -136,7 +137,8 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     }
 
     private void initiaData() {
-        Picasso.with(this).load(detail.getData().getBasic().getImg()).placeholder(R.drawable.logo).into(imageMovie);
+        Picasso.with(this).load(detail.getData().getBasic().getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into(imageMovie);
         textMovieName.setText(detail.getData().getBasic().getName());
         if (detail.getData().getBasic().getNameEn().length() > 1) {
             textMovieNameEn.setText(detail.getData().getBasic().getNameEn());
@@ -183,7 +185,8 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         textMovieIntro1.setText(detail.getData().getBasic().getStory()+"");
         //        Log.d("000000000",detail.getData().getBasic().getVideo().getImg());
         if (detail.getData().getBasic().getVideo().getImg().length() > 0) {
-            Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).placeholder(R.drawable.logo).into(imageMoviePrevue);
+            Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                    .noFade().into(imageMoviePrevue);
         } else {
             layoutMoviePrevue.setVisibility(View.GONE);
             framePlay.setVisibility(View.GONE);

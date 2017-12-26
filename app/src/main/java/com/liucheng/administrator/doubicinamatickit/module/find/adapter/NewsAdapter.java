@@ -12,6 +12,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.BaseAdapter;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.squareup.picasso.Picasso;
 
@@ -31,7 +32,8 @@ public class NewsAdapter extends BaseQuickAdapter<MovieNews.DataBeanX.DataBean,B
 
     @Override
     protected void convert(BaseViewHolder helper, MovieNews.DataBeanX.DataBean item) {
-        Picasso.with(mContext).load(item.getImg1()).placeholder(R.drawable.logo).into((ImageView) helper.getView(R.id.iv_item_news_picture));
+        Picasso.with(mContext).load(item.getImg1()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                .noFade().into((ImageView) helper.getView(R.id.iv_item_news_picture));
         helper.setText(R.id.tv_item_news_describe,item.getTitle());
     }
 //    List<MovieNews.DataBeanX.DataBean> data =new ArrayList<>();

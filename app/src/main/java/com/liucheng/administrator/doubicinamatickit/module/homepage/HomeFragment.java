@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.manager.LocationId;
@@ -349,7 +350,8 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             //            Glide.with(context).load(path).into(imageView);
 
             //Picasso 加载图片简单用法
-            Picasso.with(context).load(path.toString())
+            Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                    .noFade()
                     .into((ImageView) imageView);
             //
             //            //用fresco加载图片简单用法，记得要写下面的createImageView方法

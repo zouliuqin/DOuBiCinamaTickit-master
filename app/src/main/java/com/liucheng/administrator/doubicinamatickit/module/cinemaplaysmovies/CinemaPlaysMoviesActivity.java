@@ -30,6 +30,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.Cinema;
 import com.liucheng.administrator.doubicinamatickit.entity.CinemaPlaysMovies;
+import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.SeatTable.SeatToActivity;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.adapter.PlayTimeAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.data.CinemaPlaysMoviesData;
@@ -252,7 +253,8 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
             public Object instantiateItem(@NonNull ViewGroup container, int position) {
                 View pageView = LayoutInflater.from(CinemaPlaysMoviesActivity.this).inflate(R.layout.pager_item_poster, null);
                 ImageView imageView = pageView.findViewById(R.id.imageView1);
-                Picasso.with(CinemaPlaysMoviesActivity.this).load(moviesBeans.get(position).getImg()).into(imageView);
+                Picasso.with(CinemaPlaysMoviesActivity.this).load(moviesBeans.get(position).getImg()).transform(new CropSquareTransformation())
+                        .noFade().into(imageView);
                 // imageView.setLayoutParams(lp);
                 pager.addView(pageView);
 
