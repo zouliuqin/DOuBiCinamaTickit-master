@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+
 import com.liucheng.administrator.doubicinamatickit.util.StringUtil;
 
 import cn.bmob.v3.Bmob;
@@ -34,6 +35,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+//        Pay66.init("49987844faab4f5b8022e612b2ec142c", getApplicationContext());
         context = getApplicationContext();
         //初始化Bmob
         //初始化自v3.4.7版本开始,设置BmobConfig,允许设置请求超时时间、文件分片上传时每片的大小、文件的过期时间(单位为秒)，
@@ -49,6 +51,8 @@ public class MyApplication extends Application {
 //                .build();
 //        Bmob.initialize(config);
         Bmob.initialize(this,"6ec73fd4d4b6c4091e12a6b2d632fcc1");
+
+
 
 
     }

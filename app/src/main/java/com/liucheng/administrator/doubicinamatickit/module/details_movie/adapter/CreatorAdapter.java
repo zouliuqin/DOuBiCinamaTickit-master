@@ -22,7 +22,7 @@ public class CreatorAdapter extends BaseQuickAdapter<Details.DataBean.BasicBean.
 
     @Override
     protected void convert(BaseViewHolder helper, Details.DataBean.BasicBean.ActorsBean item) {
-        helper.setText(R.id.text_names,item.getName());
+        helper.setText(R.id.text_names,item.getName()+"");
         Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).into((ImageView)
                 helper.getView(R.id.image_actors));
     }

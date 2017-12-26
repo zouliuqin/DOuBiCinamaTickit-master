@@ -147,7 +147,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
         textMovieDate.setText(detail.getData().getBasic().getReleaseDate().substring(0, 4));
         if (detail.getData().getBasic().getMins().length() > 1) {
-            textMovieDuration.setText(detail.getData().getBasic().getMins());
+            textMovieDuration.setText(detail.getData().getBasic().getMins()+"");
         } else {
             textMovieDuration.setText("....");
         }
@@ -179,8 +179,8 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
 
         textMovieType.setText(detail.getData().getBasic().getType() + "");
-        textMovieIntro.setText(detail.getData().getBasic().getStory());
-        textMovieIntro1.setText(detail.getData().getBasic().getStory());
+        textMovieIntro.setText(detail.getData().getBasic().getStory()+"");
+        textMovieIntro1.setText(detail.getData().getBasic().getStory()+"");
         //        Log.d("000000000",detail.getData().getBasic().getVideo().getImg());
         if (detail.getData().getBasic().getVideo().getImg().length() > 0) {
             Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).placeholder(R.drawable.logo).into(imageMoviePrevue);

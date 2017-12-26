@@ -92,6 +92,17 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
         //获取城市影院
         CinemaData.getCinemaData(this, cityId);
 
+        cinemaAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Cinema.CinemaBean   c =  cinemaBeans.get(position);
+                //点击电影院 跳转到电影院详情
+                Intent intent = new Intent(getActivity(), CinemaPlaysMoviesActivity.class);
+                intent.putExtra("cinemaBeans", c);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -107,19 +118,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
 
                 cinemaAdapter.setNewData(cinemaBeans);
                 cinemaAdapter.addHeaderView(getHeaderView());
-                cinemaAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        //点击电影院 跳转到电影院详情
-                        Intent intent = new Intent(getActivity(), CinemaPlaysMoviesActivity.class);
 
-                        Cinema.CinemaBean   c =  cinemaBeans.get(position);
-                        intent.putExtra("cinemaBeans", c);
-
-
-                        startActivity(intent);
-                    }
-                });
 
 
 

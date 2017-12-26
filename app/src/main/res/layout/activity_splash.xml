@@ -6,17 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.liucheng.administrator.doubicinamatickit.ui.SplashActivity">
 
-    <ViewFlipper
-
-        android:id="@+id/splash_viewFlipper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ViewFlipper>
-    <Button
-        android:id="@+id/button_back"
-        android:text="跳转"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+   <ImageView
+       android:src="@drawable/splash"
+       android:id="@+id/src_splash"
+       android:scaleType="fitXY"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
 
 </RelativeLayout>

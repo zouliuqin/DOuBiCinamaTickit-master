@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
@@ -39,6 +40,7 @@ public class FindFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         contentView = inflater.inflate(R.layout.find_fragment, container, false);
 
         unbinder = ButterKnife.bind(this, contentView);
@@ -83,18 +85,21 @@ public class FindFragment extends BaseFragment {
     @OnClick({R.id.rb_News, R.id.rb_ranking})
     public void onViewClicked(View view) {
         //创建事务
-        transaction = manager.beginTransaction();
+
         switch (view.getId()) {
             case R.id.rb_News:
                 //资讯
+                transaction = manager.beginTransaction();
                 transaction.replace(R.id.rl_find, new NewsFragment());
-
+                transaction.commit();
                 break;
             case R.id.rb_ranking:
                 //票房榜
+                transaction = manager.beginTransaction();
                 transaction.replace(R.id.rl_find, new RankingFragment());
+                transaction.commit();
                 break;
         }
-        transaction.commit();
+
     }
 }

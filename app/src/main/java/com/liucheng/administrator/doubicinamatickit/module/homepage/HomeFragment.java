@@ -166,6 +166,26 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
             }
         });
+        comingSoonAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                //TODO 点击即将上映item跳转到电影详情
+                Intent intentCom = new Intent(getActivity(), DetailsActivity.class);
+                intentCom.putExtra("cinameId",comingSoons.get(position).getId()+"");
+                startActivity(intentCom);
+            }
+        });
+        hotAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                //TODO 点击正在热映item跳转到电影详情
+                Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
+                intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
+                startActivity(intentHit);
+            }
+
+
+        });
     }
 
     @Override
@@ -248,17 +268,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void run() {
                 //设置正在热映
                 hotAdapter.setNewData(isHits);
-                hotAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        //TODO 点击正在热映item跳转到电影详情
-                        Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
-                        intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
-                        startActivity(intentHit);
-                    }
 
-
-                });
 
                 //设置轮播
                 setBanner();
@@ -283,15 +293,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void run() {
                 //TODO 设置即将上映
                 comingSoonAdapter.setNewData(comingSoons);
-                comingSoonAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        //TODO 点击即将上映item跳转到电影详情
-                        Intent intentCom = new Intent(getActivity(), DetailsActivity.class);
-                        intentCom.putExtra("cinameId",comingSoons.get(position).getId()+"");
-                        startActivity(intentCom);
-                    }
-                });
+
 
 
             }

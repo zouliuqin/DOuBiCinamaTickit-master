@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/theme"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <com.liucheng.administrator.doubicinamatickit.view.ImageText

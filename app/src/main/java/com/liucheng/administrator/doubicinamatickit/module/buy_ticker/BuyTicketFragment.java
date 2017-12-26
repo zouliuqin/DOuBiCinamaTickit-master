@@ -73,10 +73,10 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.radioButton_lefet:
-                        viewPager.setCurrentItem(1);
+                        viewPager.setCurrentItem(0);
                         break;
                     case R.id.radioButton_right:
-                        viewPager.setCurrentItem(0);
+                        viewPager.setCurrentItem(1);
                         break;
                 }
             }

@@ -8,9 +8,10 @@ import java.util.List;
 
 public class Details {
 
+
     /**
      * code : 1
-     * data : {"advertisement":{"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城喵星人+商城乐高","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html"}],"count":1,"error":"","success":true},"basic":{"actors":[{"actorId":913378,"img":"http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg","name":"范·迪塞尔","nameEn":"Vin Diesel","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg","roleName":"桑德·凯奇"},{"actorId":893008,"img":"http://img31.mtime.cn/ph/2014/03/13/164116.22404345_1280X720X2.jpg","name":"甄子丹","nameEn":"Donnie Yen","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162631.30237748.jpg","roleName":"项"},{"actorId":1403701,"img":"http://img31.mtime.cn/ph/2016/04/05/153734.26333599_1280X720X2.jpg","name":"迪皮卡·帕度柯妮","nameEn":"Deepika Padukone","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163611.99195116.jpg","roleName":"赛琳娜"},{"actorId":1763914,"img":"http://img5.mtime.cn/ph/2017/02/08/172048.77104443_1280X720X2.jpg","name":"鲁比·罗丝","nameEn":"Ruby Rose","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162801.28633700.jpg","roleName":"阿黛尔"},{"actorId":1981491,"img":"http://img5.mtime.cn/ph/2017/08/21/103819.54514950_1280X720X2.jpg","name":"吴亦凡","nameEn":"Kris Wu","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162650.25424635.jpg","roleName":"DJ尼克斯"},{"actorId":1266158,"img":"http://img31.mtime.cn/ph/2016/05/04/162943.45619387_1280X720X2.jpg","name":"妮娜·杜波夫","nameEn":"Nina Dobrev","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163459.85286563.jpg","roleName":"贝基"},{"actorId":913101,"img":"http://img31.mtime.cn/ph/2014/03/14/152328.88324192_1280X720X2.jpg","name":"塞缪尔·杰克逊","nameEn":"Samuel L. Jackson","roleImg":"http://img5.mtime.cn/mg/2017/02/09/143611.45346521.jpg","roleName":"吉布森"},{"actorId":938310,"img":"http://img31.mtime.cn/ph/2014/02/22/202102.28239250_1280X720X2.jpg","name":"托尼·贾","nameEn":"Tony Jaa","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163434.84663336.jpg","roleName":"塔隆"},{"actorId":915029,"img":"http://img5.mtime.cn/ph/2017/01/12/165011.48068899_1280X720X2.jpg","name":"托妮·科莱特","nameEn":"Toni Collette","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163402.87655748.jpg","roleName":"马珂"},{"actorId":926008,"img":"http://img31.mtime.cn/ph/2016/04/07/144735.68017937_1280X720X2.jpg","name":"罗伊·麦克凯恩","nameEn":"Rory McCann","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163308.86236332.jpg","roleName":"泰尼逊"},{"actorId":2201494,"img":"http://img5.mtime.cn/ph/2016/11/02/092530.84997401_1280X720X2.jpg","name":"尼基·詹姆","nameEn":"Nicky Jam","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163152.53635568.jpg","roleName":"拉撒路"},{"actorId":1416487,"img":"http://img31.mtime.cn/ph/2016/08/29/184141.26902742_1280X720X2.jpg","name":"迈克尔·比斯平","nameEn":"Michael Bisping","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163040.43362207.jpg","roleName":"霍克"},{"actorId":2098727,"img":"http://img31.mtime.cn/ph/2015/07/01/114143.59711468_1280X720X2.jpg","name":"内马尔","nameEn":"Neymar","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163524.98203922.jpg","roleName":"内马尔"},{"actorId":903983,"img":"http://img31.mtime.cn/ph/2014/02/22/194147.64436994_1280X720X2.jpg","name":"艾斯·库珀","nameEn":"Ice Cube","roleImg":"","roleName":"达里斯"},{"actorId":2084677,"img":"http://img31.mtime.cn/ph/2015/09/09/101940.19419320_1280X720X2.jpg","name":"赫敏·科菲尔德","nameEn":"Hermione Corfield","roleImg":"","roleName":"安斯利"},{"actorId":921201,"img":"http://img31.mtime.cn/ph/2014/04/15/111254.75720606_1280X720X2.jpg","name":"艾尔·斯帕恩扎","nameEn":"Al Sapienza","roleImg":"","roleName":"CIA Director"},{"actorId":1232892,"img":"http://img5.mtime.cn/ph/2017/01/05/145035.65755647_1280X720X2.jpg","name":"","nameEn":"Helena-Alexis Seymour","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218074,"img":"http://img31.mtime.cn/ph/2016/08/29/184313.10828827_1280X720X2.jpg","name":"","nameEn":"Megan Soo","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218075,"img":"http://img5.mtime.cn/ph/2017/01/05/144739.37346974_1280X720X2.jpg","name":"","nameEn":"Kristen Kurnik","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":1023991,"img":"http://img5.mtime.cn/ph/2017/01/05/144625.10720932_1280X720X2.jpg","name":"","nameEn":"Gary 'Si-Jo' Foo","roleImg":"","roleName":"NSA Contractor       (uncredited)"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"","community":{},"director":{"directorId":903521,"img":"http://img5.mtime.cn/ph/2017/02/17/182200.43454182_1280X720X2.jpg","name":"D·J·卡卢索","nameEn":"D.J. Caruso"},"festivals":[],"hotRanking":-1,"img":"http://img5.mtime.cn/mt/2017/01/05/105822.16893974_1280X720X2.jpg","is3D":true,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":false,"isIMAX3D":true,"isTicket":false,"message":"该操作将清除您对该片的评分！是否确认？","mins":"107分钟","movieId":125805,"name":"极限特工：终极回归","nameEn":"xXx: The Return of Xander Cage","overallRating":6.5,"personCount":217,"quizGame":{},"releaseArea":"中国","releaseDate":"20170210","showCinemaCount":-1,"showDay":-1,"showtimeCount":-1,"stageImg":{"count":197,"list":[{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]},"story":"范·迪塞尔扮演的桑德·凯奇在被认为已经死亡后又奇迹般归来，极度危险的反派研制出了能够毁灭世界的终极武器，在这一大危机下，凯奇重出江湖，并招募了一支各有所长、热爱刺激的团队。他们与甄子丹领衔的另一队人马争夺一个叫做\u201c潘多拉魔盒\u201d的武器，最终一起携手拯救世界。才华横溢的导演D·J·卡卢索动作场景拍得非常精彩，其中包括滑滑板下坡的镜头、摩托车冲浪的场景、一场徒步高速公路追逐戏、零重力飞机上的搏斗片段，还有可以终结一切枪战的boss级枪战。","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["动作","冒险","惊悚"],"url":"https://movie.mtime.com/125805/","video":{"count":40,"hightUrl":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4","img":"http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg","title":"极限特工：终极回归 中国版预告片","url":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4","videoId":64107}},"boxOffice":{"movieId":125805,"ranking":0,"todayBox":0,"todayBoxDes":"","todayBoxDesUnit":"","totalBox":112780408790,"totalBoxDes":"11.28亿元","totalBoxUnit":"累计票房(亿)"},"live":{"count":1,"img":"http://img5.mtime.cn/mg/2017/02/04/165331.18709160.jpg","liveId":224,"playNumTag":"83.3万次播放","playTag":"","status":4,"title":"电影《极限特工：终极回归》中国首映礼"},"related":{"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}}
+     * data : {"advertisement":{"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"银联闪付购票","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1222/yl750210.html"}],"count":1,"error":"","success":true},"basic":{"actors":[{"actorId":1518239,"img":"http://img31.mtime.cn/ph/2016/03/28/110257.13425902_1280X720X2.jpg","name":"黄轩","nameEn":"Xuan Huang","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160829.51262727.jpg","roleName":"刘峰"},{"actorId":2249246,"img":"http://img5.mtime.cn/ph/2017/09/15/153622.34557648_1280X720X2.jpg","name":"苗苗","nameEn":"Miao Miao","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160835.93704925.jpg","roleName":"何小萍"},{"actorId":2156137,"img":"http://img5.mtime.cn/ph/2017/04/26/182140.50683513_1280X720X2.jpg","name":"钟楚曦","nameEn":"Elane Zhong","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160843.75092801.jpg","roleName":"萧穗子"},{"actorId":2146497,"img":"http://img5.mtime.cn/ph/2017/04/26/181946.16471448_1280X720X2.jpg","name":"杨采钰","nameEn":"Caiyu Yang","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160849.42185611.jpg","roleName":"林丁丁"},{"actorId":2156980,"img":"http://img5.mtime.cn/ph/2017/04/26/182850.25591488_1280X720X2.jpg","name":"李晓峰","nameEn":"Xiaofeng Li","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160854.56530760.jpg","roleName":"郝淑雯"},{"actorId":1736710,"img":"http://img5.mtime.cn/ph/2017/04/26/183305.27152843_1280X720X2.jpg","name":"王天辰","nameEn":"Tianchen Wang","roleImg":"","roleName":"陈灿"},{"actorId":2248831,"img":"http://img5.mtime.cn/ph/2017/04/26/182329.99228198_1280X720X2.jpg","name":"王可如","nameEn":"Keru Wang","roleImg":"","roleName":"小芭蕾"},{"actorId":2249082,"img":"http://img5.mtime.cn/ph/2017/04/26/181317.15316448_1280X720X2.jpg","name":"隋源","nameEn":"Yuan Sui","roleImg":"","roleName":"卓玛"},{"actorId":1248646,"img":"http://img31.mtime.cn/ph/2015/07/29/153148.12876130_1280X720X2.jpg","name":"苏岩","nameEn":"Yan Su","roleImg":"","roleName":"舞蹈老师"},{"actorId":1406218,"img":"http://img5.mtime.cn/ph/2017/09/13/141630.73521940_1280X720X2.jpg","name":"赵立新","nameEn":"Lixin Zhao","roleImg":"","roleName":"政委"},{"actorId":1823789,"img":"http://img31.mtime.cn/ph/2014/11/24/114955.14517592_1280X720X2.jpg","name":"周放","nameEn":"Fang Zhou","roleImg":"","roleName":"护士长"},{"actorId":2053953,"img":"http://img31.mtime.cn/ph/2016/02/14/144239.53708558_1280X720X2.jpg","name":"张仁博","nameEn":"Renbo Zhang","roleImg":"","roleName":"朱克"},{"actorId":1448993,"img":"http://img31.mtime.cn/ph/2013/05/29/161218.67853450_1280X720X2.jpg","name":"陶海","nameEn":"Hai Tao","roleImg":"","roleName":"精神科医生"},{"actorId":2312491,"img":"http://img5.mtime.cn/ph/2017/12/19/093424.95243332_1280X720X2.jpg","name":"邝晓彤","nameEn":"","roleImg":"","roleName":""}],"award":{"awardList":[{"festivalId":12,"nominateAwards":[{"awardName":"金马奖-最佳新人奖","festivalEventYear":"2017","persons":[{"nameCn":"钟楚曦","nameEn":"Elane Zhong","personId":2156137}],"sequenceNumber":54},{"awardName":"金马奖-最佳改编剧本","festivalEventYear":"2017","persons":[{"nameCn":"严歌苓","nameEn":"Geling Yan","personId":893195}],"sequenceNumber":54},{"awardName":"金马奖-最佳艺术指导","festivalEventYear":"2017","persons":[],"sequenceNumber":54},{"awardName":"金马奖-最佳化妆和服装设计奖","festivalEventYear":"2017","persons":[],"sequenceNumber":54}],"nominateCount":4,"winAwards":[],"winCount":0}],"totalNominateAward":4,"totalWinAward":0},"commentSpecial":"青春少男少女的文工团芳华岁月","community":{},"director":{"directorId":892845,"img":"http://img31.mtime.cn/ph/2016/08/27/213246.71650971_1280X720X2.jpg","name":"冯小刚","nameEn":"Xiaogang Feng"},"festivals":[{"festivalId":12,"img":"http://img31.mtime.cn/mg/2014/02/24/145924.59251220.jpg","nameCn":"台湾电影金马奖","nameEn":"Golden Horse Film Festival","shortName":"金马奖"}],"hotRanking":50,"img":"http://img5.mtime.cn/mt/2017/12/09/120449.13626053_1280X720X2.jpg","is3D":false,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":true,"isIMAX3D":false,"isTicket":true,"message":"该操作将清除您对该片的评分！是否确认？","mins":"136分钟","movieId":236404,"name":"芳华","nameEn":"Youth","overallRating":7.7,"personCount":18,"quizGame":{},"releaseArea":"中国","releaseDate":"20171215","showCinemaCount":144,"showDay":1514188800,"showtimeCount":1288,"stageImg":{"count":243,"list":[{"imgId":7326871,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/150034.85958856_1280X720X2.jpg"},{"imgId":7336821,"imgUrl":"http://img5.mtime.cn/pi/2017/03/07/161047.67442805_1280X720X2.jpg"},{"imgId":7421892,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.39242722_1280X720X2.jpg"},{"imgId":7421893,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.64277730_1280X720X2.jpg"}]},"story":"影片讲述了在充满理想和激情的部队文工团，一群正值芳华的年轻人在爱情萌发时经历了残酷战争的洗礼。\u201c活雷锋\u201d刘峰（黄轩饰）由于一次触摸事件被集体抛弃，从农村来的何小萍（苗苗饰），因\u201c不良习气\u201d屡次遭到文工团女兵的歧视与排斥，萧穗子（钟楚曦饰）默默暗恋着文工团小号手。三人因命运巧合重逢在硝烟弥漫的战场，昔日文工团的战友林丁丁、郝淑雯、陈灿等人也在时代变革中走上了截然不同的人生命运。","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["爱情","剧情","战争","文艺","女性"],"url":"https://movie.mtime.com/236404/","video":{"count":29,"hightUrl":"https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087.mp4","img":"http://img5.mtime.cn/mg/2017/05/17/153743.75321590_235X132X4.jpg","title":"芳华 青春版预告片","url":"https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087_480.mp4","videoId":65743}},"boxOffice":{"movieId":236404,"ranking":1,"todayBox":5645932811,"todayBoxDes":"5645.93","todayBoxDesUnit":"今日实时(万)","totalBox":87721446268,"totalBoxDes":"8.77","totalBoxUnit":"累计票房(亿)"},"live":{"count":0,"img":"","liveId":0,"playNumTag":"","playTag":"","status":3,"title":""},"related":{"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}}
      * msg : 成功
      * showMsg :
      */
@@ -54,10 +55,10 @@ public class Details {
 
     public static class DataBean {
         /**
-         * advertisement : {"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城喵星人+商城乐高","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html"}],"count":1,"error":"","success":true}
-         * basic : {"actors":[{"actorId":913378,"img":"http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg","name":"范·迪塞尔","nameEn":"Vin Diesel","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg","roleName":"桑德·凯奇"},{"actorId":893008,"img":"http://img31.mtime.cn/ph/2014/03/13/164116.22404345_1280X720X2.jpg","name":"甄子丹","nameEn":"Donnie Yen","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162631.30237748.jpg","roleName":"项"},{"actorId":1403701,"img":"http://img31.mtime.cn/ph/2016/04/05/153734.26333599_1280X720X2.jpg","name":"迪皮卡·帕度柯妮","nameEn":"Deepika Padukone","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163611.99195116.jpg","roleName":"赛琳娜"},{"actorId":1763914,"img":"http://img5.mtime.cn/ph/2017/02/08/172048.77104443_1280X720X2.jpg","name":"鲁比·罗丝","nameEn":"Ruby Rose","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162801.28633700.jpg","roleName":"阿黛尔"},{"actorId":1981491,"img":"http://img5.mtime.cn/ph/2017/08/21/103819.54514950_1280X720X2.jpg","name":"吴亦凡","nameEn":"Kris Wu","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162650.25424635.jpg","roleName":"DJ尼克斯"},{"actorId":1266158,"img":"http://img31.mtime.cn/ph/2016/05/04/162943.45619387_1280X720X2.jpg","name":"妮娜·杜波夫","nameEn":"Nina Dobrev","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163459.85286563.jpg","roleName":"贝基"},{"actorId":913101,"img":"http://img31.mtime.cn/ph/2014/03/14/152328.88324192_1280X720X2.jpg","name":"塞缪尔·杰克逊","nameEn":"Samuel L. Jackson","roleImg":"http://img5.mtime.cn/mg/2017/02/09/143611.45346521.jpg","roleName":"吉布森"},{"actorId":938310,"img":"http://img31.mtime.cn/ph/2014/02/22/202102.28239250_1280X720X2.jpg","name":"托尼·贾","nameEn":"Tony Jaa","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163434.84663336.jpg","roleName":"塔隆"},{"actorId":915029,"img":"http://img5.mtime.cn/ph/2017/01/12/165011.48068899_1280X720X2.jpg","name":"托妮·科莱特","nameEn":"Toni Collette","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163402.87655748.jpg","roleName":"马珂"},{"actorId":926008,"img":"http://img31.mtime.cn/ph/2016/04/07/144735.68017937_1280X720X2.jpg","name":"罗伊·麦克凯恩","nameEn":"Rory McCann","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163308.86236332.jpg","roleName":"泰尼逊"},{"actorId":2201494,"img":"http://img5.mtime.cn/ph/2016/11/02/092530.84997401_1280X720X2.jpg","name":"尼基·詹姆","nameEn":"Nicky Jam","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163152.53635568.jpg","roleName":"拉撒路"},{"actorId":1416487,"img":"http://img31.mtime.cn/ph/2016/08/29/184141.26902742_1280X720X2.jpg","name":"迈克尔·比斯平","nameEn":"Michael Bisping","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163040.43362207.jpg","roleName":"霍克"},{"actorId":2098727,"img":"http://img31.mtime.cn/ph/2015/07/01/114143.59711468_1280X720X2.jpg","name":"内马尔","nameEn":"Neymar","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163524.98203922.jpg","roleName":"内马尔"},{"actorId":903983,"img":"http://img31.mtime.cn/ph/2014/02/22/194147.64436994_1280X720X2.jpg","name":"艾斯·库珀","nameEn":"Ice Cube","roleImg":"","roleName":"达里斯"},{"actorId":2084677,"img":"http://img31.mtime.cn/ph/2015/09/09/101940.19419320_1280X720X2.jpg","name":"赫敏·科菲尔德","nameEn":"Hermione Corfield","roleImg":"","roleName":"安斯利"},{"actorId":921201,"img":"http://img31.mtime.cn/ph/2014/04/15/111254.75720606_1280X720X2.jpg","name":"艾尔·斯帕恩扎","nameEn":"Al Sapienza","roleImg":"","roleName":"CIA Director"},{"actorId":1232892,"img":"http://img5.mtime.cn/ph/2017/01/05/145035.65755647_1280X720X2.jpg","name":"","nameEn":"Helena-Alexis Seymour","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218074,"img":"http://img31.mtime.cn/ph/2016/08/29/184313.10828827_1280X720X2.jpg","name":"","nameEn":"Megan Soo","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218075,"img":"http://img5.mtime.cn/ph/2017/01/05/144739.37346974_1280X720X2.jpg","name":"","nameEn":"Kristen Kurnik","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":1023991,"img":"http://img5.mtime.cn/ph/2017/01/05/144625.10720932_1280X720X2.jpg","name":"","nameEn":"Gary 'Si-Jo' Foo","roleImg":"","roleName":"NSA Contractor       (uncredited)"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"","community":{},"director":{"directorId":903521,"img":"http://img5.mtime.cn/ph/2017/02/17/182200.43454182_1280X720X2.jpg","name":"D·J·卡卢索","nameEn":"D.J. Caruso"},"festivals":[],"hotRanking":-1,"img":"http://img5.mtime.cn/mt/2017/01/05/105822.16893974_1280X720X2.jpg","is3D":true,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":false,"isIMAX3D":true,"isTicket":false,"message":"该操作将清除您对该片的评分！是否确认？","mins":"107分钟","movieId":125805,"name":"极限特工：终极回归","nameEn":"xXx: The Return of Xander Cage","overallRating":6.5,"personCount":217,"quizGame":{},"releaseArea":"中国","releaseDate":"20170210","showCinemaCount":-1,"showDay":-1,"showtimeCount":-1,"stageImg":{"count":197,"list":[{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]},"story":"范·迪塞尔扮演的桑德·凯奇在被认为已经死亡后又奇迹般归来，极度危险的反派研制出了能够毁灭世界的终极武器，在这一大危机下，凯奇重出江湖，并招募了一支各有所长、热爱刺激的团队。他们与甄子丹领衔的另一队人马争夺一个叫做\u201c潘多拉魔盒\u201d的武器，最终一起携手拯救世界。才华横溢的导演D·J·卡卢索动作场景拍得非常精彩，其中包括滑滑板下坡的镜头、摩托车冲浪的场景、一场徒步高速公路追逐戏、零重力飞机上的搏斗片段，还有可以终结一切枪战的boss级枪战。","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["动作","冒险","惊悚"],"url":"https://movie.mtime.com/125805/","video":{"count":40,"hightUrl":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4","img":"http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg","title":"极限特工：终极回归 中国版预告片","url":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4","videoId":64107}}
-         * boxOffice : {"movieId":125805,"ranking":0,"todayBox":0,"todayBoxDes":"","todayBoxDesUnit":"","totalBox":112780408790,"totalBoxDes":"11.28亿元","totalBoxUnit":"累计票房(亿)"}
-         * live : {"count":1,"img":"http://img5.mtime.cn/mg/2017/02/04/165331.18709160.jpg","liveId":224,"playNumTag":"83.3万次播放","playTag":"","status":4,"title":"电影《极限特工：终极回归》中国首映礼"}
+         * advertisement : {"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"银联闪付购票","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1222/yl750210.html"}],"count":1,"error":"","success":true}
+         * basic : {"actors":[{"actorId":1518239,"img":"http://img31.mtime.cn/ph/2016/03/28/110257.13425902_1280X720X2.jpg","name":"黄轩","nameEn":"Xuan Huang","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160829.51262727.jpg","roleName":"刘峰"},{"actorId":2249246,"img":"http://img5.mtime.cn/ph/2017/09/15/153622.34557648_1280X720X2.jpg","name":"苗苗","nameEn":"Miao Miao","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160835.93704925.jpg","roleName":"何小萍"},{"actorId":2156137,"img":"http://img5.mtime.cn/ph/2017/04/26/182140.50683513_1280X720X2.jpg","name":"钟楚曦","nameEn":"Elane Zhong","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160843.75092801.jpg","roleName":"萧穗子"},{"actorId":2146497,"img":"http://img5.mtime.cn/ph/2017/04/26/181946.16471448_1280X720X2.jpg","name":"杨采钰","nameEn":"Caiyu Yang","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160849.42185611.jpg","roleName":"林丁丁"},{"actorId":2156980,"img":"http://img5.mtime.cn/ph/2017/04/26/182850.25591488_1280X720X2.jpg","name":"李晓峰","nameEn":"Xiaofeng Li","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160854.56530760.jpg","roleName":"郝淑雯"},{"actorId":1736710,"img":"http://img5.mtime.cn/ph/2017/04/26/183305.27152843_1280X720X2.jpg","name":"王天辰","nameEn":"Tianchen Wang","roleImg":"","roleName":"陈灿"},{"actorId":2248831,"img":"http://img5.mtime.cn/ph/2017/04/26/182329.99228198_1280X720X2.jpg","name":"王可如","nameEn":"Keru Wang","roleImg":"","roleName":"小芭蕾"},{"actorId":2249082,"img":"http://img5.mtime.cn/ph/2017/04/26/181317.15316448_1280X720X2.jpg","name":"隋源","nameEn":"Yuan Sui","roleImg":"","roleName":"卓玛"},{"actorId":1248646,"img":"http://img31.mtime.cn/ph/2015/07/29/153148.12876130_1280X720X2.jpg","name":"苏岩","nameEn":"Yan Su","roleImg":"","roleName":"舞蹈老师"},{"actorId":1406218,"img":"http://img5.mtime.cn/ph/2017/09/13/141630.73521940_1280X720X2.jpg","name":"赵立新","nameEn":"Lixin Zhao","roleImg":"","roleName":"政委"},{"actorId":1823789,"img":"http://img31.mtime.cn/ph/2014/11/24/114955.14517592_1280X720X2.jpg","name":"周放","nameEn":"Fang Zhou","roleImg":"","roleName":"护士长"},{"actorId":2053953,"img":"http://img31.mtime.cn/ph/2016/02/14/144239.53708558_1280X720X2.jpg","name":"张仁博","nameEn":"Renbo Zhang","roleImg":"","roleName":"朱克"},{"actorId":1448993,"img":"http://img31.mtime.cn/ph/2013/05/29/161218.67853450_1280X720X2.jpg","name":"陶海","nameEn":"Hai Tao","roleImg":"","roleName":"精神科医生"},{"actorId":2312491,"img":"http://img5.mtime.cn/ph/2017/12/19/093424.95243332_1280X720X2.jpg","name":"邝晓彤","nameEn":"","roleImg":"","roleName":""}],"award":{"awardList":[{"festivalId":12,"nominateAwards":[{"awardName":"金马奖-最佳新人奖","festivalEventYear":"2017","persons":[{"nameCn":"钟楚曦","nameEn":"Elane Zhong","personId":2156137}],"sequenceNumber":54},{"awardName":"金马奖-最佳改编剧本","festivalEventYear":"2017","persons":[{"nameCn":"严歌苓","nameEn":"Geling Yan","personId":893195}],"sequenceNumber":54},{"awardName":"金马奖-最佳艺术指导","festivalEventYear":"2017","persons":[],"sequenceNumber":54},{"awardName":"金马奖-最佳化妆和服装设计奖","festivalEventYear":"2017","persons":[],"sequenceNumber":54}],"nominateCount":4,"winAwards":[],"winCount":0}],"totalNominateAward":4,"totalWinAward":0},"commentSpecial":"青春少男少女的文工团芳华岁月","community":{},"director":{"directorId":892845,"img":"http://img31.mtime.cn/ph/2016/08/27/213246.71650971_1280X720X2.jpg","name":"冯小刚","nameEn":"Xiaogang Feng"},"festivals":[{"festivalId":12,"img":"http://img31.mtime.cn/mg/2014/02/24/145924.59251220.jpg","nameCn":"台湾电影金马奖","nameEn":"Golden Horse Film Festival","shortName":"金马奖"}],"hotRanking":50,"img":"http://img5.mtime.cn/mt/2017/12/09/120449.13626053_1280X720X2.jpg","is3D":false,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":true,"isIMAX3D":false,"isTicket":true,"message":"该操作将清除您对该片的评分！是否确认？","mins":"136分钟","movieId":236404,"name":"芳华","nameEn":"Youth","overallRating":7.7,"personCount":18,"quizGame":{},"releaseArea":"中国","releaseDate":"20171215","showCinemaCount":144,"showDay":1514188800,"showtimeCount":1288,"stageImg":{"count":243,"list":[{"imgId":7326871,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/150034.85958856_1280X720X2.jpg"},{"imgId":7336821,"imgUrl":"http://img5.mtime.cn/pi/2017/03/07/161047.67442805_1280X720X2.jpg"},{"imgId":7421892,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.39242722_1280X720X2.jpg"},{"imgId":7421893,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.64277730_1280X720X2.jpg"}]},"story":"影片讲述了在充满理想和激情的部队文工团，一群正值芳华的年轻人在爱情萌发时经历了残酷战争的洗礼。\u201c活雷锋\u201d刘峰（黄轩饰）由于一次触摸事件被集体抛弃，从农村来的何小萍（苗苗饰），因\u201c不良习气\u201d屡次遭到文工团女兵的歧视与排斥，萧穗子（钟楚曦饰）默默暗恋着文工团小号手。三人因命运巧合重逢在硝烟弥漫的战场，昔日文工团的战友林丁丁、郝淑雯、陈灿等人也在时代变革中走上了截然不同的人生命运。","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["爱情","剧情","战争","文艺","女性"],"url":"https://movie.mtime.com/236404/","video":{"count":29,"hightUrl":"https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087.mp4","img":"http://img5.mtime.cn/mg/2017/05/17/153743.75321590_235X132X4.jpg","title":"芳华 青春版预告片","url":"https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087_480.mp4","videoId":65743}}
+         * boxOffice : {"movieId":236404,"ranking":1,"todayBox":5645932811,"todayBoxDes":"5645.93","todayBoxDesUnit":"今日实时(万)","totalBox":87721446268,"totalBoxDes":"8.77","totalBoxUnit":"累计票房(亿)"}
+         * live : {"count":0,"img":"","liveId":0,"playNumTag":"","playTag":"","status":3,"title":""}
          * related : {"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}
          */
 
@@ -109,7 +110,7 @@ public class Details {
 
         public static class AdvertisementBean {
             /**
-             * advList : [{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城喵星人+商城乐高","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html"}]
+             * advList : [{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"银联闪付购票","type":"203","typeName":"影片详情页banner2","url":"https://static1.mtime.cn/feature/mobile/banner/2017/1222/yl750210.html"}]
              * count : 1
              * error :
              * success : true
@@ -159,10 +160,10 @@ public class Details {
                  * isHorizontalScreen : false
                  * isOpenH5 : false
                  * startDate : 1451577600
-                 * tag : 商城喵星人+商城乐高
+                 * tag : 银联闪付购票
                  * type : 203
                  * typeName : 影片详情页banner2
-                 * url : https://static1.mtime.cn/feature/mobile/banner/2017/1214/lgmxr750210m.html
+                 * url : https://static1.mtime.cn/feature/mobile/banner/2017/1222/yl750210.html
                  */
 
                 private String advTag;
@@ -251,42 +252,42 @@ public class Details {
 
         public static class BasicBean {
             /**
-             * actors : [{"actorId":913378,"img":"http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg","name":"范·迪塞尔","nameEn":"Vin Diesel","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg","roleName":"桑德·凯奇"},{"actorId":893008,"img":"http://img31.mtime.cn/ph/2014/03/13/164116.22404345_1280X720X2.jpg","name":"甄子丹","nameEn":"Donnie Yen","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162631.30237748.jpg","roleName":"项"},{"actorId":1403701,"img":"http://img31.mtime.cn/ph/2016/04/05/153734.26333599_1280X720X2.jpg","name":"迪皮卡·帕度柯妮","nameEn":"Deepika Padukone","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163611.99195116.jpg","roleName":"赛琳娜"},{"actorId":1763914,"img":"http://img5.mtime.cn/ph/2017/02/08/172048.77104443_1280X720X2.jpg","name":"鲁比·罗丝","nameEn":"Ruby Rose","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162801.28633700.jpg","roleName":"阿黛尔"},{"actorId":1981491,"img":"http://img5.mtime.cn/ph/2017/08/21/103819.54514950_1280X720X2.jpg","name":"吴亦凡","nameEn":"Kris Wu","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162650.25424635.jpg","roleName":"DJ尼克斯"},{"actorId":1266158,"img":"http://img31.mtime.cn/ph/2016/05/04/162943.45619387_1280X720X2.jpg","name":"妮娜·杜波夫","nameEn":"Nina Dobrev","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163459.85286563.jpg","roleName":"贝基"},{"actorId":913101,"img":"http://img31.mtime.cn/ph/2014/03/14/152328.88324192_1280X720X2.jpg","name":"塞缪尔·杰克逊","nameEn":"Samuel L. Jackson","roleImg":"http://img5.mtime.cn/mg/2017/02/09/143611.45346521.jpg","roleName":"吉布森"},{"actorId":938310,"img":"http://img31.mtime.cn/ph/2014/02/22/202102.28239250_1280X720X2.jpg","name":"托尼·贾","nameEn":"Tony Jaa","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163434.84663336.jpg","roleName":"塔隆"},{"actorId":915029,"img":"http://img5.mtime.cn/ph/2017/01/12/165011.48068899_1280X720X2.jpg","name":"托妮·科莱特","nameEn":"Toni Collette","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163402.87655748.jpg","roleName":"马珂"},{"actorId":926008,"img":"http://img31.mtime.cn/ph/2016/04/07/144735.68017937_1280X720X2.jpg","name":"罗伊·麦克凯恩","nameEn":"Rory McCann","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163308.86236332.jpg","roleName":"泰尼逊"},{"actorId":2201494,"img":"http://img5.mtime.cn/ph/2016/11/02/092530.84997401_1280X720X2.jpg","name":"尼基·詹姆","nameEn":"Nicky Jam","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163152.53635568.jpg","roleName":"拉撒路"},{"actorId":1416487,"img":"http://img31.mtime.cn/ph/2016/08/29/184141.26902742_1280X720X2.jpg","name":"迈克尔·比斯平","nameEn":"Michael Bisping","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163040.43362207.jpg","roleName":"霍克"},{"actorId":2098727,"img":"http://img31.mtime.cn/ph/2015/07/01/114143.59711468_1280X720X2.jpg","name":"内马尔","nameEn":"Neymar","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163524.98203922.jpg","roleName":"内马尔"},{"actorId":903983,"img":"http://img31.mtime.cn/ph/2014/02/22/194147.64436994_1280X720X2.jpg","name":"艾斯·库珀","nameEn":"Ice Cube","roleImg":"","roleName":"达里斯"},{"actorId":2084677,"img":"http://img31.mtime.cn/ph/2015/09/09/101940.19419320_1280X720X2.jpg","name":"赫敏·科菲尔德","nameEn":"Hermione Corfield","roleImg":"","roleName":"安斯利"},{"actorId":921201,"img":"http://img31.mtime.cn/ph/2014/04/15/111254.75720606_1280X720X2.jpg","name":"艾尔·斯帕恩扎","nameEn":"Al Sapienza","roleImg":"","roleName":"CIA Director"},{"actorId":1232892,"img":"http://img5.mtime.cn/ph/2017/01/05/145035.65755647_1280X720X2.jpg","name":"","nameEn":"Helena-Alexis Seymour","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218074,"img":"http://img31.mtime.cn/ph/2016/08/29/184313.10828827_1280X720X2.jpg","name":"","nameEn":"Megan Soo","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218075,"img":"http://img5.mtime.cn/ph/2017/01/05/144739.37346974_1280X720X2.jpg","name":"","nameEn":"Kristen Kurnik","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":1023991,"img":"http://img5.mtime.cn/ph/2017/01/05/144625.10720932_1280X720X2.jpg","name":"","nameEn":"Gary 'Si-Jo' Foo","roleImg":"","roleName":"NSA Contractor       (uncredited)"}]
-             * award : {"awardList":[],"totalNominateAward":0,"totalWinAward":0}
-             * commentSpecial :
+             * actors : [{"actorId":1518239,"img":"http://img31.mtime.cn/ph/2016/03/28/110257.13425902_1280X720X2.jpg","name":"黄轩","nameEn":"Xuan Huang","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160829.51262727.jpg","roleName":"刘峰"},{"actorId":2249246,"img":"http://img5.mtime.cn/ph/2017/09/15/153622.34557648_1280X720X2.jpg","name":"苗苗","nameEn":"Miao Miao","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160835.93704925.jpg","roleName":"何小萍"},{"actorId":2156137,"img":"http://img5.mtime.cn/ph/2017/04/26/182140.50683513_1280X720X2.jpg","name":"钟楚曦","nameEn":"Elane Zhong","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160843.75092801.jpg","roleName":"萧穗子"},{"actorId":2146497,"img":"http://img5.mtime.cn/ph/2017/04/26/181946.16471448_1280X720X2.jpg","name":"杨采钰","nameEn":"Caiyu Yang","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160849.42185611.jpg","roleName":"林丁丁"},{"actorId":2156980,"img":"http://img5.mtime.cn/ph/2017/04/26/182850.25591488_1280X720X2.jpg","name":"李晓峰","nameEn":"Xiaofeng Li","roleImg":"http://img5.mtime.cn/mg/2017/09/25/160854.56530760.jpg","roleName":"郝淑雯"},{"actorId":1736710,"img":"http://img5.mtime.cn/ph/2017/04/26/183305.27152843_1280X720X2.jpg","name":"王天辰","nameEn":"Tianchen Wang","roleImg":"","roleName":"陈灿"},{"actorId":2248831,"img":"http://img5.mtime.cn/ph/2017/04/26/182329.99228198_1280X720X2.jpg","name":"王可如","nameEn":"Keru Wang","roleImg":"","roleName":"小芭蕾"},{"actorId":2249082,"img":"http://img5.mtime.cn/ph/2017/04/26/181317.15316448_1280X720X2.jpg","name":"隋源","nameEn":"Yuan Sui","roleImg":"","roleName":"卓玛"},{"actorId":1248646,"img":"http://img31.mtime.cn/ph/2015/07/29/153148.12876130_1280X720X2.jpg","name":"苏岩","nameEn":"Yan Su","roleImg":"","roleName":"舞蹈老师"},{"actorId":1406218,"img":"http://img5.mtime.cn/ph/2017/09/13/141630.73521940_1280X720X2.jpg","name":"赵立新","nameEn":"Lixin Zhao","roleImg":"","roleName":"政委"},{"actorId":1823789,"img":"http://img31.mtime.cn/ph/2014/11/24/114955.14517592_1280X720X2.jpg","name":"周放","nameEn":"Fang Zhou","roleImg":"","roleName":"护士长"},{"actorId":2053953,"img":"http://img31.mtime.cn/ph/2016/02/14/144239.53708558_1280X720X2.jpg","name":"张仁博","nameEn":"Renbo Zhang","roleImg":"","roleName":"朱克"},{"actorId":1448993,"img":"http://img31.mtime.cn/ph/2013/05/29/161218.67853450_1280X720X2.jpg","name":"陶海","nameEn":"Hai Tao","roleImg":"","roleName":"精神科医生"},{"actorId":2312491,"img":"http://img5.mtime.cn/ph/2017/12/19/093424.95243332_1280X720X2.jpg","name":"邝晓彤","nameEn":"","roleImg":"","roleName":""}]
+             * award : {"awardList":[{"festivalId":12,"nominateAwards":[{"awardName":"金马奖-最佳新人奖","festivalEventYear":"2017","persons":[{"nameCn":"钟楚曦","nameEn":"Elane Zhong","personId":2156137}],"sequenceNumber":54},{"awardName":"金马奖-最佳改编剧本","festivalEventYear":"2017","persons":[{"nameCn":"严歌苓","nameEn":"Geling Yan","personId":893195}],"sequenceNumber":54},{"awardName":"金马奖-最佳艺术指导","festivalEventYear":"2017","persons":[],"sequenceNumber":54},{"awardName":"金马奖-最佳化妆和服装设计奖","festivalEventYear":"2017","persons":[],"sequenceNumber":54}],"nominateCount":4,"winAwards":[],"winCount":0}],"totalNominateAward":4,"totalWinAward":0}
+             * commentSpecial : 青春少男少女的文工团芳华岁月
              * community : {}
-             * director : {"directorId":903521,"img":"http://img5.mtime.cn/ph/2017/02/17/182200.43454182_1280X720X2.jpg","name":"D·J·卡卢索","nameEn":"D.J. Caruso"}
-             * festivals : []
-             * hotRanking : -1
-             * img : http://img5.mtime.cn/mt/2017/01/05/105822.16893974_1280X720X2.jpg
-             * is3D : true
+             * director : {"directorId":892845,"img":"http://img31.mtime.cn/ph/2016/08/27/213246.71650971_1280X720X2.jpg","name":"冯小刚","nameEn":"Xiaogang Feng"}
+             * festivals : [{"festivalId":12,"img":"http://img31.mtime.cn/mg/2014/02/24/145924.59251220.jpg","nameCn":"台湾电影金马奖","nameEn":"Golden Horse Film Festival","shortName":"金马奖"}]
+             * hotRanking : 50
+             * img : http://img5.mtime.cn/mt/2017/12/09/120449.13626053_1280X720X2.jpg
+             * is3D : false
              * isDMAX : true
              * isEggHunt : false
              * isFilter : false
-             * isIMAX : false
-             * isIMAX3D : true
-             * isTicket : false
+             * isIMAX : true
+             * isIMAX3D : false
+             * isTicket : true
              * message : 该操作将清除您对该片的评分！是否确认？
-             * mins : 107分钟
-             * movieId : 125805
-             * name : 极限特工：终极回归
-             * nameEn : xXx: The Return of Xander Cage
-             * overallRating : 6.5
-             * personCount : 217
+             * mins : 136分钟
+             * movieId : 236404
+             * name : 芳华
+             * nameEn : Youth
+             * overallRating : 7.7
+             * personCount : 18
              * quizGame : {}
              * releaseArea : 中国
-             * releaseDate : 20170210
-             * showCinemaCount : -1
-             * showDay : -1
-             * showtimeCount : -1
-             * stageImg : {"count":197,"list":[{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]}
-             * story : 范·迪塞尔扮演的桑德·凯奇在被认为已经死亡后又奇迹般归来，极度危险的反派研制出了能够毁灭世界的终极武器，在这一大危机下，凯奇重出江湖，并招募了一支各有所长、热爱刺激的团队。他们与甄子丹领衔的另一队人马争夺一个叫做“潘多拉魔盒”的武器，最终一起携手拯救世界。才华横溢的导演D·J·卡卢索动作场景拍得非常精彩，其中包括滑滑板下坡的镜头、摩托车冲浪的场景、一场徒步高速公路追逐戏、零重力飞机上的搏斗片段，还有可以终结一切枪战的boss级枪战。
+             * releaseDate : 20171215
+             * showCinemaCount : 144
+             * showDay : 1514188800
+             * showtimeCount : 1288
+             * stageImg : {"count":243,"list":[{"imgId":7326871,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/150034.85958856_1280X720X2.jpg"},{"imgId":7336821,"imgUrl":"http://img5.mtime.cn/pi/2017/03/07/161047.67442805_1280X720X2.jpg"},{"imgId":7421892,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.39242722_1280X720X2.jpg"},{"imgId":7421893,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.64277730_1280X720X2.jpg"}]}
+             * story : 影片讲述了在充满理想和激情的部队文工团，一群正值芳华的年轻人在爱情萌发时经历了残酷战争的洗礼。“活雷锋”刘峰（黄轩饰）由于一次触摸事件被集体抛弃，从农村来的何小萍（苗苗饰），因“不良习气”屡次遭到文工团女兵的歧视与排斥，萧穗子（钟楚曦饰）默默暗恋着文工团小号手。三人因命运巧合重逢在硝烟弥漫的战场，昔日文工团的战友林丁丁、郝淑雯、陈灿等人也在时代变革中走上了截然不同的人生命运。
              * style : {"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""}
              * totalNominateAward : 0
              * totalWinAward : 0
-             * type : ["动作","冒险","惊悚"]
-             * url : https://movie.mtime.com/125805/
-             * video : {"count":40,"hightUrl":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4","img":"http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg","title":"极限特工：终极回归 中国版预告片","url":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4","videoId":64107}
+             * type : ["爱情","剧情","战争","文艺","女性"]
+             * url : https://movie.mtime.com/236404/
+             * video : {"count":29,"hightUrl":"https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087.mp4","img":"http://img5.mtime.cn/mg/2017/05/17/153743.75321590_235X132X4.jpg","title":"芳华 青春版预告片","url":"https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087_480.mp4","videoId":65743}
              */
 
             private AwardBean award;
@@ -323,7 +324,7 @@ public class Details {
             private String url;
             private VideoBean video;
             private List<ActorsBean> actors;
-            private List<?> festivals;
+            private List<FestivalsBean> festivals;
             private List<String> type;
 
             public AwardBean getAward() {
@@ -598,11 +599,11 @@ public class Details {
                 this.actors = actors;
             }
 
-            public List<?> getFestivals() {
+            public List<FestivalsBean> getFestivals() {
                 return festivals;
             }
 
-            public void setFestivals(List<?> festivals) {
+            public void setFestivals(List<FestivalsBean> festivals) {
                 this.festivals = festivals;
             }
 
@@ -615,12 +616,190 @@ public class Details {
             }
 
             public static class AwardBean {
+                /**
+                 * awardList : [{"festivalId":12,"nominateAwards":[{"awardName":"金马奖-最佳新人奖","festivalEventYear":"2017","persons":[{"nameCn":"钟楚曦","nameEn":"Elane Zhong","personId":2156137}],"sequenceNumber":54},{"awardName":"金马奖-最佳改编剧本","festivalEventYear":"2017","persons":[{"nameCn":"严歌苓","nameEn":"Geling Yan","personId":893195}],"sequenceNumber":54},{"awardName":"金马奖-最佳艺术指导","festivalEventYear":"2017","persons":[],"sequenceNumber":54},{"awardName":"金马奖-最佳化妆和服装设计奖","festivalEventYear":"2017","persons":[],"sequenceNumber":54}],"nominateCount":4,"winAwards":[],"winCount":0}]
+                 * totalNominateAward : 4
+                 * totalWinAward : 0
+                 */
+
+                private int totalNominateAward;
+                private int totalWinAward;
+                private List<AwardListBean> awardList;
+
+                public int getTotalNominateAward() {
+                    return totalNominateAward;
+                }
+
+                public void setTotalNominateAward(int totalNominateAward) {
+                    this.totalNominateAward = totalNominateAward;
+                }
+
+                public int getTotalWinAward() {
+                    return totalWinAward;
+                }
+
+                public void setTotalWinAward(int totalWinAward) {
+                    this.totalWinAward = totalWinAward;
+                }
+
+                public List<AwardListBean> getAwardList() {
+                    return awardList;
+                }
+
+                public void setAwardList(List<AwardListBean> awardList) {
+                    this.awardList = awardList;
+                }
+
+                public static class AwardListBean {
+                    /**
+                     * festivalId : 12
+                     * nominateAwards : [{"awardName":"金马奖-最佳新人奖","festivalEventYear":"2017","persons":[{"nameCn":"钟楚曦","nameEn":"Elane Zhong","personId":2156137}],"sequenceNumber":54},{"awardName":"金马奖-最佳改编剧本","festivalEventYear":"2017","persons":[{"nameCn":"严歌苓","nameEn":"Geling Yan","personId":893195}],"sequenceNumber":54},{"awardName":"金马奖-最佳艺术指导","festivalEventYear":"2017","persons":[],"sequenceNumber":54},{"awardName":"金马奖-最佳化妆和服装设计奖","festivalEventYear":"2017","persons":[],"sequenceNumber":54}]
+                     * nominateCount : 4
+                     * winAwards : []
+                     * winCount : 0
+                     */
+
+                    private int festivalId;
+                    private int nominateCount;
+                    private int winCount;
+                    private List<NominateAwardsBean> nominateAwards;
+                    private List<?> winAwards;
+
+                    public int getFestivalId() {
+                        return festivalId;
+                    }
+
+                    public void setFestivalId(int festivalId) {
+                        this.festivalId = festivalId;
+                    }
+
+                    public int getNominateCount() {
+                        return nominateCount;
+                    }
+
+                    public void setNominateCount(int nominateCount) {
+                        this.nominateCount = nominateCount;
+                    }
+
+                    public int getWinCount() {
+                        return winCount;
+                    }
+
+                    public void setWinCount(int winCount) {
+                        this.winCount = winCount;
+                    }
+
+                    public List<NominateAwardsBean> getNominateAwards() {
+                        return nominateAwards;
+                    }
+
+                    public void setNominateAwards(List<NominateAwardsBean> nominateAwards) {
+                        this.nominateAwards = nominateAwards;
+                    }
+
+                    public List<?> getWinAwards() {
+                        return winAwards;
+                    }
+
+                    public void setWinAwards(List<?> winAwards) {
+                        this.winAwards = winAwards;
+                    }
+
+                    public static class NominateAwardsBean {
+                        /**
+                         * awardName : 金马奖-最佳新人奖
+                         * festivalEventYear : 2017
+                         * persons : [{"nameCn":"钟楚曦","nameEn":"Elane Zhong","personId":2156137}]
+                         * sequenceNumber : 54
+                         */
+
+                        private String awardName;
+                        private String festivalEventYear;
+                        private int sequenceNumber;
+                        private List<PersonsBean> persons;
+
+                        public String getAwardName() {
+                            return awardName;
+                        }
+
+                        public void setAwardName(String awardName) {
+                            this.awardName = awardName;
+                        }
+
+                        public String getFestivalEventYear() {
+                            return festivalEventYear;
+                        }
+
+                        public void setFestivalEventYear(String festivalEventYear) {
+                            this.festivalEventYear = festivalEventYear;
+                        }
+
+                        public int getSequenceNumber() {
+                            return sequenceNumber;
+                        }
+
+                        public void setSequenceNumber(int sequenceNumber) {
+                            this.sequenceNumber = sequenceNumber;
+                        }
+
+                        public List<PersonsBean> getPersons() {
+                            return persons;
+                        }
+
+                        public void setPersons(List<PersonsBean> persons) {
+                            this.persons = persons;
+                        }
+
+                        public static class PersonsBean {
+                            /**
+                             * nameCn : 钟楚曦
+                             * nameEn : Elane Zhong
+                             * personId : 2156137
+                             */
+
+                            private String nameCn;
+                            private String nameEn;
+                            private int personId;
+
+                            public String getNameCn() {
+                                return nameCn;
+                            }
+
+                            public void setNameCn(String nameCn) {
+                                this.nameCn = nameCn;
+                            }
+
+                            public String getNameEn() {
+                                return nameEn;
+                            }
+
+                            public void setNameEn(String nameEn) {
+                                this.nameEn = nameEn;
+                            }
+
+                            public int getPersonId() {
+                                return personId;
+                            }
+
+                            public void setPersonId(int personId) {
+                                this.personId = personId;
+                            }
+                        }
+                    }
+                }
             }
 
             public static class CommunityBean {
             }
 
             public static class DirectorBean {
+                /**
+                 * directorId : 892845
+                 * img : http://img31.mtime.cn/ph/2016/08/27/213246.71650971_1280X720X2.jpg
+                 * name : 冯小刚
+                 * nameEn : Xiaogang Feng
+                 */
+
                 private int directorId;
                 private String img;
                 private String name;
@@ -664,8 +843,8 @@ public class Details {
 
             public static class StageImgBean {
                 /**
-                 * count : 197
-                 * list : [{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]
+                 * count : 243
+                 * list : [{"imgId":7326871,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/150034.85958856_1280X720X2.jpg"},{"imgId":7336821,"imgUrl":"http://img5.mtime.cn/pi/2017/03/07/161047.67442805_1280X720X2.jpg"},{"imgId":7421892,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.39242722_1280X720X2.jpg"},{"imgId":7421893,"imgUrl":"http://img5.mtime.cn/pi/2017/12/11/162742.64277730_1280X720X2.jpg"}]
                  */
 
                 private int count;
@@ -689,8 +868,8 @@ public class Details {
 
                 public static class ListBean {
                     /**
-                     * imgId : 7176277
-                     * imgUrl : http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg
+                     * imgId : 7326871
+                     * imgUrl : http://img5.mtime.cn/pi/2017/01/25/150034.85958856_1280X720X2.jpg
                      */
 
                     private int imgId;
@@ -752,12 +931,12 @@ public class Details {
 
             public static class VideoBean {
                 /**
-                 * count : 40
-                 * hightUrl : https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4
-                 * img : http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg
-                 * title : 极限特工：终极回归 中国版预告片
-                 * url : https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4
-                 * videoId : 64107
+                 * count : 29
+                 * hightUrl : https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087.mp4
+                 * img : http://img5.mtime.cn/mg/2017/05/17/153743.75321590_235X132X4.jpg
+                 * title : 芳华 青春版预告片
+                 * url : https://vfx.mtime.cn/Video/2017/05/17/mp4/170517153754509087_480.mp4
+                 * videoId : 65743
                  */
 
                 private int count;
@@ -818,12 +997,12 @@ public class Details {
 
             public static class ActorsBean {
                 /**
-                 * actorId : 913378
-                 * img : http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg
-                 * name : 范·迪塞尔
-                 * nameEn : Vin Diesel
-                 * roleImg : http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg
-                 * roleName : 桑德·凯奇
+                 * actorId : 1518239
+                 * img : http://img31.mtime.cn/ph/2016/03/28/110257.13425902_1280X720X2.jpg
+                 * name : 黄轩
+                 * nameEn : Xuan Huang
+                 * roleImg : http://img5.mtime.cn/mg/2017/09/25/160829.51262727.jpg
+                 * roleName : 刘峰
                  */
 
                 private int actorId;
@@ -881,23 +1060,79 @@ public class Details {
                     this.roleName = roleName;
                 }
             }
+
+            public static class FestivalsBean {
+                /**
+                 * festivalId : 12
+                 * img : http://img31.mtime.cn/mg/2014/02/24/145924.59251220.jpg
+                 * nameCn : 台湾电影金马奖
+                 * nameEn : Golden Horse Film Festival
+                 * shortName : 金马奖
+                 */
+
+                private int festivalId;
+                private String img;
+                private String nameCn;
+                private String nameEn;
+                private String shortName;
+
+                public int getFestivalId() {
+                    return festivalId;
+                }
+
+                public void setFestivalId(int festivalId) {
+                    this.festivalId = festivalId;
+                }
+
+                public String getImg() {
+                    return img;
+                }
+
+                public void setImg(String img) {
+                    this.img = img;
+                }
+
+                public String getNameCn() {
+                    return nameCn;
+                }
+
+                public void setNameCn(String nameCn) {
+                    this.nameCn = nameCn;
+                }
+
+                public String getNameEn() {
+                    return nameEn;
+                }
+
+                public void setNameEn(String nameEn) {
+                    this.nameEn = nameEn;
+                }
+
+                public String getShortName() {
+                    return shortName;
+                }
+
+                public void setShortName(String shortName) {
+                    this.shortName = shortName;
+                }
+            }
         }
 
         public static class BoxOfficeBean {
             /**
-             * movieId : 125805
-             * ranking : 0
-             * todayBox : 0
-             * todayBoxDes :
-             * todayBoxDesUnit :
-             * totalBox : 112780408790
-             * totalBoxDes : 11.28亿元
+             * movieId : 236404
+             * ranking : 1
+             * todayBox : 5645932811
+             * todayBoxDes : 5645.93
+             * todayBoxDesUnit : 今日实时(万)
+             * totalBox : 87721446268
+             * totalBoxDes : 8.77
              * totalBoxUnit : 累计票房(亿)
              */
 
             private int movieId;
             private int ranking;
-            private int todayBox;
+            private long todayBox;
             private String todayBoxDes;
             private String todayBoxDesUnit;
             private long totalBox;
@@ -920,11 +1155,11 @@ public class Details {
                 this.ranking = ranking;
             }
 
-            public int getTodayBox() {
+            public long getTodayBox() {
                 return todayBox;
             }
 
-            public void setTodayBox(int todayBox) {
+            public void setTodayBox(long todayBox) {
                 this.todayBox = todayBox;
             }
 
@@ -971,13 +1206,13 @@ public class Details {
 
         public static class LiveBean {
             /**
-             * count : 1
-             * img : http://img5.mtime.cn/mg/2017/02/04/165331.18709160.jpg
-             * liveId : 224
-             * playNumTag : 83.3万次播放
+             * count : 0
+             * img :
+             * liveId : 0
+             * playNumTag :
              * playTag :
-             * status : 4
-             * title : 电影《极限特工：终极回归》中国首映礼
+             * status : 3
+             * title :
              */
 
             private int count;

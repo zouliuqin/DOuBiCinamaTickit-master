@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +42,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
 
     Unbinder unbinder;
     @BindView(R.id.lv_news)
-    ListView lvNews;
+    RecyclerView lvNews;
     @BindView(R.id.srl_news)
     SwipeRefreshLayout srlNews;
     //是否有横幅新闻
@@ -71,6 +74,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
         unbinder = ButterKnife.bind(this, view);
         //获取新闻资讯数据
         NewsData.getNewsData(this, pageNumber);
+
          initUi();
 
         return view;
@@ -149,7 +153,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
      * @param movieNews 电影资讯
      */
     @Override
-    public void onNewsLoadEnd(MovieNews movieNews) {
+    public void onNewsLoadEnd(final MovieNews movieNews) {
         //获取新闻资讯集合
         if (newsLists==null){
             newsLists.addAll( movieNews.getData().getData());
@@ -161,11 +165,18 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                adapter = new NewsAdapter(getActivity(), newsLists);
-                lvNews.setAdapter(adapter);
+//                adapter = new NewsAdapter(getActivity(), newsLists);
+//                lvNews.setAdapter(adapter);
                 //更新界面
-                adapter.notifyDataSetChanged();
+//                adapter.notifyDataSetChanged();
                 //如果没有横幅 则添加横幅信息
+                LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+                manager.setOrientation(LinearLayoutManager.VERTICAL);
+                lvNews.setLayoutManager(manager);
+                adapter = new NewsAdapter(R.layout.item_news,newsLists);
+                Log.d("8888888888",newsLists.get(2).getContent());
+                lvNews.setAdapter(adapter);
+
                 if (!isBanner) {
                     for (int i = 0; i < 4; i++) {
                         images.add(newsLists.get(i).getImg1());
