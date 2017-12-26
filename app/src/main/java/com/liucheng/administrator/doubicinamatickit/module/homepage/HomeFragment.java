@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
@@ -31,7 +30,6 @@ import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageComingSoonAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageHotAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageNewsAdapter;
-import com.liucheng.administrator.doubicinamatickit.view.ImageText;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -50,25 +48,62 @@ import butterknife.Unbinder;
  */
 
 public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener, UpcomingData.UpcomingLoadListener, NewsData.NewsLoadListener {
-
-
-    @BindView(R.id.imageviewText)
-    ImageText imageviewText;
+    @BindView(R.id.text_actionbar)
+    TextView textActionbar;
+    @BindView(R.id.imageView_actionbar)
+    ImageView imageViewActionbar;
+    @BindView(R.id.homepage_banner)
+    Banner homepageBanner;
+    @BindView(R.id.iv_dot)
+    ImageView ivDot;
+    @BindView(R.id.tv_hot)
+    TextView tvHot;
     @BindView(R.id.tv_hot_more)
     TextView tvHotMore;
+    @BindView(R.id.rl_hot)
+    RelativeLayout rlHot;
     @BindView(R.id.rv_homepage_hot)
     RecyclerView rvHomepageHot;
+    @BindView(R.id.iv_coming_soon)
+    ImageView ivComingSoon;
+    @BindView(R.id.tv_coming_soon)
+    TextView tvComingSoon;
     @BindView(R.id.tv_coming_soon_more)
     TextView tvComingSoonMore;
+    @BindView(R.id.rl_coming_soon)
+    RelativeLayout rlComingSoon;
     @BindView(R.id.rv_coming_soon)
     RecyclerView rvComingSoon;
+    @BindView(R.id.iv_movie_news)
+    ImageView ivMovieNews;
+    @BindView(R.id.tv_movie_news)
+    TextView tvMovieNews;
     @BindView(R.id.tv_movie_news_more)
     TextView tvMovieNewsMore;
+    @BindView(R.id.rl_movie_news)
+    RelativeLayout rlMovieNews;
     @BindView(R.id.rv_movie_news)
     RecyclerView rvMovieNews;
     Unbinder unbinder;
-    @BindView(R.id.homepage_banner)
-    Banner homepageBanner;
+
+    //
+    //    @BindView(R.id.imageviewText)
+    //    ImageText imageviewText;
+    //    @BindView(R.id.tv_hot_more)
+    //    TextView tvHotMore;
+    //    @BindView(R.id.rv_homepage_hot)
+    //    RecyclerView rvHomepageHot;
+    //    @BindView(R.id.tv_coming_soon_more)
+    //    TextView tvComingSoonMore;
+    //    @BindView(R.id.rv_coming_soon)
+    //    RecyclerView rvComingSoon;
+    //    @BindView(R.id.tv_movie_news_more)
+    //    TextView tvMovieNewsMore;
+    //    @BindView(R.id.rv_movie_news)
+    //    RecyclerView rvMovieNews;
+    //    Unbinder unbinder;
+    //    @BindView(R.id.homepage_banner)
+    //    Banner homepageBanner;
     /**
      * 首页新闻轮播图片
      */
@@ -120,12 +155,8 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
 
         unbinder = ButterKnife.bind(this, contentView);
-
-
         return contentView;
     }
-
-
 
 
     @Override
@@ -158,10 +189,10 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //TODO 点击电影资讯item跳转到资讯详情
-//                Toast.makeText(getContext(), "sdafvsadf", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(getContext(), "sdafvsadf", Toast.LENGTH_SHORT).show();
                 Intent intentNew = new Intent(getActivity(), DetailNewsActivity.class);
-//                        Log.d("00000000000ppppp",comingSoons.get(position).getId()+"");
-                intentNew.putExtra("NewsId",news.get(position).getAId()+"");
+                //                        Log.d("00000000000ppppp",comingSoons.get(position).getId()+"");
+                intentNew.putExtra("NewsId", news.get(position).getAId() + "");
                 startActivity(intentNew);
 
 
@@ -172,7 +203,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //TODO 点击即将上映item跳转到电影详情
                 Intent intentCom = new Intent(getActivity(), DetailsActivity.class);
-                intentCom.putExtra("cinameId",comingSoons.get(position).getId()+"");
+                intentCom.putExtra("cinameId", comingSoons.get(position).getId() + "");
                 startActivity(intentCom);
             }
         });
@@ -181,7 +212,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //TODO 点击正在热映item跳转到电影详情
                 Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
-                intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
+                intentHit.putExtra("cinameId", isHits.get(position).getId() + "");
                 startActivity(intentHit);
             }
 
@@ -261,7 +292,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         isHits.clear();
         //获取资讯集合
         isHits.addAll(isHit.getMs());
-        if (isHits.size()<=0){
+        if (isHits.size() <= 0) {
             return;
         }
         getActivity().runOnUiThread(new Runnable() {
@@ -286,7 +317,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     public void onUpcomingLoadEnd(Upcoming upcoming) {
 
         comingSoons.addAll(upcoming.getAttention());
-        if (comingSoons.size()<=0){
+        if (comingSoons.size() <= 0) {
             return;
         }
         getActivity().runOnUiThread(new Runnable() {
@@ -294,7 +325,6 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void run() {
                 //TODO 设置即将上映
                 comingSoonAdapter.setNewData(comingSoons);
-
 
 
             }
@@ -330,8 +360,6 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         });
 
     }
-
-
 
 
     private class GlideImageLoader implements ImageLoaderInterface {

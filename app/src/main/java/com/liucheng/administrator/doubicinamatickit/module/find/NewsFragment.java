@@ -162,6 +162,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     public void onNewsLoadEnd(final MovieNews movieNews) {
         //获取新闻资讯集合
         if (newsLists.size()<=0){
+            newsLists.clear();
             newsLists.addAll( movieNews.getData().getData());
         }else {
             newsLists.addAll(0,movieNews.getData().getData());
