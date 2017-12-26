@@ -119,14 +119,8 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
                 cinemaAdapter.setNewData(cinemaBeans);
                 cinemaAdapter.addHeaderView(getHeaderView());
-
-
-
-
-
             }
         });
 
