@@ -55,7 +55,7 @@ public class CinemaData {
                     Gson gson = new Gson();
                     Cinema cinema = gson.fromJson(s.toString(), Cinema.class);
 
-
+                    Log.i("qq", "run: "+cinema.toString());
                     if (loadListener != null && cinema != null) {
                         //接口回调
                         loadListener.onCinemaLoadEnd(cinema);

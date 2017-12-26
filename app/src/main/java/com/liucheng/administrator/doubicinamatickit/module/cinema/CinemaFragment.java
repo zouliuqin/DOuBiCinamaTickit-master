@@ -72,7 +72,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     @Override
     public void initialUI() {
         actionBar = contentView.findViewById(R.id.include_actionbar_cinema);
-        initiaActionBar(R.drawable.ic_brake, city, "影院", R.drawable.title_find);
+        initiaActionBar(R.drawable.ic_brake, city, "影院",0);
         //设置即将上映
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -107,6 +107,10 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
 
     @Override
     public void onCinemaLoadEnd(Cinema cinema) {
+//        Log.d("55555555555",cinema.getCinema().toString());
+        Log.d("666666666666",cinema.toString());
+        Log.d("7777777777777",cinemaBeans.toString());
+
         //清除原有数据
         cinemaBeans.clear();
         //添加回调的数据到城市电影院中

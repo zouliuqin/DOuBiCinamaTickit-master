@@ -28,8 +28,15 @@ public class Cinema {
         this.cinema = cinema;
     }
 
+    @Override
+    public String toString() {
+        return "Cinema{" +
+                "cinema=" + cinema +
+                '}';
+    }
 
     public static class CinemaBean implements Parcelable {
+
         /**
          * address : 上海市虹口区西江湾路388号凯德龙之梦B座6F-7F
          * baiduLatitude : 31.276552

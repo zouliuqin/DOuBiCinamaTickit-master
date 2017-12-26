@@ -35,7 +35,7 @@ public class SeatToActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_seatto);
-        cinemaBean = getIntent().getParcelableExtra("cinema");
+        cinemaBean = getIntent().getParcelableExtra("cinema_tick");
 
 
 //        int c = (int) (Math.random()*30);

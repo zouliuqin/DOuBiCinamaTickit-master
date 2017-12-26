@@ -21,6 +21,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Request;
 
+/**
+ * 电影评论的类
+ */
 public class ReviewActivity extends AppCompatActivity implements AllReviewData.AllReviewDataLoadListener {
     int index = 1;
     int i = 0;

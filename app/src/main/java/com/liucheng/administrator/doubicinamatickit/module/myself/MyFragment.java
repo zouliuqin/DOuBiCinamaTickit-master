@@ -24,9 +24,7 @@ import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.basicsettings.BasicSettingsActivity;
 import com.liucheng.administrator.doubicinamatickit.module.feedback.FeedbackActivity;
 import com.liucheng.administrator.doubicinamatickit.module.login.LoginActivity;
-import com.liucheng.administrator.doubicinamatickit.ui.MainActivity;
 import com.liucheng.administrator.doubicinamatickit.util.FastBlurUtil;
-import com.liucheng.administrator.doubicinamatickit.util.Utils;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -85,7 +83,7 @@ public class MyFragment extends BaseFragment {
     public void initialUI() {
         actionBar = contentView.findViewById(R.id.include_actionbar_my);
 
-        initiaActionBar(-1, null, "个人中心", R.drawable.setting);
+        initiaActionBar(-1, null, "个人中心", R.drawable.settingss);
         //如果用户登录了 则修改为  用户名称
         User user = BmobUser.getCurrentUser(User.class);
         if (user != null) {

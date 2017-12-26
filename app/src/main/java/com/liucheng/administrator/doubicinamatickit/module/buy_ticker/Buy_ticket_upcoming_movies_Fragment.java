@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.adapter.UpcomingAdapter;
@@ -34,7 +37,7 @@ import butterknife.Unbinder;
 public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements UpcomingData.UpcomingLoadListener {
     List<Upcoming.MoviecomingsBean> upcomingList = new ArrayList<>();
     @BindView(R.id.upcoming_listView)
-    ListView listView;
+    RecyclerView listView;
     Unbinder unbinder;
     UpcomingAdapter adapter;
 
@@ -49,13 +52,19 @@ public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements
     }
 
     private void Listener() {
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                intent.putExtra("cinameId",upcomingList.get(i).getId()+"");
-                startActivity(intent);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        listView.setLayoutManager(manager);
+        adapter = new UpcomingAdapter(R.layout.upcoming_show,upcomingList);
+        listView.setAdapter(adapter);
 
+
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("cinameId",upcomingList.get(position).getId()+"");
+                startActivity(intent);
             }
         });
     }
@@ -70,12 +79,11 @@ public class Buy_ticket_upcoming_movies_Fragment extends BaseFragment implements
     public void onUpcomingLoadEnd(Upcoming upcoming) {
         upcomingList.clear();
         upcomingList.addAll(upcoming.getMoviecomings());
+
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                adapter = new UpcomingAdapter(getActivity(),upcomingList);
-                listView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                adapter.setNewData(upcomingList);
             }
         });
 
