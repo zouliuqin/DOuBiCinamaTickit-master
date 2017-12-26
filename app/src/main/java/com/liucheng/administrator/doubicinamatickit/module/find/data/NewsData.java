@@ -50,7 +50,6 @@ public class NewsData {
 
 
                     if (loadListener!=null&&movieNews!=null){
-
                         //接口回调
                         loadListener.onNewsLoadEnd(movieNews);
                     }

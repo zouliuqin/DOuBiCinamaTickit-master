@@ -36,16 +36,6 @@ public class ImageText extends LinearLayout {
     }
 
 
-
-
-
-
-
-
-
-
-
-
     public ImageText(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
@@ -57,11 +47,12 @@ public class ImageText extends LinearLayout {
         initView();
         typedArray.recycle();
     }
+
     private void initView() {
-        final View view = LayoutInflater.from(context).inflate(R.layout.imageview_text, this, true);
-        LinearLayout lv = (LinearLayout) view.findViewById(R.id.linearlayout_view_image_with_text);
-        final ImageView iv = (ImageView) view.findViewById(R.id.imageview_view_image_with_text);
-        TextView tv = (TextView) view.findViewById(R.id.textview_view_image_with_text);
+         View view = LayoutInflater.from(context).inflate(R.layout.imageview_text, this, true);
+        LinearLayout lv =  view.findViewById(R.id.linearlayout_view_image_with_text);
+        ImageView iv =  view.findViewById(R.id.imageview_view_image_with_text);
+        TextView tv =  view.findViewById(R.id.textview_view_image_with_text);
         iv.setImageDrawable(viewImage);
         tv.setText(viewText);
         tv.setTextColor(viewTextColor);
@@ -69,8 +60,8 @@ public class ImageText extends LinearLayout {
         lv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "dsafdddfafd", Toast.LENGTH_SHORT).show();
-               context.startActivity(new Intent(getContext(),CityActivity.class));
+
+                context.startActivity(new Intent(getContext(), CityActivity.class));
 
             }
         });
@@ -85,12 +76,13 @@ public class ImageText extends LinearLayout {
     public void setOnImageWithTextViewClickListener(OnImageWithTextViewClickListener onImageWithTextViewClickListener) {
         this.onImageWithTextViewClickListener = onImageWithTextViewClickListener;
     }
+
     public interface OnImageWithTextViewClickListener {
 
         /**
          * 单击View
          */
-       public void onViewClick(View view);
+        public void onViewClick(View view);
 
     }
 

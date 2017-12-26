@@ -13,8 +13,14 @@ import android.widget.Toast;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.MyFragmentAdapter;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
+import com.liucheng.administrator.doubicinamatickit.module.find.NewsFragment;
+import com.liucheng.administrator.doubicinamatickit.module.find.RankingFragment;
 import com.liucheng.administrator.doubicinamatickit.view.ImageText;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -34,6 +40,10 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     MyFragmentAdapter adapter;
 
     Unbinder unbinder;
+    @BindView(R.id.viewpagertab)
+    SmartTabLayout viewpagertab;
+    @BindView(R.id.viewpager)
+    ViewPager viewpager;
 
 
     public BuyTicketFragment() {
@@ -50,37 +60,48 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.buy_ticket_fragment, container, false);
         initialUI();
-        Listener();
+       // Listener();
 
 
         unbinder = ButterKnife.bind(this, contentView);
+
+
+        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
+                getChildFragmentManager(), FragmentPagerItems.with(getContext())
+                .add("正在热映", Buy_ticket_now_showing_Fragment.class)
+                .add("即将上映", Buy_ticket_upcoming_movies_Fragment.class)
+                .create());
+
+        viewpager.setAdapter(adapter);
+
+        viewpagertab.setViewPager(viewpager);
         return contentView;
     }
 
     private void Listener() {
-        ImageText imageText = contentView.findViewById(R.id.imageviewText);
-        imageText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), "dfsafa", Toast.LENGTH_SHORT).show();
+//        ImageText imageText = contentView.findViewById(R.id.imageviewText);
+//        imageText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//
+//            }
+//        });
 
-            }
-        });
 
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i) {
-                    case R.id.radioButton_lefet:
-                        viewPager.setCurrentItem(0);
-                        break;
-                    case R.id.radioButton_right:
-                        viewPager.setCurrentItem(1);
-                        break;
-                }
-            }
-        });
+//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//                switch (i) {
+//                    case R.id.radioButton_lefet:
+//                        viewPager.setCurrentItem(0);
+//                        break;
+//                    case R.id.radioButton_right:
+//                        viewPager.setCurrentItem(1);
+//                        break;
+//                }
+//            }
+//        });
 
 
     }
@@ -90,22 +111,21 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     public void initialUI() {
 
 
-
         //初始化控件
-        viewPager = contentView.findViewById(R.id.framentlayout_BuyTicket_viewpager);
-        Log.d("TTTTgetActivity()", getActivity().toString());
+//        viewPager = contentView.findViewById(R.id.framentlayout_BuyTicket_viewpager);
+//        Log.d("TTTTgetActivity()", getActivity().toString());
         actionBar = contentView.findViewById(R.id.include_actionbar_buy_ticket);
-        initiaActionBar(R.drawable.go, "武汉", "电影票", -1);
+        initiaActionBar(R.drawable.ic_brake, "武汉", "电影票", -1);
 
-
-        radioGroup = contentView.findViewById(R.id.radioGroup_byu_ticket);
-        upcoming_movies_fragment = new Buy_ticket_upcoming_movies_Fragment();
-        now_showing_fragment = new Buy_ticket_now_showing_Fragment();
-        adapter = new MyFragmentAdapter(getChildFragmentManager());
-        adapter.addFragment(now_showing_fragment);
-        adapter.addFragment(upcoming_movies_fragment);
-
-        viewPager.setAdapter(adapter);
+//
+//        radioGroup = contentView.findViewById(R.id.radioGroup_byu_ticket);
+//        upcoming_movies_fragment = new Buy_ticket_upcoming_movies_Fragment();
+//        now_showing_fragment = new Buy_ticket_now_showing_Fragment();
+//        adapter = new MyFragmentAdapter(getChildFragmentManager());
+//        adapter.addFragment(now_showing_fragment);
+//        adapter.addFragment(upcoming_movies_fragment);
+//
+//        viewPager.setAdapter(adapter);
 
 
     }

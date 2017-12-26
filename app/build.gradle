@@ -78,4 +78,9 @@ dependencies {
 
 
     compile project(path: ':SeatTable')
+    //fragment 滑动标题带下划线
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+
+    //fragment 滑动标题带下划线
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
 }

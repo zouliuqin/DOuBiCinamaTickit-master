@@ -72,8 +72,8 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     @Override
     public void initialUI() {
         actionBar = contentView.findViewById(R.id.include_actionbar_cinema);
-        initiaActionBar(R.drawable.go, city, "影院", R.drawable.title_find);
-        //TODO 设置即将上映
+        initiaActionBar(R.drawable.ic_brake, city, "影院", R.drawable.title_find);
+        //设置即将上映
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         rvCinema.setLayoutManager(manager);

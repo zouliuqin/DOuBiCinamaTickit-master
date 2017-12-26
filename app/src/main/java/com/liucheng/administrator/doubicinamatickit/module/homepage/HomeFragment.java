@@ -145,7 +145,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
         //设置标题栏
         actionBar = contentView.findViewById(R.id.include_actionbar_home);
-        initiaActionBar(R.drawable.go, city, "某票", -1);
+        initiaActionBar(R.drawable.ic_brake, city, "易迅电影", -1);
 
         //初始化新闻信息
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
