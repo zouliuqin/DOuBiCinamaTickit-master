@@ -19,6 +19,7 @@ import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
+import com.liucheng.administrator.doubicinamatickit.entity.SquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.manager.LocationId;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit;
@@ -213,6 +214,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
             case R.id.imageviewText:
                 //TODO 点击定位，选择城市
+
                 break;
             case R.id.tv_hot_more:
                 //TODO 点击正在热映 -更多按钮 跳转到购票-正在热映
@@ -350,7 +352,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             //            Glide.with(context).load(path).into(imageView);
 
             //Picasso 加载图片简单用法
-            Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+            Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new SquareTransformation())
                     .noFade()
                     .into((ImageView) imageView);
             //
