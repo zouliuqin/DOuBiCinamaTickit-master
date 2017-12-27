@@ -5,12 +5,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
@@ -18,6 +21,7 @@ import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformat
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
 import com.liucheng.administrator.doubicinamatickit.module.find.adapter.NewsAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
+
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -34,15 +38,16 @@ import butterknife.Unbinder;
 public class NewsFragment extends Fragment implements NewsData.NewsLoadListener {
 
 
+    @BindView(R.id.banner)
+    Banner bvBanner;
+
     Unbinder unbinder;
     @BindView(R.id.lv_news)
     RecyclerView lvNews;
     @BindView(R.id.srl_news)
     SwipeRefreshLayout srlNews;
-    @BindView(R.id.banner)
-    Banner banner;
     //是否有横幅新闻
-    private boolean isBanner = false;
+    private  boolean isBanner=false;
     //新闻页码 最大为10
     private int pageNumber = 1;
 
@@ -71,7 +76,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
         //获取新闻资讯数据
         NewsData.getNewsData(this, pageNumber);
 
-        initUi();
+         initUi();
 
         return view;
     }
@@ -80,7 +85,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         lvNews.setLayoutManager(manager);
-        adapter = new NewsAdapter(R.layout.item_news, newsLists);
+        adapter = new NewsAdapter(R.layout.item_news,newsLists);
         lvNews.setAdapter(adapter);
 
         //默认下拉刷新
@@ -89,13 +94,13 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
             @Override
             public void onRefresh() {
                 //加载数据
-                if (pageNumber <= 4) {
+                if (pageNumber<=4){
                     pageNumber++;
                     //获取新闻资讯数据
                     NewsData.getNewsData(NewsFragment.this, pageNumber);
                     //停止更新
                     srlNews.setRefreshing(false);
-                } else {
+                }else {
                     //最多加载5页
                     Toast.makeText(getActivity(), "无法加载更多数据", Toast.LENGTH_SHORT).show();
                     //停止更新
@@ -111,17 +116,17 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
 
 
         //设置图片加载器
-        banner.setImageLoader(new GlideImageLoader());
+        bvBanner.setImageLoader(new GlideImageLoader());
         //设置轮播样式（默认为CIRCLE_INDICATOR）
-        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+        bvBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
         //设置轮播图片间隔时间（单位毫秒，默认为2000）
-        banner.setDelayTime(3000);
+        bvBanner.setDelayTime(3000);
 
-        banner.setBannerTitles(titles);
+        bvBanner.setBannerTitles(titles);
         //设置图片集合
-        banner.setImages(images);
+        bvBanner.setImages(images);
         //banner设置方法全部调用完毕时最后调用
-        banner.start();
+        bvBanner.start();
 
 
     }
@@ -132,14 +137,14 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     public void onStart() {
         super.onStart();
         //开始轮播
-        banner.startAutoPlay();
+        bvBanner.startAutoPlay();
     }
 
     @Override
     public void onStop() {
         super.onStop();
         //结束轮播
-        banner.stopAutoPlay();
+        bvBanner.stopAutoPlay();
     }
 
     @Override
@@ -156,22 +161,22 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
     @Override
     public void onNewsLoadEnd(final MovieNews movieNews) {
         //获取新闻资讯集合
-        if (newsLists.size() <= 0) {
-            newsLists.clear();
-            newsLists.addAll(movieNews.getData().getData());
-        } else {
-            newsLists.addAll(0, movieNews.getData().getData());
+        if (newsLists.size()<=0){
+            newsLists.addAll( movieNews.getData().getData());
+        }else {
+            newsLists.addAll(0,movieNews.getData().getData());
         }
 
 
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //                adapter = new NewsAdapter(getActivity(), newsLists);
-                //                lvNews.setAdapter(adapter);
+//                adapter = new NewsAdapter(getActivity(), newsLists);
+//                lvNews.setAdapter(adapter);
                 //更新界面
-                //                adapter.notifyDataSetChanged();
+//                adapter.notifyDataSetChanged();
                 //如果没有横幅 则添加横幅信息
+
 
 
                 adapter.setNewData(newsLists);
@@ -182,7 +187,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
                         titles.add(newsLists.get(i).getTitle());
                     }
                     //修改是否有横幅状态
-                    isBanner = true;
+                    isBanner=true;
                 }
 
                 setBanner();
@@ -208,7 +213,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
             //            Glide.with(context).load(path).into(imageView);
 
             //Picasso 加载图片简单用法
-            if (!path.toString().equals("")) {
+            if (!path.toString().equals("")){
                 Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
                         .noFade().into((ImageView) imageView);
             }

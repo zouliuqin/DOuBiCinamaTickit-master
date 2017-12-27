@@ -79,8 +79,8 @@ public class RankingFragment extends Fragment implements BoxOfficeData.BoxOffice
 
     private void initUi() {
         //添加头
-        View headerView = View.inflate(getActivity(), R.layout.header_ranking, null);
-        lvRanking.addHeaderView(headerView);
+//        View headerView = View.inflate(getActivity(), R.layout.header_ranking, null);
+//        lvRanking.addHeaderView(headerView);
         //设置下拉刷新
 
         //默认下拉刷新ui颜色
