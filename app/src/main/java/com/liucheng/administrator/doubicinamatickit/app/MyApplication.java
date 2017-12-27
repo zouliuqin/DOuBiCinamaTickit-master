@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 
 
+import com.liucheng.administrator.doubicinamatickit.module.cityselector.citychoose.SharedPreferencesUtil;
 import com.liucheng.administrator.doubicinamatickit.util.StringUtil;
 
 import cn.bmob.v3.Bmob;
@@ -22,7 +23,6 @@ public class MyApplication extends Application {
      * 默认城市
      */
     private static String cityName = "北京";
-
     /**
      * 纬度
      */
