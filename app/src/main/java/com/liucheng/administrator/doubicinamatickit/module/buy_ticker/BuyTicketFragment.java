@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.adapter.MyFragmentAdapter;
+import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
 import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
+import com.liucheng.administrator.doubicinamatickit.manager.LocationId;
 import com.liucheng.administrator.doubicinamatickit.module.find.NewsFragment;
 import com.liucheng.administrator.doubicinamatickit.module.find.RankingFragment;
 import com.liucheng.administrator.doubicinamatickit.view.ImageText;
@@ -34,9 +36,11 @@ import butterknife.Unbinder;
  */
 
 public class BuyTicketFragment extends BaseFragment implements ImageText.OnImageWithTextViewClickListener {
+    /**
+     * 定位城市
+     */
+    private String city;
     //actionbar
-
-
     //声明控件
     RadioGroup radioGroup = null;
     ViewPager viewPager = null;
@@ -83,7 +87,7 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
         //初始化控件
 
         actionBar = contentView.findViewById(R.id.include_actionbar_buy_ticket);
-        initiaActionBar(R.drawable.ic_brake, "武汉", "电影票", -1);
+        initiaActionBar(R.drawable.ic_brake, city, "电影票", -1);
 
 
     }
@@ -116,4 +120,14 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
         viewpagertab.setViewPager(viewpager);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        //获取当前城市
+        city = MyApplication.getCityName();
+        initialUI();
+        //获取城市ID
+        int Locationid = LocationId.getLocationId(getActivity(), R.raw.json);
+        //Toast.makeText(getActivity(), "Locationid"+Locationid, Toast.LENGTH_SHORT).show();
+    }
 }

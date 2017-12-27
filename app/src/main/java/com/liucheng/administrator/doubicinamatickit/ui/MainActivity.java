@@ -1,9 +1,12 @@
 package com.liucheng.administrator.doubicinamatickit.ui;
 
+import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
 import com.liucheng.administrator.doubicinamatickit.adapter.MyFragmentAdapter;
@@ -119,5 +122,39 @@ public class MainActivity extends FragmentActivity {
 
     }
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
 
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            showDialogView();
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
+
+    private void showDialogView() {
+        AlertDialog dialog = null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+
+        builder.setMessage("确认要退出吗？");
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+    }
 }
