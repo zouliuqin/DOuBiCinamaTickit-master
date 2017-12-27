@@ -131,7 +131,7 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
 
         setContentView(R.layout.activity_cinema_plays_movies);
         ButterKnife.bind(this);
-        //接收电影院详情
+//接收电影院详情
         cinemaBean = getIntent().getParcelableExtra("cinemaBeans");
 
         //获取电影院正在播出的电影
@@ -144,6 +144,8 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
 
 
     }
+
+
 
     private void initData() {
         getPlayTimeData(0);
@@ -191,8 +193,6 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
 
                 return pager.dispatchTouchEvent(motionEvent);
             }
-
-
         });
         pager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.page_margin));
         pager.setOffscreenPageLimit(moviesBeans.size());

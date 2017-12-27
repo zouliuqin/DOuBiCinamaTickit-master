@@ -66,7 +66,6 @@ public class DetailNewsActivity extends AppCompatActivity implements DetailNewDa
 //启用js
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-
         //解决图片不显示
         webSettings.setBlockNetworkImage(false);
 

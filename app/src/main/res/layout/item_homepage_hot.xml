@@ -18,17 +18,22 @@
         android:layout_width="72dp"
         android:layout_height="wrap_content"
         android:singleLine="true"
+       android:gravity="center_horizontal"
         android:ellipsize="end"
         android:textStyle="bold"
         android:text="电影名称" />
 
-    <Button
-        android:id="@+id/item_but_homepage_hot_buy_ticket"
-        android:layout_margin="5dp"
-        android:background="@drawable/shape_homepage_hot_buy_ticket_button"
-        android:layout_width="48dp"
-        android:layout_height="24dp"
-        android:textColor="#ffffff"
-        android:textSize="12sp"
-        android:text="购票" />
+        <Button
+            android:id="@+id/item_but_homepage_hot_buy_ticket"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_homepage_hot_buy_ticket_button"
+            android:layout_width="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="24dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:text="购票" />
+
+
+
 </LinearLayout>

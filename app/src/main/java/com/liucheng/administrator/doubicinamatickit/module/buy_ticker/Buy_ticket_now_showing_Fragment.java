@@ -19,6 +19,7 @@ import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.adapter.NowShowAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity;
+import com.liucheng.administrator.doubicinamatickit.ui.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,12 @@ public class Buy_ticket_now_showing_Fragment extends BaseFragment implements IsH
                 startActivity(intent);
             }
         });
+//        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+//            @Override
+//            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+//                ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(2);
+//            }
+//        });
 
 
 //        listViewHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {

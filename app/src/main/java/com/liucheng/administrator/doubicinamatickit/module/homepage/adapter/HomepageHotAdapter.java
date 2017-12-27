@@ -28,6 +28,7 @@ public class HomepageHotAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHo
         Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
                 .noFade().into((ImageView)
                 helper.getView(R.id.item_iv_homepage_hot));
+helper.addOnClickListener(R.id.item_but_homepage_hot_buy_ticket);
 
     }
 }

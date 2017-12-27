@@ -60,18 +60,19 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.buy_ticket_fragment, container, false);
+
         initialUI();
        // Listener();
         unbinder = ButterKnife.bind(this, contentView);
-        EventBus.getDefault().register(this);
+
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getChildFragmentManager(), FragmentPagerItems.with(getContext())
                 .add("正在热映", Buy_ticket_now_showing_Fragment.class)
                 .add("即将上映", Buy_ticket_upcoming_movies_Fragment.class)
                 .create());
         viewpager.setAdapter(adapter);
-
         viewpagertab.setViewPager(viewpager);
+        EventBus.getDefault().register(this);
         return contentView;
     }
 
@@ -107,12 +108,14 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
 
 
 
+
+
     @Subscribe
     public void onEvent(String data) {
+        Log.i("TAG", "onEvent: "+data);
         //如果是1 跳转到正在热映
         if (data.equals("0")){
             viewpager.setCurrentItem(0);
-
         } else   if (data.equals("1")){
             //如果是2 跳转到即将上映
             viewpager.setCurrentItem(1);

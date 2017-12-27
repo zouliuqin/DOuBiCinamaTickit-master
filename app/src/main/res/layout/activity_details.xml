@@ -41,7 +41,7 @@
                     <ImageView
                         android:id="@+id/iv_details_wanna_see"
                         android:layout_margin="5dp"
-                        android:src="@mipmap/ic_love"
+                        android:src="@drawable/logo"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                     <TextView
@@ -68,7 +68,7 @@
                     <ImageView
                         android:id="@+id/iv_details_have_seen"
                         android:layout_margin="5dp"
-                        android:src="@mipmap/ic_star"
+                        android:src="@drawable/logo"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                     <TextView

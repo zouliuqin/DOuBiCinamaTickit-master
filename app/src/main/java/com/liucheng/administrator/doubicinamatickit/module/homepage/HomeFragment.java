@@ -3,6 +3,7 @@ package com.liucheng.administrator.doubicinamatickit.module.homepage;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,17 +27,22 @@ import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHit
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.IsHitData;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.Upcoming;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.data.UpcomingData;
+import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.CinemaPlaysMoviesActivity;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity;
 import com.liucheng.administrator.doubicinamatickit.module.find.DetailNewsActivity;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageComingSoonAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageHotAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.homepage.adapter.HomepageNewsAdapter;
+import com.liucheng.administrator.doubicinamatickit.ui.MainActivity;
 import com.liucheng.administrator.doubicinamatickit.view.ImageText;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoaderInterface;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -187,7 +193,25 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             }
 
 
+
         });
+        hotAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(2);
+            }
+        });
+        homepageBanner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                //TODO 点击正在热映item跳转到电影详情
+                Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
+                intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
+                startActivity(intentHit);
+            }
+        });
+
+
     }
 
     @Override
@@ -219,13 +243,18 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             case R.id.tv_hot_more:
 
                 //TODO 点击正在热映 -更多按钮 跳转到购票-正在热映
+                EventBus.getDefault().post("0");
+                ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(1);
                 break;
             case R.id.tv_coming_soon_more:
+                EventBus.getDefault().post("1");
+                ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(1);
                 //TODO 点击即将上映 -更多按钮 跳转到购票-即将上映
                 break;
             case R.id.tv_movie_news_more:
                 //TODO 点击最新资讯 -更多按钮 跳转到发现-资讯
-
+//                EventBus.getDefault().post("0");
+                ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(3);
                 break;
 
         }
@@ -272,8 +301,6 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             public void run() {
                 //设置正在热映
                 hotAdapter.setNewData(isHits);
-
-
                 //设置轮播
                 setBanner();
             }
@@ -331,7 +358,6 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
             }
         });
-
     }
 
 
