@@ -36,7 +36,9 @@ public class MainActivity extends FragmentActivity {
     FindFragment findFragment;
     HomeFragment homeFragment;
     MyFragment myFragment;
-
+public ViewPager  getViewPager_main(){
+    return viewPager_main;
+}
 
     private void initialUI() {
         //初始化控件

@@ -4,7 +4,7 @@
     android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent" android:layout_height="130dp">
     <ImageView
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/logo"
         android:scaleType="fitXY"
         android:id="@+id/poster_movie"
         android:layout_width="80dp"
@@ -64,6 +64,7 @@
             android:background="@drawable/buy_ciname_button"
             android:layout_width="wrap_content"
             android:text="购票"
+            android:id="@+id/buy_ciname_button_ticker"
             android:textSize="16sp"
             android:textColor="#3EA9D5"
             android:layout_marginTop="15dp"

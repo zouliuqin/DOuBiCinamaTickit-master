@@ -35,6 +35,7 @@ public class NowShowAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHolder
         helper.setText(R.id.content_movie,item.getCommonSpecial());
         helper.setText(R.id.grader_movie,item.getR()+"");
         helper.setText(R.id.actor_movie,item.getActors());
+        helper.addOnClickListener(R.id.buy_ciname_button_ticker);
 
 
     }

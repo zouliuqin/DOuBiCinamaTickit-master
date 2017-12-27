@@ -1,6 +1,7 @@
 package com.liucheng.administrator.doubicinamatickit.module.find;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
@@ -107,6 +109,15 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
                     srlNews.setRefreshing(false);
                 }
 
+            }
+        });
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intentNew = new Intent(getActivity(), DetailNewsActivity.class);
+//                        Log.d("00000000000ppppp",comingSoons.get(position).getId()+"");
+                intentNew.putExtra("NewsId",newsLists.get(position).getAId()+"");
+                startActivity(intentNew);
             }
         });
     }
