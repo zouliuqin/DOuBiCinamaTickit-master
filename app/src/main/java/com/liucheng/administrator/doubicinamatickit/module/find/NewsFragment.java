@@ -21,6 +21,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.entity.MovieNews;
+import com.liucheng.administrator.doubicinamatickit.entity.SquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.find.adapter.NewsAdapter;
 import com.liucheng.administrator.doubicinamatickit.module.find.data.NewsData;
 
@@ -225,7 +226,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
 
             //Picasso 加载图片简单用法
             if (!path.toString().equals("")){
-                Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
+                Picasso.with(context).load(path.toString()).placeholder(R.drawable.logo).transform(new SquareTransformation())
                         .noFade().into((ImageView) imageView);
             }
 

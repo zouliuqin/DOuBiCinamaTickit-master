@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.app.MyApplication;
@@ -56,7 +58,7 @@ import butterknife.Unbinder;
  * Created by Administrator on 2017/10/15 0015.
  */
 
-public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener, UpcomingData.UpcomingLoadListener, NewsData.NewsLoadListener {
+public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadListener, UpcomingData.UpcomingLoadListener, NewsData.NewsLoadListener,BDLocationListener {
 
 
     @BindView(R.id.imageviewText)
@@ -267,7 +269,6 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
             imgs.add(isHits.get(i).getImg());
 
         }
-
         //设置图片加载器
         homepageBanner.setImageLoader(new GlideImageLoader());
         //设置轮播样式（默认为CIRCLE_INDICATOR）
@@ -360,7 +361,30 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         });
     }
 
+    @Override
+    public void onReceiveLocation(BDLocation bdLocation) {
 
+        StringBuilder currentPosition = new StringBuilder();
+        currentPosition.append("纬度：").append(bdLocation.getLatitude()).append("\n");
+        currentPosition.append("经线：").append(bdLocation.getLongitude()).append("\n");
+        currentPosition.append("国家：").append(bdLocation.getCountry()).append("\n");
+        currentPosition.append("省：").append(bdLocation.getProvince()).append("\n");
+        currentPosition.append("市：").append(bdLocation.getCity()).append("\n");
+        currentPosition.append("区：").append(bdLocation.getDistrict()).append("\n");
+        currentPosition.append("街道：").append(bdLocation.getStreet()).append("\n");
+        currentPosition.append("定位方式：");
+        if (bdLocation.getLocType() == BDLocation.TypeGpsLocation) {
+            currentPosition.append("GPS");
+        } else if (bdLocation.getLocType() == BDLocation.TypeNetWorkLocation) {
+            currentPosition.append("网络");
+        }
+        //设置城市
+        city = bdLocation.getCity().substring(0,bdLocation.getCity().length()-1);
+        MyApplication.setCityName(city);
+        initiaActionBar(R.drawable.ic_brake, city, "易迅电影", -1);
+        EventBus.getDefault().post(city);
+
+    }
 
 
     private class GlideImageLoader implements ImageLoaderInterface {

@@ -196,7 +196,7 @@ public class CityActivity extends AppCompatActivity implements
                 currentPosition.append("网络");
             }
 
-            textView.setText(currentPosition);
+          //  textView.setText(currentPosition);
 
 
             String city = location.getCity();
