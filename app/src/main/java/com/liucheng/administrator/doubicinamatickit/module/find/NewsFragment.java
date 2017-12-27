@@ -115,8 +115,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
 
 
         //设置图片加载器
-        banner
-                .setImageLoader(new GlideImageLoader());
+        banner.setImageLoader(new GlideImageLoader());
         //设置轮播样式（默认为CIRCLE_INDICATOR）
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
         //设置轮播图片间隔时间（单位毫秒，默认为2000）
