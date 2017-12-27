@@ -217,6 +217,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
                 break;
             case R.id.tv_hot_more:
+
                 //TODO 点击正在热映 -更多按钮 跳转到购票-正在热映
                 break;
             case R.id.tv_coming_soon_more:
