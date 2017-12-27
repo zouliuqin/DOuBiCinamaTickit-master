@@ -2,7 +2,6 @@ package com.liucheng.administrator.doubicinamatickit.module.cinema;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
@@ -25,7 +23,6 @@ import com.liucheng.administrator.doubicinamatickit.module.cinema.adapter.Cinema
 import com.liucheng.administrator.doubicinamatickit.module.cinema.data.CinemaData;
 import com.liucheng.administrator.doubicinamatickit.module.cinemaplaysmovies.CinemaPlaysMoviesActivity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +38,9 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     List<Location.PBean> pBeans = new ArrayList<>();
 
 
+    Unbinder unbinder;
     @BindView(R.id.rv_cinema)
     RecyclerView rvCinema;
-    Unbinder unbinder;
     private CinemaAdapter cinemaAdapter;
     /**
      * 定位城市
@@ -72,7 +69,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     @Override
     public void initialUI() {
         actionBar = contentView.findViewById(R.id.include_actionbar_cinema);
-        initiaActionBar(R.drawable.ic_brake, city, "影院",0);
+        initiaActionBar(R.drawable.ic_brake, city, "影院", 0);
         //设置即将上映
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -95,7 +92,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
         cinemaAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Cinema.CinemaBean   c =  cinemaBeans.get(position);
+                Cinema.CinemaBean c = cinemaBeans.get(position);
                 //点击电影院 跳转到电影院详情
                 Intent intent = new Intent(getActivity(), CinemaPlaysMoviesActivity.class);
                 intent.putExtra("cinemaBeans", c);
@@ -107,9 +104,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
 
     @Override
     public void onCinemaLoadEnd(Cinema cinema) {
-//        Log.d("55555555555",cinema.getCinema().toString());
-        Log.d("666666666666",cinema.toString());
-        Log.d("7777777777777",cinemaBeans.toString());
+
 
         //清除原有数据
         cinemaBeans.clear();
@@ -128,16 +123,20 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
     }
 
     private View getHeaderView() {
+
+        Log.i("TAG", "getHeaderView: "+getLayoutInflater().toString());
+
+
         View view = getLayoutInflater().inflate(R.layout.header_cinema, (ViewGroup) rvCinema.getParent(), false);
-        TextView itemCinemaSign = view.findViewById(R.id.item_cinema_sign);
-        TextView itemCinemaCinameName = view.findViewById(R.id.item_cinema_cinameName);
-        TextView itemCinemaMinPrice = view.findViewById(R.id.item_cinema_minPrice);
-        TextView itemCinemaAddress = view.findViewById(R.id.item_cinema_address);
-        TextView itemCinemaDistance = view.findViewById(R.id.item_cinema_distance);
-        ImageView itemCinemaVip = view.findViewById(R.id.item_cinema_vip);
-        ImageView itemCinemaPark = view.findViewById(R.id.item_cinema_park);
-        ImageView itemCinemaImax = view.findViewById(R.id.item_cinema_imax);
-        ImageView itemCinemaWifi = view.findViewById(R.id.item_cinema_wifi);
+//        TextView itemCinemaSign = view.findViewById(R.id.item_cinema_sign);
+//        TextView itemCinemaCinameName = view.findViewById(R.id.item_cinema_cinameName);
+//        TextView itemCinemaMinPrice = view.findViewById(R.id.item_cinema_minPrice);
+//        TextView itemCinemaAddress = view.findViewById(R.id.item_cinema_address);
+//        TextView itemCinemaDistance = view.findViewById(R.id.item_cinema_distance);
+//        ImageView itemCinemaVip = view.findViewById(R.id.item_cinema_vip);
+//        ImageView itemCinemaPark = view.findViewById(R.id.item_cinema_park);
+//        ImageView itemCinemaImax = view.findViewById(R.id.item_cinema_imax);
+//        ImageView itemCinemaWifi = view.findViewById(R.id.item_cinema_wifi);
 
         return view;
     }

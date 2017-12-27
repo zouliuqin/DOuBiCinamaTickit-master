@@ -83,4 +83,7 @@ dependencies {
 
     //fragment 滑动标题带下划线
     compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+
+
+    compile 'org.greenrobot:eventbus:3.1.1'
 }

@@ -97,19 +97,19 @@ public class SplashActivity extends Activity implements IsHitData.IsHitLoadListe
     @Override
     public void onIsHitLoadEnd(IsHit isHit) {
 
-        ms.addAll(isHit.getMs());
-        SQLiteDatabase db= new MyDataBaseHelper(this,"IsHit.db",null,1).getWritableDatabase();
-        //先清空数据表，再添加数据
-        db.execSQL("delete from IsHit;");
-        ContentValues cv = new ContentValues();
-        //添加当天正在热映的电影编号和电影名称在数据库，方便后期排行榜调用
-        for(int i=0 ; i <ms.size();i++){
-            Log.i("TAG", "movieId: "+ms.get(i).getId());
-            Log.i("TAG", "movieName: "+ms.get(i).getT());
-            cv.put("movieId",ms.get(i).getId());
-            cv.put("movieName",ms.get(i).getT());
-            db.insert("IsHit", null, cv);
-        }
+//        ms.addAll(isHit.getMs());
+//        SQLiteDatabase db= new MyDataBaseHelper(this,"IsHit.db",null,1).getWritableDatabase();
+//        //先清空数据表，再添加数据
+//        db.execSQL("delete from IsHit;");
+//        ContentValues cv = new ContentValues();
+    //        //添加当天正在热映的电影编号和电影名称在数据库，方便后期排行榜调用
+//        for(int i=0 ; i <ms.size();i++){
+//            Log.i("TAG", "movieId: "+ms.get(i).getId());
+//            Log.i("TAG", "movieName: "+ms.get(i).getT());
+//            cv.put("movieId",ms.get(i).getId());
+//            cv.put("movieName",ms.get(i).getT());
+//            db.insert("IsHit", null, cv);
+//        }
 
     }
 }

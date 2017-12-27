@@ -1,5 +1,7 @@
 package com.liucheng.administrator.doubicinamatickit.module.buy_ticker;
 
+import android.content.Context;
+import android.media.MediaDrm;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -19,6 +21,9 @@ import com.liucheng.administrator.doubicinamatickit.view.ImageText;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,14 +51,6 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     ViewPager viewpager;
 
 
-    public BuyTicketFragment() {
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Nullable
     @Override
@@ -61,50 +58,22 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
         contentView = inflater.inflate(R.layout.buy_ticket_fragment, container, false);
         initialUI();
        // Listener();
-
-
         unbinder = ButterKnife.bind(this, contentView);
-
-
+        EventBus.getDefault().register(this);
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getChildFragmentManager(), FragmentPagerItems.with(getContext())
                 .add("正在热映", Buy_ticket_now_showing_Fragment.class)
                 .add("即将上映", Buy_ticket_upcoming_movies_Fragment.class)
                 .create());
-
         viewpager.setAdapter(adapter);
 
         viewpagertab.setViewPager(viewpager);
         return contentView;
     }
 
-    private void Listener() {
-//        ImageText imageText = contentView.findViewById(R.id.imageviewText);
-//        imageText.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//            }
-//        });
 
 
-//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-//                switch (i) {
-//                    case R.id.radioButton_lefet:
-//                        viewPager.setCurrentItem(0);
-//                        break;
-//                    case R.id.radioButton_right:
-//                        viewPager.setCurrentItem(1);
-//                        break;
-//                }
-//            }
-//        });
 
-
-    }
 
 
     @Override
@@ -112,20 +81,9 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
 
 
         //初始化控件
-//        viewPager = contentView.findViewById(R.id.framentlayout_BuyTicket_viewpager);
-//        Log.d("TTTTgetActivity()", getActivity().toString());
+
         actionBar = contentView.findViewById(R.id.include_actionbar_buy_ticket);
         initiaActionBar(R.drawable.ic_brake, "武汉", "电影票", -1);
-
-//
-//        radioGroup = contentView.findViewById(R.id.radioGroup_byu_ticket);
-//        upcoming_movies_fragment = new Buy_ticket_upcoming_movies_Fragment();
-//        now_showing_fragment = new Buy_ticket_now_showing_Fragment();
-//        adapter = new MyFragmentAdapter(getChildFragmentManager());
-//        adapter.addFragment(now_showing_fragment);
-//        adapter.addFragment(upcoming_movies_fragment);
-//
-//        viewPager.setAdapter(adapter);
 
 
     }
@@ -134,6 +92,7 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        EventBus.getDefault().unregister(this);
     }
 
 
@@ -141,4 +100,20 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
     public void onViewClick(View view) {
 
     }
+
+
+
+    @Subscribe
+    public void onEvent(String data) {
+        //如果是1 跳转到正在热映
+        if (data.equals("0")){
+            viewpager.setCurrentItem(0);
+
+        } else   if (data.equals("1")){
+            //如果是2 跳转到即将上映
+            viewpager.setCurrentItem(1);
+        }
+        viewpagertab.setViewPager(viewpager);
+    }
+
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.liucheng.administrator.doubicinamatickit.adapter.MyFragmentAdapter;
+import com.liucheng.administrator.doubicinamatickit.fragment.BaseFragment;
 import com.liucheng.administrator.doubicinamatickit.module.buy_ticker.BuyTicketFragment;
 import com.liucheng.administrator.doubicinamatickit.module.cinema.CinemaFragment;
 import com.liucheng.administrator.doubicinamatickit.module.find.FindFragment;
@@ -33,6 +34,10 @@ public class MainActivity extends FragmentActivity {
     FindFragment findFragment;
     HomeFragment homeFragment;
     MyFragment myFragment;
+
+    public  ViewPager  getViewPager_main(){
+        return viewPager_main;
+    }
 
 
     private void initialUI() {
