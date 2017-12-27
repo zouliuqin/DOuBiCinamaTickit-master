@@ -25,6 +25,8 @@ import butterknife.ButterKnife;
 public class RankingAdapter extends BaseAdapter<BoxOffice.MoviesBean> {
 
 
+
+
     public RankingAdapter(Context context, List<BoxOffice.MoviesBean> data) {
         super(context, data);
     }
@@ -48,34 +50,35 @@ public class RankingAdapter extends BaseAdapter<BoxOffice.MoviesBean> {
         //        holer.tvSumBoxOffice.setText(getItem(i).getSumBoxOffice());
         //        holer.tvMovieDay.setText(getItem(i).getMovieDay()+"天");
         //        holer.tvBoxPer.setText(getItem(i).getBoxPer()+"%");
-        holer.tvMovieRanking.setText( getItem(i).getRankNum()+"");
+        holer.tvMovieRanking.setText(getItem(i).getRankNum() + "");
         Picasso.with(getContext()).load(getItem(i).getPosterUrl()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
                 .noFade().into(holer.imMoviePoster);
         holer.tvMovieName.setText(getItem(i).getName());
-        holer.tvMovieUsName.setText(getItem(i).getNameEn());
-        holer.tvMovieBoxOffice.setText(StringUtil.BoxOfficeString(getItem(i).getWeekBoxOffice()));
-        holer.tvMovieSumBoxOffice.setText(StringUtil.BoxOfficeString(getItem(i).getTotalBoxOffice()));
-        holer.tvMovieGrade.setText(getItem(i).getRating()+"");
+        holer.rankWeek2.setText(StringUtil.BoxOfficeString(getItem(i).getWeekBoxOffice()));
+        holer.rankingAdd.setText(StringUtil.BoxOfficeString(getItem(i).getTotalBoxOffice()));
+        holer.rankGraded.setText(getItem(i).getRating() + "分");
         return view;
 
     }
 
 
     class ViewHolder {
-        @BindView(R.id.tv_movie_ranking)
-        TextView tvMovieRanking;
         @BindView(R.id.im_movie_poster)
         ImageView imMoviePoster;
         @BindView(R.id.tv_movie_name)
         TextView tvMovieName;
-        @BindView(R.id.tv_movie_us_name)
-        TextView tvMovieUsName;
-        @BindView(R.id.tv_movie_box_office)
-        TextView tvMovieBoxOffice;
-        @BindView(R.id.tv_movie_sum_box_office)
-        TextView tvMovieSumBoxOffice;
-        @BindView(R.id.tv_movie_grade)
-        TextView tvMovieGrade;
+        @BindView(R.id.ranking_add1)
+        TextView rankingAdd1;
+        @BindView(R.id.ranking_add)
+        TextView rankingAdd;
+        @BindView(R.id.ranking_week1)
+        TextView rankingWeek1;
+        @BindView(R.id.rank_week2)
+        TextView rankWeek2;
+        @BindView(R.id.rank_graded)
+        TextView rankGraded;
+        @BindView(R.id.tv_movie_ranking)
+        TextView tvMovieRanking;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

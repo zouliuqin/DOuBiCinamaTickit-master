@@ -3,95 +3,126 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/gray_200"
     android:orientation="horizontal"
     android:padding="8dp">
-
-
-    <TextView
-        android:id="@+id/tv_movie_ranking"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
-        android:gravity="center|left"
-        android:text="01"
-
-        android:textSize="40sp"
-        android:textStyle="bold" />
-
+    <LinearLayout
+        android:padding="5dp"
+        android:background="@drawable/bacground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:layout_marginEnd="5dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/im_movie_poster"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
 
-            android:src="@mipmap/ic_launcher" />
+            android:id="@+id/im_movie_poster"
+            android:layout_width="80dp"
+            android:padding="3dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/tv_movie_name"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/im_movie_poster"
             android:text="寻梦环游记"
-
+            android:textColor="#000000"
             android:textSize="16sp" />
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_movie_name"
+           android:layout_toRightOf="@+id/im_movie_poster"
+            android:id="@+id/linearlayou_add"
+            android:orientation="horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="center"
+                android:text="累计票房："
+                android:id="@+id/ranking_add1"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+
+                android:layout_gravity="center"
+                android:text="23525r24124"
+                android:singleLine="true"
+                android:textColor="#e16531"
+                android:id="@+id/ranking_add"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/linearlayou_add"
+           android:layout_toRightOf="@+id/im_movie_poster"
+            android:id="@+id/linearlayou_week"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="center"
+                android:text="本日票房："
+                android:id="@+id/ranking_week1"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_gravity="center"
+                android:text="23525r24124"
+                android:textColor="#e16531"
+                android:textSize="13sp"
+                android:singleLine="true"
+                android:id="@+id/rank_week2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_movie_us_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_movie_name"
             android:layout_gravity="center"
-            android:layout_marginStart="5dp"
+            android:layout_below="@+id/linearlayou_week"
+            android:layout_marginTop="5dp"
+            android:text="23525r24124"
+            android:textColor="#e16531"
+            android:layout_marginLeft="12dp"
+            android:textSize="16sp"
+            android:id="@+id/rank_graded"
             android:layout_toEndOf="@+id/im_movie_poster"
-            android:text="coco"
-
-            android:textSize="14sp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </RelativeLayout>
 
-    <TextView
-        android:layout_marginEnd="5dp"
-        android:id="@+id/tv_movie_box_office"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="2788.3"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_marginEnd="5dp"
-        android:id="@+id/tv_movie_sum_box_office"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
-        android:text="5.18"
-
-
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tv_movie_grade"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
-        android:text="9.0"
-
-
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+        <TextView
+            android:id="@+id/tv_movie_ranking"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginRight="8dp"
+            android:text="01"
+            android:textColor="#e16531"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </LinearLayout>
