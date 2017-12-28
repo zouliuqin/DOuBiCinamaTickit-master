@@ -332,7 +332,6 @@ public class CityActivity extends AppCompatActivity implements
         cityListAdapter.setOnCityClickListener(this);
         cityListView.setAdapter(cityListAdapter);
         cityListView.setOnItemClickListener(this);
-
         initAlphaIndex();
 
         initIndexBar();

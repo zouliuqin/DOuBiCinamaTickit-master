@@ -22,14 +22,15 @@
             </include>
 
             <LinearLayout
-                android:background="#ffffff"
                 android:layout_width="match_parent"
+                android:background="@drawable/bacground"
                 android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/ll_details_wanna_see"
-                    android:background="@color/gray_200"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_marginTop="5dp"
@@ -60,7 +61,7 @@
                     android:id="@+id/ll_details_have_seen"
 
                     android:gravity="center"
-                    android:background="@color/gray_200"
+                    android:background="#ffffff"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
@@ -188,17 +189,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <FrameLayout
-        android:id="@+id/video_framLayout"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <WebView
-            android:id="@+id/webView_video1"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </FrameLayout>
+
 
 
 

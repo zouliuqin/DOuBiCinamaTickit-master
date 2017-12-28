@@ -123,22 +123,10 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         //热评
         ReviewData.getReviewData(this, cinameId);
         //        Log.d("rrrrrrrrrrrrrr",detail.getData().getBasic().getStory());
-        initiaUi();
+
     }
 
-    private void initiaUi() {
-        //设置webView
-        webView = (WebView) findViewById(R.id.webView_video1);
-        // 设置WebView属性，能够执行Javascript脚本
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setUseWideViewPort(true);
-        settings.setLoadWithOverviewMode(true);
-        settings.setMediaPlaybackRequiresUserGesture(false);
-        webView.setVisibility(View.VISIBLE);
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.getSettings().setUseWideViewPort(true);
-    }
+
 
     private void initiaData() {
         Picasso.with(this).load(detail.getData().getBasic().getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
@@ -307,8 +295,14 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
     @OnClick(R.id.video_play)
     public void onViewClicked() {
-        webView.setVisibility(View.VISIBLE);
-        webView.loadUrl(detail.getData().getBasic().getVideo().getUrl());
+//        webView.setVisibility(View.VISIBLE);
+//        webView.loadUrl(detail.getData().getBasic().getVideo().getUrl());
+//        Log.d("5555555555555555555555",detail.getData().getBasic().getVideo().getUrl());
+        Intent intent = new Intent(DetailsActivity.this,VideoActivity.class);
+        intent.putExtra("URL",detail.getData().getBasic().getVideo().getUrl());
+        intent.putExtra("TITLE",detail.getData().getBasic().getVideo().getTitle());
+        startActivity(intent);
+
     }
 
 
