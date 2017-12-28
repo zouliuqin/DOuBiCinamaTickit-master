@@ -136,6 +136,9 @@ public class CityListAdapter extends BaseAdapter {
         final TextView city;
         int viewType = getItemViewType(position);
 
+
+        //aaaa
+
         if (viewType == 0) { // 定位
             convertView = inflater.inflate(R.layout.city_locate_item, null);
             city = (TextView) convertView.findViewById(R.id.city_locate_item_city);
