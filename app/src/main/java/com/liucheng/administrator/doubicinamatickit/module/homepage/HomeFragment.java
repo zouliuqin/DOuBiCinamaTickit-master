@@ -89,6 +89,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     private List<IsHit.MsBean> isHits = new ArrayList<>();
 
     private HomepageHotAdapter hotAdapter;
+    private List<IsHit.MsBean> isHitsTop10 = new ArrayList<>();
 
     /**
      * 即将上线
@@ -96,6 +97,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     private List<Upcoming.AttentionBean> comingSoons = new ArrayList<>();
 
     private HomepageComingSoonAdapter comingSoonAdapter;
+    private List<Upcoming.AttentionBean> comingSoonTop10 = new ArrayList<>();
 
     /**
      * 新闻资讯
@@ -166,7 +168,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         newsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                //TODO 点击电影资讯item跳转到资讯详情
+                //点击电影资讯item跳转到资讯详情
 //                Toast.makeText(getContext(), "sdafvsadf", Toast.LENGTH_SHORT).show();
                 Intent intentNew = new Intent(getActivity(), DetailNewsActivity.class);
 //                        Log.d("00000000000ppppp",comingSoons.get(position).getId()+"");
@@ -179,7 +181,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         comingSoonAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                //TODO 点击即将上映item跳转到电影详情
+                // 点击即将上映item跳转到电影详情
                 Intent intentCom = new Intent(getActivity(), DetailsActivity.class);
                 intentCom.putExtra("cinameId",comingSoons.get(position).getId()+"");
                 startActivity(intentCom);
@@ -188,7 +190,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         hotAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                //TODO 点击正在热映item跳转到电影详情
+                // 点击正在热映item跳转到电影详情
                 Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
                 intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
                 startActivity(intentHit);
@@ -206,7 +208,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         homepageBanner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
-                //TODO 点击正在热映item跳转到电影详情
+                // 点击首页滚动条跳转到电影详情
                 Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
                 intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
                 startActivity(intentHit);
@@ -244,17 +246,17 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
                 break;
             case R.id.tv_hot_more:
 
-                //TODO 点击正在热映 -更多按钮 跳转到购票-正在热映
+                // 点击正在热映 -更多按钮 跳转到购票-正在热映
                 EventBus.getDefault().post("0");
                 ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(1);
                 break;
             case R.id.tv_coming_soon_more:
                 EventBus.getDefault().post("1");
                 ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(1);
-                //TODO 点击即将上映 -更多按钮 跳转到购票-即将上映
+                // 点击即将上映 -更多按钮 跳转到购票-即将上映
                 break;
             case R.id.tv_movie_news_more:
-                //TODO 点击最新资讯 -更多按钮 跳转到发现-资讯
+                // 点击最新资讯 -更多按钮 跳转到发现-资讯
 //                EventBus.getDefault().post("0");
                 ((MainActivity)getActivity()).getViewPager_main().setCurrentItem(3);
                 break;
@@ -291,17 +293,29 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void onIsHitLoadEnd(final IsHit isHit) {
+        isHitsTop10.clear();
         isHits.clear();
         //获取资讯集合
         isHits.addAll(isHit.getMs());
-        if (isHits.size()<=0){
+        if (isHits.size() <= 0) {
             return;
+        }
+        //取前10条数据放在首页
+        if (isHits.size() >= 10) {
+            for (int i = 0; i < 10; i++) {
+                isHitsTop10.add(isHits.get(i));
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                isHitsTop10.add(isHits.get(i));
+            }
+
         }
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //设置正在热映
-                hotAdapter.setNewData(isHits);
+                hotAdapter.setNewData(isHitsTop10);
                 //设置轮播
                 setBanner();
             }
@@ -316,21 +330,32 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
     @Override
     public void onUpcomingLoadEnd(Upcoming upcoming) {
 
+
+        comingSoonTop10.clear();
+
         comingSoons.addAll(upcoming.getAttention());
-        if (comingSoons.size()<=0){
+        if (comingSoons.size() <= 0) {
             return;
+        }
+        //取前10条数据放在首页
+        if (comingSoons.size() >= 10) {
+            for (int i = 0; i < 10; i++) {
+                comingSoonTop10.add(comingSoons.get(i));
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                comingSoonTop10.add(comingSoons.get(i));
+            }
         }
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //TODO 设置即将上映
-                comingSoonAdapter.setNewData(comingSoons);
-
+                // 设置即将上映
+                comingSoonAdapter.setNewData(comingSoonTop10);
 
 
             }
         });
-
 
     }
 
@@ -341,12 +366,19 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
 
     @Override
     public void onNewsLoadEnd(MovieNews movieNews) {
+        int j = 8;
         news.clear();
 
         news.addAll(movieNews.getData().getData());
         //首页只显示4条电影资讯，点击更多跳转到发现-电影资讯，查看更多电影资讯
         newsTop4.clear();
-        for (int i = 0; i < 8; i++) {
+        if (news.size() >= 8) {
+            j = 8;
+        } else {
+            j = 4;
+        }
+
+        for (int i = 0; i < j; i++) {
 
             newsTop4.add(movieNews.getData().getData().get(i));
         }
@@ -354,11 +386,12 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //TODO 设置电影资讯
+                //设置电影资讯
                 newsAdapter.setNewData(newsTop4);
 
             }
         });
+
     }
 
     @Override

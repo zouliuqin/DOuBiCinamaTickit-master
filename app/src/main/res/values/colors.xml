@@ -11,6 +11,7 @@
     <color name="gray">#666666</color>
     <color name="gray_400">#bdbdbd</color>
     <color name="gray_500">#9E9E9E</color>
+    <color name="gray_300">#E0E0E0</color>
     <color name="gray_200">#EEEEEE</color>
     <color name="transparentBlack">#66000000</color>
     <color name="transparent">#00ffffff</color>

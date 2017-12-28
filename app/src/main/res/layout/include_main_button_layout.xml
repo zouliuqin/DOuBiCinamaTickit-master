@@ -20,6 +20,7 @@
             android:id="@+id/radioButton_home"
             android:textColor="@drawable/home_character"
             android:drawableTop="@drawable/home_gridbutton_selscte"
+            android:textSize="12sp"
             android:text="首页" />
 
         <RadioButton
@@ -28,6 +29,7 @@
             android:id="@+id/radioButton_buy_ticket"
             android:textColor="@drawable/buy_ticke_character"
             android:drawableTop="@drawable/buy_ticket_gridbutton_sellctor"
+            android:textSize="12sp"
             android:text="购票" />
 
         <RadioButton
@@ -35,6 +37,7 @@
             android:id="@+id/radioButton_cinema"
             android:textColor="@drawable/buy_ticke_character"
             android:drawableTop="@drawable/cinema_gridbutton_selscte"
+            android:textSize="12sp"
             android:text="院线" />
 
         <RadioButton
@@ -42,6 +45,7 @@
             android:id="@+id/radioButton_find"
             android:textColor="@drawable/buy_ticke_character"
             android:drawableTop="@drawable/find_gridbutton_selscte"
+            android:textSize="12sp"
             android:text="发现" />
 
         <RadioButton
@@ -49,6 +53,7 @@
             android:id="@+id/radioButton_my"
             android:textColor="@drawable/buy_ticke_character"
             android:drawableTop="@drawable/my_gridbutton_selscte"
+            android:textSize="12sp"
             android:text="我的" />
 
 

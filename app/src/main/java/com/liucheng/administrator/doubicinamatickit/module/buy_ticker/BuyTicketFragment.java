@@ -71,6 +71,7 @@ public class BuyTicketFragment extends BaseFragment implements ImageText.OnImage
                 .add("即将上映", Buy_ticket_upcoming_movies_Fragment.class)
                 .create());
         viewpager.setAdapter(adapter);
+
         viewpagertab.setViewPager(viewpager);
         EventBus.getDefault().register(this);
         return contentView;

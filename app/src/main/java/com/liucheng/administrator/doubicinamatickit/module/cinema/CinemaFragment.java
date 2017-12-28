@@ -75,6 +75,8 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         rvCinema.setLayoutManager(manager);
         cinemaAdapter = new CinemaAdapter(R.layout.item_cinema, cinemaBeans);
+        cinemaAdapter.addHeaderView(getHeaderView());
+
         rvCinema.setAdapter(cinemaAdapter);
     }
 
@@ -115,7 +117,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
             @Override
             public void run() {
                 cinemaAdapter.setNewData(cinemaBeans);
-                cinemaAdapter.addHeaderView(getHeaderView());
+                cinemaAdapter.setHeaderView(getHeaderView());
             }
         });
 
@@ -124,19 +126,7 @@ public class CinemaFragment extends BaseFragment implements CinemaData.CinemaLoa
 
     private View getHeaderView() {
 
-        Log.i("TAG", "getHeaderView: "+getLayoutInflater().toString());
-
-
         View view = getLayoutInflater().inflate(R.layout.header_cinema, (ViewGroup) rvCinema.getParent(), false);
-//        TextView itemCinemaSign = view.findViewById(R.id.item_cinema_sign);
-//        TextView itemCinemaCinameName = view.findViewById(R.id.item_cinema_cinameName);
-//        TextView itemCinemaMinPrice = view.findViewById(R.id.item_cinema_minPrice);
-//        TextView itemCinemaAddress = view.findViewById(R.id.item_cinema_address);
-//        TextView itemCinemaDistance = view.findViewById(R.id.item_cinema_distance);
-//        ImageView itemCinemaVip = view.findViewById(R.id.item_cinema_vip);
-//        ImageView itemCinemaPark = view.findViewById(R.id.item_cinema_park);
-//        ImageView itemCinemaImax = view.findViewById(R.id.item_cinema_imax);
-//        ImageView itemCinemaWifi = view.findViewById(R.id.item_cinema_wifi);
 
         return view;
     }
