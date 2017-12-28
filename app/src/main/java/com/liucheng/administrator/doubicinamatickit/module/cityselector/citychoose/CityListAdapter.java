@@ -135,11 +135,23 @@ public class CityListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final TextView city;
         int viewType = getItemViewType(position);
-        Log.i(TAG, "getView()-----viewType :" + viewType);
+
         if (viewType == 0) { // 定位
             convertView = inflater.inflate(R.layout.city_locate_item, null);
             city = (TextView) convertView.findViewById(R.id.city_locate_item_city);
+            if (locateCity!=null){
+              locateCity  = locateCity.substring(0,locateCity.length()-1);
+            }
+         //
             city.setText(locateCity);
+            //点击当前定位城市监听
+            city.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MyApplication.setCityName(locateCity);
+                    ((Activity) context).finish();
+                }
+            });
         } else if (viewType == 1) { // 已访问城市
             convertView = inflater.inflate(R.layout.city_recent_item, null);
             GridView recentCity = (GridView) convertView
