@@ -9,6 +9,7 @@
     tools:context="com.liucheng.administrator.doubicinamatickit.module.details_movie.DetailsActivity">
 
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -41,12 +42,15 @@
                     <ImageView
                         android:id="@+id/iv_details_wanna_see"
                         android:layout_margin="5dp"
-                        android:src="@drawable/logo"
+                        android:src="@mipmap/ic_love"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
+
+
                     <TextView
                         android:id="@+id/tv_details_wanna_see"
                         android:text="想看"
+                        android:textColor="@color/gray_500"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -68,12 +72,13 @@
                     <ImageView
                         android:id="@+id/iv_details_have_seen"
                         android:layout_margin="5dp"
-                        android:src="@drawable/logo"
+                        android:src="@mipmap/ic_star"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                     <TextView
                         android:id="@+id/tv_details_have_seen"
                         android:text="看过"
+                        android:textColor="@color/gray_500"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 

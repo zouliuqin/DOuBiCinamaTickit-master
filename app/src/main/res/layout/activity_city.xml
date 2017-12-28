@@ -99,7 +99,7 @@
         android:layout_height="wrap_content">
         <TextView
             android:textSize="30dp"
-            android:text="2314"
+
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/text_dia"

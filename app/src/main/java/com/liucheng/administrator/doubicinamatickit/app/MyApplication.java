@@ -34,6 +34,7 @@ import cn.bmob.v3.BmobConfig;
 
 public class MyApplication extends Application {
 
+
     private static Context context;
     /**
      * 默认城市

@@ -14,6 +14,7 @@
     <ScrollView
         android:layout_below="@id/include_actionbar_home"
         android:layout_width="match_parent"
+        android:scrollbars="none"
         android:layout_height="match_parent">
 
         <RelativeLayout

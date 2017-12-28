@@ -39,6 +39,10 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     Details detail = new Details();
     List<Review.DataBean.MiniBean.ListBean> listBeans = new ArrayList<>();
 
+    private  boolean islove=false;
+
+    private  boolean isstar=false;
+
     int i = 2;//控制简介的弹出与折叠
     @BindView(R.id.image_movie)
     ImageView imageMovie;
@@ -206,7 +210,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Log.d("666666666", detail.getData().getBasic().getStory() + "");
+
                 initiaData();
                 StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 stillRecyc.setLayoutManager(layoutManager);
@@ -269,15 +273,31 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
             case R.id.ll_details_wanna_see:
                 //想看
                 //点击想看,改变图像样式，字体颜色
+                if (islove) {
+                    tvDetailsWannaSee.setTextColor(getResources().getColor(R.color.gray_500));
+                    ivDetailsWannaSee.setImageResource(R.mipmap.ic_love);
+                    islove=false;
+                }else {
+                    tvDetailsWannaSee.setTextColor(getResources().getColor(R.color.red_300));
+                    ivDetailsWannaSee.setImageResource(R.mipmap.ic_love_select);
+                    islove=true;
+                }
 
-                tvDetailsWannaSee.setTextColor(getResources().getColor(R.color.red_300));
-                ivDetailsWannaSee.setImageResource(R.mipmap.ic_love_select);
+
 
 
                 break;
             case R.id.ll_details_have_seen:
-                tvDetailsHaveSeen.setTextColor(getResources().getColor(R.color.red_300));
-                ivDetailsHaveSeen.setImageResource(R.mipmap.ic_star_select);
+                if (isstar) {
+                    tvDetailsHaveSeen.setTextColor(getResources().getColor(R.color.gray_500));
+                    ivDetailsHaveSeen.setImageResource(R.mipmap.ic_star);
+                    isstar=false;
+                }else {
+                    tvDetailsHaveSeen.setTextColor(getResources().getColor(R.color.red_300));
+                    ivDetailsHaveSeen.setImageResource(R.mipmap.ic_star_select);
+                    isstar=true;
+                }
+
 
                 //看过
                 break;
