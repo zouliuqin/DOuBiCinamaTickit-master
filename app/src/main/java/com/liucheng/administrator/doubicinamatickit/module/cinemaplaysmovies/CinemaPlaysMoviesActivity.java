@@ -317,17 +317,18 @@ public class CinemaPlaysMoviesActivity extends AppCompatActivity implements Cine
     }
 
     private void dimImage(final String img) {
+                    //加载本地图片
         //        //得到原始图片
-        //        Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.a111);
-        //        int scaleRatio = 10;
-        //        int blurRadius = 100;//模糊度 越大越模糊
-        //        //将图片进行缩放 避免OOM错误
-        //        Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
-        //                originBitmap.getWidth() / scaleRatio,
-        //                originBitmap.getHeight() / scaleRatio,
-        //                false);
-        //        Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
-        //        Drawable a = new BitmapDrawable(blurBitmap);
+//                Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.a111);
+//                int scaleRatio = 10;
+//                int blurRadius = 100;//模糊度 越大越模糊
+//        //        //将图片进行缩放 避免OOM错误
+//                Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
+//                        originBitmap.getWidth() / scaleRatio,
+//                        originBitmap.getHeight() / scaleRatio,
+//                        false);
+//                Bitmap blurBitmap = Utils.doBlur(scaledBitmap, blurRadius, true);
+//                Drawable a = new BitmapDrawable(blurBitmap);
 
         new Thread(new Runnable() {
             @Override

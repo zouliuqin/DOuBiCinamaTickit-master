@@ -69,7 +69,7 @@ public class RankingFragment extends Fragment implements BoxOfficeData.BoxOffice
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                intent.putExtra("cinameId",boxOffices.get(i-1).getId()+"");
+                intent.putExtra("cinameId",boxOffices.get(i).getId()+"");
                 startActivity(intent);
             }
         });

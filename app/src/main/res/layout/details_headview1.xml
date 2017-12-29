@@ -82,25 +82,57 @@
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp" />
+                    <TextView
+                        android:layout_below="@+id/text_movieAct"
+                        android:id="@+id/text_movieType"
+                        android:text="类型：剧情 战争"
+                        android:textColor="#000000"
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp" />
                 </LinearLayout>
                 <RelativeLayout
-                    android:layout_weight="1.5"
-                    android:layout_width="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="80dp"
                     android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_centerInParent="true"
+                        android:id="@+id/frame"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                       >
+
+                        <com.timqi.sectorprogressview.ColorfulRingProgressView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/crpv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:bgColor="#e1e1e1"
+                            app:fgColorEnd="#ff4800"
+                            app:fgColorStart="#ffe400"
+                            app:percent="75"
+                            app:startAngle="0"
+                            app:strokeWidth="5dp" />
+
+                        <TextView
+                            android:id="@+id/tvPercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="75"
+                            android:textColor="#ff4800"
+                            android:textSize="18sp" />
+                    </FrameLayout>
                     
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/text_movieType"
-                android:text="类型：剧情 战争"
-                android:textColor="#000000"
-                android:singleLine="true"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
+
 
         </LinearLayout>
 

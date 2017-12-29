@@ -193,6 +193,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
                 // 点击正在热映item跳转到电影详情
                 Intent intentHit = new Intent(getActivity(), DetailsActivity.class);
                 intentHit.putExtra("cinameId",isHits.get(position).getId()+"");
+                Log.d("55555555555555",isHits.get(position).getId()+"");
                 startActivity(intentHit);
             }
 

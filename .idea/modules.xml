@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/DOuBiCinamaTickit-master.iml" filepath="$PROJECT_DIR$/DOuBiCinamaTickit-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/SeatTable/SeatTable.iml" filepath="$PROJECT_DIR$/SeatTable/SeatTable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>

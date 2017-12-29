@@ -1,13 +1,16 @@
 package com.liucheng.administrator.doubicinamatickit.module.details_movie;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -26,6 +29,7 @@ import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.De
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.Review;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.ReviewData;
 import com.squareup.picasso.Picasso;
+import com.timqi.sectorprogressview.ColorfulRingProgressView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,17 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class DetailsActivity extends AppCompatActivity implements DetailsData.DetailsDataLoadListener, ReviewData.ReviewDataLoadListener {
+    /**
+     * 进度条
+     */
+    ColorfulRingProgressView crpv;
+    /**
+     * 进度条中的评分
+     */
+    TextView tvPercent;
+    Handler handler = null;
+    Runnable runnable = null;
+
     WebView webView;
     Details detail = new Details();
     List<Review.DataBean.MiniBean.ListBean> listBeans = new ArrayList<>();
@@ -198,8 +213,9 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
                 initiaData();
+                initiaProgress(details.getData().getBasic().getOverallRating());
+                Log.d("1899999999999999999999",details.getData().getBasic().getOverallRating()+"");
                 StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 stillRecyc.setLayoutManager(layoutManager);
                 stillAdapter = new StillAdapter(R.layout.item_still, details.getData().getBasic().getStageImg().getList());
@@ -304,6 +320,45 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         startActivity(intent);
 
     }
+    private void initiaProgress(double grade) {
+        handler = new Handler();
+        crpv = (ColorfulRingProgressView) findViewById(R.id.crpv);
+        tvPercent = (TextView) findViewById(R.id.tvPercent);
+        tvPercent.setText(grade+"分");
+        setTemperature(((int)grade)*10);
+        crpv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ObjectAnimator anim = ObjectAnimator.ofFloat(v, "percent",
+                        0, ((ColorfulRingProgressView) v).getPercent());
+                anim.setInterpolator(new LinearInterpolator());
+                anim.setDuration(1000);
+                anim.start();
+            }
+        });
 
+
+    }
+
+    private void setTemperature(final int temperature) {
+        //初始化handler对象
+        handler.removeCallbacksAndMessages(null);
+        runnable = new Runnable() {
+            int progress = 0;
+
+            @Override
+            public void run() {
+                progress++;
+                if (progress < temperature) {
+                    crpv.setPercent(progress);
+
+                }
+                handler.postDelayed(runnable, 70);
+            }
+        };
+        //启动线程
+        handler.postDelayed(runnable,1000);
+
+    }
 
 }

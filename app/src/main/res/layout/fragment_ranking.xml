@@ -12,6 +12,7 @@
 
         <ListView
             android:id="@+id/lv_ranking"
+            android:divider="@color/gray_200"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </android.support.v4.widget.SwipeRefreshLayout>

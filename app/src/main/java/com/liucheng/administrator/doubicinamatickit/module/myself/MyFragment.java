@@ -106,7 +106,7 @@ public class MyFragment extends BaseFragment {
             tvMyIsloginOrUsername.setText("点击登录");
         }
         //加载本地模糊背景
-       // dimImage();
+        dimImage();
     }
 
     /**
@@ -114,9 +114,9 @@ public class MyFragment extends BaseFragment {
      */
     private void dimImage() {
         //得到原始图片
-        Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.myself_bg);
-        int scaleRatio = 100;
-        int blurRadius = 80;//模糊度 越大越模糊
+        Bitmap originBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.brijing);
+        int scaleRatio = 300;
+        int blurRadius = 1;//模糊度 越大越模糊
         //将图片进行缩放 避免OOM错误
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
                 originBitmap.getWidth() / scaleRatio,

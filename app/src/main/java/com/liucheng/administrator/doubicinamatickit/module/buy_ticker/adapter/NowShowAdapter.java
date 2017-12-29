@@ -30,9 +30,10 @@ public class NowShowAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHolder
 
     @Override
     protected void convert(BaseViewHolder helper, IsHit.MsBean item) {
-        Picasso.with(mContext).load(item.getImg()).placeholder(R.mipmap.ic_launcher).transform(new CropSquareTransformation()).noFade().into((ImageView) helper.getView(R.id.poster_movie));
+        Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation()).noFade().into((ImageView) helper.getView(R.id.poster_movie));
         helper.setText(R.id.title_movie,item.getTCn());
         helper.setText(R.id.content_movie,item.getCommonSpecial());
+
         helper.setText(R.id.grader_movie,item.getR()+"");
         helper.setText(R.id.actor_movie,item.getActors());
         helper.addOnClickListener(R.id.buy_ciname_button_ticker);
