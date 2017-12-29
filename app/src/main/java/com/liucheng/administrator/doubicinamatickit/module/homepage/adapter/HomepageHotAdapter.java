@@ -16,7 +16,7 @@ import java.util.List;
  * Created by 邹柳钦 on 2017/12/16 0016.
  */
 
-public class HomepageHotAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHolder> {
+public class HomepageHotAdapter extends BaseQuickAdapter<IsHit.MsBean, BaseViewHolder> {
     public HomepageHotAdapter(int layoutResId, @Nullable List<IsHit.MsBean> data) {
         super(layoutResId, data);
     }
@@ -24,11 +24,11 @@ public class HomepageHotAdapter extends BaseQuickAdapter<IsHit.MsBean,BaseViewHo
     @Override
     protected void convert(BaseViewHolder helper, IsHit.MsBean item) {
 
-        helper.setText(R.id.item_tv_homepage_hot_name,item.getTCn());
+        helper.setText(R.id.item_tv_homepage_hot_name, item.getTCn());
         Picasso.with(mContext).load(item.getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
                 .noFade().into((ImageView)
                 helper.getView(R.id.item_iv_homepage_hot));
-helper.addOnClickListener(R.id.item_but_homepage_hot_buy_ticket);
+        helper.addOnClickListener(R.id.item_but_homepage_hot_buy_ticket);
 
     }
 }
