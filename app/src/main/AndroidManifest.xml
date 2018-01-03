@@ -69,6 +69,7 @@
         <activity android:name=".module.basicsettings.BasicSettingsActivity" />
         <activity android:name=".module.basicsettings.NotificationManagerActivity" />
         <activity android:name=".module.feedback.FeedbackActivity" />
+        <activity android:name=".module.myself.ChangePasswordActivity" />
         <activity android:name=".module.details_movie.VideoActivity" android:screenOrientation="landscape"></activity>
     </application>
 
