@@ -1,6 +1,8 @@
 package com.liucheng.administrator.doubicinamatickit.module.findpassword;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liucheng.administrator.doubicinamatickit.R;
+import com.liucheng.administrator.doubicinamatickit.module.register.RegisterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,13 +44,51 @@ public class FindPasswordActivity extends AppCompatActivity {
     EditText etRegisterAgainPassword;
     @BindView(R.id.but_submit)
     Button butSubmit;
+    /**
+     * 倒计时
+     */
+    private CountDownTime timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_password);
         ButterKnife.bind(this);
+
+        timer= new CountDownTime(60000, 1000);
     }
+    /**
+     *
+     * 创建一个类继承 CountDownTimer,实现倒计时
+     */
+    class CountDownTime extends CountDownTimer {
+
+        //构造函数  第一个参数代表总的计时时长  第二个参数代表计时间隔  单位都是毫秒
+        public CountDownTime(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+
+        @Override
+        public void onTick(long l) { //每计时一次回调一次该方法
+            ibRegisterAuthCode.setClickable(false);
+            ibRegisterAuthCode.setText(l/1000 + "秒后重发");
+            ibRegisterAuthCode.setBackgroundColor(getResources().getColor(R.color.gray_500));
+        }
+
+
+
+        @Override
+        public void onFinish() { //计时结束回调该方法
+            ibRegisterAuthCode.setClickable(true);
+            ibRegisterAuthCode.setText("获取验证码");
+
+            Drawable drawable = getResources().getDrawable(R.drawable.shape_get_auth_code_button);
+
+            ibRegisterAuthCode.setBackground(drawable);
+
+        }
+    }
+
 
     @OnClick({R.id.ib_register_auth_code, R.id.but_submit})
     public void onViewClicked(View view) {
@@ -59,6 +100,7 @@ public class FindPasswordActivity extends AppCompatActivity {
                     @Override
                     public void done(Integer smsId, BmobException ex) {
                         if (ex == null) {//验证码发送成功
+                            timer.start();
                             Toast.makeText(FindPasswordActivity.this, "短信发送成功！", Toast.LENGTH_SHORT).show();
                         } else {
                             Log.i("TAG", "done: " + ex);

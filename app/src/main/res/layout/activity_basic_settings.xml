@@ -8,11 +8,15 @@
     android:orientation="vertical"
     tools:context="com.liucheng.administrator.doubicinamatickit.module.basicsettings.BasicSettingsActivity">
 
+    
+
+
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
         <LinearLayout
             android:layout_width="match_parent"

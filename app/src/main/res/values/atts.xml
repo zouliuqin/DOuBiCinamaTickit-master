@@ -38,5 +38,9 @@
         </attr>
 
 
+        <attr name="normalBackground" format="reference|color" />
+        <attr name="disableBackground" format="reference|color" />
+
+
     </declare-styleable>
 </resources>

@@ -1,6 +1,7 @@
 package com.liucheng.administrator.doubicinamatickit.module.details_movie;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -215,7 +216,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
             public void run() {
                 initiaData();
                 initiaProgress(details.getData().getBasic().getOverallRating());
-                Log.d("1899999999999999999999",details.getData().getBasic().getOverallRating()+"");
+
                 StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 stillRecyc.setLayoutManager(layoutManager);
                 stillAdapter = new StillAdapter(R.layout.item_still, details.getData().getBasic().getStageImg().getList());
@@ -329,7 +330,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
         crpv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator anim = ObjectAnimator.ofFloat(v, "percent",
+                @SuppressLint("ObjectAnimatorBinding") ObjectAnimator anim = ObjectAnimator.ofFloat(v, "percent",
                         0, ((ColorfulRingProgressView) v).getPercent());
                 anim.setInterpolator(new LinearInterpolator());
                 anim.setDuration(1000);
