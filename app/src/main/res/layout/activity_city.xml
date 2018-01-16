@@ -20,6 +20,7 @@
 
 
         <ImageView
+            android:id="@+id/city_back"
             android:layout_marginLeft="15dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/back"

@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,6 +76,8 @@ public class CityActivity extends AppCompatActivity implements
     TextView textView;
     public LocationClient mLocationClient;
 
+    private ImageView ivCityBack;
+
     public static final String KEY_RECENT_CITY1 = "KEY_RECENT_CITY1";
     public static final String KEY_RECENT_CITY2 = "KEY_RECENT_CITY2";
     public static final String KEY_RECENT_CITY3 = "KEY_RECENT_CITY3";
@@ -102,11 +105,19 @@ public class CityActivity extends AppCompatActivity implements
         //自定义的输入框
         mEtCityName = (EditTextWithDel) findViewById(R.id.et_search);
 
+        ivCityBack = findViewById(R.id.city_back);
         //检查权限
         startPermison();
 
 
         textView = (TextView) findViewById(R.id.text_dia);
+
+        ivCityBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     //申请权限

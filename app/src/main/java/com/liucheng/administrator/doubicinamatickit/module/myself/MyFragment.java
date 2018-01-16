@@ -202,9 +202,12 @@ public class MyFragment extends BaseFragment {
                 break;
             case R.id.ll_wanna_see:
                 //TODO  想看的电影
+                Toast.makeText(getActivity(), "暂无想看的电影！", Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.ll_have_seen:
                 //TODO  看过的电影
+                Toast.makeText(getActivity(), "暂无看过的电影！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.ll_invite_friends:
                 // 分享给好友
