@@ -270,7 +270,7 @@ public class MySetActivity extends AppCompatActivity {
 
                     //在界面中显示已经选择回来的图片
                     // Picasso.with(MyApplication.getContext()).load().into(ivMySetImg);
-                    Log.i("TAG", "onActivityResult: " + PictureSelector.obtainMultipleResult(data).get(0).getPath());
+
                     showImage(PictureSelector.obtainMultipleResult(data).get(0).getPath());
                     break;
             }

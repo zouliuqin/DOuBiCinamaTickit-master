@@ -97,4 +97,5 @@ public class CinemaAdapter extends BaseQuickAdapter<Cinema.CinemaBean, CinemaAda
              itemCinemaWifi= view.findViewById(R.id.item_cinema_wifi);
         }
     }
+
 }

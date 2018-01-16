@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.liucheng.administrator.doubicinamatickit.R;
 import com.liucheng.administrator.doubicinamatickit.entity.CropSquareTransformation;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.adapter.CreatorAdapter;
@@ -29,6 +30,9 @@ import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.De
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.DetailsData;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.Review;
 import com.liucheng.administrator.doubicinamatickit.module.details_movie.data.ReviewData;
+import com.liucheng.administrator.doubicinamatickit.module.photo.PhotoActivity;
+import com.liucheng.administrator.doubicinamatickit.ui.MainActivity;
+import com.luck.picture.lib.PictureSelector;
 import com.squareup.picasso.Picasso;
 import com.timqi.sectorprogressview.ColorfulRingProgressView;
 
@@ -55,9 +59,9 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     Details detail = new Details();
     List<Review.DataBean.MiniBean.ListBean> listBeans = new ArrayList<>();
 
-    private  boolean islove=false;
+    private boolean islove = false;
 
-    private  boolean isstar=false;
+    private boolean isstar = false;
 
     int i = 2;//控制简介的弹出与折叠
     @BindView(R.id.image_movie)
@@ -124,6 +128,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     ImageView ivDetailsHaveSeen;
     @BindView(R.id.tv_details_have_seen)
     TextView tvDetailsHaveSeen;
+    List<Details.DataBean.BasicBean.StageImgBean.ListBean> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,7 +148,6 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
     }
 
 
-
     private void initiaData() {
         Picasso.with(this).load(detail.getData().getBasic().getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
                 .noFade().into(imageMovie);
@@ -157,7 +161,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
         textMovieDate.setText(detail.getData().getBasic().getReleaseDate().substring(0, 4));
         if (detail.getData().getBasic().getMins().length() > 1) {
-            textMovieDuration.setText(detail.getData().getBasic().getMins()+"");
+            textMovieDuration.setText(detail.getData().getBasic().getMins() + "");
         } else {
             textMovieDuration.setText("....");
         }
@@ -189,8 +193,8 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
 
         textMovieType.setText(detail.getData().getBasic().getType() + "");
-        textMovieIntro.setText(detail.getData().getBasic().getStory()+"");
-        textMovieIntro1.setText(detail.getData().getBasic().getStory()+"");
+        textMovieIntro.setText(detail.getData().getBasic().getStory() + "");
+        textMovieIntro1.setText(detail.getData().getBasic().getStory() + "");
         //        Log.d("000000000",detail.getData().getBasic().getVideo().getImg());
         if (detail.getData().getBasic().getVideo().getImg().length() > 0) {
             Picasso.with(this).load(detail.getData().getBasic().getVideo().getImg()).placeholder(R.drawable.logo).transform(new CropSquareTransformation())
@@ -227,10 +231,22 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
                 creatorAdapter = new CreatorAdapter(R.layout.item_actors, details.getData().getBasic().getActors());
                 actorRecyc.setAdapter(creatorAdapter);
 
+                //设置剧照点击事件
+                stillAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                        String img = details.getData().getBasic().getStageImg().getList().get(position).getImgUrl();
+                        Intent intent = new Intent(DetailsActivity.this, PhotoActivity.class);
+                        intent.putExtra("img", img);
+                        startActivity(intent);
+                    }
+                });
+
             }
         });
 
     }
+
 
     @Override
     public void onReviewLoadEnd(final Review review) {
@@ -281,14 +297,12 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
                 if (islove) {
                     tvDetailsWannaSee.setTextColor(getResources().getColor(R.color.gray_500));
                     ivDetailsWannaSee.setImageResource(R.mipmap.ic_love);
-                    islove=false;
-                }else {
+                    islove = false;
+                } else {
                     tvDetailsWannaSee.setTextColor(getResources().getColor(R.color.red_300));
                     ivDetailsWannaSee.setImageResource(R.mipmap.ic_love_select);
-                    islove=true;
+                    islove = true;
                 }
-
-
 
 
                 break;
@@ -296,11 +310,11 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
                 if (isstar) {
                     tvDetailsHaveSeen.setTextColor(getResources().getColor(R.color.gray_500));
                     ivDetailsHaveSeen.setImageResource(R.mipmap.ic_star);
-                    isstar=false;
-                }else {
+                    isstar = false;
+                } else {
                     tvDetailsHaveSeen.setTextColor(getResources().getColor(R.color.red_300));
                     ivDetailsHaveSeen.setImageResource(R.mipmap.ic_star_select);
-                    isstar=true;
+                    isstar = true;
                 }
 
 
@@ -312,21 +326,22 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
 
     @OnClick(R.id.video_play)
     public void onViewClicked() {
-//        webView.setVisibility(View.VISIBLE);
-//        webView.loadUrl(detail.getData().getBasic().getVideo().getUrl());
-//        Log.d("5555555555555555555555",detail.getData().getBasic().getVideo().getUrl());
-        Intent intent = new Intent(DetailsActivity.this,VideoActivity.class);
-        intent.putExtra("URL",detail.getData().getBasic().getVideo().getUrl());
-        intent.putExtra("TITLE",detail.getData().getBasic().getVideo().getTitle());
+        //        webView.setVisibility(View.VISIBLE);
+        //        webView.loadUrl(detail.getData().getBasic().getVideo().getUrl());
+        //        Log.d("5555555555555555555555",detail.getData().getBasic().getVideo().getUrl());
+        Intent intent = new Intent(DetailsActivity.this, VideoActivity.class);
+        intent.putExtra("URL", detail.getData().getBasic().getVideo().getUrl());
+        intent.putExtra("TITLE", detail.getData().getBasic().getVideo().getTitle());
         startActivity(intent);
 
     }
+
     private void initiaProgress(double grade) {
         handler = new Handler();
         crpv = (ColorfulRingProgressView) findViewById(R.id.crpv);
         tvPercent = (TextView) findViewById(R.id.tvPercent);
-        tvPercent.setText(grade+"分");
-        setTemperature(((int)grade)*10);
+        tvPercent.setText(grade + "分");
+        setTemperature(((int) grade) * 10);
         crpv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -358,7 +373,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsData.De
             }
         };
         //启动线程
-        handler.postDelayed(runnable,1000);
+        handler.postDelayed(runnable, 1000);
 
     }
 

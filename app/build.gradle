@@ -93,4 +93,7 @@ dependencies {
     compile 'com.linsea:universalvideoview:1.1.0@aar'
     //评分进度条
     compile 'com.timqi.sectorprogressview:library:2.0.1'
+
+    //可放大的照片预览
+    implementation 'com.github.chrisbanes:PhotoView:1.2.6'
 }
