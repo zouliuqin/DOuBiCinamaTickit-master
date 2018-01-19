@@ -344,7 +344,7 @@ public class HomeFragment extends BaseFragment implements IsHitData.IsHitLoadLis
                 comingSoonTop10.add(comingSoons.get(i));
             }
         } else {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 4; i++) {
                 comingSoonTop10.add(comingSoons.get(i));
             }
         }

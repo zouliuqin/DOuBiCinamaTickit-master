@@ -171,7 +171,7 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
      * @param movieNews 电影资讯
      */
     @Override
-    public void onNewsLoadEnd(final MovieNews movieNews) {
+    public  void onNewsLoadEnd(final MovieNews movieNews) {
         //获取新闻资讯集合
         if (newsLists.size()<=0){
             newsLists.addAll( movieNews.getData().getData());
@@ -180,16 +180,12 @@ public class NewsFragment extends Fragment implements NewsData.NewsLoadListener 
         }
 
 
+
+
+
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-//                adapter = new NewsAdapter(getActivity(), newsLists);
-//                lvNews.setAdapter(adapter);
-                //更新界面
-//                adapter.notifyDataSetChanged();
-                //如果没有横幅 则添加横幅信息
-
-
 
                 adapter.setNewData(newsLists);
 

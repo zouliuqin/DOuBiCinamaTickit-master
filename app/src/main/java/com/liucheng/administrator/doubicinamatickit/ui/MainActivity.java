@@ -150,8 +150,11 @@ public class MainActivity extends FragmentActivity {
             //设置城市
            city = location.getCity().substring(0,location.getCity().length()-1);
             Log.i("TAG", "onReceiveLocation: "+city);
-
-            MyApplication.setCityName(city);
+            //如果选择的地址和定位的地址不一致则弹出对话框
+            if (!city.equals(MyApplication.getCityName())){
+                showCityDialog();
+            }
+           // MyApplication.setCityName(city);
 
         }
 
@@ -288,6 +291,38 @@ public ViewPager  getViewPager_main(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * 显示当前城市定位对话框
+     */
+    private void showCityDialog() {
+        AlertDialog dialog = null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+
+        builder.setMessage("系统检测到你当前城市为"+city+",是否切换当前城市？");
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        builder.setPositiveButton("切换", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //切换当前城市
+                MyApplication.setCityName(city);
+                //获取当前城市
+                city = MyApplication.getCityName();
+                initialUI();
+
             }
         });
 

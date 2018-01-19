@@ -61,6 +61,8 @@ public class MyImageLoader {
         loadBitmapFormHttp(context, imageView, imageUrl);
 
 
+
+
     }
 
     //从网上异步加载图片的方法

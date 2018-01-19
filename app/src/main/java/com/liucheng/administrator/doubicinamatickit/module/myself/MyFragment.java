@@ -128,7 +128,6 @@ public class MyFragment extends BaseFragment {
 
         flMyFragment.setBackground(a);
 
-
     }
 
     /**

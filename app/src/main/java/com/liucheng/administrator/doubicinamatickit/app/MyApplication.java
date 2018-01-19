@@ -32,14 +32,14 @@ import cn.bmob.v3.BmobConfig;
  * Created by 邹柳钦 on 2017/11/4 0004.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends Application   {
 
 
     private static Context context;
     /**
      * 默认城市
      */
-    private static String cityName ;
+    private static String cityName ="武汉" ;
     /**
      * 纬度
      */
@@ -91,8 +91,6 @@ public class MyApplication extends Application {
     public static void setLongitude(double longitude) {
         Longitude = longitude;
     }
-
-
 
 
 }

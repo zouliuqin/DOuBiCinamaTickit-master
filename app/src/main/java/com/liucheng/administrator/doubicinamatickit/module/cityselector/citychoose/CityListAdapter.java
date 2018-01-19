@@ -137,13 +137,13 @@ public class CityListAdapter extends BaseAdapter {
         int viewType = getItemViewType(position);
 
 
-        //aaaa
 
         if (viewType == 0) { // 定位
             convertView = inflater.inflate(R.layout.city_locate_item, null);
             city = (TextView) convertView.findViewById(R.id.city_locate_item_city);
             if (locateCity!=null){
-              locateCity  = locateCity.substring(0,locateCity.length()-1);
+              //locateCity  = locateCity.substring(0,locateCity.length()-1);
+              locateCity="武汉";
             }
          //
             city.setText(locateCity);
@@ -225,7 +225,6 @@ public class CityListAdapter extends BaseAdapter {
             }
             if (position >= 1) {
                 holder.name.setText(list.get(position).getName());
-                Log.d("YYYYYYYYYYYYYYYYYYYYYY", list.toString());
                 String currentStr = PinyinUtil.getAlpha(list.get(position).getPinyi());
                 String previewStr = (position - 1) >= 0 ? PinyinUtil.getAlpha(list
                         .get(position - 1).getPinyi()) : " ";

@@ -288,6 +288,7 @@ public class MySetActivity extends AppCompatActivity {
                     Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
                     ivMySetImg.setImageBitmap(bitmap);
                     imagePaths=imagePath;
+
                 } else {
                     Toast.makeText(MySetActivity.this, "选择头像失败", Toast.LENGTH_LONG).show();
                 }
